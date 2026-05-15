@@ -2,9 +2,11 @@ pandas
 numpy
 matplotlib
 seaborn
+scipy
+openpyxl
 great_expectations
 pandera
-scipy
 fhir.resources
+jsonschema
 jupyter
 streamlit
