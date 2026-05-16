@@ -1,0 +1,2 @@
+column,failure_case,index,schema_context,check,check_number
+district_pop_mid_year_cbs,int64,,Column,dtype('float64'),
