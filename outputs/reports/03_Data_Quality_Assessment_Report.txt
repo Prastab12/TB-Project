@@ -110,20 +110,21 @@ B. PANDERA SCHEMA VALIDATION
    Validation Date : 2026-05-16
    Rows Evaluated  : 780
 --------------------------------------------------------------------------------
-Status : FAILED
-Total violations : 1
+Status : FAILED — 1 violation(s)
 
 Checks Performed:
   [✓] Integer columns  — pbc_reg, cured, failed, died, ltfu, not_eval,
                          new_cases_total, relapse_total, total_tb_m+f
   [✓] Non-negative counts — all integer & float count fields
-  [✓] Required columns — all mandatory columns present
+  [✓] Required columns — all 15 mandatory columns present
   [✓] Proportion bounds — tb_hiv_pct, xpert_cov_pct within [0, 1]
   [✓] Fiscal year range — bs_year in {2078, 2079, 2080, 2081, 2082}
+  [✓] Non-null identifiers — district, bs_month, bs_year
 
 Failure Summary by Column & Constraint:
 ---------------------------------------
   - [Column] Column 'district_pop_mid_year_cbs' | Constraint: dtype('float64') | Violations: 1
 
-Detailed failure cases saved to : outputs/reports/05_Pandera_Failed_Rows.csv
-Full validation log saved to    : outputs/reports/05_Pandera_Validation_Log.csv
+Full report       : outputs/reports/04_Pandera_Validation_Report.txt
+Failed rows CSV   : outputs/reports/05_Pandera_Failed_Rows.csv
+Validation log    : outputs/reports/05_Pandera_Validation_Log.csv
