@@ -303,9 +303,10 @@ def main():
                     {
                         "id": f"group-{meas_id}",
                         "population": populations,
-                        "measureScore": measure_score_obj
+                        "measureScoreQuantity": measure_score_obj
                     }
                 ]
+
             }
 
             
