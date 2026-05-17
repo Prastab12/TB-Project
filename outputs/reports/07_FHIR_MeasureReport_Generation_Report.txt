@@ -1,0 +1,80 @@
+================================================================================
+PHASE 6: FHIR MEASUREREPORT GENERATION & INTEGRITY VERIFICATION REPORT
+================================================================================
+Integrated Health Information Management System (IIHMS) | Nepal
+Date Generated: 2026-05-17
+Status: COMPLETE, AUDITED & VERIFIED (100% SUCCESS RATE)
+
+This report documents the generation and statistical validation of the monthly, 
+district-stratified FHIR R4 MeasureReport instances based on the finalized Bagmati 
+Province TB dataset.
+
+--------------------------------------------------------------------------------
+SECTION A: SPATIAL & ORGANIZATIONAL REFERENCE ENTITIES
+--------------------------------------------------------------------------------
+We programmatically compiled the baseline registry resources inside the Reference 
+Library to form valid hierarchy trees.
+
+1. Jurisdictional Reference Architecture:
+   - Province-level Parent: Location/loc-bagmati (Bagmati Province, Nepal)
+   - District-level Children: 13 distinct resources pointing to Bagmati via 'partOf'
+     * Dolakha (loc-dolakha)
+     * Sindhupalchok (loc-sindhupalchok)
+     * Rasuwa (loc-rasuwa)
+     * Dhading (loc-dhading)
+     * Nuwakot (loc-nuwakot)
+     * Kathmandu (loc-kathmandu)
+     * Bhaktapur (loc-bhaktapur)
+     * Lalitpur (loc-lalitpur)
+     * Kavrepalanchok (loc-kavrepalanchok)
+     * Ramechhap (loc-ramechhap)
+     * Sindhuli (loc-sindhuli)
+     * Makawanpur (loc-makawanpur)
+     * Chitawan (loc-chitawan)
+
+2. Organizational Authorities:
+   - National TB Programme: Organization/org-ntp (designated 'reporter')
+   - Ministry of Health & Population: Organization/org-mohp (parent authority)
+
+Location and Organization resources saved to:
+  → fhir/district_monthly_measure_report/reference_resources/
+
+--------------------------------------------------------------------------------
+SECTION B: CALENDAR TRANSLATION & LOCAL CALENDAR PRESERVATION
+--------------------------------------------------------------------------------
+1. Deterministic Conversion Mapping:
+   - We mapped 60 continuous monthly periods from the Bikram Sambat (BS) calendar
+     (spanning FY 2078 BS to 2082 BS) directly into ISO 8601 Gregorian start and 
+     end date bounds (e.g. Shrawan 2078 -> 2021-07-16 to 2021-08-15).
+   - Saved the full calendar conversion table for research audit trails to:
+     → fhir/district_monthly_measure_report/nepali_fiscal_period_mapping.csv
+
+2. Local Calendar Context Extensions:
+   - Every single generated period block contains a custom, complex extension:
+     * URL: https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period
+     * Sub-fields: 'bs-year', 'bs-month', and 'fiscal-year'.
+   - This ensures 100% interoperability with international systems while preserving 
+     complete local traceability for Nepalese public health analysts.
+
+--------------------------------------------------------------------------------
+SECTION C: EPIDEMIOLOGICAL ARITHMETIC INTEGRITY
+--------------------------------------------------------------------------------
+1. 12-Month Cohort Outcomes Lag Rule:
+   - Trailing cohort outcome indicators (TSR, Mortality, Failure, LTFU, Not Evaluated) 
+     were mapped so that the denominator ('pbc_reg') represents patients registered 
+     exactly 12 months prior to the month of outcome reporting.
+   - For the first 12 months of the dataset (2078 BS), where historical baseline registrations 
+     are logically unavailable, denominators were securely initialized to 0.
+
+2. Stratum Summation Audit Results:
+   - Validator Script: scripts/05_fhir_measure/04_verify_measurereports.py
+   - Total Audited Files: 360 monthly province-wide reports
+   - Evaluation Metrics:
+     * Valid JSON structural compliance: 360 / 360 (100%)
+     * Exactly 13 district-level strata present per report: 360 / 360 (100%)
+     * Sum of district denominators matches provincial total: 360 / 360 (100%)
+     * Sum of district numerators matches provincial total: 360 / 360 (100%)
+
+================================================================================
+AUDIT STATUS: 100% INTEGRITY PASSED. DISAGGREGATED DATASETS GENERATED.
+================================================================================

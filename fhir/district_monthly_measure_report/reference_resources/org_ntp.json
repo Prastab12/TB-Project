@@ -1,0 +1,11 @@
+{
+  "resourceType": "Organization",
+  "id": "org-ntp",
+  "name": "National Tuberculosis Programme",
+  "alias": [
+    "NTP"
+  ],
+  "partOf": {
+    "reference": "Organization/org-mohp"
+  }
+}

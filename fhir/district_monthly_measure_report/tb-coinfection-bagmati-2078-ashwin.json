@@ -1,0 +1,460 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "tb-coinfection-bagmati-2078-ashwin",
+  "status": "complete",
+  "type": "summary",
+  "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-hiv-coinfection",
+  "subject": {
+    "reference": "Location/loc-bagmati",
+    "display": "Bagmati Province"
+  },
+  "date": "2026-05-17T13:29:48Z",
+  "reporter": {
+    "reference": "Organization/org-ntp",
+    "display": "National Tuberculosis Programme"
+  },
+  "period": {
+    "extension": [
+      {
+        "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+        "extension": [
+          {
+            "url": "bs-year",
+            "valueInteger": 2078
+          },
+          {
+            "url": "bs-month",
+            "valueString": "Ashwin"
+          },
+          {
+            "url": "fiscal-year",
+            "valueString": "2078/79"
+          }
+        ]
+      }
+    ],
+    "start": "2021-09-16",
+    "end": "2021-10-15"
+  },
+  "group": [
+    {
+      "id": "group-nepal-tb-hiv-coinfection",
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator"
+              }
+            ]
+          },
+          "count": 6135940
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator"
+              }
+            ]
+          },
+          "count": 0
+        }
+      ],
+      "measureScore": {
+        "value": 0.0,
+        "unit": "proportion",
+        "system": "http://unitsofmeasure.org"
+      },
+      "stratifier": [
+        {
+          "id": "stratifier-district",
+          "code": {
+            "text": "District-level Disaggregation"
+          },
+          "stratum": [
+            {
+              "value": {
+                "text": "DOLAKHA"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 172488
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "SINDHUPALCHOK"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 261444
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "RASUWA"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 46525
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "DHADING"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 325069
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "NUWAKOT"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 264927
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "KATHMANDU"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 2055881
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "BHAKTAPUR"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 434178
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "LALITPUR"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 554103
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "KAVREPALANCHOK"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 365609
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "RAMECHHAP"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 170303
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "SINDHULI"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 299195
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "MAKAWANPUR"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 465517
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "CHITAWAN"
+              },
+              "population": [
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                      }
+                    ]
+                  },
+                  "count": 0
+                },
+                {
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                      }
+                    ]
+                  },
+                  "count": 720701
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
