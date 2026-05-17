@@ -1,0 +1,87 @@
+{
+  "resourceType": "Measure",
+  "id": "nepal-tb-xpert-coverage",
+  "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-xpert-coverage",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+      "value": "nepal-tb-xpert-coverage"
+    }
+  ],
+  "version": "1.0.0",
+  "name": "NEPAL_TB_XPERT_COVERAGE",
+  "title": "Xpert MTB/RIF Coverage Rate",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-05-17",
+  "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://iihms.gov.np"
+        }
+      ]
+    }
+  ],
+  "description": "The proportion of the population covered or tested using Xpert MTB/RIF assays.",
+  "scoring": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+        "code": "proportion",
+        "display": "Proportion"
+      }
+    ]
+  },
+  "improvementNotation": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+        "code": "increase",
+        "display": "Increased score indicates improvement"
+      }
+    ]
+  },
+  "group": [
+    {
+      "id": "group-nepal-tb-xpert-coverage",
+      "population": [
+        {
+          "id": "pop-denom-nepal-tb-xpert-coverage",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator",
+                "display": "Denominator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "CBS Mid-year district population (district_pop_mid_year_cbs)"
+          }
+        },
+        {
+          "id": "pop-numer-nepal-tb-xpert-coverage",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator",
+                "display": "Numerator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "Xpert coverage percent * population"
+          }
+        }
+      ]
+    }
+  ]
+}

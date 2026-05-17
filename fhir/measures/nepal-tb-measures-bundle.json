@@ -1,0 +1,1090 @@
+{
+  "resourceType": "Bundle",
+  "id": "nepal-tb-measures-bundle",
+  "identifier": {
+    "use": "official",
+    "system": "https://iihms.gov.np/fhir/NamingSystem/bundle-identifiers",
+    "value": "nepal-tb-measures-bundle"
+  },
+  "type": "collection",
+  "timestamp": "2026-05-17T07:04:15.804490Z",
+  "entry": [
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-art-coverage",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-art-coverage",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-art-coverage",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-art-coverage"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_ART_COVERAGE",
+        "title": "HIV/ART Coverage Percentage",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The proportion of TB/HIV co-infected patients receiving antiretroviral therapy (ART).",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "proportion",
+              "display": "Proportion"
+            }
+          ]
+        },
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "increase",
+              "display": "Increased score indicates improvement"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-art-coverage",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-art-coverage",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "TB-HIV co-infected cases (tb_hiv_pct * population)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-art-coverage",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "ART coverage percentage * TB-HIV positive cases"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-bacteriological-confirmation",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-bacteriological-confirmation",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-bacteriological-confirmation",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-bacteriological-confirmation"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_BACTERIOLOGICAL_CONFIRMATION",
+        "title": "Tuberculosis Bacteriological Confirmation Proportion",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The proportion of notified TB cases that were bacteriologically confirmed.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "proportion",
+              "display": "Proportion"
+            }
+          ]
+        },
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "increase",
+              "display": "Increased score indicates improvement"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-bacteriological-confirmation",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-bacteriological-confirmation",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Total notified TB cases (total_tb_m+f)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-bacteriological-confirmation",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Bacteriologically confirmed registered cases (pbc_reg)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-failure-rate",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-failure-rate",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-failure-rate",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-failure-rate"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_FAILURE_RATE",
+        "title": "Tuberculosis Treatment Failure Rate",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The proportion of registered TB patients whose treatment failed.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "proportion",
+              "display": "Proportion"
+            }
+          ]
+        },
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "decrease",
+              "display": "Decreased score indicates improvement"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-failure-rate",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-failure-rate",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Registered bacteriologically confirmed cases (pbc_reg)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-failure-rate",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "TB cases whose treatment failed (failed)"
+                }
+              }
+            ],
+            "stratifier": [
+              {
+                "id": "stratifier-gender",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "263495000",
+                      "display": "Gender"
+                    }
+                  ],
+                  "text": "Stratification by patient gender"
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Patient.gender"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-gender-ratio",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-gender-ratio",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-gender-ratio",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-gender-ratio"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_GENDER_RATIO",
+        "title": "Male-to-Female TB Notification Ratio",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The ratio of notified male TB cases to female TB cases to track skewness in case detection.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-gender-ratio",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-gender-ratio",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Total female TB cases notified (total_tb_female)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-gender-ratio",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Total male TB cases notified (total_tb_male)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-hiv-coinfection",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-hiv-coinfection",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-hiv-coinfection",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-hiv-coinfection"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_HIV_COINFECTION",
+        "title": "Tuberculosis/HIV Co-infection Proportion",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The proportion of the population evaluated who are co-infected with TB and HIV.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "proportion",
+              "display": "Proportion"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-hiv-coinfection",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-hiv-coinfection",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "CBS Mid-year district population (district_pop_mid_year_cbs)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-hiv-coinfection",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "TB-HIV percentage * population"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-ltfu-rate",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-ltfu-rate",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-ltfu-rate",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-ltfu-rate"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_LTFU_RATE",
+        "title": "Tuberculosis Lost to Follow-Up (LTFU) Rate",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The proportion of registered TB patients who were lost to follow-up.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "proportion",
+              "display": "Proportion"
+            }
+          ]
+        },
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "decrease",
+              "display": "Decreased score indicates improvement"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-ltfu-rate",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-ltfu-rate",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Registered bacteriologically confirmed cases (pbc_reg)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-ltfu-rate",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "TB cases lost to follow-up (ltfu)"
+                }
+              }
+            ],
+            "stratifier": [
+              {
+                "id": "stratifier-gender",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "263495000",
+                      "display": "Gender"
+                    }
+                  ],
+                  "text": "Stratification by patient gender"
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Patient.gender"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-mortality-rate",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-mortality-rate",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-mortality-rate",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-mortality-rate"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_MORTALITY_RATE",
+        "title": "Tuberculosis Mortality Rate",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The proportion of registered TB patients who died during treatment.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "proportion",
+              "display": "Proportion"
+            }
+          ]
+        },
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "decrease",
+              "display": "Decreased score indicates improvement"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-mortality-rate",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-mortality-rate",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Registered bacteriologically confirmed cases (pbc_reg)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-mortality-rate",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Registered TB cases who died (died)"
+                }
+              }
+            ],
+            "stratifier": [
+              {
+                "id": "stratifier-gender",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "263495000",
+                      "display": "Gender"
+                    }
+                  ],
+                  "text": "Stratification by patient gender"
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Patient.gender"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval-rate",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-not-eval-rate",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval-rate",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-not-eval-rate"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_NOT_EVAL_RATE",
+        "title": "Tuberculosis Not Evaluated Rate",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The proportion of registered TB patients whose treatment outcome was not evaluated.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "proportion",
+              "display": "Proportion"
+            }
+          ]
+        },
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "decrease",
+              "display": "Decreased score indicates improvement"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval-rate",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-not-eval-rate",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Registered bacteriologically confirmed cases (pbc_reg)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-not-eval-rate",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "TB cases not evaluated (not_eval)"
+                }
+              }
+            ],
+            "stratifier": [
+              {
+                "id": "stratifier-gender",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "263495000",
+                      "display": "Gender"
+                    }
+                  ],
+                  "text": "Stratification by patient gender"
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Patient.gender"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-notification-rate",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-notification-rate",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-notification-rate",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-notification-rate"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_NOTIFICATION_RATE",
+        "title": "Annualized Tuberculosis Notification Rate",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The rate of newly notified and relapse TB cases per 100,000 population.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-notification-rate",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-notification-rate",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "CBS Mid-year district population (district_pop_mid_year_cbs)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-notification-rate",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Total notified TB cases (total_tb_m+f)"
+                }
+              }
+            ],
+            "stratifier": [
+              {
+                "id": "stratifier-gender",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "263495000",
+                      "display": "Gender"
+                    }
+                  ],
+                  "text": "Stratification by patient gender"
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Patient.gender"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-tsr-cure",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-tsr-cure",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-tsr-cure",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-tsr-cure"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_TSR_CURE",
+        "title": "Tuberculosis Treatment Success Rate (Cure Rate)",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The proportion of registered bacteriologically confirmed TB cases that completed treatment and were cured.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "proportion",
+              "display": "Proportion"
+            }
+          ]
+        },
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "increase",
+              "display": "Increased score indicates improvement"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-tsr-cure",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-tsr-cure",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Registered bacteriologically confirmed cases (pbc_reg)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-tsr-cure",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Successfully cured TB cases (cured)"
+                }
+              }
+            ],
+            "stratifier": [
+              {
+                "id": "stratifier-gender",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "263495000",
+                      "display": "Gender"
+                    }
+                  ],
+                  "text": "Stratification by patient gender"
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Patient.gender"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-xpert-coverage",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-xpert-coverage",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-xpert-coverage",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-xpert-coverage"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_XPERT_COVERAGE",
+        "title": "Xpert MTB/RIF Coverage Rate",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-05-17",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "The proportion of the population covered or tested using Xpert MTB/RIF assays.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "proportion",
+              "display": "Proportion"
+            }
+          ]
+        },
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "increase",
+              "display": "Increased score indicates improvement"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-xpert-coverage",
+            "population": [
+              {
+                "id": "pop-denom-nepal-tb-xpert-coverage",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "CBS Mid-year district population (district_pop_mid_year_cbs)"
+                }
+              },
+              {
+                "id": "pop-numer-nepal-tb-xpert-coverage",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "Xpert coverage percent * population"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

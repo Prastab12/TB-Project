@@ -1,0 +1,87 @@
+{
+  "resourceType": "Measure",
+  "id": "nepal-tb-bacteriological-confirmation",
+  "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-bacteriological-confirmation",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+      "value": "nepal-tb-bacteriological-confirmation"
+    }
+  ],
+  "version": "1.0.0",
+  "name": "NEPAL_TB_BACTERIOLOGICAL_CONFIRMATION",
+  "title": "Tuberculosis Bacteriological Confirmation Proportion",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-05-17",
+  "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://iihms.gov.np"
+        }
+      ]
+    }
+  ],
+  "description": "The proportion of notified TB cases that were bacteriologically confirmed.",
+  "scoring": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+        "code": "proportion",
+        "display": "Proportion"
+      }
+    ]
+  },
+  "improvementNotation": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+        "code": "increase",
+        "display": "Increased score indicates improvement"
+      }
+    ]
+  },
+  "group": [
+    {
+      "id": "group-nepal-tb-bacteriological-confirmation",
+      "population": [
+        {
+          "id": "pop-denom-nepal-tb-bacteriological-confirmation",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator",
+                "display": "Denominator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "Total notified TB cases (total_tb_m+f)"
+          }
+        },
+        {
+          "id": "pop-numer-nepal-tb-bacteriological-confirmation",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator",
+                "display": "Numerator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "Bacteriologically confirmed registered cases (pbc_reg)"
+          }
+        }
+      ]
+    }
+  ]
+}

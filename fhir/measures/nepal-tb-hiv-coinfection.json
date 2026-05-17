@@ -1,0 +1,78 @@
+{
+  "resourceType": "Measure",
+  "id": "nepal-tb-hiv-coinfection",
+  "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-hiv-coinfection",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+      "value": "nepal-tb-hiv-coinfection"
+    }
+  ],
+  "version": "1.0.0",
+  "name": "NEPAL_TB_HIV_COINFECTION",
+  "title": "Tuberculosis/HIV Co-infection Proportion",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-05-17",
+  "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://iihms.gov.np"
+        }
+      ]
+    }
+  ],
+  "description": "The proportion of the population evaluated who are co-infected with TB and HIV.",
+  "scoring": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+        "code": "proportion",
+        "display": "Proportion"
+      }
+    ]
+  },
+  "group": [
+    {
+      "id": "group-nepal-tb-hiv-coinfection",
+      "population": [
+        {
+          "id": "pop-denom-nepal-tb-hiv-coinfection",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator",
+                "display": "Denominator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "CBS Mid-year district population (district_pop_mid_year_cbs)"
+          }
+        },
+        {
+          "id": "pop-numer-nepal-tb-hiv-coinfection",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator",
+                "display": "Numerator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/cql",
+            "expression": "TB-HIV percentage * population"
+          }
+        }
+      ]
+    }
+  ]
+}

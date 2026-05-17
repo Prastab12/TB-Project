@@ -1,0 +1,12 @@
+DHIS2 Indicator,FHIR Measure ID,Numerator,Denominator
+Treatment Success Rate (TSR),nepal-tb-tsr-cure,cured,pbc_reg
+Annualized TB Notification Rate,nepal-tb-notification-rate,total_tb_m+f,district_pop_mid_year_cbs
+Mortality Rate (Cohort),nepal-tb-mortality-rate,died,pbc_reg
+Lost to Follow-up (LTFU) Rate,nepal-tb-ltfu-rate,ltfu,pbc_reg
+Treatment Failure Rate,nepal-tb-failure-rate,failed,pbc_reg
+Not Evaluated Rate,nepal-tb-not-eval-rate,not_eval,pbc_reg
+Bacteriological Confirmation Proportion,nepal-tb-bacteriological-confirmation,pbc_reg,total_tb_m+f
+Xpert MTB/RIF Coverage Rate,nepal-tb-xpert-coverage,xpert_cov_pct (multiplied by population),district_pop_mid_year_cbs
+TB/HIV Co-infection Proportion,nepal-tb-hiv-coinfection,tb_hiv_pct (multiplied by population),district_pop_mid_year_cbs
+HIV/ART Coverage Percentage,nepal-tb-art-coverage,art_cov_pct (multiplied by TB-HIV positive cases),tb_hiv_pct (multiplied by population)
+Male-to-Female Notification Ratio,nepal-tb-gender-ratio,total_tb_male,total_tb_female

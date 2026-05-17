@@ -1,0 +1,89 @@
+================================================================================
+PHASE 6: FHIR MEASURE STANDARDISATION REPORT
+================================================================================
+Integrated Health Information Management System (IIHMS) | Nepal
+Date Generated: 2026-05-17
+Status: COMPLETE & VERIFIED
+
+This report documents the standardisation of the cleaned Bagmati Province TB dataset
+into official HL7 FHIR R4 Quality Measure specifications.
+
+--------------------------------------------------------------------------------
+SECTION A: LEARN FHIR STRUCTURE (CONCEPTUAL STUDY)
+--------------------------------------------------------------------------------
+We investigated the FHIR Clinical Reasoning Module structure to determine the most
+interoperable format for public health monthly TB summaries.
+
+1. Structural Strategy: Definitional vs Instance Resources
+   - Measure (Definitional): Acts as the computable standard, defining groups,
+     scoring methodologies, and populations.
+   - MeasureReport (Instance): Holds the actual calculated results (numerator,
+     denominator, and score) for a specific district over a specific month.
+
+2. Scoring Types Enforced:
+   - Proportion: Utilized when the numerator is a strict mathematical subset
+     of the denominator. Score is bounded within [0.0 - 1.0].
+   - Ratio: Utilized when the numerator is NOT a subset of the denominator 
+     (e.g., gender count comparisons, or notification rates scaled per 100k).
+
+3. Stratifiers:
+   - Built-in SNOMED CT gender stratification schema (Code: 263495000) inside
+     epidemiological groups to map demographic counts.
+
+--------------------------------------------------------------------------------
+SECTION B: DEFINE MAPPING TABLE
+--------------------------------------------------------------------------------
+The following mapping table aligns pre-aggregated DHIS2 indicator columns in the
+cleaned dataset directly to standard FHIR R4 Measure components:
+
+DHIS2 Indicator                         | FHIR Measure ID               | Numerator                     | Denominator
+----------------------------------------|-------------------------------|-------------------------------|---------------------------
+Treatment Success Rate (TSR)            | nepal-tb-tsr-cure             | cured                         | pbc_reg
+Annualized TB Notification Rate         | nepal-tb-notification-rate    | total_tb_m+f                  | district_pop_mid_year_cbs
+Mortality Rate (Cohort)                 | nepal-tb-mortality-rate       | died                          | pbc_reg
+Lost to Follow-up (LTFU) Rate           | nepal-tb-ltfu-rate            | ltfu                          | pbc_reg
+Treatment Failure Rate                  | nepal-tb-failure-rate         | failed                        | pbc_reg
+Not Evaluated Rate                      | nepal-tb-not-eval-rate        | not_eval                      | pbc_reg
+Bacteriological Confirmation Proportion  | nepal-tb-bacteriological-conf | pbc_reg                       | total_tb_m+f
+Xpert MTB/RIF Coverage Rate             | nepal-tb-xpert-coverage       | xpert_cov_pct * population    | district_pop_mid_year_cbs
+TB/HIV Co-infection Proportion          | nepal-tb-hiv-coinfection      | tb_hiv_pct * population       | district_pop_mid_year_cbs
+HIV/ART Coverage Percentage             | nepal-tb-art-coverage         | art_cov_pct * HIV positive    | tb_hiv_pct * population
+Male-to-Female Notification Ratio       | nepal-tb-gender-ratio         | total_tb_male                 | total_tb_female
+
+Spreadsheet saved to: outputs/reports/11_DHIS2_FHIR_Mapping_Table.csv
+
+--------------------------------------------------------------------------------
+SECTION C: GENERATE MEASURE RESOURCES
+--------------------------------------------------------------------------------
+We programmatically compiled the mapping specifications into standard FHIR R4 resources.
+
+1. Execution Summary:
+   - Generator Script: scripts/05_fhir_measure/01_generate_fhir_measures.py
+   - Bundler Script  : scripts/05_fhir_measure/02_bundle_measures.py
+   - Target Directory: fhir/measures/
+
+2. Output Catalog:
+   - 11 Individual JSON Measure Files successfully validated:
+     * nepal-tb-tsr-cure.json
+     * nepal-tb-notification-rate.json
+     * nepal-tb-mortality-rate.json
+     * nepal-tb-ltfu-rate.json
+     * nepal-tb-failure-rate.json
+     * nepal-tb-not-eval-rate.json
+     * nepal-tb-bacteriological-confirmation.json
+     * nepal-tb-xpert-coverage.json
+     * nepal-tb-hiv-coinfection.json
+     * nepal-tb-art-coverage.json
+     * nepal-tb-gender-ratio.json
+   - 1 Global Bundle Resource containing all measures combined:
+     * nepal-tb-measures-bundle.json (Type: collection)
+
+3. Key Structural Attributes Included:
+   - Canonical URLs: https://iihms.gov.np/fhir/Measure/<id>
+   - Unified publisher & contact telemetry.
+   - Distinctive "proportion" vs "ratio" scoring declarations in XML/JSON formats.
+   - Built-in CQL descriptors inside population definitions.
+
+================================================================================
+STATUS: VALIDATED & STANDARDISED. DEPLOYMENT READY.
+================================================================================
