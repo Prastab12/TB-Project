@@ -1,0 +1,259 @@
+import pandas as pd
+import numpy as np
+import os
+import json
+from datetime import datetime
+
+def get_iso_period(bs_year, bs_month):
+    """
+    Deterministic BS to AD Gregorian period mapper.
+    """
+    month_map = {
+        "Baishakh": 4, "Jestha": 5, "Ashad": 6, "Shrawan": 7, 
+        "Bhadra": 8, "Ashwin": 9, "Kartik": 10, "Mangsir": 11, 
+        "Poush": 12, "Magh": 1, "Falgun": 2, "Chaitra": 3,
+        "Baishak": 4, "Asar": 6
+    }
+    
+    clean_month = bs_month.split()[0].strip()
+    m = month_map.get(clean_month, 1)
+    
+    g_year = bs_year - 57 if m >= 4 else bs_year - 56
+    start_date = f"{g_year}-{m:02d}-16"
+    
+    next_m = m + 1
+    next_yr = g_year
+    if next_m > 12:
+        next_m = 1
+        next_yr += 1
+        
+    end_date = f"{next_yr}-{next_m:02d}-15"
+    return start_date, end_date
+
+def get_fiscal_year(bs_year, bs_month):
+    """
+    Returns localized fiscal year string.
+    """
+    month_map = {
+        "Baishakh": 1, "Jestha": 2, "Ashad": 3, "Shrawan": 4, 
+        "Bhadra": 5, "Ashwin": 6, "Kartik": 7, "Mangsir": 8, 
+        "Poush": 9, "Magh": 10, "Falgun": 11, "Chaitra": 12,
+        "Baishak": 1, "Asar": 3
+    }
+    clean_month = bs_month.split()[0].strip()
+    m = month_map.get(clean_month, 1)
+    if m <= 3:
+        return f"{bs_year-1}/{str(bs_year)[-2:]}"
+    else:
+        return f"{bs_year}/{str(bs_year+1)[-2:]}"
+
+def main():
+    input_file = "data/final/final_cleaned_data.csv"
+    output_dir = "data/fhir/measure_report"
+    os.makedirs(output_dir, exist_ok=True)
+
+    df = pd.read_csv(input_file)
+    
+    # Filter strictly for KATHMANDU district data
+    df_ktm = df[df["district"].str.upper() == "KATHMANDU"].copy()
+    print(f"Loaded {len(df_ktm)} Kathmandu-specific monthly records.")
+
+    indicators_spec = {
+        "nepal-tb-tsr-cure": {
+            "title": "Treatment Success Rate (TSR)",
+            "numerator_field": "cured",
+            "denominator_field": "pbc_reg",
+            "is_cohort_lag": True,
+            "is_derived": False
+        },
+        "nepal-tb-notification-rate": {
+            "title": "Annualized TB Notification Rate",
+            "numerator_field": "total_tb_m+f",
+            "denominator_field": "district_pop_mid_year_cbs",
+            "is_cohort_lag": False,
+            "is_derived": False
+        },
+        "nepal-tb-mortality-rate": {
+            "title": "Mortality Rate (Cohort)",
+            "numerator_field": "died",
+            "denominator_field": "pbc_reg",
+            "is_cohort_lag": True,
+            "is_derived": False
+        },
+        "nepal-tb-ltfu-rate": {
+            "title": "Lost to Follow-up (LTFU) Rate",
+            "numerator_field": "ltfu",
+            "denominator_field": "pbc_reg",
+            "is_cohort_lag": True,
+            "is_derived": False
+        },
+        "nepal-tb-failure-rate": {
+            "title": "Treatment Failure Rate",
+            "numerator_field": "failed",
+            "denominator_field": "pbc_reg",
+            "is_cohort_lag": True,
+            "is_derived": False
+        },
+        "nepal-tb-not-eval-rate": {
+            "title": "Not Evaluated Rate",
+            "numerator_field": "not_eval",
+            "denominator_field": "pbc_reg",
+            "is_cohort_lag": True,
+            "is_derived": False
+        },
+        "nepal-tb-bacteriological-confirmation": {
+            "title": "Bacteriological Confirmation Proportion",
+            "numerator_field": "pbc_reg",
+            "denominator_field": "total_tb_m+f",
+            "is_cohort_lag": False,
+            "is_derived": False
+        },
+        "nepal-tb-xpert-coverage": {
+            "title": "Xpert MTB/RIF Coverage Rate",
+            "numerator_field": "xpert_cov_pct",
+            "denominator_field": "district_pop_mid_year_cbs",
+            "is_cohort_lag": False,
+            "is_derived": True,
+            "derived_type": "rate_of_pop"
+        },
+        "nepal-tb-hiv-coinfection": {
+            "title": "Tuberculosis/HIV Co-infection Proportion",
+            "numerator_field": "tb_hiv_pct",
+            "denominator_field": "district_pop_mid_year_cbs",
+            "is_cohort_lag": False,
+            "is_derived": True,
+            "derived_type": "rate_of_pop"
+        },
+        "nepal-tb-art-coverage": {
+            "title": "HIV/ART Coverage Percentage",
+            "numerator_field": "art_cov_pct",
+            "denominator_field": "tb_hiv_pct",
+            "is_cohort_lag": False,
+            "is_derived": True,
+            "derived_type": "rate_of_hiv"
+        },
+        "nepal-tb-gender-ratio": {
+            "title": "Male-to-Female TB Notification Ratio",
+            "numerator_field": "total_tb_male",
+            "denominator_field": "total_tb_female",
+            "is_cohort_lag": False,
+            "is_derived": False
+        }
+    }
+
+    generated_count = 0
+
+    for idx, row in df_ktm.iterrows():
+        bs_yr = int(row["bs_year"])
+        bs_mnth = row["bs_month"]
+        clean_month = bs_mnth.split()[0].strip().lower()
+        
+        start_date, end_date = get_iso_period(bs_yr, bs_mnth)
+        fy = get_fiscal_year(bs_yr, bs_mnth)
+        
+        # Build individual MeasureReports for Kathmandu
+        for meas_id, spec in indicators_spec.items():
+            report_id = f"tb-{meas_id.replace('nepal-tb-', '')}-kathmandu-{bs_yr}-{clean_month}"
+            
+            # 1. Retrieve Denominator
+            if spec["is_cohort_lag"]:
+                lag_yr = bs_yr - 1
+                lag_row = df_ktm[(df_ktm["bs_year"] == lag_yr) & (df_ktm["bs_month"] == bs_mnth)]
+                if len(lag_row) > 0:
+                    denom_val = int(lag_row.iloc[0][spec["denominator_field"]])
+                else:
+                    denom_val = 0
+            elif spec["is_derived"] and spec["derived_type"] == "rate_of_hiv":
+                pop_val = int(row["district_pop_mid_year_cbs"])
+                hiv_rate = int(row["tb_hiv_pct"])
+                denom_val = int(hiv_rate * pop_val)
+            else:
+                denom_val = int(row[spec["denominator_field"]])
+            
+            # 2. Retrieve Numerator
+            if spec["is_derived"]:
+                if spec["derived_type"] == "rate_of_pop":
+                    pop_val = int(row["district_pop_mid_year_cbs"])
+                    rate_val = int(row[spec["numerator_field"]])
+                    num_val = int(rate_val * pop_val)
+                elif spec["derived_type"] == "rate_of_hiv":
+                    art_rate = int(row[spec["numerator_field"]])
+                    num_val = int(art_rate * denom_val)
+                else:
+                    num_val = 0
+            else:
+                num_val = int(row[spec["numerator_field"]])
+                
+            score = (num_val / denom_val) if denom_val > 0 else 0.0
+            
+            # Build valid FHIR MeasureReport
+            measure_report = {
+                "resourceType": "MeasureReport",
+                "id": report_id,
+                "status": "complete",
+                "type": "summary",
+                "measure": f"https://iihms.gov.np/fhir/Measure/{meas_id}",
+                "subject": {
+                    "reference": "Location/loc-kathmandu",
+                    "display": "Kathmandu District, Nepal"
+                },
+                "date": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "reporter": {
+                    "reference": "Organization/org-ntp",
+                    "display": "National Tuberculosis Programme"
+                },
+                "period": {
+                    "extension": [
+                        {
+                            "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+                            "extension": [
+                                {"url": "bs-year", "valueInteger": bs_yr},
+                                {"url": "bs-month", "valueString": bs_mnth.split()[0].strip()},
+                                {"url": "fiscal-year", "valueString": fy}
+                            ]
+                        }
+                    ],
+                    "start": start_date,
+                    "end": end_date
+                },
+                "group": [
+                    {
+                        "id": f"group-{meas_id}",
+                        "population": [
+                            {
+                                "code": {
+                                    "coding": [{
+                                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                                        "code": "denominator"
+                                    }]
+                                },
+                                "count": denom_val
+                            },
+                            {
+                                "code": {
+                                    "coding": [{
+                                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                                        "code": "numerator"
+                                    }]
+                                },
+                                "count": num_val
+                            }
+                        ],
+                        "measureScore": {
+                            "value": float(round(score, 4)),
+                            "unit": "ratio" if meas_id in ["nepal-tb-notification-rate", "nepal-tb-gender-ratio"] else "proportion",
+                            "system": "http://unitsofmeasure.org"
+                        }
+                    }
+                ]
+            }
+            
+            report_file = os.path.join(output_dir, f"{report_id}.json")
+            with open(report_file, "w") as f:
+                json.dump(measure_report, f, indent=2)
+            generated_count += 1
+            
+    print(f"Successfully generated {generated_count} Kathmandu-specific monthly MeasureReport files.")
+
+if __name__ == "__main__":
+    main()

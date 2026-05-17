@@ -50,3 +50,7 @@ data/final/*
 
 # macOS
 .DS_Store
+
+# FHIR Outputs (Ignored as per directive)
+data/fhir/
+fhir/measures/measure_report/
