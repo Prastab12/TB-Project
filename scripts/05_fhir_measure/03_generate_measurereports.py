@@ -239,7 +239,8 @@ def main():
         
         # Build MeasureReports for each configured indicator
         for meas_id, spec in indicators_spec.items():
-            report_id = f"tb-{meas_id.split('-')[-1]}-bagmati-{bs_yr}-{clean_month}"
+            suffix = meas_id.replace("nepal-tb-", "")
+            report_id = f"tb-{suffix}-bagmati-{bs_yr}-{clean_month}"
             
             # 6.7 Numerator and Denominator totals
             total_num = 0
