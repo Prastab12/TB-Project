@@ -1,9 +1,7 @@
 import pandas as pd
-import numpy as np
 import os
 import json
-import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
 def get_iso_period(bs_year, bs_month):
     """
@@ -54,8 +52,9 @@ def get_fiscal_year(bs_year, bs_month):
         return f"{bs_year}/{str(bs_year+1)[-2:]}"
 
 def main():
-    input_file = "data/final/final_cleaned_data.csv"
-    output_dir = "fhir/district_monthly_measure_report"
+    BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    input_file = os.path.join(BASE, "data/final/final_cleaned_data.csv")
+    output_dir = os.path.join(BASE, "fhir/district_monthly_measure_report")
     ref_dir = os.path.join(output_dir, "reference_resources")
     os.makedirs(ref_dir, exist_ok=True)
 
@@ -86,7 +85,7 @@ def main():
         "physicalType": {
             "coding": [{
                 "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-                "code": "jln",
+                "code": "jdn",
                 "display": "Jurisdiction"
             }]
         }
@@ -110,7 +109,7 @@ def main():
             "physicalType": {
                 "coding": [{
                     "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-                    "code": "jln",
+                    "code": "jdn",
                     "display": "Jurisdiction"
                 }]
             },
@@ -254,33 +253,39 @@ def main():
                 # Retrieve denominator
                 if spec["is_cohort_lag"]:
                     lag_yr = int(bs_yr) - 1
-                    lag_row = df[(df["district"] == dist_name) & 
-                                 (df["bs_year"] == lag_yr) & 
-                                 (df["bs_month"] == bs_mnth)]
+                    clean_mnth = bs_mnth.split()[0].strip()
+                    lag_row = df[(df["district"] == dist_name) &
+                                 (df["bs_year"] == lag_yr) &
+                                 (df["bs_month"].str.split().str[0] == clean_mnth)]
                     if len(lag_row) > 0:
-                        denom_val = int(lag_row.iloc[0][spec["denominator_field"]])
+                        raw = lag_row.iloc[0][spec["denominator_field"]]
+                        denom_val = int(raw) if pd.notna(raw) else 0
                     else:
-                        denom_val = 0  # No registration history from 12-months ago
+                        denom_val = 0
                 elif spec["is_derived"] and spec["derived_type"] == "rate_of_hiv":
-                    pop_val = int(row["district_pop_mid_year_cbs"])
-                    hiv_rate = int(row["tb_hiv_pct"])
-                    denom_val = int(hiv_rate * pop_val)
+                    pop_val = int(row["district_pop_mid_year_cbs"]) if pd.notna(row["district_pop_mid_year_cbs"]) else 0
+                    hiv_rate = int(row["tb_hiv_pct"]) if pd.notna(row["tb_hiv_pct"]) else 0
+                    denom_val = hiv_rate * pop_val
                 else:
-                    denom_val = int(row[spec["denominator_field"]])
+                    raw = row[spec["denominator_field"]]
+                    denom_val = int(raw) if pd.notna(raw) else 0
                 
                 # Retrieve numerator
                 if spec["is_derived"]:
                     if spec["derived_type"] == "rate_of_pop":
-                        pop_val = int(row["district_pop_mid_year_cbs"])
-                        rate_val = int(row[spec["numerator_field"]])
-                        num_val = int(rate_val * pop_val)
+                        pop_val = int(row["district_pop_mid_year_cbs"]) if pd.notna(row["district_pop_mid_year_cbs"]) else 0
+                        raw = row[spec["numerator_field"]]
+                        rate_val = int(raw) if pd.notna(raw) else 0
+                        num_val = rate_val * pop_val
                     elif spec["derived_type"] == "rate_of_hiv":
-                        art_rate = int(row[spec["numerator_field"]])
-                        num_val = int(art_rate * denom_val)
+                        raw = row[spec["numerator_field"]]
+                        art_rate = int(raw) if pd.notna(raw) else 0
+                        num_val = art_rate * denom_val
                     else:
                         num_val = 0
                 else:
-                    num_val = int(row[spec["numerator_field"]])
+                    raw = row[spec["numerator_field"]]
+                    num_val = int(raw) if pd.notna(raw) else 0
                     
                 total_num += num_val
                 total_denom += denom_val
@@ -320,16 +325,43 @@ def main():
             measure_report = {
                 "resourceType": "MeasureReport",
                 "id": report_id,
+                "contained": [
+                    {
+                        "resourceType": "Organization",
+                        "id": "org-mohp",
+                        "name": "Ministry of Health and Population, Nepal",
+                        "alias": ["MoHP"]
+                    },
+                    {
+                        "resourceType": "Organization",
+                        "id": "org-ntp",
+                        "name": "National Tuberculosis Programme",
+                        "alias": ["NTP"],
+                        "partOf": {"reference": "#org-mohp"}
+                    },
+                    {
+                        "resourceType": "Location",
+                        "id": "loc-bagmati",
+                        "name": "Bagmati Province",
+                        "physicalType": {
+                            "coding": [{
+                                "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+                                "code": "jdn",
+                                "display": "Jurisdiction"
+                            }]
+                        }
+                    }
+                ],
                 "status": "complete",
                 "type": "summary",
                 "measure": f"https://iihms.gov.np/fhir/Measure/{meas_id}",
                 "subject": {
-                    "reference": "Location/loc-bagmati",
+                    "reference": "#loc-bagmati",
                     "display": "Bagmati Province"
                 },
-                "date": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "date": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                 "reporter": {
-                    "reference": "Organization/org-ntp",
+                    "reference": "#org-ntp",
                     "display": "National Tuberculosis Programme"
                 },
                 "period": {
@@ -371,15 +403,16 @@ def main():
                         ],
                         "measureScore": {
                             "value": float(round(score, 4)),
-                            "unit": "ratio" if meas_id in ["nepal-tb-notification-rate", "nepal-tb-gender-ratio"] else "proportion",
-                            "system": "http://unitsofmeasure.org"
+                            "unit": "{ratio}" if meas_id in ["nepal-tb-notification-rate", "nepal-tb-gender-ratio"] else "{proportion}",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "{ratio}" if meas_id in ["nepal-tb-notification-rate", "nepal-tb-gender-ratio"] else "{proportion}"
                         },
                         "stratifier": [
                             {
                                 "id": "stratifier-district",
-                                "code": {
-                                    "text": "District-level Disaggregation"
-                                },
+                                "code": [
+                                    {"text": "District-level Disaggregation"}
+                                ],
                                 "stratum": stratifiers
                             }
                         ]
