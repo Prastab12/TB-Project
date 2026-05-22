@@ -47,6 +47,7 @@ data/harmonized/*
 !data/harmonized/.gitkeep
 data/final/*
 !data/final/.gitkeep
+!data/final/final_cleaned_data.csv
 
 # macOS
 .DS_Store
