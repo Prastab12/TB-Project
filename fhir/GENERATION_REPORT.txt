@@ -1,0 +1,103 @@
+======================================================================
+  FHIR R4 MEASURE & MEASUREREPORT GENERATION REPORT
+  Generated: 2026-05-22 07:36:11 UTC
+  Project:   TB Performance Dashboard — Kathmandu, Nepal
+======================================================================
+
+1. MEASURE RESOURCES
+----------------------------------------------------------------------
+   Total Measure definitions : 13
+   Location                  : fhir/measures/measures/
+   Scoring type              : Cohort (raw counts)
+   FHIR Version              : R4 (4.0.1)
+
+   No.  Measure ID                        Title
+   ------------------------------------------------------------------
+    1.  nepal-tb-cured                         TB Patients Cured
+    2.  nepal-tb-died                          TB Patients Died
+    3.  nepal-tb-failed                        TB Treatment Failures
+    4.  nepal-tb-ltfu                          TB Patients Lost to Follow-up
+    5.  nepal-tb-new-cases-female              New TB Cases (Female)
+    6.  nepal-tb-new-cases-male                New TB Cases (Male)
+    7.  nepal-tb-new-cases-total               New TB Cases (Total)
+    8.  nepal-tb-not-eval                      TB Treatment Outcomes Not Evaluated
+    9.  nepal-tb-pbc-reg                       Pulmonary Bacteriologically Confirmed Registered Cohort
+   10.  nepal-tb-relapse-female                TB Relapse Cases (Female)
+   11.  nepal-tb-relapse-male                  TB Relapse Cases (Male)
+   12.  nepal-tb-relapse-total                 TB Relapse Cases (Total)
+   13.  nepal-tb-total-tb-notified             Total TB Cases Notified
+
+2. MEASUREREPORT RESOURCES
+----------------------------------------------------------------------
+   Total indicators          : 13
+   Months per indicator      : 60  (BS 2078 Shrawan – 2082 Asar)
+   Total MeasureReport files : 780
+   Location                  : fhir/measure_reports/by_indicator/{indicator}/
+   Type                      : summary
+   FHIR Version              : R4 (4.0.1)
+
+   No.  Indicator ID             Files   DAR Months
+   -------------------------------------------------------
+    1.  cured                         60     None
+    2.  died                          60     None
+    3.  failed                        60     None
+    4.  ltfu                          60     None
+    5.  new-cases-female              60     Baishak/Jestha/Asar 2078 (not-reported)
+    6.  new-cases-male                60     Baishak/Jestha/Asar 2078 (not-reported)
+    7.  new-cases-total               60     Baishak/Jestha/Asar 2078 (not-reported)
+    8.  not-eval                      60     None
+    9.  pbc-reg                       60     None
+   10.  relapse-female                60     Baishak/Jestha/Asar 2078 (not-reported)
+   11.  relapse-male                  60     Baishak/Jestha/Asar 2078 (not-reported)
+   12.  relapse-total                 60     Baishak/Jestha/Asar 2078 (not-reported)
+   13.  total-tb-notified             60     Baishak/Jestha/Asar 2078 (not-reported)
+
+   Note: relapse-total 2079-Magh has 1 additional DAR entry (empty in source CSV)
+
+3. BUNDLE SUMMARY
+----------------------------------------------------------------------
+   Location: fhir/measure_reports/bundles/
+
+   File                            Type            Entries
+   ------------------------------------------------------------
+   bundle-all-measures.json           Master (Measures)      13
+   bundle-all.json                    Master (MeasureReports) 783
+   bundle-cured.json                  Per-indicator          63
+   bundle-died.json                   Per-indicator          63
+   bundle-failed.json                 Per-indicator          63
+   bundle-ltfu.json                   Per-indicator          63
+   bundle-new-cases-female.json       Per-indicator          63
+   bundle-new-cases-male.json         Per-indicator          63
+   bundle-new-cases-total.json        Per-indicator          63
+   bundle-not-eval.json               Per-indicator          63
+   bundle-pbc-reg.json                Per-indicator          63
+   bundle-relapse-female.json         Per-indicator          63
+   bundle-relapse-male.json           Per-indicator          63
+   bundle-relapse-total.json          Per-indicator          63
+   bundle-total-tb-notified.json      Per-indicator          63
+
+4. DATA ABSENT REASON (not-reported)
+----------------------------------------------------------------------
+   Extension URL: http://hl7.org/fhir/StructureDefinition/data-absent-reason
+   Code         : not-reported
+
+   Applied to   : 7 monthly notification variables
+                  new_cases_total, new_cases_female, new_cases_male
+                  relapse_total, relapse_female, relapse_male, total_tb_m+f
+   For months   : BS 2078 Baishak, Jestha, Asar  (under-reported in source)
+   Also applied : relapse_total BS 2079 Magh  (missing value in source CSV)
+   Fields       : population[0]._count  +  group.measureScore._value
+
+   Annual cohort variables (pbc_reg, cured, failed, died, ltfu, not_eval)
+   are NOT affected — they have valid values for all 60 months.
+
+5. SHARED CANONICAL RESOURCES (in every MeasureReport bundle)
+----------------------------------------------------------------------
+   Organization  org-mohp       Ministry of Health and Population, Nepal
+   Organization  org-ntp        National Tuberculosis Programme
+   Location      loc-kathmandu  Kathmandu District, Nepal
+   Base URL      https://iihms.gov.np/fhir
+
+======================================================================
+  END OF REPORT
+======================================================================

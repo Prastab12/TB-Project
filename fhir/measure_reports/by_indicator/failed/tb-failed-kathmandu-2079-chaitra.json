@@ -1,0 +1,104 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "tb-failed-kathmandu-2079-chaitra",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+    ]
+  },
+  "status": "complete",
+  "type": "summary",
+  "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-failed",
+  "subject": {
+    "reference": "#loc-kathmandu",
+    "display": "Kathmandu District, Nepal"
+  },
+  "date": "2026-05-22T07:00:39Z",
+  "reporter": {
+    "reference": "#org-ntp",
+    "display": "National Tuberculosis Programme"
+  },
+  "period": {
+    "extension": [
+      {
+        "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+        "extension": [
+          {
+            "url": "bs-year",
+            "valueInteger": 2079
+          },
+          {
+            "url": "bs-month",
+            "valueString": "Chaitra"
+          },
+          {
+            "url": "fiscal-year",
+            "valueString": "2079/80"
+          }
+        ]
+      }
+    ],
+    "start": "2023-03-16",
+    "end": "2023-04-15"
+  },
+  "group": [
+    {
+      "id": "group-nepal-tb-failed",
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population",
+                "display": "Initial Population"
+              }
+            ]
+          },
+          "count": 8
+        }
+      ],
+      "measureScore": {
+        "value": 8,
+        "unit": "count",
+        "system": "http://unitsofmeasure.org",
+        "code": "1"
+      }
+    }
+  ],
+  "contained": [
+    {
+      "resourceType": "Organization",
+      "id": "org-mohp",
+      "name": "Ministry of Health and Population, Nepal",
+      "alias": [
+        "MoHP"
+      ]
+    },
+    {
+      "resourceType": "Organization",
+      "id": "org-ntp",
+      "name": "National Tuberculosis Programme",
+      "alias": [
+        "NTP"
+      ],
+      "partOf": {
+        "reference": "#org-mohp"
+      }
+    },
+    {
+      "resourceType": "Location",
+      "id": "loc-kathmandu",
+      "name": "Kathmandu District, Nepal",
+      "physicalType": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+            "code": "jdn",
+            "display": "Jurisdiction"
+          }
+        ]
+      }
+    }
+  ]
+}

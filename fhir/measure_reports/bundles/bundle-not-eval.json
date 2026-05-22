@@ -1,0 +1,4409 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundle-kathmandu-not-eval",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/Bundle"
+    ]
+  },
+  "type": "collection",
+  "timestamp": "2026-05-22T07:00:39Z",
+  "entry": [
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Organization/org-mohp",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-mohp",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/Organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://iihms.gov.np/fhir/NamingSystem/organization-id",
+            "value": "org-mohp"
+          }
+        ],
+        "name": "Ministry of Health and Population, Nepal",
+        "alias": [
+          "MoHP"
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Organization/org-ntp",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-ntp",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/Organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://iihms.gov.np/fhir/NamingSystem/organization-id",
+            "value": "org-ntp"
+          }
+        ],
+        "name": "National Tuberculosis Programme",
+        "alias": [
+          "NTP"
+        ],
+        "partOf": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-mohp",
+          "display": "Ministry of Health and Population, Nepal"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+      "resource": {
+        "resourceType": "Location",
+        "id": "loc-kathmandu",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/Location"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://iihms.gov.np/fhir/NamingSystem/location-id",
+            "value": "loc-kathmandu"
+          }
+        ],
+        "name": "Kathmandu District, Nepal",
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "jdn",
+              "display": "Jurisdiction"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-shrawan",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-shrawan",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Shrawan"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-07-16",
+          "end": "2021-08-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-bhadra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-bhadra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Bhadra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-08-16",
+          "end": "2021-09-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-ashwin",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-ashwin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Ashwin"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-09-16",
+          "end": "2021-10-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-kartik",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-kartik",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Kartik"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-10-16",
+          "end": "2021-11-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-mangsir",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-mangsir",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Mangsir"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-11-16",
+          "end": "2021-12-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-poush",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-poush",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Poush"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-12-16",
+          "end": "2022-01-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-magh",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-magh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Magh"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-01-16",
+          "end": "2022-02-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-falgun",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-falgun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Falgun"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-02-16",
+          "end": "2022-03-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-chaitra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-chaitra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Chaitra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-03-16",
+          "end": "2022-04-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2077/78"
+                }
+              ]
+            }
+          ],
+          "start": "2021-04-16",
+          "end": "2021-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2077/78"
+                }
+              ]
+            }
+          ],
+          "start": "2021-05-16",
+          "end": "2021-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2078-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2078-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2077/78"
+                }
+              ]
+            }
+          ],
+          "start": "2021-06-16",
+          "end": "2021-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 55
+              }
+            ],
+            "measureScore": {
+              "value": 55,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-shrawan",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-shrawan",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Shrawan"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-07-16",
+          "end": "2022-08-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-bhadra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-bhadra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Bhadra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-08-16",
+          "end": "2022-09-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-ashwin",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-ashwin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Ashwin"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-09-16",
+          "end": "2022-10-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-kartik",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-kartik",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Kartik"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-10-16",
+          "end": "2022-11-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-mangsir",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-mangsir",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Mangsir"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-11-16",
+          "end": "2022-12-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-poush",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-poush",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Poush"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-12-16",
+          "end": "2023-01-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-magh",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-magh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Magh"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-01-16",
+          "end": "2023-02-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-falgun",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-falgun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Falgun"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-02-16",
+          "end": "2023-03-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-chaitra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-chaitra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Chaitra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-03-16",
+          "end": "2023-04-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-04-16",
+          "end": "2022-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-05-16",
+          "end": "2022-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2079-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2079-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-06-16",
+          "end": "2022-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 98
+              }
+            ],
+            "measureScore": {
+              "value": 98,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-shrawan",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-shrawan",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Shrawan"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-07-16",
+          "end": "2023-08-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-bhadra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-bhadra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Bhadra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-08-16",
+          "end": "2023-09-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-ashwin",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-ashwin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Ashwin"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-09-16",
+          "end": "2023-10-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-kartik",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-kartik",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Kartik"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-10-16",
+          "end": "2023-11-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-mangsir",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-mangsir",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Mangsir"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-11-16",
+          "end": "2023-12-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-poush",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-poush",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Poush"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-12-16",
+          "end": "2024-01-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-magh",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-magh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Magh"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-01-16",
+          "end": "2024-02-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-falgun",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-falgun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Falgun"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-02-16",
+          "end": "2024-03-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-chaitra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-chaitra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Chaitra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-03-16",
+          "end": "2024-04-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-04-16",
+          "end": "2023-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-05-16",
+          "end": "2023-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2080-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2080-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-06-16",
+          "end": "2023-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 79
+              }
+            ],
+            "measureScore": {
+              "value": 79,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-shrawan",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-shrawan",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Shrawan"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-07-16",
+          "end": "2024-08-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-bhadra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-bhadra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Bhadra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-08-16",
+          "end": "2024-09-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-ashwin",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-ashwin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Ashwin"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-09-16",
+          "end": "2024-10-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-kartik",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-kartik",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Kartik"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-10-16",
+          "end": "2024-11-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-mangsir",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-mangsir",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Mangsir"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-11-16",
+          "end": "2024-12-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-poush",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-poush",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Poush"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-12-16",
+          "end": "2025-01-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-magh",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-magh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Magh"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-01-16",
+          "end": "2025-02-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-falgun",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-falgun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Falgun"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-02-16",
+          "end": "2025-03-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-chaitra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-chaitra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Chaitra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-03-16",
+          "end": "2025-04-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-04-16",
+          "end": "2024-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-05-16",
+          "end": "2024-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2081-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2081-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-06-16",
+          "end": "2024-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 39
+              }
+            ],
+            "measureScore": {
+              "value": 39,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-shrawan",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-shrawan",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Shrawan"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-07-16",
+          "end": "2025-08-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-bhadra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-bhadra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Bhadra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-08-16",
+          "end": "2025-09-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-ashwin",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-ashwin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Ashwin"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-09-16",
+          "end": "2025-10-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-kartik",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-kartik",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Kartik"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-10-16",
+          "end": "2025-11-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-mangsir",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-mangsir",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Mangsir"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-11-16",
+          "end": "2025-12-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-poush",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-poush",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Poush"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-12-16",
+          "end": "2026-01-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-magh",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-magh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Magh"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2026-01-16",
+          "end": "2026-02-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-falgun",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-falgun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Falgun"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2026-02-16",
+          "end": "2026-03-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-chaitra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-chaitra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Chaitra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2026-03-16",
+          "end": "2026-04-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-04-16",
+          "end": "2025-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-05-16",
+          "end": "2025-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-not-eval-kathmandu-2082-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-not-eval-kathmandu-2082-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-05-22T07:00:39Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-06-16",
+          "end": "2025-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 13
+              }
+            ],
+            "measureScore": {
+              "value": 13,
+              "unit": "count",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "resourceType": "Measure",
+  "id": "nepal-tb-pbc-reg",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/Measure"
+    ]
+  },
+  "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-pbc-reg",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+      "value": "nepal-tb-pbc-reg"
+    }
+  ],
+  "version": "1.0.0",
+  "name": "NEPAL_TB_PBC_REG",
+  "title": "Pulmonary Bacteriologically Confirmed Registered Cohort",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-05-21",
+  "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://iihms.gov.np"
+        }
+      ]
+    }
+  ],
+  "description": "Annual count of pulmonary bacteriologically confirmed TB patients registered in the treatment cohort for a given BS fiscal year.",
+  "scoring": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+        "code": "cohort",
+        "display": "Cohort"
+      }
+    ]
+  },
+  "group": [
+    {
+      "id": "group-nepal-tb-pbc-reg",
+      "population": [
+        {
+          "id": "pop-init-nepal-tb-pbc-reg",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population",
+                "display": "Initial Population"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/plain",
+            "expression": "Count of pbc_reg from the NTP monthly reporting data for Kathmandu district."
+          }
+        }
+      ]
+    }
+  ]
+}
