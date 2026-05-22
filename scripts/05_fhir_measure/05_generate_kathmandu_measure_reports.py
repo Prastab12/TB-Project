@@ -194,8 +194,8 @@ def main():
                     denom_val = 0
             elif spec["is_derived"] and spec["derived_type"] == "rate_of_hiv":
                 pop_val = int(row["district_pop_mid_year_cbs"]) if pd.notna(row["district_pop_mid_year_cbs"]) else 0
-                hiv_rate = int(row["tb_hiv_pct"]) if pd.notna(row["tb_hiv_pct"]) else 0
-                denom_val = hiv_rate * pop_val
+                hiv_rate = float(row["tb_hiv_pct"]) if pd.notna(row["tb_hiv_pct"]) else 0.0
+                denom_val = round(hiv_rate * pop_val)
             else:
                 raw = row[spec["denominator_field"]]
                 denom_val = int(raw) if pd.notna(raw) else 0
@@ -205,12 +205,12 @@ def main():
                 if spec["derived_type"] == "rate_of_pop":
                     pop_val = int(row["district_pop_mid_year_cbs"]) if pd.notna(row["district_pop_mid_year_cbs"]) else 0
                     raw = row[spec["numerator_field"]]
-                    rate_val = int(raw) if pd.notna(raw) else 0
-                    num_val = rate_val * pop_val
+                    rate_val = float(raw) if pd.notna(raw) else 0.0
+                    num_val = round(rate_val * pop_val)
                 elif spec["derived_type"] == "rate_of_hiv":
                     raw = row[spec["numerator_field"]]
-                    art_rate = int(raw) if pd.notna(raw) else 0
-                    num_val = art_rate * denom_val
+                    art_rate = float(raw) if pd.notna(raw) else 0.0
+                    num_val = round(art_rate * denom_val)
                 else:
                     num_val = 0
             else:
@@ -220,6 +220,42 @@ def main():
             score = (num_val / denom_val) if denom_val > 0 else 0.0
             ucum_code = "{ratio}" if meas_id in ["nepal-tb-notification-rate", "nepal-tb-gender-ratio"] else "{proportion}"
 
+            early_2078 = (bs_yr == 2078 and clean_mnth in ["Baishakh", "Baishak", "Jestha", "Ashad", "Asar"])
+            
+            denom_pop = {
+                "code": {
+                    "coding": [{
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "denominator"
+                    }]
+                },
+                "count": denom_val
+            }
+            if denom_val == 0 and early_2078:
+                denom_pop["_count"] = {
+                    "extension": [{
+                        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                        "valueCode": "unknown"
+                    }]
+                }
+
+            num_pop = {
+                "code": {
+                    "coding": [{
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "numerator"
+                    }]
+                },
+                "count": num_val
+            }
+            if num_val == 0 and early_2078:
+                num_pop["_count"] = {
+                    "extension": [{
+                        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                        "valueCode": "unknown"
+                    }]
+                }
+            
             measure_report = {
                 "resourceType": "MeasureReport",
                 "id": report_id,
@@ -253,26 +289,7 @@ def main():
                 "group": [
                     {
                         "id": f"group-{meas_id}",
-                        "population": [
-                            {
-                                "code": {
-                                    "coding": [{
-                                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                                        "code": "denominator"
-                                    }]
-                                },
-                                "count": denom_val
-                            },
-                            {
-                                "code": {
-                                    "coding": [{
-                                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                                        "code": "numerator"
-                                    }]
-                                },
-                                "count": num_val
-                            }
-                        ],
+                        "population": [denom_pop, num_pop],
                         "measureScore": {
                             "value": float(round(score, 4)),
                             "unit": ucum_code,
