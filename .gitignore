@@ -55,3 +55,14 @@ data/final/*
 # FHIR Outputs (Ignored as per directive)
 data/fhir/
 fhir/measures/measure_report/
+
+# FHIR IG Publisher artifacts (large binaries / generated output)
+ig/fsh-generated/
+ig/output/
+ig/input-cache/
+ig/temp/
+ig/template/
+ig/.fhir/
+publisher.jar
+run_logs.zip
+*.jar

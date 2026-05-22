@@ -1,0 +1,53 @@
+id: iihms.nepal.tb
+canonical: https://iihms.gov.np/fhir
+name: NepalTBImplementationGuide
+title: "Nepal NTP TB FHIR R4 Implementation Guide"
+description: >
+  FHIR R4 Implementation Guide for Nepal's National Tuberculosis Programme (NTP).
+  Covers aggregate monthly district-level reporting using the Bikram Sambat (BS)
+  calendar, Case Notification Rate, Treatment Outcome indicators, and integration
+  with DHIS2 export data for Kathmandu district (BS 2078–2082).
+status: active
+version: 1.0.0
+fhirVersion: 4.0.1
+copyrightYear: 2026+
+releaseLabel: STU1
+license: CC0-1.0
+jurisdiction: urn:iso:std:iso:3166#NP "Nepal"
+
+publisher:
+  name: "Integrated Health Information Management System (IIHMS), Nepal"
+  url: https://iihms.gov.np
+  email: iihms@mohp.gov.np
+
+dependencies:
+  hl7.fhir.r4.core: 4.0.1
+
+pages:
+  index.md:
+    title: Home
+  indicators.md:
+    title: TB Indicators
+
+menu:
+  Home: index.html
+  Profiles: artifacts.html#structures-resource-profiles
+  Extensions: artifacts.html#structures-extension-definitions
+  Artifacts: artifacts.html
+
+parameters:
+  path-resource:
+    - input/resources
+    - fsh-generated/resources
+  path-pages:
+    - input/pagecontent
+  active-tables: false
+  apply-contact: true
+  apply-jurisdiction: true
+  apply-publisher: true
+  apply-version: true
+  show-inherited-invariants: false
+  usage-stats-opt-out: true
+  excludexml: false
+  excludejson: false
+  excludettl: true
