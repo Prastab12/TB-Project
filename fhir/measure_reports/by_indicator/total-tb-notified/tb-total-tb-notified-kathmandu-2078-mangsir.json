@@ -13,7 +13,7 @@
     "reference": "#loc-kathmandu",
     "display": "Kathmandu District, Nepal"
   },
-  "date": "2026-05-22T07:00:39Z",
+  "date": "2026-05-22T09:08:48Z",
   "reporter": {
     "reference": "#org-ntp",
     "display": "National Tuberculosis Programme"
@@ -50,17 +50,29 @@
             "coding": [
               {
                 "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                "code": "initial-population",
-                "display": "Initial Population"
+                "code": "numerator",
+                "display": "Numerator"
               }
             ]
           },
           "count": 233
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator",
+                "display": "Denominator"
+              }
+            ]
+          },
+          "count": 2062145
         }
       ],
       "measureScore": {
-        "value": 233,
-        "unit": "count",
+        "value": 0.00011299,
+        "unit": "1",
         "system": "http://unitsofmeasure.org",
         "code": "1"
       }

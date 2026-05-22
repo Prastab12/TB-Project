@@ -19,7 +19,7 @@
   "title": "TB Relapse Cases (Male)",
   "status": "active",
   "experimental": false,
-  "date": "2026-05-21",
+  "date": "2026-05-22",
   "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
   "contact": [
     {
@@ -31,13 +31,13 @@
       ]
     }
   ],
-  "description": "Number of TB relapse cases among male patients in a given BS month.",
+  "description": "Monthly count of TB relapse cases among male patients in Kathmandu district. Denominator is the CBS mid-year district population.",
   "scoring": {
     "coding": [
       {
         "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-        "code": "cohort",
-        "display": "Cohort"
+        "code": "ratio",
+        "display": "Ratio"
       }
     ]
   },
@@ -46,19 +46,35 @@
       "id": "group-nepal-tb-relapse-male",
       "population": [
         {
-          "id": "pop-init-nepal-tb-relapse-male",
+          "id": "pop-numer-nepal-tb-relapse-male",
           "code": {
             "coding": [
               {
                 "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                "code": "initial-population",
-                "display": "Initial Population"
+                "code": "numerator",
+                "display": "Numerator"
               }
             ]
           },
           "criteria": {
             "language": "text/plain",
-            "expression": "Count of relapse_male from the NTP monthly reporting data for Kathmandu district."
+            "expression": "Monthly count of relapse_male from NTP reporting data for Kathmandu district."
+          }
+        },
+        {
+          "id": "pop-denom-nepal-tb-relapse-male",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator",
+                "display": "Denominator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/plain",
+            "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
           }
         }
       ]

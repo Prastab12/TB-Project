@@ -19,7 +19,7 @@
   "title": "TB Treatment Failures",
   "status": "active",
   "experimental": false,
-  "date": "2026-05-21",
+  "date": "2026-05-22",
   "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
   "contact": [
     {
@@ -58,7 +58,7 @@
           },
           "criteria": {
             "language": "text/plain",
-            "expression": "Count of failed from the NTP monthly reporting data for Kathmandu district."
+            "expression": "Count of failed from NTP monthly reporting data for Kathmandu district."
           }
         }
       ]

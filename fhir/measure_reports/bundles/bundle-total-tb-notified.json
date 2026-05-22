@@ -7,7 +7,7 @@
     ]
   },
   "type": "collection",
-  "timestamp": "2026-05-22T07:00:39Z",
+  "timestamp": "2026-05-22T09:08:48Z",
   "entry": [
     {
       "fullUrl": "https://iihms.gov.np/fhir/Organization/org-mohp",
@@ -102,7 +102,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -139,17 +139,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 397
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
               }
             ],
             "measureScore": {
-              "value": 397,
-              "unit": "count",
+              "value": 0.00019369,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -174,7 +186,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -211,17 +223,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 300
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2052749
               }
             ],
             "measureScore": {
-              "value": 300,
-              "unit": "count",
+              "value": 0.00014615,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -246,7 +270,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -283,17 +307,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 210
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2055881
               }
             ],
             "measureScore": {
-              "value": 210,
-              "unit": "count",
+              "value": 0.00010215,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -318,7 +354,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -355,17 +391,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 240
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2059013
               }
             ],
             "measureScore": {
-              "value": 240,
-              "unit": "count",
+              "value": 0.00011656,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -390,7 +438,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -427,17 +475,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 233
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2062145
               }
             ],
             "measureScore": {
-              "value": 233,
-              "unit": "count",
+              "value": 0.00011299,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -462,7 +522,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -499,17 +559,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 279
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2065276
               }
             ],
             "measureScore": {
-              "value": 279,
-              "unit": "count",
+              "value": 0.00013509,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -534,7 +606,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -571,17 +643,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 208
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2068408
               }
             ],
             "measureScore": {
-              "value": 208,
-              "unit": "count",
+              "value": 0.00010056,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -606,7 +690,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -643,17 +727,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 282
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2071540
               }
             ],
             "measureScore": {
-              "value": 282,
-              "unit": "count",
+              "value": 0.00013613,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -678,7 +774,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -715,17 +811,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 358
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2074672
               }
             ],
             "measureScore": {
-              "value": 358,
-              "unit": "count",
+              "value": 0.00017256,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -750,7 +858,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -787,8 +895,8 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
@@ -800,10 +908,22 @@
                     }
                   ]
                 }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2077803
               }
             ],
             "measureScore": {
-              "unit": "count",
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1",
               "_value": {
@@ -836,7 +956,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -873,8 +993,8 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
@@ -886,10 +1006,22 @@
                     }
                   ]
                 }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2080935
               }
             ],
             "measureScore": {
-              "unit": "count",
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1",
               "_value": {
@@ -922,7 +1054,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -959,8 +1091,8 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
@@ -972,10 +1104,22 @@
                     }
                   ]
                 }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2084067
               }
             ],
             "measureScore": {
-              "unit": "count",
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1",
               "_value": {
@@ -1008,7 +1152,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1045,17 +1189,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 330
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
               }
             ],
             "measureScore": {
-              "value": 330,
-              "unit": "count",
+              "value": 0.00015811,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1080,7 +1236,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1117,17 +1273,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 311
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2090142
               }
             ],
             "measureScore": {
-              "value": 311,
-              "unit": "count",
+              "value": 0.00014879,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1152,7 +1320,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1189,17 +1357,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 224
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2093085
               }
             ],
             "measureScore": {
-              "value": 224,
-              "unit": "count",
+              "value": 0.00010702,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1224,7 +1404,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1261,17 +1441,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 297
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2096028
               }
             ],
             "measureScore": {
-              "value": 297,
-              "unit": "count",
+              "value": 0.0001417,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1296,7 +1488,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1333,17 +1525,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 258
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2098971
               }
             ],
             "measureScore": {
-              "value": 258,
-              "unit": "count",
+              "value": 0.00012292,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1368,7 +1572,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1405,17 +1609,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 271
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2101914
               }
             ],
             "measureScore": {
-              "value": 271,
-              "unit": "count",
+              "value": 0.00012893,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1440,7 +1656,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1477,17 +1693,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 255
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2104858
               }
             ],
             "measureScore": {
-              "value": 255,
-              "unit": "count",
+              "value": 0.00012115,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1512,7 +1740,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1549,17 +1777,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 318
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2107801
               }
             ],
             "measureScore": {
-              "value": 318,
-              "unit": "count",
+              "value": 0.00015087,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1584,7 +1824,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1621,17 +1861,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 337
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2110744
               }
             ],
             "measureScore": {
-              "value": 337,
-              "unit": "count",
+              "value": 0.00015966,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1656,7 +1908,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1693,17 +1945,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 325
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2113687
               }
             ],
             "measureScore": {
-              "value": 325,
-              "unit": "count",
+              "value": 0.00015376,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1728,7 +1992,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1765,17 +2029,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 368
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2116630
               }
             ],
             "measureScore": {
-              "value": 368,
-              "unit": "count",
+              "value": 0.00017386,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1800,7 +2076,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1837,17 +2113,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 344
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2119573
               }
             ],
             "measureScore": {
-              "value": 344,
-              "unit": "count",
+              "value": 0.0001623,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1872,7 +2160,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1909,17 +2197,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 398
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 398,
-              "unit": "count",
+              "value": 0.00018751,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -1944,7 +2244,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1981,17 +2281,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 305
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2125313
               }
             ],
             "measureScore": {
-              "value": 305,
-              "unit": "count",
+              "value": 0.00014351,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2016,7 +2328,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2053,17 +2365,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 270
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2128109
               }
             ],
             "measureScore": {
-              "value": 270,
-              "unit": "count",
+              "value": 0.00012687,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2088,7 +2412,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2125,17 +2449,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 170
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2130905
               }
             ],
             "measureScore": {
-              "value": 170,
-              "unit": "count",
+              "value": 7.978e-05,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2160,7 +2496,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2197,17 +2533,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 262
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2133701
               }
             ],
             "measureScore": {
-              "value": 262,
-              "unit": "count",
+              "value": 0.00012279,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2232,7 +2580,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2269,17 +2617,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 301
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2136497
               }
             ],
             "measureScore": {
-              "value": 301,
-              "unit": "count",
+              "value": 0.00014088,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2304,7 +2664,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2341,17 +2701,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 299
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2139293
               }
             ],
             "measureScore": {
-              "value": 299,
-              "unit": "count",
+              "value": 0.00013977,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2376,7 +2748,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2413,17 +2785,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 329
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2142089
               }
             ],
             "measureScore": {
-              "value": 329,
-              "unit": "count",
+              "value": 0.00015359,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2448,7 +2832,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2485,17 +2869,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 395
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2144885
               }
             ],
             "measureScore": {
-              "value": 395,
-              "unit": "count",
+              "value": 0.00018416,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2520,7 +2916,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2557,17 +2953,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 322
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2147681
               }
             ],
             "measureScore": {
-              "value": 322,
-              "unit": "count",
+              "value": 0.00014993,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2592,7 +3000,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2629,17 +3037,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 426
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2150477
               }
             ],
             "measureScore": {
-              "value": 426,
-              "unit": "count",
+              "value": 0.0001981,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2664,7 +3084,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2701,17 +3121,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 321
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2153273
               }
             ],
             "measureScore": {
-              "value": 321,
-              "unit": "count",
+              "value": 0.00014908,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2736,7 +3168,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2773,17 +3205,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 429
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 429,
-              "unit": "count",
+              "value": 0.00019897,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2808,7 +3252,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2845,17 +3289,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 316
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2158733
               }
             ],
             "measureScore": {
-              "value": 316,
-              "unit": "count",
+              "value": 0.00014638,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2880,7 +3336,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2917,17 +3373,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 215
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2161397
               }
             ],
             "measureScore": {
-              "value": 215,
-              "unit": "count",
+              "value": 9.947e-05,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -2952,7 +3420,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2989,17 +3457,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 234
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2164061
               }
             ],
             "measureScore": {
-              "value": 234,
-              "unit": "count",
+              "value": 0.00010813,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3024,7 +3504,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3061,17 +3541,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 293
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2166725
               }
             ],
             "measureScore": {
-              "value": 293,
-              "unit": "count",
+              "value": 0.00013523,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3096,7 +3588,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3133,17 +3625,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 273
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2169388
               }
             ],
             "measureScore": {
-              "value": 273,
-              "unit": "count",
+              "value": 0.00012584,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3168,7 +3672,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3205,17 +3709,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 296
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2172052
               }
             ],
             "measureScore": {
-              "value": 296,
-              "unit": "count",
+              "value": 0.00013628,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3240,7 +3756,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3277,17 +3793,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 299
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2174716
               }
             ],
             "measureScore": {
-              "value": 299,
-              "unit": "count",
+              "value": 0.00013749,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3312,7 +3840,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3349,17 +3877,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 361
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2177380
               }
             ],
             "measureScore": {
-              "value": 361,
-              "unit": "count",
+              "value": 0.0001658,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3384,7 +3924,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3421,17 +3961,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 366
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2180043
               }
             ],
             "measureScore": {
-              "value": 366,
-              "unit": "count",
+              "value": 0.00016789,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3456,7 +4008,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3493,17 +4045,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 395
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2182707
               }
             ],
             "measureScore": {
-              "value": 395,
-              "unit": "count",
+              "value": 0.00018097,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3528,7 +4092,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3565,17 +4129,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 310
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2185371
               }
             ],
             "measureScore": {
-              "value": 310,
-              "unit": "count",
+              "value": 0.00014185,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3600,7 +4176,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3637,17 +4213,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 351
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 351,
-              "unit": "count",
+              "value": 0.00016042,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3672,7 +4260,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3709,17 +4297,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 310
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 310,
-              "unit": "count",
+              "value": 0.00014168,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3744,7 +4344,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3781,17 +4381,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 245
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 245,
-              "unit": "count",
+              "value": 0.00011197,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3816,7 +4428,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3853,17 +4465,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 220
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 220,
-              "unit": "count",
+              "value": 0.00010055,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3888,7 +4512,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3925,17 +4549,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 218
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 218,
-              "unit": "count",
+              "value": 9.963e-05,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -3960,7 +4596,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3997,17 +4633,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 268
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 268,
-              "unit": "count",
+              "value": 0.00012248,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -4032,7 +4680,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4069,17 +4717,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 266
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 266,
-              "unit": "count",
+              "value": 0.00012157,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -4104,7 +4764,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4141,17 +4801,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 240
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 240,
-              "unit": "count",
+              "value": 0.00010969,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -4176,7 +4848,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4213,17 +4885,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 272
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 272,
-              "unit": "count",
+              "value": 0.00012431,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -4248,7 +4932,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4285,17 +4969,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 335
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 335,
-              "unit": "count",
+              "value": 0.00015311,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -4320,7 +5016,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4357,17 +5053,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 361
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 361,
-              "unit": "count",
+              "value": 0.00016499,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }
@@ -4392,7 +5100,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T07:00:39Z",
+        "date": "2026-05-22T09:08:48Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4429,17 +5137,29 @@
                   "coding": [
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
+                      "code": "numerator",
+                      "display": "Numerator"
                     }
                   ]
                 },
                 "count": 386
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 386,
-              "unit": "count",
+              "value": 0.00017641,
+              "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
             }

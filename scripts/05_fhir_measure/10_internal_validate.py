@@ -14,7 +14,7 @@ CSV_PATH     = os.path.join(BASE, "data/final/final_cleaned_data.csv")
 REPORT_PATH  = os.path.join(BASE, "fhir/VALIDATION_REPORT.txt")
 FHIR_BASE    = "https://iihms.gov.np/fhir"
 
-INDICATORS = [
+RATIO_INDICATORS = [
     ("new-cases-total",   "new_cases_total"),
     ("new-cases-female",  "new_cases_female"),
     ("new-cases-male",    "new_cases_male"),
@@ -22,21 +22,23 @@ INDICATORS = [
     ("relapse-female",    "relapse_female"),
     ("relapse-male",      "relapse_male"),
     ("total-tb-notified", "total_tb_m+f"),
-    ("pbc-reg",           "pbc_reg"),
-    ("cured",             "cured"),
-    ("failed",            "failed"),
-    ("died",              "died"),
-    ("ltfu",              "ltfu"),
-    ("not-eval",          "not_eval"),
 ]
-IND_IDS  = [i[0] for i in INDICATORS]
-IND_COLS = {i[0]: i[1] for i in INDICATORS}
+COHORT_INDICATORS = [
+    ("pbc-reg",  "pbc_reg"),
+    ("cured",    "cured"),
+    ("failed",   "failed"),
+    ("died",     "died"),
+    ("ltfu",     "ltfu"),
+    ("not-eval", "not_eval"),
+]
+INDICATORS   = RATIO_INDICATORS + COHORT_INDICATORS
+RATIO_IDS    = {i[0] for i in RATIO_INDICATORS}
+COHORT_IDS   = {i[0] for i in COHORT_INDICATORS}
+IND_IDS      = [i[0] for i in INDICATORS]
+IND_COLS     = {i[0]: i[1] for i in INDICATORS}
+DENOMINATOR_COL = "district_pop_mid_year_cbs"
 
 UNDER_REPORTED = {("2078", "Baishak"), ("2078", "Jestha"), ("2078", "Asar")}
-MONTHLY_COLS   = {
-    "new-cases-total", "new-cases-female", "new-cases-male",
-    "relapse-total", "relapse-female", "relapse-male", "total-tb-notified",
-}
 
 DAR_URL             = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
 POP_CODE_SYS        = "http://terminology.hl7.org/CodeSystem/measure-population"
@@ -120,16 +122,18 @@ def validate_measure(data, ctx, rpt):
     codings  = scoring.get("coding", [])
     if not codings:
         rpt.err(ctx, "scoring.coding is empty")
+        scoring_code = None
     else:
         c = codings[0]
         if c.get("system") != MEASURE_SCORING_SYS:
             rpt.err(ctx, f"scoring system invalid: '{c.get('system')}'")
         else:
             rpt.ok(f"scoring.system = '{MEASURE_SCORING_SYS}'")
-        if c.get("code") != "cohort":
-            rpt.err(ctx, f"scoring code must be 'cohort', got '{c.get('code')}'")
+        scoring_code = c.get("code")
+        if scoring_code not in ("ratio", "cohort"):
+            rpt.err(ctx, f"scoring code must be 'ratio' or 'cohort', got '{scoring_code}'")
         else:
-            rpt.ok("scoring.code = 'cohort'")
+            rpt.ok(f"scoring.code = '{scoring_code}'")
 
     groups = data.get("group", [])
     if not groups:
@@ -139,6 +143,22 @@ def validate_measure(data, ctx, rpt):
         pops = groups[0].get("population", [])
         if not pops:
             rpt.err(ctx, "group.population empty")
+        elif scoring_code == "ratio":
+            if len(pops) != 2:
+                rpt.err(ctx, f"ratio measure must have 2 populations, got {len(pops)}")
+            else:
+                rpt.ok("group.population count = 2 (ratio: numerator + denominator)")
+                exp_codes = ["numerator", "denominator"]
+                for i, exp_code in enumerate(exp_codes):
+                    c = pops[i].get("code", {}).get("coding", [{}])[0]
+                    if c.get("code") != exp_code:
+                        rpt.err(ctx, f"population[{i}] code must be '{exp_code}', got '{c.get('code')}'")
+                    else:
+                        rpt.ok(f"population[{i}].code = '{exp_code}'")
+                    if "criteria" not in pops[i]:
+                        rpt.err(ctx, f"population[{i}].criteria missing")
+                    else:
+                        rpt.ok(f"population[{i}].criteria present")
         else:
             rpt.ok(f"group.population present ({len(pops)} entry)")
             code = pops[0].get("code", {}).get("coding", [{}])[0]
@@ -274,39 +294,78 @@ def validate_measure_report(data, ctx, rpt, csv_row=None, ind_id=None,
         else:
             _ok(f"group.id = '{g['id']}'")
 
-        pops = g.get("population", [])
-        if len(pops) != 1:
-            _err(f"cohort must have exactly 1 population, has {len(pops)}")
+        # Auto-detect ratio vs cohort from measure URL when ind_id not supplied
+        if ind_id:
+            is_ratio = ind_id in RATIO_IDS
         else:
-            _ok("population count = 1 (cohort)")
-            pop    = pops[0]
-            coding = pop.get("code", {}).get("coding", [{}])[0]
-            if coding.get("system") != POP_CODE_SYS:
-                _err(f"population system invalid")
-            else:
-                _ok("population.code.system valid")
-            if coding.get("code") != "initial-population":
-                _err(f"population code must be 'initial-population'")
-            else:
-                _ok("population.code = 'initial-population'")
+            measure_url = data.get("measure", "")
+            ind_part    = measure_url.split("nepal-tb-")[-1] if "nepal-tb-" in measure_url else ""
+            is_ratio    = ind_part in RATIO_IDS
+        pops = g.get("population", [])
 
-            has_count = "count" in pop
-            has_ext   = "_count" in pop
-            if not has_count and not has_ext:
-                _err("population must have 'count' or '_count'")
-            elif has_ext:
-                dar_urls = [e.get("url") for e in pop["_count"].get("extension", [])]
-                if DAR_URL not in dar_urls:
-                    _err("_count missing data-absent-reason extension")
-                else:
-                    _ok("_count has data-absent-reason (not-reported)")
+        if is_ratio:
+            if len(pops) != 2:
+                _err(f"ratio must have exactly 2 populations, has {len(pops)}")
             else:
-                if not isinstance(pop["count"], int):
-                    _err(f"count must be integer, got {type(pop['count']).__name__}")
-                elif pop["count"] < 0:
-                    _err(f"count is negative: {pop['count']}")
+                _ok("population count = 2 (ratio: numerator + denominator)")
+                for i, exp_code in enumerate(["numerator", "denominator"]):
+                    pop    = pops[i]
+                    coding = pop.get("code", {}).get("coding", [{}])[0]
+                    if coding.get("system") != POP_CODE_SYS:
+                        _err(f"population[{i}] system invalid")
+                    else:
+                        _ok(f"population[{i}].code.system valid")
+                    if coding.get("code") != exp_code:
+                        _err(f"population[{i}] code must be '{exp_code}', got '{coding.get('code')}'")
+                    else:
+                        _ok(f"population[{i}].code = '{exp_code}'")
+                    has_count = "count" in pop
+                    has_ext   = "_count" in pop
+                    if not has_count and not has_ext:
+                        _err(f"population[{i}] must have 'count' or '_count'")
+                    elif has_ext:
+                        dar_urls = [e.get("url") for e in pop["_count"].get("extension", [])]
+                        if DAR_URL not in dar_urls:
+                            _err(f"population[{i}]._count missing data-absent-reason")
+                        else:
+                            _ok(f"population[{i}]._count has data-absent-reason")
+                    else:
+                        if not isinstance(pop["count"], int) or pop["count"] < 0:
+                            _err(f"population[{i}].count invalid: {pop.get('count')}")
+                        else:
+                            _ok(f"population[{i}].count = {pop['count']}")
+        else:
+            if len(pops) != 1:
+                _err(f"cohort must have exactly 1 population, has {len(pops)}")
+            else:
+                _ok("population count = 1 (cohort)")
+                pop    = pops[0]
+                coding = pop.get("code", {}).get("coding", [{}])[0]
+                if coding.get("system") != POP_CODE_SYS:
+                    _err("population system invalid")
                 else:
-                    _ok(f"count = {pop['count']} (non-negative integer)")
+                    _ok("population.code.system valid")
+                if coding.get("code") != "initial-population":
+                    _err(f"population code must be 'initial-population'")
+                else:
+                    _ok("population.code = 'initial-population'")
+                has_count = "count" in pop
+                has_ext   = "_count" in pop
+                if not has_count and not has_ext:
+                    _err("population must have 'count' or '_count'")
+                elif has_ext:
+                    dar_urls = [e.get("url") for e in pop["_count"].get("extension", [])]
+                    if DAR_URL not in dar_urls:
+                        _err("_count missing data-absent-reason extension")
+                    else:
+                        _ok("_count has data-absent-reason (not-reported)")
+                else:
+                    if not isinstance(pop["count"], int):
+                        _err(f"count must be integer, got {type(pop['count']).__name__}")
+                    elif pop["count"] < 0:
+                        _err(f"count is negative: {pop['count']}")
+                    else:
+                        _ok(f"count = {pop['count']} (non-negative integer)")
 
         ms = g.get("measureScore")
         if ms is None:
@@ -324,7 +383,7 @@ def validate_measure_report(data, ctx, rpt, csv_row=None, ind_id=None,
                     _ok("measureScore._value has data-absent-reason (not-reported)")
             else:
                 if not isinstance(ms["value"], (int, float)):
-                    _err(f"measureScore.value must be numeric")
+                    _err("measureScore.value must be numeric")
                 elif ms["value"] < 0:
                     _err(f"measureScore.value negative: {ms['value']}")
                 else:
@@ -340,29 +399,58 @@ def validate_measure_report(data, ctx, rpt, csv_row=None, ind_id=None,
 
     # CSV cross-validation
     if csv_row and ind_id:
-        yr   = csv_row["bs_year"]
-        mo   = csv_row["bs_month"].strip()
-        col  = IND_COLS[ind_id]
-        raw  = csv_row.get(col, "").strip()
-        no_data = ((yr, mo) in UNDER_REPORTED and ind_id in MONTHLY_COLS) or raw == ""
+        yr      = csv_row["bs_year"]
+        mo      = csv_row["bs_month"].strip()
+        col     = IND_COLS[ind_id]
+        raw     = csv_row.get(col, "").strip()
+        # UNDER_REPORTED only affects ratio (monthly notification) indicators
+        no_data = raw == "" or (ind_id in RATIO_IDS and (yr, mo) in UNDER_REPORTED)
 
         g    = (data.get("group") or [{}])[0]
         pops = g.get("population", [])
-        if pops:
-            pop       = pops[0]
-            act_count = pop.get("count") if "_count" not in pop else None
-            act_dar   = "_count" in pop
-            if no_data:
-                if not act_dar:
-                    _err(f"CSV cross-check: expected DAR for {yr} {mo} [{col}], got count={act_count}")
+
+        if ind_id in RATIO_IDS:
+            # Cross-check numerator (TB count)
+            if len(pops) >= 1:
+                numer = pops[0]
+                act_dar   = "_count" in numer
+                act_count = numer.get("count") if not act_dar else None
+                if no_data:
+                    if not act_dar:
+                        _err(f"CSV cross-check: expected numerator DAR for {yr} {mo} [{col}], got count={act_count}")
+                    else:
+                        _ok(f"CSV cross-check: numerator DAR correct for {yr} {mo} [{col}]")
                 else:
-                    _ok(f"CSV cross-check: DAR correct for {yr} {mo} [{col}]")
-            else:
-                exp_count = int(float(raw))
-                if act_count != exp_count:
-                    _err(f"CSV cross-check: [{col}] CSV={exp_count}, file={act_count}")
+                    exp = int(float(raw))
+                    if act_count != exp:
+                        _err(f"CSV cross-check: [{col}] CSV={exp}, file={act_count}")
+                    else:
+                        _ok(f"CSV cross-check: [{col}] numerator={act_count} matches CSV")
+            # Cross-check denominator (district population)
+            if len(pops) >= 2:
+                denom     = pops[1]
+                den_count = denom.get("count")
+                exp_den   = int(float(csv_row.get(DENOMINATOR_COL, "0").strip()))
+                if den_count != exp_den:
+                    _err(f"CSV cross-check: denominator CSV={exp_den}, file={den_count}")
                 else:
-                    _ok(f"CSV cross-check: [{col}] count={act_count} matches CSV")
+                    _ok(f"CSV cross-check: denominator={den_count} matches CBS population")
+        else:
+            if pops:
+                pop       = pops[0]
+                act_count = pop.get("count") if "_count" not in pop else None
+                act_dar   = "_count" in pop
+                if no_data:
+                    if not act_dar:
+                        _err(f"CSV cross-check: expected DAR for {yr} {mo} [{col}], got count={act_count}")
+                    else:
+                        _ok(f"CSV cross-check: DAR correct for {yr} {mo} [{col}]")
+                else:
+                    exp_count = int(float(raw))
+                    if act_count != exp_count:
+                        _err(f"CSV cross-check: [{col}] CSV={exp_count}, file={act_count}")
+                    else:
+                        _ok(f"CSV cross-check: [{col}] count={act_count} matches CSV")
 
 
 # ── Bundle validations ────────────────────────────────────────────────────────
@@ -616,7 +704,18 @@ def main():
 
             grp  = (data.get("group") or [{}])[0]
             pops = grp.get("population", [])
-            if pops:
+            if not pops:
+                count_str = "no population"
+            elif ind_id in RATIO_IDS:
+                numer = pops[0]
+                if "_count" in numer:
+                    count_str = "DAR / pop"
+                    ind_dar  += 1
+                    dar_count += 1
+                else:
+                    den = pops[1].get("count", "?") if len(pops) > 1 else "?"
+                    count_str = f"{numer.get('count','?')}/{den}"
+            else:
                 pop = pops[0]
                 if "_count" in pop:
                     count_str = "DAR (not-reported)"
@@ -624,8 +723,6 @@ def main():
                     dar_count += 1
                 else:
                     count_str = str(pop.get("count", "?"))
-            else:
-                count_str = "no population"
 
             status = "PASS" if new_errs == 0 else f"FAIL ({new_errs} errors)"
             if new_errs > 0:

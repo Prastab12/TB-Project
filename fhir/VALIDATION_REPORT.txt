@@ -1,6 +1,6 @@
 ======================================================================
   FHIR R4 INTERNAL VALIDATION REPORT
-  Generated  : 2026-05-22 07:46:18 UTC
+  Generated  : 2026-05-22 09:18:45 UTC
   Project    : TB Performance Dashboard — Kathmandu, Nepal
   FHIR Ver   : R4 (4.0.1)
   Validator  : scripts/05_fhir_measure/10_internal_validate.py
@@ -135,11 +135,13 @@ SECTION 1 — MEASURE DEFINITION FILES
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -161,11 +163,13 @@ SECTION 1 — MEASURE DEFINITION FILES
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -187,11 +191,13 @@ SECTION 1 — MEASURE DEFINITION FILES
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -265,11 +271,13 @@ SECTION 1 — MEASURE DEFINITION FILES
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -291,11 +299,13 @@ SECTION 1 — MEASURE DEFINITION FILES
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -317,11 +327,13 @@ SECTION 1 — MEASURE DEFINITION FILES
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -343,11 +355,13 @@ SECTION 1 — MEASURE DEFINITION FILES
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -381,11 +395,13 @@ SECTION 2 — MEASURES BUNDLE (bundle-all-measures.json)
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -406,11 +422,13 @@ SECTION 2 — MEASURES BUNDLE (bundle-all-measures.json)
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -431,11 +449,13 @@ SECTION 2 — MEASURES BUNDLE (bundle-all-measures.json)
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -456,11 +476,13 @@ SECTION 2 — MEASURES BUNDLE (bundle-all-measures.json)
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -481,11 +503,13 @@ SECTION 2 — MEASURES BUNDLE (bundle-all-measures.json)
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -506,11 +530,13 @@ SECTION 2 — MEASURES BUNDLE (bundle-all-measures.json)
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -531,11 +557,13 @@ SECTION 2 — MEASURES BUNDLE (bundle-all-measures.json)
     [PASS] meta.profile present
     [PASS] identifier present
     [PASS] scoring.system = 'http://terminology.hl7.org/CodeSystem/measure-scoring'
-    [PASS] scoring.code = 'cohort'
+    [PASS] scoring.code = 'ratio'
     [PASS] group present (1 group(s))
-    [PASS] group.population present (1 entry)
-    [PASS] population code = 'initial-population'
-    [PASS] criteria present
+    [PASS] group.population count = 2 (ratio: numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[0].criteria present
+    [PASS] population[1].code = 'denominator'
+    [PASS] population[1].criteria present
     [PASS] 'publisher' present
     [PASS] 'description' present
     [PASS] 'title' present
@@ -701,456 +729,456 @@ SECTION 3 — INDIVIDUAL MEASUREREPORT FILES (standalone, with contained)
   Indicator: new-cases-total  (csv col: new_cases_total)
   File                                               Count / DAR          Status
   --------------------------------------------------------------------
-  tb-new-cases-total-kathmandu-2078-asar.json        DAR (not-reported)   PASS
-  tb-new-cases-total-kathmandu-2078-ashwin.json      206                  PASS
-  tb-new-cases-total-kathmandu-2078-baishak.json     DAR (not-reported)   PASS
-  tb-new-cases-total-kathmandu-2078-bhadra.json      295                  PASS
-  tb-new-cases-total-kathmandu-2078-chaitra.json     349                  PASS
-  tb-new-cases-total-kathmandu-2078-falgun.json      272                  PASS
-  tb-new-cases-total-kathmandu-2078-jestha.json      DAR (not-reported)   PASS
-  tb-new-cases-total-kathmandu-2078-kartik.json      230                  PASS
-  tb-new-cases-total-kathmandu-2078-magh.json        202                  PASS
-  tb-new-cases-total-kathmandu-2078-mangsir.json     229                  PASS
-  tb-new-cases-total-kathmandu-2078-poush.json       267                  PASS
-  tb-new-cases-total-kathmandu-2078-shrawan.json     389                  PASS
-  tb-new-cases-total-kathmandu-2079-asar.json        336                  PASS
-  tb-new-cases-total-kathmandu-2079-ashwin.json      215                  PASS
-  tb-new-cases-total-kathmandu-2079-baishak.json     317                  PASS
-  tb-new-cases-total-kathmandu-2079-bhadra.json      306                  PASS
-  tb-new-cases-total-kathmandu-2079-chaitra.json     325                  PASS
-  tb-new-cases-total-kathmandu-2079-falgun.json      309                  PASS
-  tb-new-cases-total-kathmandu-2079-jestha.json      354                  PASS
-  tb-new-cases-total-kathmandu-2079-kartik.json      285                  PASS
-  tb-new-cases-total-kathmandu-2079-magh.json        245                  PASS
-  tb-new-cases-total-kathmandu-2079-mangsir.json     247                  PASS
-  tb-new-cases-total-kathmandu-2079-poush.json       266                  PASS
-  tb-new-cases-total-kathmandu-2079-shrawan.json     325                  PASS
-  tb-new-cases-total-kathmandu-2080-asar.json        313                  PASS
-  tb-new-cases-total-kathmandu-2080-ashwin.json      257                  PASS
-  tb-new-cases-total-kathmandu-2080-baishak.json     312                  PASS
-  tb-new-cases-total-kathmandu-2080-bhadra.json      296                  PASS
-  tb-new-cases-total-kathmandu-2080-chaitra.json     374                  PASS
-  tb-new-cases-total-kathmandu-2080-falgun.json      315                  PASS
-  tb-new-cases-total-kathmandu-2080-jestha.json      402                  PASS
-  tb-new-cases-total-kathmandu-2080-kartik.json      164                  PASS
-  tb-new-cases-total-kathmandu-2080-magh.json        286                  PASS
-  tb-new-cases-total-kathmandu-2080-mangsir.json     250                  PASS
-  tb-new-cases-total-kathmandu-2080-poush.json       286                  PASS
-  tb-new-cases-total-kathmandu-2080-shrawan.json     377                  PASS
-  tb-new-cases-total-kathmandu-2081-asar.json        294                  PASS
-  tb-new-cases-total-kathmandu-2081-ashwin.json      206                  PASS
-  tb-new-cases-total-kathmandu-2081-baishak.json     354                  PASS
-  tb-new-cases-total-kathmandu-2081-bhadra.json      303                  PASS
-  tb-new-cases-total-kathmandu-2081-chaitra.json     343                  PASS
-  tb-new-cases-total-kathmandu-2081-falgun.json      283                  PASS
-  tb-new-cases-total-kathmandu-2081-jestha.json      380                  PASS
-  tb-new-cases-total-kathmandu-2081-kartik.json      224                  PASS
-  tb-new-cases-total-kathmandu-2081-magh.json        285                  PASS
-  tb-new-cases-total-kathmandu-2081-mangsir.json     282                  PASS
-  tb-new-cases-total-kathmandu-2081-poush.json       259                  PASS
-  tb-new-cases-total-kathmandu-2081-shrawan.json     416                  PASS
-  tb-new-cases-total-kathmandu-2082-asar.json        371                  PASS
-  tb-new-cases-total-kathmandu-2082-ashwin.json      236                  PASS
-  tb-new-cases-total-kathmandu-2082-baishak.json     323                  PASS
-  tb-new-cases-total-kathmandu-2082-bhadra.json      297                  PASS
-  tb-new-cases-total-kathmandu-2082-chaitra.json     262                  PASS
-  tb-new-cases-total-kathmandu-2082-falgun.json      222                  PASS
-  tb-new-cases-total-kathmandu-2082-jestha.json      351                  PASS
-  tb-new-cases-total-kathmandu-2082-kartik.json      204                  PASS
-  tb-new-cases-total-kathmandu-2082-magh.json        257                  PASS
-  tb-new-cases-total-kathmandu-2082-mangsir.json     202                  PASS
-  tb-new-cases-total-kathmandu-2082-poush.json       256                  PASS
-  tb-new-cases-total-kathmandu-2082-shrawan.json     340                  PASS
+  tb-new-cases-total-kathmandu-2078-asar.json        DAR / pop            PASS
+  tb-new-cases-total-kathmandu-2078-ashwin.json      206/2055881          PASS
+  tb-new-cases-total-kathmandu-2078-baishak.json     DAR / pop            PASS
+  tb-new-cases-total-kathmandu-2078-bhadra.json      295/2052749          PASS
+  tb-new-cases-total-kathmandu-2078-chaitra.json     349/2074672          PASS
+  tb-new-cases-total-kathmandu-2078-falgun.json      272/2071540          PASS
+  tb-new-cases-total-kathmandu-2078-jestha.json      DAR / pop            PASS
+  tb-new-cases-total-kathmandu-2078-kartik.json      230/2059013          PASS
+  tb-new-cases-total-kathmandu-2078-magh.json        202/2068408          PASS
+  tb-new-cases-total-kathmandu-2078-mangsir.json     229/2062145          PASS
+  tb-new-cases-total-kathmandu-2078-poush.json       267/2065276          PASS
+  tb-new-cases-total-kathmandu-2078-shrawan.json     389/2049618          PASS
+  tb-new-cases-total-kathmandu-2079-asar.json        336/2119573          PASS
+  tb-new-cases-total-kathmandu-2079-ashwin.json      215/2093085          PASS
+  tb-new-cases-total-kathmandu-2079-baishak.json     317/2113687          PASS
+  tb-new-cases-total-kathmandu-2079-bhadra.json      306/2090142          PASS
+  tb-new-cases-total-kathmandu-2079-chaitra.json     325/2110744          PASS
+  tb-new-cases-total-kathmandu-2079-falgun.json      309/2107801          PASS
+  tb-new-cases-total-kathmandu-2079-jestha.json      354/2116630          PASS
+  tb-new-cases-total-kathmandu-2079-kartik.json      285/2096028          PASS
+  tb-new-cases-total-kathmandu-2079-magh.json        245/2104858          PASS
+  tb-new-cases-total-kathmandu-2079-mangsir.json     247/2098971          PASS
+  tb-new-cases-total-kathmandu-2079-poush.json       266/2101914          PASS
+  tb-new-cases-total-kathmandu-2079-shrawan.json     325/2087199          PASS
+  tb-new-cases-total-kathmandu-2080-asar.json        313/2153273          PASS
+  tb-new-cases-total-kathmandu-2080-ashwin.json      257/2128109          PASS
+  tb-new-cases-total-kathmandu-2080-baishak.json     312/2147681          PASS
+  tb-new-cases-total-kathmandu-2080-bhadra.json      296/2125313          PASS
+  tb-new-cases-total-kathmandu-2080-chaitra.json     374/2144885          PASS
+  tb-new-cases-total-kathmandu-2080-falgun.json      315/2142089          PASS
+  tb-new-cases-total-kathmandu-2080-jestha.json      402/2150477          PASS
+  tb-new-cases-total-kathmandu-2080-kartik.json      164/2130905          PASS
+  tb-new-cases-total-kathmandu-2080-magh.json        286/2139293          PASS
+  tb-new-cases-total-kathmandu-2080-mangsir.json     250/2133701          PASS
+  tb-new-cases-total-kathmandu-2080-poush.json       286/2136497          PASS
+  tb-new-cases-total-kathmandu-2080-shrawan.json     377/2122517          PASS
+  tb-new-cases-total-kathmandu-2081-asar.json        294/2185371          PASS
+  tb-new-cases-total-kathmandu-2081-ashwin.json      206/2161397          PASS
+  tb-new-cases-total-kathmandu-2081-baishak.json     354/2180043          PASS
+  tb-new-cases-total-kathmandu-2081-bhadra.json      303/2158733          PASS
+  tb-new-cases-total-kathmandu-2081-chaitra.json     343/2177380          PASS
+  tb-new-cases-total-kathmandu-2081-falgun.json      283/2174716          PASS
+  tb-new-cases-total-kathmandu-2081-jestha.json      380/2182707          PASS
+  tb-new-cases-total-kathmandu-2081-kartik.json      224/2164061          PASS
+  tb-new-cases-total-kathmandu-2081-magh.json        285/2172052          PASS
+  tb-new-cases-total-kathmandu-2081-mangsir.json     282/2166725          PASS
+  tb-new-cases-total-kathmandu-2081-poush.json       259/2169388          PASS
+  tb-new-cases-total-kathmandu-2081-shrawan.json     416/2156070          PASS
+  tb-new-cases-total-kathmandu-2082-asar.json        371/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-ashwin.json      236/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-baishak.json     323/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-bhadra.json      297/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-chaitra.json     262/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-falgun.json      222/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-jestha.json      351/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-kartik.json      204/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-magh.json        257/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-mangsir.json     202/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-poush.json       256/2188035          PASS
+  tb-new-cases-total-kathmandu-2082-shrawan.json     340/2188035          PASS
   → Subtotal: 60 files, 0 errors, DAR entries: 3 DAR file(s)
 
   Indicator: new-cases-female  (csv col: new_cases_female)
   File                                               Count / DAR          Status
   --------------------------------------------------------------------
-  tb-new-cases-female-kathmandu-2078-asar.json       DAR (not-reported)   PASS
-  tb-new-cases-female-kathmandu-2078-ashwin.json     117                  PASS
-  tb-new-cases-female-kathmandu-2078-baishak.json    DAR (not-reported)   PASS
-  tb-new-cases-female-kathmandu-2078-bhadra.json     144                  PASS
-  tb-new-cases-female-kathmandu-2078-chaitra.json    180                  PASS
-  tb-new-cases-female-kathmandu-2078-falgun.json     123                  PASS
-  tb-new-cases-female-kathmandu-2078-jestha.json     DAR (not-reported)   PASS
-  tb-new-cases-female-kathmandu-2078-kartik.json     109                  PASS
-  tb-new-cases-female-kathmandu-2078-magh.json       89                   PASS
-  tb-new-cases-female-kathmandu-2078-mangsir.json    102                  PASS
-  tb-new-cases-female-kathmandu-2078-poush.json      118                  PASS
-  tb-new-cases-female-kathmandu-2078-shrawan.json    143                  PASS
-  tb-new-cases-female-kathmandu-2079-asar.json       166                  PASS
-  tb-new-cases-female-kathmandu-2079-ashwin.json     102                  PASS
-  tb-new-cases-female-kathmandu-2079-baishak.json    149                  PASS
-  tb-new-cases-female-kathmandu-2079-bhadra.json     130                  PASS
-  tb-new-cases-female-kathmandu-2079-chaitra.json    146                  PASS
-  tb-new-cases-female-kathmandu-2079-falgun.json     130                  PASS
-  tb-new-cases-female-kathmandu-2079-jestha.json     170                  PASS
-  tb-new-cases-female-kathmandu-2079-kartik.json     119                  PASS
-  tb-new-cases-female-kathmandu-2079-magh.json       87                   PASS
-  tb-new-cases-female-kathmandu-2079-mangsir.json    110                  PASS
-  tb-new-cases-female-kathmandu-2079-poush.json      121                  PASS
-  tb-new-cases-female-kathmandu-2079-shrawan.json    155                  PASS
-  tb-new-cases-female-kathmandu-2080-asar.json       142                  PASS
-  tb-new-cases-female-kathmandu-2080-ashwin.json     128                  PASS
-  tb-new-cases-female-kathmandu-2080-baishak.json    142                  PASS
-  tb-new-cases-female-kathmandu-2080-bhadra.json     134                  PASS
-  tb-new-cases-female-kathmandu-2080-chaitra.json    176                  PASS
-  tb-new-cases-female-kathmandu-2080-falgun.json     146                  PASS
-  tb-new-cases-female-kathmandu-2080-jestha.json     182                  PASS
-  tb-new-cases-female-kathmandu-2080-kartik.json     79                   PASS
-  tb-new-cases-female-kathmandu-2080-magh.json       118                  PASS
-  tb-new-cases-female-kathmandu-2080-mangsir.json    100                  PASS
-  tb-new-cases-female-kathmandu-2080-poush.json      132                  PASS
-  tb-new-cases-female-kathmandu-2080-shrawan.json    170                  PASS
-  tb-new-cases-female-kathmandu-2081-asar.json       145                  PASS
-  tb-new-cases-female-kathmandu-2081-ashwin.json     94                   PASS
-  tb-new-cases-female-kathmandu-2081-baishak.json    167                  PASS
-  tb-new-cases-female-kathmandu-2081-bhadra.json     139                  PASS
-  tb-new-cases-female-kathmandu-2081-chaitra.json    169                  PASS
-  tb-new-cases-female-kathmandu-2081-falgun.json     125                  PASS
-  tb-new-cases-female-kathmandu-2081-jestha.json     183                  PASS
-  tb-new-cases-female-kathmandu-2081-kartik.json     90                   PASS
-  tb-new-cases-female-kathmandu-2081-magh.json       120                  PASS
-  tb-new-cases-female-kathmandu-2081-mangsir.json    133                  PASS
-  tb-new-cases-female-kathmandu-2081-poush.json      110                  PASS
-  tb-new-cases-female-kathmandu-2081-shrawan.json    204                  PASS
-  tb-new-cases-female-kathmandu-2082-asar.json       181                  PASS
-  tb-new-cases-female-kathmandu-2082-ashwin.json     100                  PASS
-  tb-new-cases-female-kathmandu-2082-baishak.json    147                  PASS
-  tb-new-cases-female-kathmandu-2082-bhadra.json     136                  PASS
-  tb-new-cases-female-kathmandu-2082-chaitra.json    129                  PASS
-  tb-new-cases-female-kathmandu-2082-falgun.json     110                  PASS
-  tb-new-cases-female-kathmandu-2082-jestha.json     185                  PASS
-  tb-new-cases-female-kathmandu-2082-kartik.json     92                   PASS
-  tb-new-cases-female-kathmandu-2082-magh.json       122                  PASS
-  tb-new-cases-female-kathmandu-2082-mangsir.json    109                  PASS
-  tb-new-cases-female-kathmandu-2082-poush.json      110                  PASS
-  tb-new-cases-female-kathmandu-2082-shrawan.json    152                  PASS
+  tb-new-cases-female-kathmandu-2078-asar.json       DAR / pop            PASS
+  tb-new-cases-female-kathmandu-2078-ashwin.json     117/2055881          PASS
+  tb-new-cases-female-kathmandu-2078-baishak.json    DAR / pop            PASS
+  tb-new-cases-female-kathmandu-2078-bhadra.json     144/2052749          PASS
+  tb-new-cases-female-kathmandu-2078-chaitra.json    180/2074672          PASS
+  tb-new-cases-female-kathmandu-2078-falgun.json     123/2071540          PASS
+  tb-new-cases-female-kathmandu-2078-jestha.json     DAR / pop            PASS
+  tb-new-cases-female-kathmandu-2078-kartik.json     109/2059013          PASS
+  tb-new-cases-female-kathmandu-2078-magh.json       89/2068408           PASS
+  tb-new-cases-female-kathmandu-2078-mangsir.json    102/2062145          PASS
+  tb-new-cases-female-kathmandu-2078-poush.json      118/2065276          PASS
+  tb-new-cases-female-kathmandu-2078-shrawan.json    143/2049618          PASS
+  tb-new-cases-female-kathmandu-2079-asar.json       166/2119573          PASS
+  tb-new-cases-female-kathmandu-2079-ashwin.json     102/2093085          PASS
+  tb-new-cases-female-kathmandu-2079-baishak.json    149/2113687          PASS
+  tb-new-cases-female-kathmandu-2079-bhadra.json     130/2090142          PASS
+  tb-new-cases-female-kathmandu-2079-chaitra.json    146/2110744          PASS
+  tb-new-cases-female-kathmandu-2079-falgun.json     130/2107801          PASS
+  tb-new-cases-female-kathmandu-2079-jestha.json     170/2116630          PASS
+  tb-new-cases-female-kathmandu-2079-kartik.json     119/2096028          PASS
+  tb-new-cases-female-kathmandu-2079-magh.json       87/2104858           PASS
+  tb-new-cases-female-kathmandu-2079-mangsir.json    110/2098971          PASS
+  tb-new-cases-female-kathmandu-2079-poush.json      121/2101914          PASS
+  tb-new-cases-female-kathmandu-2079-shrawan.json    155/2087199          PASS
+  tb-new-cases-female-kathmandu-2080-asar.json       142/2153273          PASS
+  tb-new-cases-female-kathmandu-2080-ashwin.json     128/2128109          PASS
+  tb-new-cases-female-kathmandu-2080-baishak.json    142/2147681          PASS
+  tb-new-cases-female-kathmandu-2080-bhadra.json     134/2125313          PASS
+  tb-new-cases-female-kathmandu-2080-chaitra.json    176/2144885          PASS
+  tb-new-cases-female-kathmandu-2080-falgun.json     146/2142089          PASS
+  tb-new-cases-female-kathmandu-2080-jestha.json     182/2150477          PASS
+  tb-new-cases-female-kathmandu-2080-kartik.json     79/2130905           PASS
+  tb-new-cases-female-kathmandu-2080-magh.json       118/2139293          PASS
+  tb-new-cases-female-kathmandu-2080-mangsir.json    100/2133701          PASS
+  tb-new-cases-female-kathmandu-2080-poush.json      132/2136497          PASS
+  tb-new-cases-female-kathmandu-2080-shrawan.json    170/2122517          PASS
+  tb-new-cases-female-kathmandu-2081-asar.json       145/2185371          PASS
+  tb-new-cases-female-kathmandu-2081-ashwin.json     94/2161397           PASS
+  tb-new-cases-female-kathmandu-2081-baishak.json    167/2180043          PASS
+  tb-new-cases-female-kathmandu-2081-bhadra.json     139/2158733          PASS
+  tb-new-cases-female-kathmandu-2081-chaitra.json    169/2177380          PASS
+  tb-new-cases-female-kathmandu-2081-falgun.json     125/2174716          PASS
+  tb-new-cases-female-kathmandu-2081-jestha.json     183/2182707          PASS
+  tb-new-cases-female-kathmandu-2081-kartik.json     90/2164061           PASS
+  tb-new-cases-female-kathmandu-2081-magh.json       120/2172052          PASS
+  tb-new-cases-female-kathmandu-2081-mangsir.json    133/2166725          PASS
+  tb-new-cases-female-kathmandu-2081-poush.json      110/2169388          PASS
+  tb-new-cases-female-kathmandu-2081-shrawan.json    204/2156070          PASS
+  tb-new-cases-female-kathmandu-2082-asar.json       181/2188035          PASS
+  tb-new-cases-female-kathmandu-2082-ashwin.json     100/2188035          PASS
+  tb-new-cases-female-kathmandu-2082-baishak.json    147/2188035          PASS
+  tb-new-cases-female-kathmandu-2082-bhadra.json     136/2188035          PASS
+  tb-new-cases-female-kathmandu-2082-chaitra.json    129/2188035          PASS
+  tb-new-cases-female-kathmandu-2082-falgun.json     110/2188035          PASS
+  tb-new-cases-female-kathmandu-2082-jestha.json     185/2188035          PASS
+  tb-new-cases-female-kathmandu-2082-kartik.json     92/2188035           PASS
+  tb-new-cases-female-kathmandu-2082-magh.json       122/2188035          PASS
+  tb-new-cases-female-kathmandu-2082-mangsir.json    109/2188035          PASS
+  tb-new-cases-female-kathmandu-2082-poush.json      110/2188035          PASS
+  tb-new-cases-female-kathmandu-2082-shrawan.json    152/2188035          PASS
   → Subtotal: 60 files, 0 errors, DAR entries: 3 DAR file(s)
 
   Indicator: new-cases-male  (csv col: new_cases_male)
   File                                               Count / DAR          Status
   --------------------------------------------------------------------
-  tb-new-cases-male-kathmandu-2078-asar.json         DAR (not-reported)   PASS
-  tb-new-cases-male-kathmandu-2078-ashwin.json       89                   PASS
-  tb-new-cases-male-kathmandu-2078-baishak.json      DAR (not-reported)   PASS
-  tb-new-cases-male-kathmandu-2078-bhadra.json       151                  PASS
-  tb-new-cases-male-kathmandu-2078-chaitra.json      169                  PASS
-  tb-new-cases-male-kathmandu-2078-falgun.json       149                  PASS
-  tb-new-cases-male-kathmandu-2078-jestha.json       DAR (not-reported)   PASS
-  tb-new-cases-male-kathmandu-2078-kartik.json       121                  PASS
-  tb-new-cases-male-kathmandu-2078-magh.json         113                  PASS
-  tb-new-cases-male-kathmandu-2078-mangsir.json      127                  PASS
-  tb-new-cases-male-kathmandu-2078-poush.json        149                  PASS
-  tb-new-cases-male-kathmandu-2078-shrawan.json      246                  PASS
-  tb-new-cases-male-kathmandu-2079-asar.json         170                  PASS
-  tb-new-cases-male-kathmandu-2079-ashwin.json       113                  PASS
-  tb-new-cases-male-kathmandu-2079-baishak.json      168                  PASS
-  tb-new-cases-male-kathmandu-2079-bhadra.json       176                  PASS
-  tb-new-cases-male-kathmandu-2079-chaitra.json      179                  PASS
-  tb-new-cases-male-kathmandu-2079-falgun.json       179                  PASS
-  tb-new-cases-male-kathmandu-2079-jestha.json       184                  PASS
-  tb-new-cases-male-kathmandu-2079-kartik.json       166                  PASS
-  tb-new-cases-male-kathmandu-2079-magh.json         158                  PASS
-  tb-new-cases-male-kathmandu-2079-mangsir.json      137                  PASS
-  tb-new-cases-male-kathmandu-2079-poush.json        145                  PASS
-  tb-new-cases-male-kathmandu-2079-shrawan.json      170                  PASS
-  tb-new-cases-male-kathmandu-2080-asar.json         171                  PASS
-  tb-new-cases-male-kathmandu-2080-ashwin.json       129                  PASS
-  tb-new-cases-male-kathmandu-2080-baishak.json      170                  PASS
-  tb-new-cases-male-kathmandu-2080-bhadra.json       162                  PASS
-  tb-new-cases-male-kathmandu-2080-chaitra.json      198                  PASS
-  tb-new-cases-male-kathmandu-2080-falgun.json       169                  PASS
-  tb-new-cases-male-kathmandu-2080-jestha.json       220                  PASS
-  tb-new-cases-male-kathmandu-2080-kartik.json       85                   PASS
-  tb-new-cases-male-kathmandu-2080-magh.json         168                  PASS
-  tb-new-cases-male-kathmandu-2080-mangsir.json      150                  PASS
-  tb-new-cases-male-kathmandu-2080-poush.json        154                  PASS
-  tb-new-cases-male-kathmandu-2080-shrawan.json      207                  PASS
-  tb-new-cases-male-kathmandu-2081-asar.json         149                  PASS
-  tb-new-cases-male-kathmandu-2081-ashwin.json       112                  PASS
-  tb-new-cases-male-kathmandu-2081-baishak.json      187                  PASS
-  tb-new-cases-male-kathmandu-2081-bhadra.json       164                  PASS
-  tb-new-cases-male-kathmandu-2081-chaitra.json      174                  PASS
-  tb-new-cases-male-kathmandu-2081-falgun.json       158                  PASS
-  tb-new-cases-male-kathmandu-2081-jestha.json       197                  PASS
-  tb-new-cases-male-kathmandu-2081-kartik.json       134                  PASS
-  tb-new-cases-male-kathmandu-2081-magh.json         165                  PASS
-  tb-new-cases-male-kathmandu-2081-mangsir.json      149                  PASS
-  tb-new-cases-male-kathmandu-2081-poush.json        149                  PASS
-  tb-new-cases-male-kathmandu-2081-shrawan.json      212                  PASS
-  tb-new-cases-male-kathmandu-2082-asar.json         190                  PASS
-  tb-new-cases-male-kathmandu-2082-ashwin.json       136                  PASS
-  tb-new-cases-male-kathmandu-2082-baishak.json      176                  PASS
-  tb-new-cases-male-kathmandu-2082-bhadra.json       161                  PASS
-  tb-new-cases-male-kathmandu-2082-chaitra.json      133                  PASS
-  tb-new-cases-male-kathmandu-2082-falgun.json       112                  PASS
-  tb-new-cases-male-kathmandu-2082-jestha.json       166                  PASS
-  tb-new-cases-male-kathmandu-2082-kartik.json       112                  PASS
-  tb-new-cases-male-kathmandu-2082-magh.json         135                  PASS
-  tb-new-cases-male-kathmandu-2082-mangsir.json      93                   PASS
-  tb-new-cases-male-kathmandu-2082-poush.json        146                  PASS
-  tb-new-cases-male-kathmandu-2082-shrawan.json      188                  PASS
+  tb-new-cases-male-kathmandu-2078-asar.json         DAR / pop            PASS
+  tb-new-cases-male-kathmandu-2078-ashwin.json       89/2055881           PASS
+  tb-new-cases-male-kathmandu-2078-baishak.json      DAR / pop            PASS
+  tb-new-cases-male-kathmandu-2078-bhadra.json       151/2052749          PASS
+  tb-new-cases-male-kathmandu-2078-chaitra.json      169/2074672          PASS
+  tb-new-cases-male-kathmandu-2078-falgun.json       149/2071540          PASS
+  tb-new-cases-male-kathmandu-2078-jestha.json       DAR / pop            PASS
+  tb-new-cases-male-kathmandu-2078-kartik.json       121/2059013          PASS
+  tb-new-cases-male-kathmandu-2078-magh.json         113/2068408          PASS
+  tb-new-cases-male-kathmandu-2078-mangsir.json      127/2062145          PASS
+  tb-new-cases-male-kathmandu-2078-poush.json        149/2065276          PASS
+  tb-new-cases-male-kathmandu-2078-shrawan.json      246/2049618          PASS
+  tb-new-cases-male-kathmandu-2079-asar.json         170/2119573          PASS
+  tb-new-cases-male-kathmandu-2079-ashwin.json       113/2093085          PASS
+  tb-new-cases-male-kathmandu-2079-baishak.json      168/2113687          PASS
+  tb-new-cases-male-kathmandu-2079-bhadra.json       176/2090142          PASS
+  tb-new-cases-male-kathmandu-2079-chaitra.json      179/2110744          PASS
+  tb-new-cases-male-kathmandu-2079-falgun.json       179/2107801          PASS
+  tb-new-cases-male-kathmandu-2079-jestha.json       184/2116630          PASS
+  tb-new-cases-male-kathmandu-2079-kartik.json       166/2096028          PASS
+  tb-new-cases-male-kathmandu-2079-magh.json         158/2104858          PASS
+  tb-new-cases-male-kathmandu-2079-mangsir.json      137/2098971          PASS
+  tb-new-cases-male-kathmandu-2079-poush.json        145/2101914          PASS
+  tb-new-cases-male-kathmandu-2079-shrawan.json      170/2087199          PASS
+  tb-new-cases-male-kathmandu-2080-asar.json         171/2153273          PASS
+  tb-new-cases-male-kathmandu-2080-ashwin.json       129/2128109          PASS
+  tb-new-cases-male-kathmandu-2080-baishak.json      170/2147681          PASS
+  tb-new-cases-male-kathmandu-2080-bhadra.json       162/2125313          PASS
+  tb-new-cases-male-kathmandu-2080-chaitra.json      198/2144885          PASS
+  tb-new-cases-male-kathmandu-2080-falgun.json       169/2142089          PASS
+  tb-new-cases-male-kathmandu-2080-jestha.json       220/2150477          PASS
+  tb-new-cases-male-kathmandu-2080-kartik.json       85/2130905           PASS
+  tb-new-cases-male-kathmandu-2080-magh.json         168/2139293          PASS
+  tb-new-cases-male-kathmandu-2080-mangsir.json      150/2133701          PASS
+  tb-new-cases-male-kathmandu-2080-poush.json        154/2136497          PASS
+  tb-new-cases-male-kathmandu-2080-shrawan.json      207/2122517          PASS
+  tb-new-cases-male-kathmandu-2081-asar.json         149/2185371          PASS
+  tb-new-cases-male-kathmandu-2081-ashwin.json       112/2161397          PASS
+  tb-new-cases-male-kathmandu-2081-baishak.json      187/2180043          PASS
+  tb-new-cases-male-kathmandu-2081-bhadra.json       164/2158733          PASS
+  tb-new-cases-male-kathmandu-2081-chaitra.json      174/2177380          PASS
+  tb-new-cases-male-kathmandu-2081-falgun.json       158/2174716          PASS
+  tb-new-cases-male-kathmandu-2081-jestha.json       197/2182707          PASS
+  tb-new-cases-male-kathmandu-2081-kartik.json       134/2164061          PASS
+  tb-new-cases-male-kathmandu-2081-magh.json         165/2172052          PASS
+  tb-new-cases-male-kathmandu-2081-mangsir.json      149/2166725          PASS
+  tb-new-cases-male-kathmandu-2081-poush.json        149/2169388          PASS
+  tb-new-cases-male-kathmandu-2081-shrawan.json      212/2156070          PASS
+  tb-new-cases-male-kathmandu-2082-asar.json         190/2188035          PASS
+  tb-new-cases-male-kathmandu-2082-ashwin.json       136/2188035          PASS
+  tb-new-cases-male-kathmandu-2082-baishak.json      176/2188035          PASS
+  tb-new-cases-male-kathmandu-2082-bhadra.json       161/2188035          PASS
+  tb-new-cases-male-kathmandu-2082-chaitra.json      133/2188035          PASS
+  tb-new-cases-male-kathmandu-2082-falgun.json       112/2188035          PASS
+  tb-new-cases-male-kathmandu-2082-jestha.json       166/2188035          PASS
+  tb-new-cases-male-kathmandu-2082-kartik.json       112/2188035          PASS
+  tb-new-cases-male-kathmandu-2082-magh.json         135/2188035          PASS
+  tb-new-cases-male-kathmandu-2082-mangsir.json      93/2188035           PASS
+  tb-new-cases-male-kathmandu-2082-poush.json        146/2188035          PASS
+  tb-new-cases-male-kathmandu-2082-shrawan.json      188/2188035          PASS
   → Subtotal: 60 files, 0 errors, DAR entries: 3 DAR file(s)
 
   Indicator: relapse-total  (csv col: relapse_total)
   File                                               Count / DAR          Status
   --------------------------------------------------------------------
-  tb-relapse-total-kathmandu-2078-asar.json          DAR (not-reported)   PASS
-  tb-relapse-total-kathmandu-2078-ashwin.json        4                    PASS
-  tb-relapse-total-kathmandu-2078-baishak.json       DAR (not-reported)   PASS
-  tb-relapse-total-kathmandu-2078-bhadra.json        5                    PASS
-  tb-relapse-total-kathmandu-2078-chaitra.json       9                    PASS
-  tb-relapse-total-kathmandu-2078-falgun.json        10                   PASS
-  tb-relapse-total-kathmandu-2078-jestha.json        DAR (not-reported)   PASS
-  tb-relapse-total-kathmandu-2078-kartik.json        10                   PASS
-  tb-relapse-total-kathmandu-2078-magh.json          6                    PASS
-  tb-relapse-total-kathmandu-2078-mangsir.json       4                    PASS
-  tb-relapse-total-kathmandu-2078-poush.json         12                   PASS
-  tb-relapse-total-kathmandu-2078-shrawan.json       8                    PASS
-  tb-relapse-total-kathmandu-2079-asar.json          8                    PASS
-  tb-relapse-total-kathmandu-2079-ashwin.json        9                    PASS
-  tb-relapse-total-kathmandu-2079-baishak.json       8                    PASS
-  tb-relapse-total-kathmandu-2079-bhadra.json        5                    PASS
-  tb-relapse-total-kathmandu-2079-chaitra.json       12                   PASS
-  tb-relapse-total-kathmandu-2079-falgun.json        9                    PASS
-  tb-relapse-total-kathmandu-2079-jestha.json        14                   PASS
-  tb-relapse-total-kathmandu-2079-kartik.json        12                   PASS
-  tb-relapse-total-kathmandu-2079-magh.json          DAR (not-reported)   PASS
-  tb-relapse-total-kathmandu-2079-mangsir.json       11                   PASS
-  tb-relapse-total-kathmandu-2079-poush.json         5                    PASS
-  tb-relapse-total-kathmandu-2079-shrawan.json       5                    PASS
-  tb-relapse-total-kathmandu-2080-asar.json          8                    PASS
-  tb-relapse-total-kathmandu-2080-ashwin.json        13                   PASS
-  tb-relapse-total-kathmandu-2080-baishak.json       10                   PASS
-  tb-relapse-total-kathmandu-2080-bhadra.json        9                    PASS
-  tb-relapse-total-kathmandu-2080-chaitra.json       21                   PASS
-  tb-relapse-total-kathmandu-2080-falgun.json        14                   PASS
-  tb-relapse-total-kathmandu-2080-jestha.json        24                   PASS
-  tb-relapse-total-kathmandu-2080-kartik.json        6                    PASS
-  tb-relapse-total-kathmandu-2080-magh.json          13                   PASS
-  tb-relapse-total-kathmandu-2080-mangsir.json       12                   PASS
-  tb-relapse-total-kathmandu-2080-poush.json         15                   PASS
-  tb-relapse-total-kathmandu-2080-shrawan.json       21                   PASS
-  tb-relapse-total-kathmandu-2081-asar.json          16                   PASS
-  tb-relapse-total-kathmandu-2081-ashwin.json        9                    PASS
-  tb-relapse-total-kathmandu-2081-baishak.json       12                   PASS
-  tb-relapse-total-kathmandu-2081-bhadra.json        13                   PASS
-  tb-relapse-total-kathmandu-2081-chaitra.json       18                   PASS
-  tb-relapse-total-kathmandu-2081-falgun.json        16                   PASS
-  tb-relapse-total-kathmandu-2081-jestha.json        15                   PASS
-  tb-relapse-total-kathmandu-2081-kartik.json        10                   PASS
-  tb-relapse-total-kathmandu-2081-magh.json          11                   PASS
-  tb-relapse-total-kathmandu-2081-mangsir.json       11                   PASS
-  tb-relapse-total-kathmandu-2081-poush.json         14                   PASS
-  tb-relapse-total-kathmandu-2081-shrawan.json       13                   PASS
-  tb-relapse-total-kathmandu-2082-asar.json          15                   PASS
-  tb-relapse-total-kathmandu-2082-ashwin.json        9                    PASS
-  tb-relapse-total-kathmandu-2082-baishak.json       12                   PASS
-  tb-relapse-total-kathmandu-2082-bhadra.json        13                   PASS
-  tb-relapse-total-kathmandu-2082-chaitra.json       10                   PASS
-  tb-relapse-total-kathmandu-2082-falgun.json        18                   PASS
-  tb-relapse-total-kathmandu-2082-jestha.json        10                   PASS
-  tb-relapse-total-kathmandu-2082-kartik.json        16                   PASS
-  tb-relapse-total-kathmandu-2082-magh.json          9                    PASS
-  tb-relapse-total-kathmandu-2082-mangsir.json       16                   PASS
-  tb-relapse-total-kathmandu-2082-poush.json         12                   PASS
-  tb-relapse-total-kathmandu-2082-shrawan.json       11                   PASS
+  tb-relapse-total-kathmandu-2078-asar.json          DAR / pop            PASS
+  tb-relapse-total-kathmandu-2078-ashwin.json        4/2055881            PASS
+  tb-relapse-total-kathmandu-2078-baishak.json       DAR / pop            PASS
+  tb-relapse-total-kathmandu-2078-bhadra.json        5/2052749            PASS
+  tb-relapse-total-kathmandu-2078-chaitra.json       9/2074672            PASS
+  tb-relapse-total-kathmandu-2078-falgun.json        10/2071540           PASS
+  tb-relapse-total-kathmandu-2078-jestha.json        DAR / pop            PASS
+  tb-relapse-total-kathmandu-2078-kartik.json        10/2059013           PASS
+  tb-relapse-total-kathmandu-2078-magh.json          6/2068408            PASS
+  tb-relapse-total-kathmandu-2078-mangsir.json       4/2062145            PASS
+  tb-relapse-total-kathmandu-2078-poush.json         12/2065276           PASS
+  tb-relapse-total-kathmandu-2078-shrawan.json       8/2049618            PASS
+  tb-relapse-total-kathmandu-2079-asar.json          8/2119573            PASS
+  tb-relapse-total-kathmandu-2079-ashwin.json        9/2093085            PASS
+  tb-relapse-total-kathmandu-2079-baishak.json       8/2113687            PASS
+  tb-relapse-total-kathmandu-2079-bhadra.json        5/2090142            PASS
+  tb-relapse-total-kathmandu-2079-chaitra.json       12/2110744           PASS
+  tb-relapse-total-kathmandu-2079-falgun.json        9/2107801            PASS
+  tb-relapse-total-kathmandu-2079-jestha.json        14/2116630           PASS
+  tb-relapse-total-kathmandu-2079-kartik.json        12/2096028           PASS
+  tb-relapse-total-kathmandu-2079-magh.json          DAR / pop            PASS
+  tb-relapse-total-kathmandu-2079-mangsir.json       11/2098971           PASS
+  tb-relapse-total-kathmandu-2079-poush.json         5/2101914            PASS
+  tb-relapse-total-kathmandu-2079-shrawan.json       5/2087199            PASS
+  tb-relapse-total-kathmandu-2080-asar.json          8/2153273            PASS
+  tb-relapse-total-kathmandu-2080-ashwin.json        13/2128109           PASS
+  tb-relapse-total-kathmandu-2080-baishak.json       10/2147681           PASS
+  tb-relapse-total-kathmandu-2080-bhadra.json        9/2125313            PASS
+  tb-relapse-total-kathmandu-2080-chaitra.json       21/2144885           PASS
+  tb-relapse-total-kathmandu-2080-falgun.json        14/2142089           PASS
+  tb-relapse-total-kathmandu-2080-jestha.json        24/2150477           PASS
+  tb-relapse-total-kathmandu-2080-kartik.json        6/2130905            PASS
+  tb-relapse-total-kathmandu-2080-magh.json          13/2139293           PASS
+  tb-relapse-total-kathmandu-2080-mangsir.json       12/2133701           PASS
+  tb-relapse-total-kathmandu-2080-poush.json         15/2136497           PASS
+  tb-relapse-total-kathmandu-2080-shrawan.json       21/2122517           PASS
+  tb-relapse-total-kathmandu-2081-asar.json          16/2185371           PASS
+  tb-relapse-total-kathmandu-2081-ashwin.json        9/2161397            PASS
+  tb-relapse-total-kathmandu-2081-baishak.json       12/2180043           PASS
+  tb-relapse-total-kathmandu-2081-bhadra.json        13/2158733           PASS
+  tb-relapse-total-kathmandu-2081-chaitra.json       18/2177380           PASS
+  tb-relapse-total-kathmandu-2081-falgun.json        16/2174716           PASS
+  tb-relapse-total-kathmandu-2081-jestha.json        15/2182707           PASS
+  tb-relapse-total-kathmandu-2081-kartik.json        10/2164061           PASS
+  tb-relapse-total-kathmandu-2081-magh.json          11/2172052           PASS
+  tb-relapse-total-kathmandu-2081-mangsir.json       11/2166725           PASS
+  tb-relapse-total-kathmandu-2081-poush.json         14/2169388           PASS
+  tb-relapse-total-kathmandu-2081-shrawan.json       13/2156070           PASS
+  tb-relapse-total-kathmandu-2082-asar.json          15/2188035           PASS
+  tb-relapse-total-kathmandu-2082-ashwin.json        9/2188035            PASS
+  tb-relapse-total-kathmandu-2082-baishak.json       12/2188035           PASS
+  tb-relapse-total-kathmandu-2082-bhadra.json        13/2188035           PASS
+  tb-relapse-total-kathmandu-2082-chaitra.json       10/2188035           PASS
+  tb-relapse-total-kathmandu-2082-falgun.json        18/2188035           PASS
+  tb-relapse-total-kathmandu-2082-jestha.json        10/2188035           PASS
+  tb-relapse-total-kathmandu-2082-kartik.json        16/2188035           PASS
+  tb-relapse-total-kathmandu-2082-magh.json          9/2188035            PASS
+  tb-relapse-total-kathmandu-2082-mangsir.json       16/2188035           PASS
+  tb-relapse-total-kathmandu-2082-poush.json         12/2188035           PASS
+  tb-relapse-total-kathmandu-2082-shrawan.json       11/2188035           PASS
   → Subtotal: 60 files, 0 errors, DAR entries: 4 DAR file(s)
 
   Indicator: relapse-female  (csv col: relapse_female)
   File                                               Count / DAR          Status
   --------------------------------------------------------------------
-  tb-relapse-female-kathmandu-2078-asar.json         DAR (not-reported)   PASS
-  tb-relapse-female-kathmandu-2078-ashwin.json       3                    PASS
-  tb-relapse-female-kathmandu-2078-baishak.json      DAR (not-reported)   PASS
-  tb-relapse-female-kathmandu-2078-bhadra.json       0                    PASS
-  tb-relapse-female-kathmandu-2078-chaitra.json      2                    PASS
-  tb-relapse-female-kathmandu-2078-falgun.json       5                    PASS
-  tb-relapse-female-kathmandu-2078-jestha.json       DAR (not-reported)   PASS
-  tb-relapse-female-kathmandu-2078-kartik.json       3                    PASS
-  tb-relapse-female-kathmandu-2078-magh.json         1                    PASS
-  tb-relapse-female-kathmandu-2078-mangsir.json      2                    PASS
-  tb-relapse-female-kathmandu-2078-poush.json        5                    PASS
-  tb-relapse-female-kathmandu-2078-shrawan.json      1                    PASS
-  tb-relapse-female-kathmandu-2079-asar.json         3                    PASS
-  tb-relapse-female-kathmandu-2079-ashwin.json       1                    PASS
-  tb-relapse-female-kathmandu-2079-baishak.json      0                    PASS
-  tb-relapse-female-kathmandu-2079-bhadra.json       2                    PASS
-  tb-relapse-female-kathmandu-2079-chaitra.json      5                    PASS
-  tb-relapse-female-kathmandu-2079-falgun.json       2                    PASS
-  tb-relapse-female-kathmandu-2079-jestha.json       3                    PASS
-  tb-relapse-female-kathmandu-2079-kartik.json       5                    PASS
-  tb-relapse-female-kathmandu-2079-magh.json         1                    PASS
-  tb-relapse-female-kathmandu-2079-mangsir.json      4                    PASS
-  tb-relapse-female-kathmandu-2079-poush.json        2                    PASS
-  tb-relapse-female-kathmandu-2079-shrawan.json      2                    PASS
-  tb-relapse-female-kathmandu-2080-asar.json         2                    PASS
-  tb-relapse-female-kathmandu-2080-ashwin.json       0                    PASS
-  tb-relapse-female-kathmandu-2080-baishak.json      1                    PASS
-  tb-relapse-female-kathmandu-2080-bhadra.json       5                    PASS
-  tb-relapse-female-kathmandu-2080-chaitra.json      9                    PASS
-  tb-relapse-female-kathmandu-2080-falgun.json       3                    PASS
-  tb-relapse-female-kathmandu-2080-jestha.json       8                    PASS
-  tb-relapse-female-kathmandu-2080-kartik.json       3                    PASS
-  tb-relapse-female-kathmandu-2080-magh.json         3                    PASS
-  tb-relapse-female-kathmandu-2080-mangsir.json      4                    PASS
-  tb-relapse-female-kathmandu-2080-poush.json        6                    PASS
-  tb-relapse-female-kathmandu-2080-shrawan.json      8                    PASS
-  tb-relapse-female-kathmandu-2081-asar.json         4                    PASS
-  tb-relapse-female-kathmandu-2081-ashwin.json       2                    PASS
-  tb-relapse-female-kathmandu-2081-baishak.json      3                    PASS
-  tb-relapse-female-kathmandu-2081-bhadra.json       8                    PASS
-  tb-relapse-female-kathmandu-2081-chaitra.json      4                    PASS
-  tb-relapse-female-kathmandu-2081-falgun.json       4                    PASS
-  tb-relapse-female-kathmandu-2081-jestha.json       5                    PASS
-  tb-relapse-female-kathmandu-2081-kartik.json       1                    PASS
-  tb-relapse-female-kathmandu-2081-magh.json         3                    PASS
-  tb-relapse-female-kathmandu-2081-mangsir.json      2                    PASS
-  tb-relapse-female-kathmandu-2081-poush.json        2                    PASS
-  tb-relapse-female-kathmandu-2081-shrawan.json      5                    PASS
-  tb-relapse-female-kathmandu-2082-asar.json         6                    PASS
-  tb-relapse-female-kathmandu-2082-ashwin.json       2                    PASS
-  tb-relapse-female-kathmandu-2082-baishak.json      3                    PASS
-  tb-relapse-female-kathmandu-2082-bhadra.json       4                    PASS
-  tb-relapse-female-kathmandu-2082-chaitra.json      1                    PASS
-  tb-relapse-female-kathmandu-2082-falgun.json       5                    PASS
-  tb-relapse-female-kathmandu-2082-jestha.json       5                    PASS
-  tb-relapse-female-kathmandu-2082-kartik.json       5                    PASS
-  tb-relapse-female-kathmandu-2082-magh.json         6                    PASS
-  tb-relapse-female-kathmandu-2082-mangsir.json      2                    PASS
-  tb-relapse-female-kathmandu-2082-poush.json        4                    PASS
-  tb-relapse-female-kathmandu-2082-shrawan.json      4                    PASS
+  tb-relapse-female-kathmandu-2078-asar.json         DAR / pop            PASS
+  tb-relapse-female-kathmandu-2078-ashwin.json       3/2055881            PASS
+  tb-relapse-female-kathmandu-2078-baishak.json      DAR / pop            PASS
+  tb-relapse-female-kathmandu-2078-bhadra.json       0/2052749            PASS
+  tb-relapse-female-kathmandu-2078-chaitra.json      2/2074672            PASS
+  tb-relapse-female-kathmandu-2078-falgun.json       5/2071540            PASS
+  tb-relapse-female-kathmandu-2078-jestha.json       DAR / pop            PASS
+  tb-relapse-female-kathmandu-2078-kartik.json       3/2059013            PASS
+  tb-relapse-female-kathmandu-2078-magh.json         1/2068408            PASS
+  tb-relapse-female-kathmandu-2078-mangsir.json      2/2062145            PASS
+  tb-relapse-female-kathmandu-2078-poush.json        5/2065276            PASS
+  tb-relapse-female-kathmandu-2078-shrawan.json      1/2049618            PASS
+  tb-relapse-female-kathmandu-2079-asar.json         3/2119573            PASS
+  tb-relapse-female-kathmandu-2079-ashwin.json       1/2093085            PASS
+  tb-relapse-female-kathmandu-2079-baishak.json      0/2113687            PASS
+  tb-relapse-female-kathmandu-2079-bhadra.json       2/2090142            PASS
+  tb-relapse-female-kathmandu-2079-chaitra.json      5/2110744            PASS
+  tb-relapse-female-kathmandu-2079-falgun.json       2/2107801            PASS
+  tb-relapse-female-kathmandu-2079-jestha.json       3/2116630            PASS
+  tb-relapse-female-kathmandu-2079-kartik.json       5/2096028            PASS
+  tb-relapse-female-kathmandu-2079-magh.json         1/2104858            PASS
+  tb-relapse-female-kathmandu-2079-mangsir.json      4/2098971            PASS
+  tb-relapse-female-kathmandu-2079-poush.json        2/2101914            PASS
+  tb-relapse-female-kathmandu-2079-shrawan.json      2/2087199            PASS
+  tb-relapse-female-kathmandu-2080-asar.json         2/2153273            PASS
+  tb-relapse-female-kathmandu-2080-ashwin.json       0/2128109            PASS
+  tb-relapse-female-kathmandu-2080-baishak.json      1/2147681            PASS
+  tb-relapse-female-kathmandu-2080-bhadra.json       5/2125313            PASS
+  tb-relapse-female-kathmandu-2080-chaitra.json      9/2144885            PASS
+  tb-relapse-female-kathmandu-2080-falgun.json       3/2142089            PASS
+  tb-relapse-female-kathmandu-2080-jestha.json       8/2150477            PASS
+  tb-relapse-female-kathmandu-2080-kartik.json       3/2130905            PASS
+  tb-relapse-female-kathmandu-2080-magh.json         3/2139293            PASS
+  tb-relapse-female-kathmandu-2080-mangsir.json      4/2133701            PASS
+  tb-relapse-female-kathmandu-2080-poush.json        6/2136497            PASS
+  tb-relapse-female-kathmandu-2080-shrawan.json      8/2122517            PASS
+  tb-relapse-female-kathmandu-2081-asar.json         4/2185371            PASS
+  tb-relapse-female-kathmandu-2081-ashwin.json       2/2161397            PASS
+  tb-relapse-female-kathmandu-2081-baishak.json      3/2180043            PASS
+  tb-relapse-female-kathmandu-2081-bhadra.json       8/2158733            PASS
+  tb-relapse-female-kathmandu-2081-chaitra.json      4/2177380            PASS
+  tb-relapse-female-kathmandu-2081-falgun.json       4/2174716            PASS
+  tb-relapse-female-kathmandu-2081-jestha.json       5/2182707            PASS
+  tb-relapse-female-kathmandu-2081-kartik.json       1/2164061            PASS
+  tb-relapse-female-kathmandu-2081-magh.json         3/2172052            PASS
+  tb-relapse-female-kathmandu-2081-mangsir.json      2/2166725            PASS
+  tb-relapse-female-kathmandu-2081-poush.json        2/2169388            PASS
+  tb-relapse-female-kathmandu-2081-shrawan.json      5/2156070            PASS
+  tb-relapse-female-kathmandu-2082-asar.json         6/2188035            PASS
+  tb-relapse-female-kathmandu-2082-ashwin.json       2/2188035            PASS
+  tb-relapse-female-kathmandu-2082-baishak.json      3/2188035            PASS
+  tb-relapse-female-kathmandu-2082-bhadra.json       4/2188035            PASS
+  tb-relapse-female-kathmandu-2082-chaitra.json      1/2188035            PASS
+  tb-relapse-female-kathmandu-2082-falgun.json       5/2188035            PASS
+  tb-relapse-female-kathmandu-2082-jestha.json       5/2188035            PASS
+  tb-relapse-female-kathmandu-2082-kartik.json       5/2188035            PASS
+  tb-relapse-female-kathmandu-2082-magh.json         6/2188035            PASS
+  tb-relapse-female-kathmandu-2082-mangsir.json      2/2188035            PASS
+  tb-relapse-female-kathmandu-2082-poush.json        4/2188035            PASS
+  tb-relapse-female-kathmandu-2082-shrawan.json      4/2188035            PASS
   → Subtotal: 60 files, 0 errors, DAR entries: 3 DAR file(s)
 
   Indicator: relapse-male  (csv col: relapse_male)
   File                                               Count / DAR          Status
   --------------------------------------------------------------------
-  tb-relapse-male-kathmandu-2078-asar.json           DAR (not-reported)   PASS
-  tb-relapse-male-kathmandu-2078-ashwin.json         1                    PASS
-  tb-relapse-male-kathmandu-2078-baishak.json        DAR (not-reported)   PASS
-  tb-relapse-male-kathmandu-2078-bhadra.json         5                    PASS
-  tb-relapse-male-kathmandu-2078-chaitra.json        7                    PASS
-  tb-relapse-male-kathmandu-2078-falgun.json         5                    PASS
-  tb-relapse-male-kathmandu-2078-jestha.json         DAR (not-reported)   PASS
-  tb-relapse-male-kathmandu-2078-kartik.json         7                    PASS
-  tb-relapse-male-kathmandu-2078-magh.json           5                    PASS
-  tb-relapse-male-kathmandu-2078-mangsir.json        2                    PASS
-  tb-relapse-male-kathmandu-2078-poush.json          7                    PASS
-  tb-relapse-male-kathmandu-2078-shrawan.json        7                    PASS
-  tb-relapse-male-kathmandu-2079-asar.json           5                    PASS
-  tb-relapse-male-kathmandu-2079-ashwin.json         8                    PASS
-  tb-relapse-male-kathmandu-2079-baishak.json        8                    PASS
-  tb-relapse-male-kathmandu-2079-bhadra.json         3                    PASS
-  tb-relapse-male-kathmandu-2079-chaitra.json        7                    PASS
-  tb-relapse-male-kathmandu-2079-falgun.json         7                    PASS
-  tb-relapse-male-kathmandu-2079-jestha.json         11                   PASS
-  tb-relapse-male-kathmandu-2079-kartik.json         7                    PASS
-  tb-relapse-male-kathmandu-2079-magh.json           9                    PASS
-  tb-relapse-male-kathmandu-2079-mangsir.json        7                    PASS
-  tb-relapse-male-kathmandu-2079-poush.json          3                    PASS
-  tb-relapse-male-kathmandu-2079-shrawan.json        3                    PASS
-  tb-relapse-male-kathmandu-2080-asar.json           6                    PASS
-  tb-relapse-male-kathmandu-2080-ashwin.json         13                   PASS
-  tb-relapse-male-kathmandu-2080-baishak.json        9                    PASS
-  tb-relapse-male-kathmandu-2080-bhadra.json         4                    PASS
-  tb-relapse-male-kathmandu-2080-chaitra.json        12                   PASS
-  tb-relapse-male-kathmandu-2080-falgun.json         11                   PASS
-  tb-relapse-male-kathmandu-2080-jestha.json         16                   PASS
-  tb-relapse-male-kathmandu-2080-kartik.json         3                    PASS
-  tb-relapse-male-kathmandu-2080-magh.json           10                   PASS
-  tb-relapse-male-kathmandu-2080-mangsir.json        8                    PASS
-  tb-relapse-male-kathmandu-2080-poush.json          9                    PASS
-  tb-relapse-male-kathmandu-2080-shrawan.json        13                   PASS
-  tb-relapse-male-kathmandu-2081-asar.json           12                   PASS
-  tb-relapse-male-kathmandu-2081-ashwin.json         7                    PASS
-  tb-relapse-male-kathmandu-2081-baishak.json        9                    PASS
-  tb-relapse-male-kathmandu-2081-bhadra.json         5                    PASS
-  tb-relapse-male-kathmandu-2081-chaitra.json        14                   PASS
-  tb-relapse-male-kathmandu-2081-falgun.json         12                   PASS
-  tb-relapse-male-kathmandu-2081-jestha.json         10                   PASS
-  tb-relapse-male-kathmandu-2081-kartik.json         9                    PASS
-  tb-relapse-male-kathmandu-2081-magh.json           8                    PASS
-  tb-relapse-male-kathmandu-2081-mangsir.json        9                    PASS
-  tb-relapse-male-kathmandu-2081-poush.json          12                   PASS
-  tb-relapse-male-kathmandu-2081-shrawan.json        8                    PASS
-  tb-relapse-male-kathmandu-2082-asar.json           9                    PASS
-  tb-relapse-male-kathmandu-2082-ashwin.json         7                    PASS
-  tb-relapse-male-kathmandu-2082-baishak.json        9                    PASS
-  tb-relapse-male-kathmandu-2082-bhadra.json         9                    PASS
-  tb-relapse-male-kathmandu-2082-chaitra.json        9                    PASS
-  tb-relapse-male-kathmandu-2082-falgun.json         13                   PASS
-  tb-relapse-male-kathmandu-2082-jestha.json         5                    PASS
-  tb-relapse-male-kathmandu-2082-kartik.json         11                   PASS
-  tb-relapse-male-kathmandu-2082-magh.json           3                    PASS
-  tb-relapse-male-kathmandu-2082-mangsir.json        14                   PASS
-  tb-relapse-male-kathmandu-2082-poush.json          8                    PASS
-  tb-relapse-male-kathmandu-2082-shrawan.json        7                    PASS
+  tb-relapse-male-kathmandu-2078-asar.json           DAR / pop            PASS
+  tb-relapse-male-kathmandu-2078-ashwin.json         1/2055881            PASS
+  tb-relapse-male-kathmandu-2078-baishak.json        DAR / pop            PASS
+  tb-relapse-male-kathmandu-2078-bhadra.json         5/2052749            PASS
+  tb-relapse-male-kathmandu-2078-chaitra.json        7/2074672            PASS
+  tb-relapse-male-kathmandu-2078-falgun.json         5/2071540            PASS
+  tb-relapse-male-kathmandu-2078-jestha.json         DAR / pop            PASS
+  tb-relapse-male-kathmandu-2078-kartik.json         7/2059013            PASS
+  tb-relapse-male-kathmandu-2078-magh.json           5/2068408            PASS
+  tb-relapse-male-kathmandu-2078-mangsir.json        2/2062145            PASS
+  tb-relapse-male-kathmandu-2078-poush.json          7/2065276            PASS
+  tb-relapse-male-kathmandu-2078-shrawan.json        7/2049618            PASS
+  tb-relapse-male-kathmandu-2079-asar.json           5/2119573            PASS
+  tb-relapse-male-kathmandu-2079-ashwin.json         8/2093085            PASS
+  tb-relapse-male-kathmandu-2079-baishak.json        8/2113687            PASS
+  tb-relapse-male-kathmandu-2079-bhadra.json         3/2090142            PASS
+  tb-relapse-male-kathmandu-2079-chaitra.json        7/2110744            PASS
+  tb-relapse-male-kathmandu-2079-falgun.json         7/2107801            PASS
+  tb-relapse-male-kathmandu-2079-jestha.json         11/2116630           PASS
+  tb-relapse-male-kathmandu-2079-kartik.json         7/2096028            PASS
+  tb-relapse-male-kathmandu-2079-magh.json           9/2104858            PASS
+  tb-relapse-male-kathmandu-2079-mangsir.json        7/2098971            PASS
+  tb-relapse-male-kathmandu-2079-poush.json          3/2101914            PASS
+  tb-relapse-male-kathmandu-2079-shrawan.json        3/2087199            PASS
+  tb-relapse-male-kathmandu-2080-asar.json           6/2153273            PASS
+  tb-relapse-male-kathmandu-2080-ashwin.json         13/2128109           PASS
+  tb-relapse-male-kathmandu-2080-baishak.json        9/2147681            PASS
+  tb-relapse-male-kathmandu-2080-bhadra.json         4/2125313            PASS
+  tb-relapse-male-kathmandu-2080-chaitra.json        12/2144885           PASS
+  tb-relapse-male-kathmandu-2080-falgun.json         11/2142089           PASS
+  tb-relapse-male-kathmandu-2080-jestha.json         16/2150477           PASS
+  tb-relapse-male-kathmandu-2080-kartik.json         3/2130905            PASS
+  tb-relapse-male-kathmandu-2080-magh.json           10/2139293           PASS
+  tb-relapse-male-kathmandu-2080-mangsir.json        8/2133701            PASS
+  tb-relapse-male-kathmandu-2080-poush.json          9/2136497            PASS
+  tb-relapse-male-kathmandu-2080-shrawan.json        13/2122517           PASS
+  tb-relapse-male-kathmandu-2081-asar.json           12/2185371           PASS
+  tb-relapse-male-kathmandu-2081-ashwin.json         7/2161397            PASS
+  tb-relapse-male-kathmandu-2081-baishak.json        9/2180043            PASS
+  tb-relapse-male-kathmandu-2081-bhadra.json         5/2158733            PASS
+  tb-relapse-male-kathmandu-2081-chaitra.json        14/2177380           PASS
+  tb-relapse-male-kathmandu-2081-falgun.json         12/2174716           PASS
+  tb-relapse-male-kathmandu-2081-jestha.json         10/2182707           PASS
+  tb-relapse-male-kathmandu-2081-kartik.json         9/2164061            PASS
+  tb-relapse-male-kathmandu-2081-magh.json           8/2172052            PASS
+  tb-relapse-male-kathmandu-2081-mangsir.json        9/2166725            PASS
+  tb-relapse-male-kathmandu-2081-poush.json          12/2169388           PASS
+  tb-relapse-male-kathmandu-2081-shrawan.json        8/2156070            PASS
+  tb-relapse-male-kathmandu-2082-asar.json           9/2188035            PASS
+  tb-relapse-male-kathmandu-2082-ashwin.json         7/2188035            PASS
+  tb-relapse-male-kathmandu-2082-baishak.json        9/2188035            PASS
+  tb-relapse-male-kathmandu-2082-bhadra.json         9/2188035            PASS
+  tb-relapse-male-kathmandu-2082-chaitra.json        9/2188035            PASS
+  tb-relapse-male-kathmandu-2082-falgun.json         13/2188035           PASS
+  tb-relapse-male-kathmandu-2082-jestha.json         5/2188035            PASS
+  tb-relapse-male-kathmandu-2082-kartik.json         11/2188035           PASS
+  tb-relapse-male-kathmandu-2082-magh.json           3/2188035            PASS
+  tb-relapse-male-kathmandu-2082-mangsir.json        14/2188035           PASS
+  tb-relapse-male-kathmandu-2082-poush.json          8/2188035            PASS
+  tb-relapse-male-kathmandu-2082-shrawan.json        7/2188035            PASS
   → Subtotal: 60 files, 0 errors, DAR entries: 3 DAR file(s)
 
   Indicator: total-tb-notified  (csv col: total_tb_m+f)
   File                                               Count / DAR          Status
   --------------------------------------------------------------------
-  tb-total-tb-notified-kathmandu-2078-asar.json      DAR (not-reported)   PASS
-  tb-total-tb-notified-kathmandu-2078-ashwin.json    210                  PASS
-  tb-total-tb-notified-kathmandu-2078-baishak.json   DAR (not-reported)   PASS
-  tb-total-tb-notified-kathmandu-2078-bhadra.json    300                  PASS
-  tb-total-tb-notified-kathmandu-2078-chaitra.json   358                  PASS
-  tb-total-tb-notified-kathmandu-2078-falgun.json    282                  PASS
-  tb-total-tb-notified-kathmandu-2078-jestha.json    DAR (not-reported)   PASS
-  tb-total-tb-notified-kathmandu-2078-kartik.json    240                  PASS
-  tb-total-tb-notified-kathmandu-2078-magh.json      208                  PASS
-  tb-total-tb-notified-kathmandu-2078-mangsir.json   233                  PASS
-  tb-total-tb-notified-kathmandu-2078-poush.json     279                  PASS
-  tb-total-tb-notified-kathmandu-2078-shrawan.json   397                  PASS
-  tb-total-tb-notified-kathmandu-2079-asar.json      344                  PASS
-  tb-total-tb-notified-kathmandu-2079-ashwin.json    224                  PASS
-  tb-total-tb-notified-kathmandu-2079-baishak.json   325                  PASS
-  tb-total-tb-notified-kathmandu-2079-bhadra.json    311                  PASS
-  tb-total-tb-notified-kathmandu-2079-chaitra.json   337                  PASS
-  tb-total-tb-notified-kathmandu-2079-falgun.json    318                  PASS
-  tb-total-tb-notified-kathmandu-2079-jestha.json    368                  PASS
-  tb-total-tb-notified-kathmandu-2079-kartik.json    297                  PASS
-  tb-total-tb-notified-kathmandu-2079-magh.json      255                  PASS
-  tb-total-tb-notified-kathmandu-2079-mangsir.json   258                  PASS
-  tb-total-tb-notified-kathmandu-2079-poush.json     271                  PASS
-  tb-total-tb-notified-kathmandu-2079-shrawan.json   330                  PASS
-  tb-total-tb-notified-kathmandu-2080-asar.json      321                  PASS
-  tb-total-tb-notified-kathmandu-2080-ashwin.json    270                  PASS
-  tb-total-tb-notified-kathmandu-2080-baishak.json   322                  PASS
-  tb-total-tb-notified-kathmandu-2080-bhadra.json    305                  PASS
-  tb-total-tb-notified-kathmandu-2080-chaitra.json   395                  PASS
-  tb-total-tb-notified-kathmandu-2080-falgun.json    329                  PASS
-  tb-total-tb-notified-kathmandu-2080-jestha.json    426                  PASS
-  tb-total-tb-notified-kathmandu-2080-kartik.json    170                  PASS
-  tb-total-tb-notified-kathmandu-2080-magh.json      299                  PASS
-  tb-total-tb-notified-kathmandu-2080-mangsir.json   262                  PASS
-  tb-total-tb-notified-kathmandu-2080-poush.json     301                  PASS
-  tb-total-tb-notified-kathmandu-2080-shrawan.json   398                  PASS
-  tb-total-tb-notified-kathmandu-2081-asar.json      310                  PASS
-  tb-total-tb-notified-kathmandu-2081-ashwin.json    215                  PASS
-  tb-total-tb-notified-kathmandu-2081-baishak.json   366                  PASS
-  tb-total-tb-notified-kathmandu-2081-bhadra.json    316                  PASS
-  tb-total-tb-notified-kathmandu-2081-chaitra.json   361                  PASS
-  tb-total-tb-notified-kathmandu-2081-falgun.json    299                  PASS
-  tb-total-tb-notified-kathmandu-2081-jestha.json    395                  PASS
-  tb-total-tb-notified-kathmandu-2081-kartik.json    234                  PASS
-  tb-total-tb-notified-kathmandu-2081-magh.json      296                  PASS
-  tb-total-tb-notified-kathmandu-2081-mangsir.json   293                  PASS
-  tb-total-tb-notified-kathmandu-2081-poush.json     273                  PASS
-  tb-total-tb-notified-kathmandu-2081-shrawan.json   429                  PASS
-  tb-total-tb-notified-kathmandu-2082-asar.json      386                  PASS
-  tb-total-tb-notified-kathmandu-2082-ashwin.json    245                  PASS
-  tb-total-tb-notified-kathmandu-2082-baishak.json   335                  PASS
-  tb-total-tb-notified-kathmandu-2082-bhadra.json    310                  PASS
-  tb-total-tb-notified-kathmandu-2082-chaitra.json   272                  PASS
-  tb-total-tb-notified-kathmandu-2082-falgun.json    240                  PASS
-  tb-total-tb-notified-kathmandu-2082-jestha.json    361                  PASS
-  tb-total-tb-notified-kathmandu-2082-kartik.json    220                  PASS
-  tb-total-tb-notified-kathmandu-2082-magh.json      266                  PASS
-  tb-total-tb-notified-kathmandu-2082-mangsir.json   218                  PASS
-  tb-total-tb-notified-kathmandu-2082-poush.json     268                  PASS
-  tb-total-tb-notified-kathmandu-2082-shrawan.json   351                  PASS
+  tb-total-tb-notified-kathmandu-2078-asar.json      DAR / pop            PASS
+  tb-total-tb-notified-kathmandu-2078-ashwin.json    210/2055881          PASS
+  tb-total-tb-notified-kathmandu-2078-baishak.json   DAR / pop            PASS
+  tb-total-tb-notified-kathmandu-2078-bhadra.json    300/2052749          PASS
+  tb-total-tb-notified-kathmandu-2078-chaitra.json   358/2074672          PASS
+  tb-total-tb-notified-kathmandu-2078-falgun.json    282/2071540          PASS
+  tb-total-tb-notified-kathmandu-2078-jestha.json    DAR / pop            PASS
+  tb-total-tb-notified-kathmandu-2078-kartik.json    240/2059013          PASS
+  tb-total-tb-notified-kathmandu-2078-magh.json      208/2068408          PASS
+  tb-total-tb-notified-kathmandu-2078-mangsir.json   233/2062145          PASS
+  tb-total-tb-notified-kathmandu-2078-poush.json     279/2065276          PASS
+  tb-total-tb-notified-kathmandu-2078-shrawan.json   397/2049618          PASS
+  tb-total-tb-notified-kathmandu-2079-asar.json      344/2119573          PASS
+  tb-total-tb-notified-kathmandu-2079-ashwin.json    224/2093085          PASS
+  tb-total-tb-notified-kathmandu-2079-baishak.json   325/2113687          PASS
+  tb-total-tb-notified-kathmandu-2079-bhadra.json    311/2090142          PASS
+  tb-total-tb-notified-kathmandu-2079-chaitra.json   337/2110744          PASS
+  tb-total-tb-notified-kathmandu-2079-falgun.json    318/2107801          PASS
+  tb-total-tb-notified-kathmandu-2079-jestha.json    368/2116630          PASS
+  tb-total-tb-notified-kathmandu-2079-kartik.json    297/2096028          PASS
+  tb-total-tb-notified-kathmandu-2079-magh.json      255/2104858          PASS
+  tb-total-tb-notified-kathmandu-2079-mangsir.json   258/2098971          PASS
+  tb-total-tb-notified-kathmandu-2079-poush.json     271/2101914          PASS
+  tb-total-tb-notified-kathmandu-2079-shrawan.json   330/2087199          PASS
+  tb-total-tb-notified-kathmandu-2080-asar.json      321/2153273          PASS
+  tb-total-tb-notified-kathmandu-2080-ashwin.json    270/2128109          PASS
+  tb-total-tb-notified-kathmandu-2080-baishak.json   322/2147681          PASS
+  tb-total-tb-notified-kathmandu-2080-bhadra.json    305/2125313          PASS
+  tb-total-tb-notified-kathmandu-2080-chaitra.json   395/2144885          PASS
+  tb-total-tb-notified-kathmandu-2080-falgun.json    329/2142089          PASS
+  tb-total-tb-notified-kathmandu-2080-jestha.json    426/2150477          PASS
+  tb-total-tb-notified-kathmandu-2080-kartik.json    170/2130905          PASS
+  tb-total-tb-notified-kathmandu-2080-magh.json      299/2139293          PASS
+  tb-total-tb-notified-kathmandu-2080-mangsir.json   262/2133701          PASS
+  tb-total-tb-notified-kathmandu-2080-poush.json     301/2136497          PASS
+  tb-total-tb-notified-kathmandu-2080-shrawan.json   398/2122517          PASS
+  tb-total-tb-notified-kathmandu-2081-asar.json      310/2185371          PASS
+  tb-total-tb-notified-kathmandu-2081-ashwin.json    215/2161397          PASS
+  tb-total-tb-notified-kathmandu-2081-baishak.json   366/2180043          PASS
+  tb-total-tb-notified-kathmandu-2081-bhadra.json    316/2158733          PASS
+  tb-total-tb-notified-kathmandu-2081-chaitra.json   361/2177380          PASS
+  tb-total-tb-notified-kathmandu-2081-falgun.json    299/2174716          PASS
+  tb-total-tb-notified-kathmandu-2081-jestha.json    395/2182707          PASS
+  tb-total-tb-notified-kathmandu-2081-kartik.json    234/2164061          PASS
+  tb-total-tb-notified-kathmandu-2081-magh.json      296/2172052          PASS
+  tb-total-tb-notified-kathmandu-2081-mangsir.json   293/2166725          PASS
+  tb-total-tb-notified-kathmandu-2081-poush.json     273/2169388          PASS
+  tb-total-tb-notified-kathmandu-2081-shrawan.json   429/2156070          PASS
+  tb-total-tb-notified-kathmandu-2082-asar.json      386/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-ashwin.json    245/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-baishak.json   335/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-bhadra.json    310/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-chaitra.json   272/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-falgun.json    240/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-jestha.json    361/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-kartik.json    220/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-magh.json      266/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-mangsir.json   218/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-poush.json     268/2188035          PASS
+  tb-total-tb-notified-kathmandu-2082-shrawan.json   351/2188035          PASS
   → Subtotal: 60 files, 0 errors, DAR entries: 3 DAR file(s)
 
   Indicator: pbc-reg  (csv col: pbc_reg)
@@ -1593,7 +1621,7 @@ SECTION 4 — MEASUREREPORT BUNDLES
     [PASS] type = 'collection'
     [PASS] 'total' absent (correct for collection)
     [PASS] meta.profile present
-    [PASS] timestamp = '2026-05-22T07:00:39Z'
+    [PASS] timestamp = '2026-05-22T09:08:48Z'
     [PASS] entry count = 783 (3 shared + 780 MeasureReports)
     [PASS] entry[0] shared resource fullUrl correct (Organization)
     [PASS] entry[0] resourceType = 'Organization'
@@ -1631,7 +1659,7 @@ VALIDATION SUMMARY
     MeasureReport bundles     : 14  (1 master + 13 per-indicator)
 
   Results
-    Checks passed  : 73140
+    Checks passed  : 77368
     Errors         : 0
     Warnings       : 0
     DAR entries    : 22  (data-absent-reason, not-reported)
