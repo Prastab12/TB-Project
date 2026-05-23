@@ -12,7 +12,9 @@ Alias: $LocPhysType     = http://terminology.hl7.org/CodeSystem/location-physica
 Alias: $DAR             = http://hl7.org/fhir/StructureDefinition/data-absent-reason
 
 // ── Project-specific canonicals ───────────────────────────────────────────────
-Alias: $NepaliPeriod    = https://iihms.gov.np/fhir/StructureDefinition/NepaliCalendarPeriod
+Alias: $NepaliPeriod    = https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period
+Alias: $BSMonthCS       = https://iihms.gov.np/fhir/CodeSystem/bs-month-codes
+Alias: $BSMonthVS       = https://iihms.gov.np/fhir/ValueSet/bs-month-valueset
 Alias: $NamingOrg       = https://iihms.gov.np/fhir/NamingSystem/organization-id
 Alias: $NamingLoc       = https://iihms.gov.np/fhir/NamingSystem/location-id
 Alias: $NamingMeasure   = https://iihms.gov.np/fhir/NamingSystem/measure-identifiers
