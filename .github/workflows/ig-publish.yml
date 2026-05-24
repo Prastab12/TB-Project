@@ -75,14 +75,26 @@ jobs:
       - name: Run ETL (IG examples)
         run: python3 ig/scripts/etl.py --examples
 
-      # 9. Download IG Publisher jar
+      # 9. Set up Ruby and install Jekyll (required by fhir.base.template)
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: false
+
+      - name: Install Jekyll
+        run: |
+          gem install jekyll bundler
+          jekyll --version
+
+      # 10. Download IG Publisher jar
       - name: Download IG Publisher
         run: |
           curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
                -o ig/publisher.jar
           echo "IG Publisher downloaded: $(du -sh ig/publisher.jar | cut -f1)"
 
-      # 10. Run IG Publisher
+      # 11. Run IG Publisher
       - name: Run IG Publisher
         working-directory: ig
         run: |
@@ -93,7 +105,7 @@ jobs:
         # -no-sushi: SUSHI already ran in step 5
         # -tx: use the public FHIR terminology server
 
-      # 11. Upload the built IG as a workflow artifact
+      # 12. Upload the built IG as a workflow artifact
       - name: Upload IG artifact
         uses: actions/upload-artifact@v4
         with:
@@ -101,7 +113,7 @@ jobs:
           path: ig/output/
           retention-days: 30
 
-      # 12. Upload GitHub Pages artifact (only on main branch push)
+      # 13. Upload GitHub Pages artifact (only on main branch push)
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: actions/upload-pages-artifact@v3
