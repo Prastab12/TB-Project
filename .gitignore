@@ -66,3 +66,6 @@ ig/.fhir/
 publisher.jar
 run_logs.zip
 *.jar
+
+# ETL generated output (780 MeasureReport files — regenerate via ig/scripts/etl.py)
+ig/fhir-output/

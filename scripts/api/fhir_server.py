@@ -3,7 +3,7 @@ import os
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import Response
+from fastapi.responses import HTMLResponse, Response
 
 app = FastAPI(
     title="TB FHIR R4 Reference Server",
@@ -40,6 +40,19 @@ def fhir_response(data: dict) -> Response:
 def load_json(path: str) -> dict:
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+# ── Dashboard ────────────────────────────────────────────────────────────────
+
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+def root():
+    return '<meta http-equiv="refresh" content="0; url=/dashboard">'
+
+@app.get("/dashboard", response_class=HTMLResponse, include_in_schema=False)
+def dashboard():
+    path = os.path.join(os.path.dirname(__file__), "dashboard.html")
+    with open(path, encoding="utf-8") as f:
+        return f.read()
 
 
 # ── Measure endpoints ─────────────────────────────────────────────────────────

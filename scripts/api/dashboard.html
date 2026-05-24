@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TB Performance Dashboard · Kathmandu</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #eee8dc;
+      color: #111827;
+      min-height: 100vh;
+      padding: 14px;
+      font-size: 14px;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #1c3761; color: #fff;
+      border-radius: 12px; padding: 16px 22px;
+      margin-bottom: 12px;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .header-left h1 { font-size: 17px; font-weight: 700; }
+    .header-left p  { font-size: 11px; color: #93c5fd; margin-top: 3px; }
+
+    .filter-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .filter-bar label { font-size: 11px; font-weight: 600; color: #bfdbfe; white-space: nowrap; }
+    .filter-bar select {
+      background: rgba(255,255,255,0.12); color: #fff;
+      border: 1px solid rgba(255,255,255,0.25); border-radius: 7px;
+      padding: 6px 28px 6px 10px; font-size: 12px; cursor: pointer;
+      outline: none; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23bfdbfe'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 8px center;
+    }
+    .filter-bar select option { background: #1c3761; color: #fff; }
+
+    /* ── Layout ── */
+    .page { display: flex; flex-direction: column; gap: 12px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ── Card ── */
+    .card {
+      background: #fff; border-radius: 12px;
+      border: 1px solid #e5e7eb; padding: 18px;
+    }
+    .card-title { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+    .card-sub   { font-size: 11px; color: #6b7280; margin-bottom: 14px; }
+
+    /* ── KPI grid ── */
+    .kpi-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    @media (max-width: 720px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+    .kpi-box {
+      border-radius: 10px; padding: 14px 15px;
+      border: 1px solid #e5e7eb; border-left-width: 4px;
+    }
+    .kpi-box.blue  { border-left-color: #1d4ed8; background: #eff6ff; }
+    .kpi-box.green { border-left-color: #15803d; background: #f0fdf4; }
+    .kpi-box.red   { border-left-color: #dc2626; background: #fef2f2; }
+    .kpi-box.teal  { border-left-color: #0e7490; background: #ecfeff; }
+    .kpi-lbl { font-size: 11px; font-weight: 600; margin-bottom: 6px; }
+    .kpi-box.blue  .kpi-lbl { color: #1d4ed8; }
+    .kpi-box.green .kpi-lbl { color: #15803d; }
+    .kpi-box.red   .kpi-lbl { color: #dc2626; }
+    .kpi-box.teal  .kpi-lbl { color: #0e7490; }
+    .kpi-val { font-size: 28px; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+    .kpi-box.blue  .kpi-val { color: #1d4ed8; }
+    .kpi-box.green .kpi-val { color: #15803d; }
+    .kpi-box.red   .kpi-val { color: #dc2626; }
+    .kpi-box.teal  .kpi-val { color: #0e7490; }
+    .kpi-sub { font-size: 11px; color: #6b7280; }
+
+    /* ── Chart wrap ── */
+    .chart-wrap { position: relative; height: 220px; }
+    .chart-wrap-lg { position: relative; height: 260px; }
+    .chart-wrap-cas { position: relative; height: 240px; }
+
+    /* ── Legend ── */
+    .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; }
+    .leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #374151; }
+    .leg-dot  { width: 18px; height: 3px; border-radius: 2px; }
+
+    /* ── Notes ── */
+    .dar-note { font-size: 10px; color: #9ca3af; margin-top: 8px; font-style: italic; }
+
+    /* ── Rate boxes ── */
+    .rate-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 18px;
+    }
+    @media (max-width: 720px) { .rate-grid { grid-template-columns: repeat(2,1fr); } }
+    .rate-box {
+      border-radius: 10px; padding: 13px 15px;
+      border: 1px solid #e5e7eb; border-left-width: 4px;
+    }
+    .rate-lbl { font-size: 11px; font-weight: 600; margin-bottom: 5px; }
+    .rate-val { font-size: 22px; font-weight: 800; line-height: 1.1; margin-bottom: 3px; }
+    .rate-sub { font-size: 10px; color: #6b7280; }
+    .rate-box.blue   { border-left-color: #1d4ed8; background: #eff6ff; }
+    .rate-box.blue   .rate-lbl, .rate-box.blue   .rate-val { color: #1d4ed8; }
+    .rate-box.red    { border-left-color: #dc2626; background: #fef2f2; }
+    .rate-box.red    .rate-lbl, .rate-box.red    .rate-val { color: #dc2626; }
+    .rate-box.teal   { border-left-color: #0e7490; background: #ecfeff; }
+    .rate-box.teal   .rate-lbl, .rate-box.teal   .rate-val { color: #0e7490; }
+    .rate-box.orange { border-left-color: #d97706; background: #fffbeb; }
+    .rate-box.orange .rate-lbl, .rate-box.orange .rate-val { color: #b45309; }
+    .rate-box.gray   { border-left-color: #6b7280; background: #f9fafb; }
+    .rate-box.gray   .rate-lbl, .rate-box.gray   .rate-val { color: #374151; }
+    .rate-box.purple { border-left-color: #7c3aed; background: #f5f3ff; }
+    .rate-box.purple .rate-lbl, .rate-box.purple .rate-val { color: #6d28d9; }
+
+    /* ── Toggle buttons ── */
+    .tog-btn {
+      padding: 4px 10px; font-size: 11px; font-weight: 600; border-radius: 6px; cursor: pointer;
+      border: 1px solid #d1d5db; background: #f9fafb; color: #374151; transition: all .15s;
+    }
+    .tog-btn:hover    { background: #f3f4f6; }
+    .tog-btn.tog-active { background: #1c3761; color: #fff; border-color: #1c3761; }
+
+    /* ── Misc ── */
+    .msg { display: flex; align-items: center; justify-content: center;
+           height: 70px; font-size: 13px; color: #6b7280; }
+    .err { color: #dc2626; }
+    .spinner {
+      display: inline-block; width: 16px; height: 16px;
+      border: 2px solid #bfdbfe; border-top-color: #1d4ed8;
+      border-radius: 50%; animation: spin .7s linear infinite;
+      margin-right: 8px; vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-left">
+    <h1>TB Performance Dashboard · Kathmandu</h1>
+    <p id="header-sub">BS 2078–2082 · 13 indicators</p>
+  </div>
+  <div class="filter-bar">
+    <label for="yr-sel">Year</label>
+    <select id="yr-sel" onchange="pickYear(this.value)">
+      <option value="all">All years (2078–2082)</option>
+      <option value="2078">BS 2078</option>
+      <option value="2079">BS 2079</option>
+      <option value="2080">BS 2080</option>
+      <option value="2081">BS 2081</option>
+      <option value="2082">BS 2082</option>
+    </select>
+    <label for="ind-sel">Indicator</label>
+    <select id="ind-sel" onchange="pickInd(this.value)"></select>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- 1. KPI Cards -->
+  <div class="card">
+    <div class="card-title">Key figures · <span id="kpi-period">Loading…</span></div>
+    <div class="card-sub">Totals from FHIR MeasureReport resources</div>
+    <div class="kpi-grid" id="kpi-grid">
+      <div class="msg" style="grid-column:1/-1"><span class="spinner"></span>Loading…</div>
+    </div>
+  </div>
+
+  <!-- 2. Notification trend + Gender split -->
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Monthly notification trend</div>
+      <div class="card-sub" id="trend-sub" style="margin-bottom:10px">New cases + Relapse</div>
+      <div class="chart-wrap"><canvas id="trend-chart"></canvas></div>
+      <div class="dar-note" id="trend-dar" style="display:none">
+        * N/R = Not Reported — BS 2078 Baishak, Jestha, Asar (under-reported in source data)
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Gender split · New cases</div>
+      <div class="card-sub" id="gender-sub" style="margin-bottom:10px">Male vs Female</div>
+      <div class="chart-wrap"><canvas id="gender-chart"></canvas></div>
+      <div class="dar-note" id="gender-dar" style="display:none">
+        * N/R = Not Reported — BS 2078 Baishak, Jestha, Asar
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Cascade of care -->
+  <div class="card">
+    <div class="card-title">Cascade of care · <span id="cas-period">Loading…</span></div>
+    <div class="card-sub">Treatment cohort outcomes — PBC Registered → Cured / Failed / Died / LTFU / Not Evaluated</div>
+    <div class="chart-wrap-cas"><canvas id="cascade-chart"></canvas></div>
+  </div>
+
+  <!-- 4. Derived Rates -->
+  <div class="card">
+    <div class="card-title">Derived Rates · <span id="rates-period">Loading…</span></div>
+    <div class="card-sub">Computed from FHIR ratio and cohort MeasureReport resources</div>
+    <div class="rate-grid" id="rates-grid">
+      <div class="msg" style="grid-column:1/-1"><span class="spinner"></span>Loading…</div>
+    </div>
+    <div class="card-title" style="font-size:13px;margin-bottom:3px">Cohort outcome rates · BS 2078–2082</div>
+    <div class="card-sub" style="margin-bottom:10px">Mortality / LTFU / Failure / Not-evaluated as % of PBC Registered cohort</div>
+    <div class="chart-wrap"><canvas id="rates-chart"></canvas></div>
+  </div>
+
+  <!-- 5. Indicator detail (year-over-year) -->
+  <div class="card">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:2px">
+      <div class="card-title" id="ind-title">Indicator detail</div>
+      <div id="rate-toggle" style="display:none;gap:4px;display:none">
+        <button id="btn-count" class="tog-btn tog-active" onclick="setIndMode('count')">Count</button>
+        <button id="btn-rate"  class="tog-btn"            onclick="setIndMode('rate')">Rate per 100k</button>
+      </div>
+    </div>
+    <div class="card-sub" id="ind-sub" style="margin-bottom:10px">Year-over-year comparison · 12-month fiscal year</div>
+    <div class="chart-wrap-lg"><canvas id="ind-chart"></canvas></div>
+    <div class="legend" id="ind-legend"></div>
+    <div class="dar-note" id="ind-dar"></div>
+  </div>
+
+</div>
+
+<script>
+const FY_MONTHS = ['Shrawan','Bhadra','Ashwin','Kartik','Mangsir','Poush','Magh','Falgun','Chaitra','Baishak','Jestha','Asar'];
+const FY_SHORT  = ['Shr','Bha','Ash','Kar','Man','Pou','Mag','Fal','Cha','Bai','Jes','Asa'];
+const YEARS     = [2078,2079,2080,2081,2082];
+const YR_COLORS = ['#2563eb','#16a34a','#dc2626','#d97706','#7c3aed'];
+
+const ANNUAL_INDS = new Set(['pbc-reg','cured','failed','died','ltfu','not-eval']);
+
+const IND_LABELS = {
+  'new-cases-total':   'New Cases (Total)',
+  'new-cases-female':  'New Cases (Female)',
+  'new-cases-male':    'New Cases (Male)',
+  'relapse-total':     'Relapse Cases (Total)',
+  'relapse-female':    'Relapse Cases (Female)',
+  'relapse-male':      'Relapse Cases (Male)',
+  'total-tb-notified': 'Total TB Notified',
+  'pbc-reg':           'PBC Registered',
+  'cured':             'Cured',
+  'failed':            'Treatment Failed',
+  'died':              'Died',
+  'ltfu':              'Lost to Follow-up',
+  'not-eval':          'Not Evaluated',
+};
+
+const CASCADE_ORDER  = ['pbc-reg','cured','failed','died','ltfu','not-eval'];
+const CASCADE_LABELS = ['PBC Registered','Cured','Failed','Died','Lost to Follow-up','Not Evaluated'];
+const CASCADE_COLORS = ['#1a4480','#15803d','#dc2626','#991b1b','#f97316','#6b7280'];
+
+let allData = {};
+let selYear = 'all';
+let selInd  = 'new-cases-total';
+let indMode = 'count';   // 'count' | 'rate'
+let trendChart, genderChart, cascadeChart, ratesChart, indChart;
+
+// ── Parse FHIR bundle ─────────────────────────────────────────────────────────
+function parseBundle(bundle) {
+  const data = {};
+  for (const entry of (bundle.entry || [])) {
+    const r = entry.resource;
+    if (!r || r.resourceType !== 'MeasureReport') continue;
+
+    // Extract indicator from measure URL: nepal-tb-{indicator}
+    const m = (r.measure || '').match(/nepal-tb-(.+)$/);
+    if (!m) continue;
+    const ind = m[1];
+
+    // Extract BS year + month from nepali-fiscal-period extension
+    const fpExt = (r.period?.extension || [])
+      .find(e => e.url?.includes('nepali-fiscal-period'));
+    if (!fpExt) continue;
+    const inner  = fpExt.extension || [];
+    const bsYear = inner.find(e => e.url === 'bs-year')?.valueInteger;
+    const bsMon  = inner.find(e => e.url === 'bs-month')?.valueString;
+    if (!bsYear || !bsMon) continue;
+
+    // Detect scoring: ratio → population[0].code = "numerator"
+    //                 cohort → population[0].code = "initial-population"
+    const pops    = r.group?.[0]?.population || [];
+    const pop0    = pops[0];
+    const isRatio = pop0?.code?.coding?.[0]?.code === 'numerator';
+
+    // Count: numerator count for ratio, cohort count for cohort; null = DAR
+    const count = pop0 ? ('_count' in pop0 ? null : pop0.count ?? null) : null;
+
+    // Rate per 100k: from measureScore.value (ratio indicators only)
+    const ms      = r.group?.[0]?.measureScore;
+    const rawRate = isRatio && ms ? ('_value' in ms ? null : ms.value ?? null) : null;
+    const rate    = rawRate !== null ? +(rawRate * 100000).toFixed(3) : null;
+
+    if (!data[ind])          data[ind] = {};
+    if (!data[ind][bsYear])  data[ind][bsYear] = {};
+    data[ind][bsYear][bsMon] = { count, rate };
+  }
+  return data;
+}
+
+// ── Data helpers ──────────────────────────────────────────────────────────────
+const v     = (ind, yr, mo) => allData[ind]?.[yr]?.[mo]?.count ?? null;
+const vRate = (ind, yr, mo) => allData[ind]?.[yr]?.[mo]?.rate  ?? null;
+
+const monthlyVals = (ind, yr) => FY_MONTHS.map(m => v(ind, yr, m));
+
+function annualVal(ind, yr) {
+  for (const m of FY_MONTHS) { const x = v(ind, yr, m); if (x !== null) return x; }
+  return null;
+}
+
+const yearSum = (ind, yr) =>
+  FY_MONTHS.reduce((s, m) => s + (v(ind, yr, m) ?? 0), 0);
+
+function kpiVal(ind, year) {
+  if (year === 'all') {
+    return ANNUAL_INDS.has(ind)
+      ? YEARS.reduce((s, y) => s + (annualVal(ind, y) ?? 0), 0)
+      : YEARS.reduce((s, y) => s + yearSum(ind, y), 0);
+  }
+  const y = parseInt(year);
+  return ANNUAL_INDS.has(ind) ? (annualVal(ind, y) ?? 0) : yearSum(ind, y);
+}
+
+function destroyChart(c) { try { c?.destroy(); } catch(_) {} }
+
+// ── Section 1: KPI Cards ──────────────────────────────────────────────────────
+function renderKPIs() {
+  document.getElementById('kpi-period').textContent =
+    selYear === 'all' ? '5-year aggregate (2078–2082)' : `BS ${selYear}`;
+
+  const cards = [
+    { ind: 'new-cases-total', label: 'Total New Cases',   color: 'blue',  sub: 'Sum of monthly notifications'   },
+    { ind: 'cured',           label: 'Cured',             color: 'green', sub: 'Annual treatment cohort outcome' },
+    { ind: 'died',            label: 'Deaths',            color: 'red',   sub: 'Annual treatment cohort outcome' },
+    { ind: 'ltfu',            label: 'Lost to Follow-up', color: 'teal',  sub: 'Annual treatment cohort outcome' },
+  ];
+
+  document.getElementById('kpi-grid').innerHTML = cards.map(c => {
+    const val = kpiVal(c.ind, selYear);
+    return `<div class="kpi-box ${c.color}">
+      <div class="kpi-lbl">${c.label}</div>
+      <div class="kpi-val">${val !== null ? val.toLocaleString() : 'N/R'}</div>
+      <div class="kpi-sub">${c.sub}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── Section 2a: Notification trend ───────────────────────────────────────────
+function renderTrend() {
+  destroyChart(trendChart);
+
+  const labels = [], newData = [], relData = [];
+  const allYears = selYear === 'all';
+  const yrs = allYears ? YEARS : [parseInt(selYear)];
+
+  for (const yr of yrs) {
+    for (let i = 0; i < 12; i++) {
+      labels.push(allYears && i === 0 ? `${yr}` : (allYears ? '' : FY_SHORT[i]));
+      newData.push(v('new-cases-total', yr, FY_MONTHS[i]));
+      relData.push(v('relapse-total',   yr, FY_MONTHS[i]));
+    }
+  }
+
+  const hasDar = newData.some(x => x === null) || relData.some(x => x === null);
+  document.getElementById('trend-dar').style.display = hasDar ? '' : 'none';
+  document.getElementById('trend-sub').textContent =
+    `${allYears ? 'BS 2078–2082' : 'BS ' + selYear} · New cases + Relapse`;
+
+  trendChart = new Chart(document.getElementById('trend-chart'), {
+    type: 'line',
+    data: { labels, datasets: [
+      { label: 'New Cases', data: newData, borderColor: '#1d4ed8',
+        backgroundColor: 'rgba(29,78,216,0.06)', borderWidth: 2.5,
+        pointRadius: allYears ? 0 : 3, tension: 0.3, fill: true, spanGaps: false },
+      { label: 'Relapse',   data: relData, borderColor: '#dc2626',
+        backgroundColor: 'rgba(220,38,38,0.05)', borderWidth: 2,
+        pointRadius: allYears ? 0 : 3, tension: 0.3, fill: true, spanGaps: false },
+    ]},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        legend: { display: true, position: 'top',
+          labels: { font: { size: 11 }, boxWidth: 16, padding: 10 } },
+        tooltip: { callbacks: { label: c =>
+          ` ${c.dataset.label}: ${c.parsed.y === null ? 'N/R' : c.parsed.y}` } },
+      },
+      scales: {
+        x: { grid: { color: '#f3f4f6' },
+             ticks: { font: { size: 10 }, maxRotation: 0, autoSkip: allYears,
+               callback(_, i) { return labels[i]; } } },
+        y: { grid: { color: '#f3f4f6' }, min: 0, ticks: { font: { size: 10 } },
+             title: { display: true, text: 'Cases', font: { size: 10 }, color: '#6b7280' } },
+      },
+    },
+  });
+}
+
+// ── Section 2b: Gender split ──────────────────────────────────────────────────
+function renderGender() {
+  destroyChart(genderChart);
+
+  const labels = [], maleData = [], femData = [];
+  const allYears = selYear === 'all';
+  const yrs = allYears ? YEARS : [parseInt(selYear)];
+
+  for (const yr of yrs) {
+    for (let i = 0; i < 12; i++) {
+      labels.push(allYears && i === 0 ? `${yr}` : (allYears ? '' : FY_SHORT[i]));
+      maleData.push(v('new-cases-male',   yr, FY_MONTHS[i]));
+      femData.push( v('new-cases-female', yr, FY_MONTHS[i]));
+    }
+  }
+
+  const hasDar = maleData.some(x => x === null) || femData.some(x => x === null);
+  document.getElementById('gender-dar').style.display = hasDar ? '' : 'none';
+  document.getElementById('gender-sub').textContent =
+    `${allYears ? 'BS 2078–2082' : 'BS ' + selYear} · Male vs Female new cases`;
+
+  genderChart = new Chart(document.getElementById('gender-chart'), {
+    type: 'bar',
+    data: { labels, datasets: [
+      { label: 'Male',   data: maleData, backgroundColor: 'rgba(37,99,235,0.75)',  borderRadius: 2 },
+      { label: 'Female', data: femData,  backgroundColor: 'rgba(225,29,72,0.75)',  borderRadius: 2 },
+    ]},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        legend: { display: true, position: 'top',
+          labels: { font: { size: 11 }, boxWidth: 14, padding: 10 } },
+        tooltip: { callbacks: { label: c =>
+          ` ${c.dataset.label}: ${c.parsed.y === null ? 'N/R' : c.parsed.y}` } },
+      },
+      scales: {
+        x: { grid: { color: '#f3f4f6' },
+             ticks: { font: { size: 10 }, maxRotation: 0, autoSkip: allYears,
+               callback(_, i) { return labels[i]; } } },
+        y: { grid: { color: '#f3f4f6' }, min: 0, ticks: { font: { size: 10 } } },
+      },
+    },
+  });
+}
+
+// ── Section 3: Cascade of care ────────────────────────────────────────────────
+function renderCascade() {
+  destroyChart(cascadeChart);
+  document.getElementById('cas-period').textContent =
+    selYear === 'all' ? 'BS 2078–2082 aggregate' : `BS ${selYear}`;
+
+  const counts = CASCADE_ORDER.map(ind =>
+    selYear === 'all'
+      ? YEARS.reduce((s, y) => s + (annualVal(ind, y) ?? 0), 0)
+      : (annualVal(ind, parseInt(selYear)) ?? 0)
+  );
+  const base = counts[0] || 1;
+  const pcts = counts.map(c => +(c / base * 100).toFixed(1));
+
+  cascadeChart = new Chart(document.getElementById('cascade-chart'), {
+    type: 'bar',
+    data: {
+      labels: CASCADE_LABELS,
+      datasets: [{
+        data: counts, backgroundColor: CASCADE_COLORS,
+        borderRadius: 5, barThickness: 30,
+      }],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: c =>
+          ` ${c.parsed.x.toLocaleString()} patients (${pcts[c.dataIndex]}% of PBC Reg)` } },
+      },
+      scales: {
+        x: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 10 } },
+             title: { display: true, text: 'Number of patients', font: { size: 10 }, color: '#6b7280' } },
+        y: { grid: { display: false }, ticks: { font: { size: 11 } } },
+      },
+    },
+  });
+}
+
+// ── Section 4: Indicator detail (year-over-year) ──────────────────────────────
+function setIndMode(mode) {
+  indMode = mode;
+  document.getElementById('btn-count').classList.toggle('tog-active', mode === 'count');
+  document.getElementById('btn-rate').classList.toggle('tog-active',  mode === 'rate');
+  renderIndDetail();
+}
+
+function renderIndDetail() {
+  destroyChart(indChart);
+
+  const label      = IND_LABELS[selInd] || selInd;
+  const isAnnual   = ANNUAL_INDS.has(selInd);
+  const isNotif    = MONTHLY_INDS_SET.has(selInd);
+  const showRate   = isNotif && indMode === 'rate';
+
+  // Show/hide toggle; reset to count mode when switching to a cohort indicator
+  const toggle = document.getElementById('rate-toggle');
+  toggle.style.display = isNotif ? 'flex' : 'none';
+  if (!isNotif && indMode === 'rate') {
+    indMode = 'count';
+    document.getElementById('btn-count').classList.add('tog-active');
+    document.getElementById('btn-rate').classList.remove('tog-active');
+  }
+
+  document.getElementById('ind-title').textContent = `Indicator detail · ${label}`;
+  document.getElementById('ind-sub').textContent   = isAnnual
+    ? 'Year-over-year comparison · Annual cohort (horizontal line = same value all 12 months)'
+    : showRate
+      ? 'Year-over-year comparison · Cases per 100,000 population (CBS denominator)'
+      : 'Year-over-year comparison · 12-month fiscal year';
+
+  const datasets = YEARS.map((yr, i) => {
+    let raw;
+    if (isAnnual) {
+      raw = FY_MONTHS.map(() => annualVal(selInd, yr));
+    } else if (showRate) {
+      raw = FY_MONTHS.map(m => vRate(selInd, yr, m));
+    } else {
+      raw = monthlyVals(selInd, yr);
+    }
+    const isSel = selYear !== 'all' && parseInt(selYear) === yr;
+    const isDim = selYear !== 'all' && !isSel;
+    const color = YR_COLORS[i];
+    return {
+      label: `BS ${yr}`,
+      data:  raw,
+      borderColor:         color + (isDim ? '44' : 'dd'),
+      pointBackgroundColor:color + (isDim ? '44' : 'dd'),
+      backgroundColor:     'transparent',
+      borderWidth:   isSel ? 3 : 1.5,
+      pointRadius:   isSel ? 4 : 2,
+      tension:       0.3,
+      spanGaps:      false,
+    };
+  });
+
+  const hasDar = YEARS.some(yr =>
+    isNotif && FY_MONTHS.some(m => (allData[selInd]?.[yr]?.[m]?.count ?? null) === null)
+  );
+  document.getElementById('ind-dar').textContent = hasDar
+    ? '* N/R = Not Reported — BS 2078 Baishak, Jestha, Asar' : '';
+
+  const yLabel = showRate ? 'Cases per 100k population' : 'Count';
+  const fmtTip = (y) => showRate
+    ? (y === null ? 'N/R' : `${y} per 100k`)
+    : (y === null ? 'N/R' : y.toLocaleString());
+
+  indChart = new Chart(document.getElementById('ind-chart'), {
+    type: 'line',
+    data: { labels: FY_SHORT, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: c =>
+          ` ${c.dataset.label}: ${fmtTip(c.parsed.y)}` } },
+      },
+      scales: {
+        x: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 10 }, maxRotation: 0 } },
+        y: { grid: { color: '#f3f4f6' }, min: 0, ticks: { font: { size: 10 } },
+             title: { display: true, text: yLabel, font: { size: 10 }, color: '#6b7280' } },
+      },
+    },
+  });
+
+  document.getElementById('ind-legend').innerHTML = YEARS.map((yr, i) => {
+    const isSel = selYear !== 'all' && parseInt(selYear) === yr;
+    const isDim = selYear !== 'all' && !isSel;
+    return `<div class="leg-item" style="opacity:${isDim ? 0.35 : 1}">
+      <div class="leg-dot" style="background:${YR_COLORS[i]}"></div>
+      <span>BS ${yr}${isSel ? ' ◀' : ''}</span>
+    </div>`;
+  }).join('');
+}
+
+const MONTHLY_INDS_SET = new Set(['new-cases-total','new-cases-female','new-cases-male',
+  'relapse-total','relapse-female','relapse-male','total-tb-notified']);
+
+// ── Derived rate helpers ──────────────────────────────────────────────────────
+// Annualised TB notification rate (per 100k) for one year = sum of monthly rates
+function annualNotifRate(yr) {
+  const rates = FY_MONTHS.map(m => vRate('total-tb-notified', yr, m));
+  if (rates.every(r => r === null)) return null;
+  return +rates.reduce((s, r) => s + (r ?? 0), 0).toFixed(1);
+}
+
+// % rate: ind count / pbc-reg count × 100 (annual cohort)
+function cohortRate(ind, yr) {
+  const num = annualVal(ind, yr);
+  const den = annualVal('pbc-reg', yr);
+  if (num === null || den === null || den === 0) return null;
+  return +(num / den * 100).toFixed(1);
+}
+
+// Male : female ratio for one year (sum over 12 months)
+function mfRatio(yr) {
+  const male = yearSum('new-cases-male', yr);
+  const fem  = yearSum('new-cases-female', yr);
+  return fem ? +(male / fem).toFixed(2) : null;
+}
+
+// All-years versions
+function avgAnnualNotifRate() {
+  const rates = YEARS.map(annualNotifRate).filter(r => r !== null);
+  return rates.length ? +(rates.reduce((s, r) => s + r, 0) / rates.length).toFixed(1) : null;
+}
+function cohortRateAll(ind) {
+  const num = YEARS.reduce((s, y) => s + (annualVal(ind, y) ?? 0), 0);
+  const den = YEARS.reduce((s, y) => s + (annualVal('pbc-reg', y) ?? 0), 0);
+  return den ? +(num / den * 100).toFixed(1) : null;
+}
+function mfRatioAll() {
+  const male = YEARS.reduce((s, y) => s + yearSum('new-cases-male', y), 0);
+  const fem  = YEARS.reduce((s, y) => s + yearSum('new-cases-female', y), 0);
+  return fem ? +(male / fem).toFixed(2) : null;
+}
+
+// ── Section 4: Derived Rates ──────────────────────────────────────────────────
+function renderDerivedRates() {
+  destroyChart(ratesChart);
+  const isAll = selYear === 'all';
+  const yr    = isAll ? null : parseInt(selYear);
+
+  document.getElementById('rates-period').textContent =
+    isAll ? '5-year aggregate (2078–2082)' : `BS ${selYear}`;
+
+  const metrics = [
+    { label: 'Annualised Notification Rate',
+      val:  isAll ? avgAnnualNotifRate()    : annualNotifRate(yr),
+      unit: ' per 100k', color: 'blue',
+      sub:  'Total TB notified ÷ CBS district population' },
+    { label: 'Mortality Rate',
+      val:  isAll ? cohortRateAll('died')   : cohortRate('died', yr),
+      unit: '%', color: 'red',
+      sub:  'Deaths ÷ PBC registered cohort' },
+    { label: 'Loss to Follow-up Rate',
+      val:  isAll ? cohortRateAll('ltfu')   : cohortRate('ltfu', yr),
+      unit: '%', color: 'teal',
+      sub:  'LTFU ÷ PBC registered cohort' },
+    { label: 'Treatment Failure Rate',
+      val:  isAll ? cohortRateAll('failed') : cohortRate('failed', yr),
+      unit: '%', color: 'orange',
+      sub:  'Failures ÷ PBC registered cohort' },
+    { label: 'Not Evaluated Rate',
+      val:  isAll ? cohortRateAll('not-eval') : cohortRate('not-eval', yr),
+      unit: '%', color: 'gray',
+      sub:  'Not evaluated ÷ PBC registered cohort' },
+    { label: 'Male : Female Ratio',
+      val:  isAll ? mfRatioAll()            : mfRatio(yr),
+      unit: ' : 1', color: 'purple',
+      sub:  'New cases male ÷ new cases female' },
+  ];
+
+  document.getElementById('rates-grid').innerHTML = metrics.map(m =>
+    `<div class="rate-box ${m.color}">
+      <div class="rate-lbl">${m.label}</div>
+      <div class="rate-val">${m.val !== null ? m.val + m.unit : 'N/A'}</div>
+      <div class="rate-sub">${m.sub}</div>
+    </div>`
+  ).join('');
+
+  // Year-over-year line chart for the 4 cohort % rates
+  const RATE_SERIES = [
+    { ind: 'died',     label: 'Mortality %',     color: '#dc2626' },
+    { ind: 'ltfu',     label: 'LTFU %',          color: '#0e7490' },
+    { ind: 'failed',   label: 'Failure %',       color: '#d97706' },
+    { ind: 'not-eval', label: 'Not Evaluated %', color: '#6b7280' },
+  ];
+
+  const yrLabels = YEARS.map(y => `BS ${y}`);
+  const datasets  = RATE_SERIES.map(s => {
+    const isSelYr  = !isAll;
+    return {
+      label:           s.label,
+      data:            YEARS.map(y => cohortRate(s.ind, y)),
+      borderColor:     s.color,
+      backgroundColor: s.color + '18',
+      borderWidth:     2,
+      pointRadius:     YEARS.map(y => (!isAll && y === yr) ? 7 : 4),
+      pointBackgroundColor: YEARS.map(y => (!isAll && y === yr) ? s.color : '#fff'),
+      pointBorderColor:     s.color,
+      pointBorderWidth: 2,
+      tension: 0.25,
+      fill: false,
+      spanGaps: false,
+    };
+  });
+
+  ratesChart = new Chart(document.getElementById('rates-chart'), {
+    type: 'line',
+    data: { labels: yrLabels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        legend: { display: true, position: 'top',
+          labels: { font: { size: 11 }, boxWidth: 14, padding: 10 } },
+        tooltip: { callbacks: { label: c =>
+          ` ${c.dataset.label}: ${c.parsed.y !== null ? c.parsed.y + '%' : 'N/A'}` } },
+      },
+      scales: {
+        x: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 11 } } },
+        y: { grid: { color: '#f3f4f6' }, min: 0,
+             ticks: { font: { size: 10 }, callback: v => v + '%' },
+             title: { display: true, text: '% of PBC Registered cohort',
+                      font: { size: 10 }, color: '#6b7280' } },
+      },
+    },
+  });
+}
+
+function renderAll() {
+  renderKPIs();
+  renderTrend();
+  renderGender();
+  renderCascade();
+  renderDerivedRates();
+  renderIndDetail();
+  document.getElementById('header-sub').textContent =
+    selYear === 'all'
+      ? 'BS 2078–2082 · 13 indicators · FHIR R4 data source'
+      : `BS ${selYear} · 13 indicators · FHIR R4 data source`;
+}
+
+function pickYear(y)  { selYear = y; renderAll(); }
+function pickInd(key) { selInd = key; indMode = 'count'; setIndMode('count'); }
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+async function init() {
+  // Build indicator dropdown with optgroups
+  const indSel = document.getElementById('ind-sel');
+  const groups = [
+    { label: 'Notification',     keys: ['new-cases-total','new-cases-female','new-cases-male','relapse-total','relapse-female','relapse-male','total-tb-notified'] },
+    { label: 'Treatment Cohort', keys: ['pbc-reg','cured','failed','died','ltfu','not-eval'] },
+  ];
+  for (const g of groups) {
+    const og = document.createElement('optgroup');
+    og.label = g.label;
+    for (const key of g.keys) {
+      const opt = document.createElement('option');
+      opt.value       = key;
+      opt.textContent = IND_LABELS[key];
+      if (key === selInd) opt.selected = true;
+      og.appendChild(opt);
+    }
+    indSel.appendChild(og);
+  }
+
+  try {
+    const res = await fetch('/MeasureReport');
+    if (!res.ok) throw new Error(`/MeasureReport → HTTP ${res.status}`);
+    const bundle = await res.json();
+    allData = parseBundle(bundle);
+    console.log(`Loaded ${Object.keys(allData).length} indicators from FHIR bundle`);
+    renderAll();
+  } catch (e) {
+    console.error('Init failed:', e);
+    document.getElementById('kpi-grid').innerHTML =
+      `<div class="msg err" style="grid-column:1/-1">
+        Failed to load data: ${e.message}<br>
+        Make sure the FHIR server is running at ${location.origin}
+      </div>`;
+  }
+}
+
+init();
+</script>
+</body>
+</html>

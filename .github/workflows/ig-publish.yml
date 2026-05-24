@@ -1,0 +1,127 @@
+name: FHIR IG Publish
+
+# ── Triggers ──────────────────────────────────────────────────────────────────
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ig/**"
+      - ".github/workflows/ig-publish.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "ig/**"
+  workflow_dispatch:          # allow manual run from GitHub Actions UI
+
+# ── Permissions (needed for GitHub Pages deployment) ──────────────────────────
+permissions:
+  contents: read
+  pages:    write
+  id-token: write
+
+# Only one deployment at a time; cancel in-progress on new push
+concurrency:
+  group: "ig-pages"
+  cancel-in-progress: true
+
+jobs:
+
+  # ────────────────────────────────────────────────────────────────────────────
+  build:
+    name: Build FHIR IG
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Java (required by IG Publisher)
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      # 3. Set up Node.js (required by SUSHI)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # 4. Install SUSHI globally
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      # 5. Run SUSHI — compile FSH → FHIR JSON
+      - name: Run SUSHI
+        working-directory: ig
+        run: |
+          sushi .
+          echo "SUSHI completed. Generated resources:"
+          ls fsh-generated/resources/
+
+      # 6. Set up Python (for ETL)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 7. Install Python ETL dependencies
+      - name: Install ETL dependencies
+        run: pip install -r ig/scripts/requirements.txt
+
+      # 8. Run ETL — generate 3 canonical IG example instances
+      - name: Run ETL (IG examples)
+        run: python3 ig/scripts/etl.py --examples
+
+      # 9. Download IG Publisher jar
+      - name: Download IG Publisher
+        run: |
+          curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
+               -o ig/publisher.jar
+          echo "IG Publisher downloaded: $(du -sh ig/publisher.jar | cut -f1)"
+
+      # 10. Run IG Publisher
+      - name: Run IG Publisher
+        working-directory: ig
+        run: |
+          java -jar publisher.jar \
+               -ig ig.ini \
+               -no-sushi \
+               -tx https://tx.fhir.org/r4
+        # -no-sushi: SUSHI already ran in step 5
+        # -tx: use the public FHIR terminology server
+
+      # 11. Upload the built IG as a workflow artifact
+      - name: Upload IG artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: fhir-ig-output
+          path: ig/output/
+          retention-days: 30
+
+      # 12. Upload GitHub Pages artifact (only on main branch push)
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ig/output/
+
+  # ────────────────────────────────────────────────────────────────────────────
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+
+    # Only deploy on direct push to main (not on PRs)
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,63 @@
+{
+  "resourceType": "MeasureReport",
+  "id": "tb-cured-kathmandu-2078-shrawan",
+  "meta": {
+    "profile": [
+      "https://iihms.gov.np/fhir/StructureDefinition/tb-measure-report"
+    ]
+  },
+  "status": "complete",
+  "type": "summary",
+  "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-cured",
+  "subject": {
+    "reference": "Location/loc-kathmandu",
+    "display": "Kathmandu District, Nepal"
+  },
+  "date": "2026-05-24T07:01:43Z",
+  "reporter": {
+    "reference": "Organization/org-ntp",
+    "display": "National Tuberculosis Programme"
+  },
+  "period": {
+    "extension": [
+      {
+        "extension": [
+          {
+            "url": "bs-year",
+            "valueInteger": 2078
+          },
+          {
+            "url": "bs-month",
+            "valueString": "Shrawan"
+          },
+          {
+            "url": "fiscal-year",
+            "valueString": "2078/79"
+          }
+        ],
+        "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period"
+      }
+    ],
+    "start": "2021-07-16",
+    "end": "2021-08-15"
+  },
+  "group": [
+    {
+      "id": "group-nepal-tb-cured",
+      "population": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population",
+                "display": "Initial Population"
+              }
+            ]
+          },
+          "count": 840
+        }
+      ]
+    }
+  ]
+}
