@@ -7,8 +7,8 @@ from fastapi.responses import HTMLResponse, Response
 
 app = FastAPI(
     title="TB FHIR R4 Reference Server",
-    description="FHIR R4 reference API — Kathmandu TB indicators BS 2078–2082",
-    version="2.0.0",
+    description="FHIR R4 reference API — Kathmandu TB surveillance variables BS 2078–2082",
+    version="3.0.0",
 )
 
 app.add_middleware(
@@ -19,17 +19,30 @@ app.add_middleware(
 )
 
 BASE_DIR            = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
-MEASURES_DIR        = os.path.join(BASE_DIR, "fhir/measures/measures")
+MEASURES_DIR        = os.path.join(BASE_DIR, "fhir/measures")
 MEASURE_REPORTS_DIR = os.path.join(BASE_DIR, "fhir/measure_reports")
 BUNDLES_DIR         = os.path.join(MEASURE_REPORTS_DIR, "bundles")
 BY_INDICATOR_DIR    = os.path.join(MEASURE_REPORTS_DIR, "by_indicator")
 
 FHIR_CONTENT_TYPE = "application/fhir+json; charset=utf-8"
 
-VALID_INDICATORS = {
+VALID_VARIABLES = {
+    # Notification counts — ratio
     "new-cases-total", "new-cases-female", "new-cases-male",
     "relapse-total", "relapse-female", "relapse-male",
-    "total-tb-notified", "pbc-reg", "cured", "failed", "died", "ltfu", "not-eval",
+    "total-tb-notified", "total-tb-female", "total-tb-male",
+    "hiv-positive",
+    # Age-sex bands — ratio (16 variables)
+    "age-0to4-f",   "age-0to4-m",
+    "age-5to14-f",  "age-5to14-m",
+    "age-15to24-f", "age-15to24-m",
+    "age-25to34-f", "age-25to34-m",
+    "age-35to44-f", "age-35to44-m",
+    "age-45to54-f", "age-45to54-m",
+    "age-55to64-f", "age-55to64-m",
+    "age-65plus-f", "age-65plus-m",
+    # Treatment outcomes — cohort
+    "pbc-reg", "cured", "failed", "died", "ltfu", "not-eval",
 }
 
 
@@ -59,7 +72,7 @@ def dashboard():
 
 @app.get("/Measure", tags=["FHIR"])
 def list_measures():
-    """Return a FHIR Bundle containing all 13 Measure definitions."""
+    """Return a FHIR Bundle containing all 32 Measure definitions."""
     path = os.path.join(MEASURES_DIR, "nepal-tb-measures-bundle.json")
     if not os.path.exists(path):
         raise HTTPException(status_code=404, detail="Measures bundle not found")
@@ -79,7 +92,7 @@ def get_measure(measure_id: str):
 
 @app.get("/MeasureReport", tags=["FHIR"])
 def list_measure_reports():
-    """Return master FHIR Bundle — 3 shared resources + 780 MeasureReports (783 entries)."""
+    """Return master FHIR Bundle — 3 shared resources + 1,920 MeasureReports (1,923 entries)."""
     path = os.path.join(BUNDLES_DIR, "bundle-all.json")
     if not os.path.exists(path):
         raise HTTPException(status_code=404, detail="MeasureReport bundle not found")
@@ -99,7 +112,7 @@ def get_measure_report(report_id: str):
         after_prefix = report_id[len(prefix):]
         ind_end      = after_prefix.index(suffix_marker)
         indicator    = after_prefix[:ind_end]
-        if indicator in VALID_INDICATORS:
+        if indicator in VALID_VARIABLES:
             path = os.path.join(BY_INDICATOR_DIR, indicator, f"{report_id}.json")
             if os.path.exists(path):
                 return fhir_response(load_json(path))
