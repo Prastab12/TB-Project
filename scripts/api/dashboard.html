@@ -42,6 +42,7 @@
     /* ── Layout ── */
     .page { display: flex; flex-direction: column; gap: 12px; }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .two-col.single-col { grid-template-columns: 1fr; }
     @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
 
     /* ── Card ── */
@@ -121,6 +122,32 @@
     .tog-btn:hover    { background: #f3f4f6; }
     .tog-btn.tog-active { background: #1c3761; color: #fff; border-color: #1c3761; }
 
+    /* ── Overview card ── */
+    .overview-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
+    }
+    @media (max-width: 720px) { .overview-grid { grid-template-columns: 1fr; } }
+    .ov-block { padding: 12px 14px; border-radius: 9px; background: #f8fafc;
+                border: 1px solid #e5e7eb; }
+    .ov-block-title { font-size: 11px; font-weight: 700; color: #1c3761;
+                      text-transform: uppercase; letter-spacing: .04em;
+                      margin-bottom: 8px; padding-bottom: 6px;
+                      border-bottom: 1px solid #e5e7eb; }
+    .ov-row { display: flex; justify-content: space-between; align-items: baseline;
+              font-size: 11px; padding: 3px 0; border-bottom: 1px dashed #f3f4f6; }
+    .ov-row:last-child { border-bottom: none; }
+    .ov-key { color: #6b7280; }
+    .ov-val { font-weight: 600; color: #111827; text-align: right; }
+    .ov-badge-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+    .ov-badge { font-size: 10px; font-weight: 600; padding: 3px 8px;
+                border-radius: 99px; }
+    .ov-badge.blue   { background: #dbeafe; color: #1d4ed8; }
+    .ov-badge.green  { background: #dcfce7; color: #15803d; }
+    .ov-badge.amber  { background: #fef3c7; color: #b45309; }
+    .ov-badge.purple { background: #ede9fe; color: #6d28d9; }
+    .ov-badge.red    { background: #fee2e2; color: #b91c1c; }
+    .ov-badge.gray   { background: #f3f4f6; color: #374151; }
+
     /* ── Misc ── */
     .msg { display: flex; align-items: center; justify-content: center;
            height: 70px; font-size: 13px; color: #6b7280; }
@@ -132,6 +159,49 @@
       margin-right: 8px; vertical-align: middle;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── DQA badges ── */
+    .dqa-badge {
+      display: inline-flex; align-items: center;
+      font-size: 10px; font-weight: 600;
+      padding: 2px 7px; border-radius: 99px;
+      margin-left: 8px; vertical-align: middle;
+      letter-spacing: .02em; cursor: default;
+    }
+    .dqa-amber { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+    .dqa-gray  { background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; }
+    .dqa-red   { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+    .dqa-green { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+
+    /* ── Focus / dim ── */
+    .section-focus {
+      box-shadow: 0 0 0 2px #1c3761, 0 6px 20px rgba(28,55,97,0.13);
+      border-radius: 12px;
+      transition: box-shadow .2s, opacity .2s;
+    }
+    .section-dim {
+      opacity: 0.42;
+      transition: opacity .2s;
+    }
+    .rate-box-focus {
+      box-shadow: 0 0 0 2px #1c3761, 0 4px 14px rgba(0,0,0,0.1) !important;
+      transform: translateY(-2px);
+      transition: all .2s;
+    }
+
+    /* ── DQA card tables ── */
+    .dqa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 720px) { .dqa-grid { grid-template-columns: 1fr; } }
+    .dqa-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .dqa-table th { padding: 4px 0; color: #6b7280; font-weight: 600; text-align: left; }
+    .dqa-table td { padding: 5px 0; color: #374151; border-top: 1px dashed #f3f4f6; }
+    .dqa-table td:nth-child(2) { padding-right: 10px; }
+    .dqa-section-head {
+      font-size: 11px; font-weight: 700; color: #1c3761;
+      text-transform: uppercase; letter-spacing: .04em;
+      margin-bottom: 8px; padding-bottom: 5px;
+      border-bottom: 1px solid #e5e7eb;
+    }
   </style>
 </head>
 <body>
@@ -153,33 +223,48 @@
       <option value="2082">BS 2082</option>
     </select>
     <label for="ind-sel">Indicator</label>
-    <select id="ind-sel" onchange="pickInd(this.value)"></select>
+    <select id="ind-sel" onchange="pickIndOrFocus(this.value)"></select>
   </div>
 </div>
 
 <div class="page">
 
-  <!-- 1. KPI Cards -->
+  <!-- 0. Overview -->
   <div class="card">
+    <div class="card-title">Overview</div>
+    <div style="font-size:12px;color:#374151;line-height:1.65;background:#f0f7ff;border-left:4px solid #1c3761;border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:14px">
+      This dashboard monitors <strong>Tuberculosis (TB) performance indicators</strong> for
+      <strong>Kathmandu District, Nepal</strong> across 5 Bikram Sambat fiscal years
+      (<strong>BS 2078–2082</strong>, approx. 2021–2025).
+      It visualises <strong>13 NTP indicators</strong> — monthly case notification rates and
+      annual treatment outcomes — derived from <strong>780 FHIR R4 MeasureReport resources</strong>
+      generated from DHIS2 source data.
+      Use the <em>Year</em> filter to drill into a specific fiscal year,
+      or <em>Indicator</em> to explore individual measures.
+    </div>
+  </div>
+
+  <!-- 1. KPI Cards -->
+  <div class="card" id="sec-kpi">
     <div class="card-title">Key figures · <span id="kpi-period">Loading…</span></div>
-    <div class="card-sub">Totals from FHIR MeasureReport resources</div>
+    <!-- <div class="card-sub">Totals from FHIR MeasureReport resources</div> -->
     <div class="kpi-grid" id="kpi-grid">
       <div class="msg" style="grid-column:1/-1"><span class="spinner"></span>Loading…</div>
     </div>
   </div>
 
   <!-- 2. Notification trend + Gender split -->
-  <div class="two-col">
-    <div class="card">
-      <div class="card-title">Monthly notification trend</div>
+  <div class="two-col" id="sec-notif-wrap">
+    <div class="card" id="sec-trend">
+      <div class="card-title">Monthly notification trend <span class="dqa-badge dqa-gray" title="5% missing data (MCAR) — safe for analysis. N/R months in BS 2078.">5% missing · MCAR</span></div>
       <div class="card-sub" id="trend-sub" style="margin-bottom:10px">New cases + Relapse</div>
       <div class="chart-wrap"><canvas id="trend-chart"></canvas></div>
       <div class="dar-note" id="trend-dar" style="display:none">
         * N/R = Not Reported — BS 2078 Baishak, Jestha, Asar (under-reported in source data)
       </div>
     </div>
-    <div class="card">
-      <div class="card-title">Gender split · New cases</div>
+    <div class="card" id="sec-gender">
+      <div class="card-title">Gender split · New cases <span class="dqa-badge dqa-amber" title="17.05% missing (MAR) — gaps concentrated in Rasuwa &amp; Ramechhap districts. Safe for imputation.">17% missing · MAR</span></div>
       <div class="card-sub" id="gender-sub" style="margin-bottom:10px">Male vs Female</div>
       <div class="chart-wrap"><canvas id="gender-chart"></canvas></div>
       <div class="dar-note" id="gender-dar" style="display:none">
@@ -189,26 +274,28 @@
   </div>
 
   <!-- 3. Cascade of care -->
-  <div class="card">
+  <div class="card" id="sec-cascade">
     <div class="card-title">Cascade of care · <span id="cas-period">Loading…</span></div>
     <div class="card-sub">Treatment cohort outcomes — PBC Registered → Cured / Failed / Died / LTFU / Not Evaluated</div>
     <div class="chart-wrap-cas"><canvas id="cascade-chart"></canvas></div>
   </div>
 
   <!-- 4. Derived Rates -->
-  <div class="card">
-    <div class="card-title">Derived Rates · <span id="rates-period">Loading…</span></div>
-    <div class="card-sub">Computed from FHIR ratio and cohort MeasureReport resources</div>
+  <div class="card" id="sec-rates">
+    <div class="card-title">Derived Rates · <span id="rates-period">Loading…</span> <span class="dqa-badge dqa-amber" title="12 rows where sum of outcomes exceeds PBC Registered — raw IIHMS data entry errors. Affects cohort rate denominators.">12 rows over-reported</span></div>
+    <!-- <div class="card-sub">Computed from FHIR ratio and cohort MeasureReport resources</div> -->
     <div class="rate-grid" id="rates-grid">
       <div class="msg" style="grid-column:1/-1"><span class="spinner"></span>Loading…</div>
     </div>
-    <div class="card-title" style="font-size:13px;margin-bottom:3px">Cohort outcome rates · BS 2078–2082</div>
-    <div class="card-sub" style="margin-bottom:10px">Mortality / LTFU / Failure / Not-evaluated as % of PBC Registered cohort</div>
-    <div class="chart-wrap"><canvas id="rates-chart"></canvas></div>
+    <div id="rates-chart-block">
+      <div class="card-title" id="rates-chart-title" style="font-size:13px;margin-bottom:3px">Cohort outcome rates · BS 2078–2082</div>
+      <div class="card-sub" id="rates-chart-sub" style="margin-bottom:10px">Mortality / LTFU / Failure / Not-evaluated as % of PBC Registered cohort</div>
+      <div class="chart-wrap"><canvas id="rates-chart"></canvas></div>
+    </div>
   </div>
 
   <!-- 5. Indicator detail (year-over-year) -->
-  <div class="card">
+  <div class="card" id="sec-ind-detail">
     <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:2px">
       <div class="card-title" id="ind-title">Indicator detail</div>
       <div id="rate-toggle" style="display:none;gap:4px;display:none">
@@ -220,6 +307,100 @@
     <div class="chart-wrap-lg"><canvas id="ind-chart"></canvas></div>
     <div class="legend" id="ind-legend"></div>
     <div class="dar-note" id="ind-dar"></div>
+  </div>
+
+  <!-- 6. DQA Results (shown only when Focus = DQA) -->
+  <div class="card" id="sec-dqa" style="display:none">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap">
+      <div class="card-title">Data Quality Assessment Results</div>
+      <span class="dqa-badge dqa-amber">⚠ Issues detected</span>
+    </div>
+    <div class="card-sub" style="margin-bottom:16px">
+      Dataset: cleaned_data.csv · Assessment: 2026-05-16 · 780 rows × 30 variables · Kathmandu District
+    </div>
+
+    <div class="dqa-grid">
+      <!-- Quality checks -->
+      <div>
+        <div class="dqa-section-head">Quality Checks</div>
+        <table class="dqa-table">
+          <thead><tr><th>Dimension</th><th>Status</th><th>Detail</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Completeness</td>
+              <td><span class="dqa-badge dqa-amber" style="margin:0">WARN</span></td>
+              <td style="color:#6b7280">3 variables with gaps</td>
+            </tr>
+            <tr>
+              <td>Logical consistency</td>
+              <td><span class="dqa-badge dqa-green" style="margin:0">PASS</span></td>
+              <td style="color:#6b7280">No numerator &gt; denominator</td>
+            </tr>
+            <tr>
+              <td>Sum consistency</td>
+              <td><span class="dqa-badge dqa-amber" style="margin:0">WARN</span></td>
+              <td style="color:#6b7280">12 rows over-reported</td>
+            </tr>
+            <tr>
+              <td>Temporal plausibility</td>
+              <td><span class="dqa-badge dqa-green" style="margin:0">PASS</span></td>
+              <td style="color:#6b7280">0 negative values</td>
+            </tr>
+            <tr>
+              <td>Epidemiological range</td>
+              <td><span class="dqa-badge dqa-green" style="margin:0">PASS</span></td>
+              <td style="color:#6b7280">99–232 per 100k (expected)</td>
+            </tr>
+            <tr>
+              <td>Schema validation</td>
+              <td><span class="dqa-badge dqa-green" style="margin:0">PASS</span></td>
+              <td style="color:#6b7280">0 violations (Pandera)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Variable missingness -->
+      <div>
+        <div class="dqa-section-head">Variable Missingness</div>
+        <table class="dqa-table">
+          <thead><tr><th>Variable</th><th>Missing</th><th>Mechanism</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Treatment outcomes</td>
+              <td style="font-weight:700;color:#15803d">0%</td>
+              <td><span class="dqa-badge dqa-green" style="margin:0">Complete</span></td>
+            </tr>
+            <tr>
+              <td>Total aggregates</td>
+              <td style="font-weight:700;color:#b45309">5.00%</td>
+              <td><span class="dqa-badge dqa-gray" style="margin:0">MCAR</span></td>
+            </tr>
+            <tr>
+              <td>Gender disaggregated</td>
+              <td style="font-weight:700;color:#b45309">12.69%</td>
+              <td><span class="dqa-badge dqa-amber" style="margin:0">MAR</span></td>
+            </tr>
+            <tr>
+              <td>Male : Female ratio</td>
+              <td style="font-weight:700;color:#b45309">17.05%</td>
+              <td><span class="dqa-badge dqa-amber" style="margin:0">MAR</span></td>
+            </tr>
+            <tr>
+              <td>art_cov_pct</td>
+              <td style="font-weight:700;color:#dc2626">32.31%</td>
+              <td><span class="dqa-badge dqa-red" style="margin:0">MNAR · Gap</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;padding:10px 14px;background:#f0f7ff;border-left:3px solid #1c3761;border-radius:0 6px 6px 0;font-size:11px;color:#374151;line-height:1.7">
+      <strong>Record completeness:</strong> 502 / 780 rows (64%) fully complete · Average missingness per row: 4.65%<br>
+      <strong>Key flag:</strong> 12 rows where sum of outcomes exceeds PBC Registered — raw IIHMS data entry errors that affect cohort rate denominators.<br>
+      <strong>art_cov_pct</strong> excluded from all analyses (MNAR, 32.31% missing — structural data gap).
+    </div>
   </div>
 
 </div>
@@ -253,10 +434,29 @@ const CASCADE_LABELS = ['PBC Registered','Cured','Failed','Died','Lost to Follow
 const CASCADE_COLORS = ['#1a4480','#15803d','#dc2626','#991b1b','#f97316','#6b7280'];
 
 let allData = {};
-let selYear = 'all';
-let selInd  = 'new-cases-total';
-let indMode = 'count';   // 'count' | 'rate'
+let selYear  = 'all';
+let selInd   = 'new-cases-total';
+let indMode  = 'count';   // 'count' | 'rate'
+let selFocus = 'overview';
 let trendChart, genderChart, cascadeChart, ratesChart, indChart;
+
+const FOCUS_CONFIG = {
+  'notification-rate': { sections: ['sec-rates','sec-ind-detail'], ind: 'total-tb-notified' },
+  'mortality-rate':    { sections: ['sec-rates','sec-ind-detail'], ind: 'died'              },
+  'ltfu-rate':         { sections: ['sec-rates','sec-ind-detail'], ind: 'ltfu'              },
+  'failure-rate':      { sections: ['sec-rates','sec-ind-detail'], ind: 'failed'            },
+  'not-eval-rate':     { sections: ['sec-rates','sec-ind-detail'], ind: 'not-eval'          },
+  'mf-ratio':          { sections: ['sec-rates','sec-gender'],     ind: null                },
+  'dqa':               { sections: ['sec-dqa'],                    ind: null                },
+};
+
+const FOCUS_RATE_IDX = {
+  'notification-rate': 0, 'mortality-rate': 1,
+  'ltfu-rate': 2, 'failure-rate': 3,
+  'not-eval-rate': 4, 'mf-ratio': 5,
+};
+
+const ALL_SECTIONS = ['sec-kpi','sec-trend','sec-gender','sec-cascade','sec-rates','sec-ind-detail','sec-dqa'];
 
 // ── Parse FHIR bundle ─────────────────────────────────────────────────────────
 function parseBundle(bundle) {
@@ -325,6 +525,50 @@ function kpiVal(ind, year) {
 }
 
 function destroyChart(c) { try { c?.destroy(); } catch(_) {} }
+
+function applyFocusClasses() {
+  const notifWrap = document.getElementById('sec-notif-wrap');
+
+  const ratesChartBlock = document.getElementById('rates-chart-block');
+
+  if (selFocus === 'overview') {
+    ALL_SECTIONS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { el.style.display = id === 'sec-dqa' ? 'none' : ''; el.classList.remove('section-focus'); }
+    });
+    notifWrap.style.display = '';
+    notifWrap.classList.remove('single-col');
+    ratesChartBlock.style.display = '';
+    return;
+  }
+
+  ratesChartBlock.style.display = 'none';
+
+  // Hide all sections
+  ALL_SECTIONS.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.style.display = 'none'; el.classList.remove('section-focus'); }
+  });
+  notifWrap.style.display = 'none';
+  notifWrap.classList.remove('single-col');
+
+  const cfg = FOCUS_CONFIG[selFocus];
+  if (!cfg) return;
+
+  cfg.sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.style.display = '';
+    el.classList.add('section-focus');
+
+    // sec-gender lives inside sec-notif-wrap — make the wrapper visible too
+    if (id === 'sec-gender') {
+      notifWrap.style.display = '';
+      notifWrap.classList.add('single-col');
+    }
+  });
+}
+
 
 // ── Section 1: KPI Cards ──────────────────────────────────────────────────────
 function renderKPIs() {
@@ -496,12 +740,11 @@ function setIndMode(mode) {
 function renderIndDetail() {
   destroyChart(indChart);
 
-  const label      = IND_LABELS[selInd] || selInd;
-  const isAnnual   = ANNUAL_INDS.has(selInd);
-  const isNotif    = MONTHLY_INDS_SET.has(selInd);
-  const showRate   = isNotif && indMode === 'rate';
+  const label    = IND_LABELS[selInd] || selInd;
+  const isAnnual = ANNUAL_INDS.has(selInd) && !COHORT_MONTHLY_INDS.has(selInd);
+  const isNotif  = MONTHLY_INDS_SET.has(selInd) || COHORT_MONTHLY_INDS.has(selInd);
+  const showRate = isNotif && indMode === 'rate';
 
-  // Show/hide toggle; reset to count mode when switching to a cohort indicator
   const toggle = document.getElementById('rate-toggle');
   toggle.style.display = isNotif ? 'flex' : 'none';
   if (!isNotif && indMode === 'rate') {
@@ -511,45 +754,101 @@ function renderIndDetail() {
   }
 
   document.getElementById('ind-title').textContent = `Indicator detail · ${label}`;
-  document.getElementById('ind-sub').textContent   = isAnnual
-    ? 'Year-over-year comparison · Annual cohort (horizontal line = same value all 12 months)'
-    : showRate
-      ? 'Year-over-year comparison · Cases per 100,000 population (CBS denominator)'
+  document.getElementById('ind-dar').textContent   = '';
+
+  // ── Annual cohort: grouped bar chart (one bar per year) ──────────────────────
+  if (isAnnual) {
+    document.getElementById('ind-sub').textContent =
+      'Year-over-year comparison · Annual treatment cohort outcome';
+
+    const vals    = YEARS.map(yr => annualVal(selInd, yr));
+    const bgColors = YEARS.map((yr, i) => {
+      const isSel = selYear !== 'all' && parseInt(selYear) === yr;
+      const isDim = selYear !== 'all' && !isSel;
+      return YR_COLORS[i] + (isDim ? '33' : 'cc');
+    });
+    const bdColors = YEARS.map((yr, i) => {
+      const isSel = selYear !== 'all' && parseInt(selYear) === yr;
+      const isDim = selYear !== 'all' && !isSel;
+      return YR_COLORS[i] + (isDim ? '44' : 'ff');
+    });
+    const bdWidths = YEARS.map(yr => {
+      const isSel = selYear !== 'all' && parseInt(selYear) === yr;
+      return isSel ? 2.5 : 1;
+    });
+
+    indChart = new Chart(document.getElementById('ind-chart'), {
+      type: 'bar',
+      data: {
+        labels: YEARS.map(y => `BS ${y}`),
+        datasets: [{
+          label: label,
+          data:  vals,
+          backgroundColor: bgColors,
+          borderColor:     bdColors,
+          borderWidth:     bdWidths,
+          borderRadius:    5,
+          barThickness:    44,
+        }],
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: c =>
+            ` ${label}: ${c.parsed.y !== null ? c.parsed.y.toLocaleString() : 'N/A'}` } },
+        },
+        scales: {
+          x: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 11 } } },
+          y: { grid: { color: '#f3f4f6' }, min: 0, ticks: { font: { size: 10 } },
+               title: { display: true, text: 'Count',
+                        font: { size: 10 }, color: '#6b7280' } },
+        },
+      },
+    });
+
+    document.getElementById('ind-legend').innerHTML = YEARS.map((yr, i) => {
+      const isSel = selYear !== 'all' && parseInt(selYear) === yr;
+      const isDim = selYear !== 'all' && !isSel;
+      return `<div class="leg-item" style="opacity:${isDim ? 0.18 : 1}">
+        <div class="leg-dot" style="background:${YR_COLORS[i]}"></div>
+        <span>BS ${yr}${isSel ? ' ◀' : ''}</span>
+      </div>`;
+    }).join('');
+    return;
+  }
+
+  // ── Monthly notification: line chart ─────────────────────────────────────────
+  document.getElementById('ind-sub').textContent = showRate
+    ? 'Year-over-year comparison · Cases per 100,000 population (CBS denominator)'
+    : COHORT_MONTHLY_INDS.has(selInd)
+      ? 'Year-over-year comparison · Annual cohort value shown across fiscal year months'
       : 'Year-over-year comparison · 12-month fiscal year';
 
   const datasets = YEARS.map((yr, i) => {
-    let raw;
-    if (isAnnual) {
-      raw = FY_MONTHS.map(() => annualVal(selInd, yr));
-    } else if (showRate) {
-      raw = FY_MONTHS.map(m => vRate(selInd, yr, m));
-    } else {
-      raw = monthlyVals(selInd, yr);
-    }
+    const raw   = showRate ? FY_MONTHS.map(m => vRate(selInd, yr, m)) : monthlyVals(selInd, yr);
     const isSel = selYear !== 'all' && parseInt(selYear) === yr;
     const isDim = selYear !== 'all' && !isSel;
     const color = YR_COLORS[i];
     return {
-      label: `BS ${yr}`,
-      data:  raw,
-      borderColor:         color + (isDim ? '44' : 'dd'),
-      pointBackgroundColor:color + (isDim ? '44' : 'dd'),
-      backgroundColor:     'transparent',
-      borderWidth:   isSel ? 3 : 1.5,
-      pointRadius:   isSel ? 4 : 2,
-      tension:       0.3,
-      spanGaps:      false,
+      label: `BS ${yr}`, data: raw,
+      borderColor:          color + (isDim ? '18' : 'ee'),
+      pointBackgroundColor: color + (isDim ? '18' : 'ee'),
+      backgroundColor:      'transparent',
+      borderWidth:   isSel ? 3.5 : 1.5,
+      pointRadius:   isSel ? 5 : (isDim ? 0 : 3),
+      tension: 0.3, spanGaps: false,
     };
   });
 
   const hasDar = YEARS.some(yr =>
-    isNotif && FY_MONTHS.some(m => (allData[selInd]?.[yr]?.[m]?.count ?? null) === null)
+    FY_MONTHS.some(m => (allData[selInd]?.[yr]?.[m]?.count ?? null) === null)
   );
   document.getElementById('ind-dar').textContent = hasDar
     ? '* N/R = Not Reported — BS 2078 Baishak, Jestha, Asar' : '';
 
   const yLabel = showRate ? 'Cases per 100k population' : 'Count';
-  const fmtTip = (y) => showRate
+  const fmtTip = y => showRate
     ? (y === null ? 'N/R' : `${y} per 100k`)
     : (y === null ? 'N/R' : y.toLocaleString());
 
@@ -575,7 +874,7 @@ function renderIndDetail() {
   document.getElementById('ind-legend').innerHTML = YEARS.map((yr, i) => {
     const isSel = selYear !== 'all' && parseInt(selYear) === yr;
     const isDim = selYear !== 'all' && !isSel;
-    return `<div class="leg-item" style="opacity:${isDim ? 0.35 : 1}">
+    return `<div class="leg-item" style="opacity:${isDim ? 0.18 : 1}">
       <div class="leg-dot" style="background:${YR_COLORS[i]}"></div>
       <span>BS ${yr}${isSel ? ' ◀' : ''}</span>
     </div>`;
@@ -584,6 +883,9 @@ function renderIndDetail() {
 
 const MONTHLY_INDS_SET = new Set(['new-cases-total','new-cases-female','new-cases-male',
   'relapse-total','relapse-female','relapse-male','total-tb-notified']);
+
+// Show month-wise line chart for these cohort outcomes (bar chart reserved for pbc-reg/cured)
+const COHORT_MONTHLY_INDS = new Set(['died','ltfu','failed','not-eval']);
 
 // ── Derived rate helpers ──────────────────────────────────────────────────────
 // Annualised TB notification rate (per 100k) for one year = sum of monthly rates
@@ -660,62 +962,120 @@ function renderDerivedRates() {
       sub:  'New cases male ÷ new cases female' },
   ];
 
-  document.getElementById('rates-grid').innerHTML = metrics.map(m =>
-    `<div class="rate-box ${m.color}">
+  document.getElementById('rates-grid').innerHTML = metrics.map((m, i) => {
+    const focused = FOCUS_RATE_IDX[selFocus] === i;
+    return `<div class="rate-box ${m.color}${focused ? ' rate-box-focus' : ''}">
       <div class="rate-lbl">${m.label}</div>
       <div class="rate-val">${m.val !== null ? m.val + m.unit : 'N/A'}</div>
       <div class="rate-sub">${m.sub}</div>
-    </div>`
-  ).join('');
+    </div>`;
+  }).join('');
 
-  // Year-over-year line chart for the 4 cohort % rates
   const RATE_SERIES = [
-    { ind: 'died',     label: 'Mortality %',     color: '#dc2626' },
-    { ind: 'ltfu',     label: 'LTFU %',          color: '#0e7490' },
-    { ind: 'failed',   label: 'Failure %',       color: '#d97706' },
-    { ind: 'not-eval', label: 'Not Evaluated %', color: '#6b7280' },
+    { ind: 'died',     label: 'Mortality',     color: '#dc2626' },
+    { ind: 'ltfu',     label: 'LTFU',          color: '#0e7490' },
+    { ind: 'failed',   label: 'Failure',       color: '#d97706' },
+    { ind: 'not-eval', label: 'Not Evaluated', color: '#6b7280' },
   ];
 
-  const yrLabels = YEARS.map(y => `BS ${y}`);
-  const datasets  = RATE_SERIES.map(s => {
-    const isSelYr  = !isAll;
-    return {
-      label:           s.label,
-      data:            YEARS.map(y => cohortRate(s.ind, y)),
-      borderColor:     s.color,
-      backgroundColor: s.color + '18',
-      borderWidth:     2,
-      pointRadius:     YEARS.map(y => (!isAll && y === yr) ? 7 : 4),
-      pointBackgroundColor: YEARS.map(y => (!isAll && y === yr) ? s.color : '#fff'),
-      pointBorderColor:     s.color,
-      pointBorderWidth: 2,
-      tension: 0.25,
-      fill: false,
-      spanGaps: false,
-    };
-  });
+  const ratesChartTitle = document.getElementById('rates-chart-title');
+  const ratesChartSub   = document.getElementById('rates-chart-sub');
 
-  ratesChart = new Chart(document.getElementById('rates-chart'), {
-    type: 'line',
-    data: { labels: yrLabels, datasets },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      interaction: { intersect: false, mode: 'index' },
-      plugins: {
-        legend: { display: true, position: 'top',
-          labels: { font: { size: 11 }, boxWidth: 14, padding: 10 } },
-        tooltip: { callbacks: { label: c =>
-          ` ${c.dataset.label}: ${c.parsed.y !== null ? c.parsed.y + '%' : 'N/A'}` } },
+  if (isAll) {
+    // All years: multi-year trend line chart
+    ratesChartTitle.textContent = 'Cohort outcome rates · BS 2078–2082';
+    ratesChartSub.textContent   = 'Mortality / LTFU / Failure / Not-evaluated as % of PBC Registered cohort';
+
+    const yrLabels = YEARS.map(y => `BS ${y}`);
+    const datasets = RATE_SERIES.map(s => ({
+      label:                s.label + ' %',
+      data:                 YEARS.map(y => cohortRate(s.ind, y)),
+      borderColor:          s.color,
+      backgroundColor:      s.color + '18',
+      borderWidth:          2,
+      pointRadius:          4,
+      pointBackgroundColor: '#fff',
+      pointBorderColor:     s.color,
+      pointBorderWidth:     2,
+      tension: 0.25, fill: false, spanGaps: false,
+    }));
+
+    ratesChart = new Chart(document.getElementById('rates-chart'), {
+      type: 'line',
+      data: { labels: yrLabels, datasets },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        interaction: { intersect: false, mode: 'index' },
+        plugins: {
+          legend: { display: true, position: 'top',
+            labels: { font: { size: 11 }, boxWidth: 14, padding: 10 } },
+          tooltip: { callbacks: { label: c =>
+            ` ${c.dataset.label}: ${c.parsed.y !== null ? c.parsed.y + '%' : 'N/A'}` } },
+        },
+        scales: {
+          x: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 11 } } },
+          y: { grid: { color: '#f3f4f6' }, min: 0,
+               ticks: { font: { size: 10 }, callback: v => v + '%' },
+               title: { display: true, text: '% of PBC Registered cohort',
+                        font: { size: 10 }, color: '#6b7280' } },
+        },
       },
-      scales: {
-        x: { grid: { color: '#f3f4f6' }, ticks: { font: { size: 11 } } },
-        y: { grid: { color: '#f3f4f6' }, min: 0,
-             ticks: { font: { size: 10 }, callback: v => v + '%' },
-             title: { display: true, text: '% of PBC Registered cohort',
-                      font: { size: 10 }, color: '#6b7280' } },
+    });
+
+  } else {
+    // Single year: horizontal grouped bar — selected year vs 5-yr average
+    ratesChartTitle.textContent = `Cohort outcome rates · BS ${selYear}`;
+    ratesChartSub.textContent   = `BS ${selYear} vs 5-year average (2078–2082) · % of PBC Registered cohort`;
+
+    const vals    = RATE_SERIES.map(s => cohortRate(s.ind, yr));
+    const avgVals = RATE_SERIES.map(s => cohortRateAll(s.ind));
+    const colors  = RATE_SERIES.map(s => s.color);
+
+    ratesChart = new Chart(document.getElementById('rates-chart'), {
+      type: 'bar',
+      data: {
+        labels: RATE_SERIES.map(s => s.label),
+        datasets: [
+          {
+            label:           `BS ${yr}`,
+            data:            vals,
+            backgroundColor: colors.map(c => c + 'cc'),
+            borderColor:     colors,
+            borderWidth:     1.5,
+            borderRadius:    5,
+            barThickness:    20,
+          },
+          {
+            label:           '5-yr avg',
+            data:            avgVals,
+            backgroundColor: colors.map(c => c + '30'),
+            borderColor:     colors.map(c => c + '80'),
+            borderWidth:     1,
+            borderRadius:    5,
+            barThickness:    20,
+          },
+        ],
       },
-    },
-  });
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        interaction: { intersect: false, mode: 'index' },
+        plugins: {
+          legend: { display: true, position: 'top',
+            labels: { font: { size: 11 }, boxWidth: 14, padding: 10 } },
+          tooltip: { callbacks: { label: c =>
+            ` ${c.dataset.label}: ${c.parsed.x !== null ? c.parsed.x + '%' : 'N/A'}` } },
+        },
+        scales: {
+          x: { grid: { color: '#f3f4f6' }, min: 0,
+               ticks: { font: { size: 10 }, callback: v => v + '%' },
+               title: { display: true, text: '% of PBC Registered cohort',
+                        font: { size: 10 }, color: '#6b7280' } },
+          y: { grid: { display: false }, ticks: { font: { size: 11 } } },
+        },
+      },
+    });
+  }
 }
 
 function renderAll() {
@@ -727,33 +1087,66 @@ function renderAll() {
   renderIndDetail();
   document.getElementById('header-sub').textContent =
     selYear === 'all'
-      ? 'BS 2078–2082 · 13 indicators · FHIR R4 data source'
-      : `BS ${selYear} · 13 indicators · FHIR R4 data source`;
+      ? 'BS 2078–2082 · 13 indicators'
+      : `BS ${selYear} · 13 indicators`;
+  applyFocusClasses();
 }
+
+const FOCUS_KEYS = new Set(['notification-rate','mortality-rate','ltfu-rate','failure-rate','not-eval-rate','mf-ratio','dqa']);
 
 function pickYear(y)  { selYear = y; renderAll(); }
 function pickInd(key) { selInd = key; indMode = 'count'; setIndMode('count'); }
+
+function pickIndOrFocus(val) {
+  if (val === 'overview') {
+    selFocus = 'overview';
+    renderDerivedRates();
+    applyFocusClasses();
+  } else if (FOCUS_KEYS.has(val)) {
+    pickFocus(val);
+  } else {
+    selFocus = 'overview';
+    pickInd(val);
+  }
+}
+
+function pickFocus(val) {
+  selFocus = val;
+  const cfg = FOCUS_CONFIG[selFocus];
+  if (cfg?.ind) { selInd = cfg.ind; indMode = 'count'; }
+  renderDerivedRates();
+  if (cfg?.ind) renderIndDetail();
+  applyFocusClasses();
+  document.getElementById('sec-rates')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 async function init() {
   // Build indicator dropdown with optgroups
   const indSel = document.getElementById('ind-sel');
-  const groups = [
-    { label: 'Notification',     keys: ['new-cases-total','new-cases-female','new-cases-male','relapse-total','relapse-female','relapse-male','total-tb-notified'] },
-    { label: 'Treatment Cohort', keys: ['pbc-reg','cured','failed','died','ltfu','not-eval'] },
+  // Overview option
+  const overviewOpt = document.createElement('option');
+  overviewOpt.value = 'overview'; overviewOpt.textContent = 'Overview'; overviewOpt.selected = true;
+  indSel.appendChild(overviewOpt);
+
+  // Derived Rates & DQA optgroup
+  const focusGroup = document.createElement('optgroup');
+  focusGroup.label = 'Derived Rates & DQA';
+  const focusOpts = [
+    { value: 'notification-rate', label: 'TB Notification Rate'    },
+    { value: 'mortality-rate',    label: 'Mortality Rate'          },
+    { value: 'ltfu-rate',         label: 'Lost to Follow-up Rate'  },
+    { value: 'failure-rate',      label: 'Treatment Failure Rate'  },
+    { value: 'not-eval-rate',     label: 'Not Evaluated Rate'      },
+    { value: 'mf-ratio',          label: 'Male : Female Ratio'     },
+    { value: 'dqa',               label: 'DQA Results'             },
   ];
-  for (const g of groups) {
-    const og = document.createElement('optgroup');
-    og.label = g.label;
-    for (const key of g.keys) {
-      const opt = document.createElement('option');
-      opt.value       = key;
-      opt.textContent = IND_LABELS[key];
-      if (key === selInd) opt.selected = true;
-      og.appendChild(opt);
-    }
-    indSel.appendChild(og);
+  for (const o of focusOpts) {
+    const opt = document.createElement('option');
+    opt.value = o.value; opt.textContent = o.label;
+    focusGroup.appendChild(opt);
   }
+  indSel.appendChild(focusGroup);
 
   try {
     const res = await fetch('/MeasureReport');
