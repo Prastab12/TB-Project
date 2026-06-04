@@ -301,19 +301,19 @@ st.divider()
 # ── Section 3: Age-Sex Distribution ──────────────────────────────────────────
 st.subheader("3. Age-Sex Distribution of New TB Cases")
 
-age_years = sorted(df["bs_year"].dropna().unique().astype(int).tolist())
-sel_age_year = st.selectbox("Select BS Year", options=age_years,
-                            index=len(age_years) - 1, key="age_yr")
-
-age_df = df[(df["bs_year"] == sel_age_year)][AGE_F_COLS + AGE_M_COLS].dropna()
+# Aggregate across all selected years — no year filter
+age_df = fd[AGE_F_COLS + AGE_M_COLS].dropna()
 
 if age_df.empty:
-    st.info(f"No age-sex data for BS {sel_age_year}.")
+    st.info("No age-sex data available for the selected period.")
 else:
-    f_vals = age_df[AGE_F_COLS].sum().values.tolist()
-    m_vals = age_df[AGE_M_COLS].sum().values.tolist()
+    f_vals  = age_df[AGE_F_COLS].sum().values.tolist()
+    m_vals  = age_df[AGE_M_COLS].sum().values.tolist()
     total_f = sum(f_vals)
     total_m = sum(m_vals)
+
+    yr_label = (f"BS {min(sel_years)}" if len(sel_years) == 1
+                else f"BS {min(sel_years)}–{max(sel_years)}")
 
     fig_age = go.Figure()
     fig_age.add_trace(go.Bar(
@@ -329,14 +329,20 @@ else:
         marker_color="#3b82f6",
         hovertemplate="%{x}<extra>Male</extra>",
     ))
+
+    max_val = max(max(f_vals), max(m_vals))
+    tick_step = 100 if max_val > 400 else 50
+    ticks = list(range(0, int(max_val * 1.2), tick_step))
+    tick_vals = [-t for t in reversed(ticks[1:])] + ticks
+    tick_text = [str(t) for t in reversed(ticks[1:])] + [str(t) for t in ticks]
+
     fig_age.update_layout(
         barmode="overlay",
-        title=f"BS {sel_age_year} — New TB Cases by Age Group "
+        title=f"{yr_label} — New TB Cases by Age Group  "
               f"(Female: {int(total_f):,} | Male: {int(total_m):,})",
         xaxis=dict(
             title="Case Count",
-            tickvals=[-200, -150, -100, -50, 0, 50, 100, 150, 200],
-            ticktext=["200", "150", "100", "50", "0", "50", "100", "150", "200"],
+            tickvals=tick_vals, ticktext=tick_text,
             zeroline=True, zerolinecolor="#374151", zerolinewidth=1.5,
             showgrid=True, gridcolor="#f3f4f6",
         ),
@@ -353,10 +359,10 @@ else:
     with a1:
         age_summary = pd.DataFrame({
             "Age Group": AGE_GROUPS,
-            "Female": [int(v) for v in f_vals],
-            "Male":   [int(v) for v in m_vals],
+            "Female":    [int(v) for v in f_vals],
+            "Male":      [int(v) for v in m_vals],
         })
-        age_summary["Total"] = age_summary["Female"] + age_summary["Male"]
+        age_summary["Total"]      = age_summary["Female"] + age_summary["Male"]
         age_summary["% of Total"] = (age_summary["Total"] /
                                      age_summary["Total"].sum() * 100
                                      ).round(1).astype(str) + "%"
@@ -364,11 +370,10 @@ else:
     with a2:
         peak_group = AGE_GROUPS[age_summary["Total"].idxmax()]
         peak_pct   = age_summary["% of Total"][age_summary["Total"].idxmax()]
-        st.metric("Highest burden age group", peak_group, f"{peak_pct} of year total")
-        st.metric("Female share", f"{total_f/(total_f+total_m)*100:.1f}%")
-        st.metric("Male share",   f"{total_m/(total_f+total_m)*100:.1f}%")
-        if sel_age_year == 2078:
-            st.caption("Baishak/Jestha/Asar 2078 excluded (DAR months).")
+        st.metric("Highest burden age group", peak_group, f"{peak_pct} of period total")
+        st.metric("Female share", f"{total_f / (total_f + total_m) * 100:.1f}%")
+        st.metric("Male share",   f"{total_m / (total_f + total_m) * 100:.1f}%")
+        st.caption("Gap months (Baishak/Jestha/Asar 2078) excluded — DAR.")
 
 st.divider()
 
