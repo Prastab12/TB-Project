@@ -1,0 +1,67 @@
+==================================================
+KATHMANDU DISTRICT: STATISTICAL SENSITIVITY ANALYSIS
+Analyzed 60 monthly records.
+Method: IQR (Interquartile Range) with varying multipliers
+==================================================
+
+--- Variable: new_cases_total ---
+  Multiplier 1.5x IQR: Range [119.4, 448.4] -> 3 outlier(s)
+  Multiplier 2.0x IQR: Range [78.2, 489.5] -> 3 outlier(s)
+  Multiplier 3.0x IQR: Range [0.0, 571.8] -> 0 outlier(s)
+
+--- Variable: relapse_total ---
+  Multiplier 1.5x IQR: Range [2.0, 20.0] -> 6 outlier(s)
+  Multiplier 2.0x IQR: Range [0.0, 22.2] -> 1 outlier(s)
+  Multiplier 3.0x IQR: Range [0.0, 26.8] -> 0 outlier(s)
+
+--- Variable: total_tb_m+f ---
+  Multiplier 1.5x IQR: Range [128.0, 460.0] -> 3 outlier(s)
+  Multiplier 2.0x IQR: Range [86.5, 501.5] -> 3 outlier(s)
+  Multiplier 3.0x IQR: Range [3.5, 584.5] -> 3 outlier(s)
+    [Extreme Outliers at 3.0x]:
+      - 2078 Baishak 2078: 0
+      - 2078 Jestha 2078: 0
+      - 2078 Asar 2078: 0
+
+--- Variable: pbc_reg ---
+  Multiplier 1.5x IQR: Range [861.0, 1965.0] -> 0 outlier(s)
+  Multiplier 2.0x IQR: Range [723.0, 2103.0] -> 0 outlier(s)
+  Multiplier 3.0x IQR: Range [447.0, 2379.0] -> 0 outlier(s)
+
+--- Variable: cured ---
+  Multiplier 1.5x IQR: Range [584.5, 1788.5] -> 0 outlier(s)
+  Multiplier 2.0x IQR: Range [434.0, 1939.0] -> 0 outlier(s)
+  Multiplier 3.0x IQR: Range [133.0, 2240.0] -> 0 outlier(s)
+
+--- Variable: failed ---
+  Multiplier 1.5x IQR: Range [2.0, 18.0] -> 0 outlier(s)
+  Multiplier 2.0x IQR: Range [0.0, 20.0] -> 0 outlier(s)
+  Multiplier 3.0x IQR: Range [0.0, 24.0] -> 0 outlier(s)
+
+--- Variable: died ---
+  Multiplier 1.5x IQR: Range [15.5, 43.5] -> 0 outlier(s)
+  Multiplier 2.0x IQR: Range [12.0, 47.0] -> 0 outlier(s)
+  Multiplier 3.0x IQR: Range [5.0, 54.0] -> 0 outlier(s)
+
+--- Variable: ltfu ---
+  Multiplier 1.5x IQR: Range [3.0, 51.0] -> 0 outlier(s)
+  Multiplier 2.0x IQR: Range [0.0, 57.0] -> 0 outlier(s)
+  Multiplier 3.0x IQR: Range [0.0, 69.0] -> 0 outlier(s)
+
+--- Variable: not_eval ---
+  Multiplier 1.5x IQR: Range [0.0, 139.0] -> 0 outlier(s)
+  Multiplier 2.0x IQR: Range [0.0, 159.0] -> 0 outlier(s)
+  Multiplier 3.0x IQR: Range [0.0, 199.0] -> 0 outlier(s)
+
+--- SENSITIVITY SUMMARY MATRIX ---
+Variable           | 1.5x IQR   | 2.0x IQR   | 3.0x IQR  
+-------------------------------------------------------
+new_cases_total    | 3          | 3          | 0         
+relapse_total      | 6          | 1          | 0         
+total_tb_m+f       | 3          | 3          | 3         
+pbc_reg            | 0          | 0          | 0         
+cured              | 0          | 0          | 0         
+failed             | 0          | 0          | 0         
+died               | 0          | 0          | 0         
+ltfu               | 0          | 0          | 0         
+not_eval           | 0          | 0          | 0         

@@ -1,44 +1,132 @@
 # Data Inspection Report & Dataset Catalog
 
-## 1. File Inventory Table
-
-| File Name | Format | Size (MB) | Sheet Name(s) | Encoding | Status |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `Data.xlsx` | Excel (.xlsx) | 0.14 | `Data Set` | Standard Excel | Source Raw |
-| `cleaned_data.csv` | CSV (.csv) | ~0.15 | N/A | UTF-8 | Cleaned |
+**Assessment Date:** 2026-06-04  
+**Dataset:** `Original Final_KTM_data_set.xlsx`  
+**Scope:** Kathmandu District, Bagmati Province, Nepal  
 
 ---
 
-## 2. Dataset Catalog & Structural Inspection
+## 1. File Inventory
 
-### 2.1 General Schema & Structure
-*   **Total Rows:** 780 (After removing 60 'BAGMATI PROVINCE' aggregate rows)
-*   **Total Columns:** 30
-*   **Duplicate Rows:** 0 (Clean!)
-*   **Schema Consistency:** Because all data from all years is unified into a single flat file, there are no missing, extra, or renamed columns between years. The schema is 100% consistent across the timeline.
-*   **Malformed Rows:** The raw file contained 2 header/metadata rows. This was resolved during ingestion.
+| File Name | Format | Size (MB) | Sheet(s) | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| `Original Final_KTM_data_set.xlsx` | Excel (.xlsx) | 0.02 | Monthly Summary | Source Raw |
 
-### 2.2 Coverage Profile
-*   **Fiscal Year Coverage:** 5 Years (BS 2078, 2079, 2080, 2081, 2082)
-*   **District Coverage:** 13 distinct true districts are covered.
-*   **Monthly Completeness:** All 12 months for each of the 5 years are represented (60 unique months total).
+---
 
-### 2.3 Specific Task Checks
-*   **Vaccine Columns:** None detected. There are no columns indicating vaccine doses or coverage in this specific dataset.
-*   **Data Types:** Strong consistency.
-    *   15 `float64` (Metrics, percentages)
-    *   10 `int64` (Outcomes, total counts)
-    *   5 `object` (Strings: District names, quarters, months)
+## 2. Dataset Structure
 
-### 2.4 Missing Values Profile
+- **Rows:** 60  (data rows; TOTAL summary row excluded during ingestion)
+- **Columns:** 34
+- **Duplicate Rows:** 0
+- **Schema Consistency:** Single flat file — column schema is 100% consistent across all 60 months.
+- **Note:** `Quarter` and `District` columns are not present in this dataset. `Quarter` will be derived from `BS_Month` during Phase 2 cleaning. `District` is fixed as Kathmandu throughout.
 
-| Column | Missing Count | Actions / Notes |
+**Column Schema:**
+
+| # | Column | Dtype |
 | :--- | :--- | :--- |
-| `art_cov_pct` | 312 | Significant absence. May affect downstream HIV/TB correlation metrics. |
-| `m_to_f_ratio` | 133 | Derived field; can potentially be recalculated if raw M/F counts exist. |
-| `male_pct_new`, `female_pct_new` | 103 | Derived fields. |
-| `new_cases_female`, `new_cases_male` | 99 | Gender disaggregation missing for ~12% of data. |
-| `relapse_female`, `relapse_male` | 99 | Gender disaggregation missing. |
-| `total_tb_female`, `total_tb_male` | 99 | Gender disaggregation missing. |
-| `tb_hiv_pct`, `xpert_cov_pct` | 60 | Lab testing / comorbidity coverage missing. |
-| `new_cases_total`, `relapse_total`, `total_tb_m+f` | 39 | Primary outcome counts missing in ~5% of rows. |
+| 0 | `BS_Month` | `object` |
+| 1 | `BS_Year` | `float64` |
+| 2 | `AD_Year` | `float64` |
+| 3 | `District Pop (Mid-Year CBS)` | `float64` |
+| 4 | `New Cases (Total)` | `int64` |
+| 5 | `New Cases Female` | `float64` |
+| 6 | `New Cases Male` | `float64` |
+| 7 | `Relapse Female` | `float64` |
+| 8 | `Relapse Male` | `float64` |
+| 9 | `Total TB Female` | `float64` |
+| 10 | `Total TB Male` | `float64` |
+| 11 | `PBC Reg *` | `int64` |
+| 12 | `Cured *` | `int64` |
+| 13 | `Failed *` | `int64` |
+| 14 | `Died *` | `int64` |
+| 15 | `LTFU *` | `int64` |
+| 16 | `Not Eval *` | `int64` |
+| 17 | `TB-HIV +ve` | `int64` |
+| 18 | `0 to 4 F` | `float64` |
+| 19 | `0 to 4 M` | `float64` |
+| 20 | `5 to 14 F` | `float64` |
+| 21 | `5 to 14 M` | `float64` |
+| 22 | `15 to 24 F` | `float64` |
+| 23 | `15 to 24 M` | `float64` |
+| 24 | `25 to 34 F` | `float64` |
+| 25 | `25 to 34 M` | `float64` |
+| 26 | `35 to 44 F` | `float64` |
+| 27 | `35 to 44 M` | `float64` |
+| 28 | `45 to 54 F` | `float64` |
+| 29 | `45 to 54 M` | `float64` |
+| 30 | `55 to 64 F` | `float64` |
+| 31 | `55 to 64 M` | `float64` |
+| 32 | `65+ F` | `float64` |
+| 33 | `65+ M` | `float64` |
+
+---
+
+## 3. Coverage Profile
+
+| Attribute | Value |
+| :--- | :--- |
+| District | Kathmandu |
+| BS Years | [2078, 2079, 2080, 2081, 2082] |
+| Total Months | 60 |
+| Months with Sex / Age Data | 57 |
+| Months without Sex / Age Data | 3 (Baishak, Jestha, Asar 2078) |
+
+**Monthly Coverage by BS Year:**
+
+| BS Year | Month Count |
+| :--- | :--- |
+| 2078 | 12 |
+| 2079 | 12 |
+| 2080 | 12 |
+| 2081 | 12 |
+| 2082 | 12 |
+
+**Population Denominator (Annual CBS Mid-Year):**
+
+| BS Year | Population |
+| :--- | :--- |
+| 2078 | 2,049,618 |
+| 2079 | 2,087,199 |
+| 2080 | 2,122,517 |
+| 2081 | 2,156,070 |
+| 2082 | 2,188,035 |
+
+---
+
+## 4. Missing Values Profile
+
+| Column | Missing | % Missing | Cause |
+| :--- | :--- | :--- | :--- |
+| `New Cases Female` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `New Cases Male` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `Relapse Female` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `Relapse Male` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `Total TB Female` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `Total TB Male` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `0 to 4 F` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `0 to 4 M` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `5 to 14 F` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `5 to 14 M` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `15 to 24 F` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `15 to 24 M` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `25 to 34 F` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `25 to 34 M` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `35 to 44 F` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `35 to 44 M` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `45 to 54 F` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `45 to 54 M` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `55 to 64 F` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `55 to 64 M` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `65+ F` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+| `65+ M` | 3 | 5.0% | Structural gap — BS 2078 Baishak / Jestha / Asar have no sex or age data in source |
+
+---
+
+## 5. Data Source Notes
+
+- **Validated columns:** New Cases (Total), New Cases Female/Male, all 16 age-sex band columns — the 16 bands sum exactly to New Cases (Total) in all 57 months.
+- **Provisional columns:** Relapse Female, Relapse Male, Total TB Female, Total TB Male — may carry ±1–4 errors in ~25 months. Confirm against source file before sex-disaggregated relapse analysis.
+- **Outcome columns (*):** PBC New cohort data — recent months may be incomplete as cohorts need ~12 months to mature.
+- **Quarter:** Not present in raw file — will be derived in Phase 2 from BS_Month (Q1=Shrawan-Ashwin, Q2=Kartik-Poush, Q3=Magh-Chaitra, Q4=Baishak-Asar).

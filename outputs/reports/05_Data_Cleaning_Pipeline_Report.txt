@@ -1,52 +1,64 @@
 ================================================================================
 DATA CLEANING PIPELINE REPORT
-TB Data Quality Standardization | Bagmati Province, Nepal
+TB Data Quality Standardization | Kathmandu District, Nepal
 ================================================================================
-Date Generated  : 2026-05-16
+Date Generated  : 2026-06-04
 Source Dataset  : data/cleaned/cleaned_data.csv
 Cleaned Dataset : data/final/final_cleaned_data.csv
 
 1. PIPELINE OBJECTIVES
 ------------------------------
-  - Standardize geographic identifiers (Districts).
-  - Eliminate data missingness (Zero-filling).
-  - Enforce strict structural types (Int64).
-  - Ensure mathematical consistency for downstream FHIR Measure calculations.
+  - Eliminate data missingness in numeric columns (Zero-filling).
+  - Enforce strict structural types (Int64) across all count columns.
+  - Derive relapse_total and total_tb_mf summary columns.
+  - Flag cohort outcome completeness (BALANCED / UNDER_REPORTED / OVER_REPORTED).
+  - Ensure mathematical consistency for downstream FHIR MeasureReport generation.
 
 2. CLEANING STRATEGIES APPLIED
 ------------------------------
   [STRATEGY A] Zero-Filling Missing Values
-    - All empty cells in numeric columns were replaced with integer 0.
-    - Rationale: Precludes calculation errors in aggregate reporting.
+    - All NaN cells in numeric columns replaced with integer 0.
+    - Applies to the 3-month structural gap: Baishak/Jestha/Asar 2078.
+    - Total cells zero-filled: 66
 
   [STRATEGY B] Int64 Type Enforcement
-    - All numeric columns (counts, populations, rates) converted to int64.
-    - Note: Decimal precision for rates (0.01 etc.) truncated to integers.
+    - All numeric columns cast to int64 via round(0).astype(int64).
+    - Columns converted: 34
 
-  [STRATEGY C] Controlled Vocabulary (Districts)
-    - MAKWANPUR -> MAKAWANPUR
-    - CHITWAN   -> CHITAWAN
+  [STRATEGY C] Derived Column Addition
+    - relapse_total  = relapse_female + relapse_male
+    - total_tb_mf    = total_tb_female + total_tb_male
+    - Columns added : 2
+    - cohort_sum_flag: NOT added — structural under-reporting on all rows
+      makes this flag uninformative for a single-district dataset.
 
 3. EXECUTION SUMMARY
 ------------------------------
-  - Total Rows Processed    : 780
-  - Total Columns Cleaned   : 31
-  - Missing Values Filled   : 762
-  - District Names Fixed    : 120 cells
-  - Type Conversions        : 26 columns
-  - Total Audit Entries     : 908
+  Total Rows Processed    : 60
+  Total Columns (final)   : 37
+  Missing Values Filled   : 66 cells
+  Type Conversions        : 34 columns
+  Derived Columns Added   : 2
+  Total Audit Log Entries : 102
 
-4. FINAL DATA INTEGRITY STATUS
+4. COHORT SUM FLAG
 ------------------------------
-  - Remaining Null Values   : 0 (Target: 0)
-  - Float64 Columns Left    : 0 (Target: 0)
+  cohort_sum_flag was intentionally excluded from the final dataset.
+  Reason: PBC outcome under-reporting is structural (the 'Completed'
+  category is absent from the schema), so the flag would read
+  UNDER_REPORTED for 58/60 rows — carrying no discriminatory value.
 
-  STATUS: CLEANED DATASET VERIFIED AS COMPLETE AND INTEGER-STRICT.
-
-5. FILE REFERENCES
+5. FINAL DATA INTEGRITY STATUS
 ------------------------------
-  - Full Audit Log          : outputs/reports/05_Cleaning_Audit_Log.csv
-  - Final Cleaned CSV       : data/final/final_cleaned_data.csv
-  - Pandera Validation      : outputs/reports/04_Pandera_Validation_Report.txt
+  Remaining Null Values   : 0 (Target: 0)
+  Float64 Columns Left    : 0 (Target: 0)
+  STATUS: VERIFIED — CLEAN AND INTEGER-STRICT
+
+6. FILE REFERENCES
+------------------------------
+  Full Audit Log        : outputs/reports/05_Cleaning_Audit_Log.csv
+  Final Cleaned CSV     : data/final/final_cleaned_data.csv
+  Pandera Validation    : outputs/reports/04_Pandera_Validation_Report.txt
+  Failed Rows (if any)  : outputs/reports/05_Pandera_Failed_Rows.csv
 
 ================================================================================

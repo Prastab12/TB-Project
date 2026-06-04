@@ -51,7 +51,7 @@ Instance:    loc-kathmandu
 InstanceOf:  Location
 Usage:       #example
 Title:       "Kathmandu District, Nepal"
-Description: "Kathmandu District, Bagmati Province, Nepal. The subject location for all 780 TBMeasureReport instances in this IG, covering BS 2078 Shrawan through BS 2082 Asar."
+Description: "Kathmandu District, Bagmati Province, Nepal. The subject location for all 1,920 TBMeasureReport instances in this IG, covering BS 2078 Baishak through BS 2082 Chaitra (60 months × 32 variables)."
 
 * id                     = "loc-kathmandu"
 * status                  = #active

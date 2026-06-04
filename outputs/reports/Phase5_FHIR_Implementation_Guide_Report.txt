@@ -1,0 +1,151 @@
+================================================================================
+       PHASE 5: FHIR IMPLEMENTATION GUIDE — PROJECT REPORT
+       Nepal NTP TB FHIR R4 Implementation Guide (iihms.nepal.tb)
+       Kathmandu District | BS 2078–2082 | Master's Thesis Project
+================================================================================
+Report Generated : 2026-06-04
+IG Package ID    : iihms.nepal.tb
+IG Version       : 1.0.0 (STU1)
+FHIR Version     : R4 (4.0.1)
+Canonical URL    : https://iihms.gov.np/fhir
+Publisher        : Integrated Health Information Management System (IIHMS), Nepal
+
+================================================================================
+SECTION A: PHASE 5 OVERVIEW
+================================================================================
+
+Phase 5 is the capstone phase — it publishes all prior work as a formal,
+standards-compliant HL7 FHIR R4 Implementation Guide (IG).
+
+The IG specifies:
+  - How TB surveillance variables are represented as FHIR Measure resources
+  - How monthly aggregate data is stored as FHIR MeasureReport resources
+  - How Nepal's Bikram Sambat (BS) calendar is encoded alongside Gregorian dates
+  - How under-reported months are flagged using data-absent-reason: not-reported
+  - Canonical shared instances for NTP and Kathmandu District
+
+================================================================================
+SECTION B: TOOLCHAIN
+================================================================================
+
+  FHIR Shorthand (FSH)  : Source language for profiles, extensions, instances
+  SUSHI v3.19.0         : FSH compiler → FHIR JSON
+  IG Publisher          : HTML IG builder (runs via GitHub Actions CI/CD)
+  Python ETL            : Generates 3 canonical IG example MeasureReports
+  GitHub Actions        : Automated build + GitHub Pages deployment
+
+================================================================================
+SECTION C: FSH ARTIFACTS
+================================================================================
+
+  File                              Type         Contents
+  ----------------------------------------------------------------------
+  aliases.fsh                       Aliases      21 canonical URL shortcuts
+  extensions/NepaliCalendarPeriod.fsh Extension  BS year/month/fiscal-year on Period
+  extensions/NepaliMonths.fsh        Terminology  BS Month CodeSystem + ValueSet (12 codes)
+  profiles/TBMeasure.fsh             Profile      Constrains Measure for NTP variables
+  profiles/TBMeasureReport.fsh       Profile      Constrains MeasureReport for NTP data
+  instances/SharedResources.fsh      Instances    org-mohp, org-ntp, loc-kathmandu
+
+================================================================================
+SECTION D: SUSHI BUILD RESULTS
+================================================================================
+
+  Errors   : 0
+  Warnings : 0
+
+  Output (fsh-generated/resources/):
+    CodeSystem-bs-month-codes.json
+    ImplementationGuide-iihms.nepal.tb.json
+    Location-loc-kathmandu.json
+    Organization-org-mohp.json
+    Organization-org-ntp.json
+    StructureDefinition-nepali-fiscal-period.json
+    StructureDefinition-tb-measure-report.json
+    StructureDefinition-tb-measure.json
+    ValueSet-bs-month-valueset.json
+
+================================================================================
+SECTION E: PYTHON ETL — IG EXAMPLE INSTANCES
+================================================================================
+
+  Three representative MeasureReport examples generated into ig/input/resources/:
+
+  1. example-mr-ratio.json
+     Variable : nepal-tb-new-cases-total
+     Month    : Shrawan 2078  (full data — no DAR)
+     Pattern  : Ratio MeasureReport with valid numerator + denominator + measureScore
+
+  2. example-mr-ratio-dar.json
+     Variable : nepal-tb-new-cases-female
+     Month    : Baishak 2078  (gap month — data-absent-reason: not-reported)
+     Pattern  : Ratio MeasureReport with _count and _value DAR extensions
+
+  3. example-mr-cohort.json
+     Variable : nepal-tb-cured
+     Month    : Shrawan 2078  (full data)
+     Pattern  : Cohort MeasureReport with initial-population count
+
+================================================================================
+SECTION F: IG PROFILES
+================================================================================
+
+  TBMeasure (tb-measure):
+    - Covers 32 variables (26 ratio + 6 cohort)
+    - Enforces scoring from MeasureScoring ValueSet (ratio | cohort)
+    - Requires url, identifier, version, name, title, status, date, publisher,
+      description, group, population, criteria
+
+  TBMeasureReport (tb-measure-report):
+    - 1,920 instances: 32 variables x 60 months
+    - status fixed = #complete; type fixed = #summary
+    - subject constrained to Location; reporter to Organization
+    - period carries NepaliCalendarPeriod extension (bs-year, bs-month, fiscal-year)
+    - measureScore system fixed to UCUM; code fixed to #1
+
+================================================================================
+SECTION G: EXTENSION — NepaliCalendarPeriod
+================================================================================
+
+  URL    : https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period
+  Context: Period element
+  Sub-extensions:
+    bs-year     (1..1 MS)  integer  — BS year, e.g. 2078
+    bs-month    (1..1 MS)  string   — BS month name, e.g. Shrawan
+    fiscal-year (1..1 MS)  string   — Nepali FY string, e.g. 2078/79
+
+================================================================================
+SECTION H: CI/CD PIPELINE
+================================================================================
+
+  File     : .github/workflows/ig-publish.yml
+  Trigger  : Push to main branch (ig/** paths) or manual dispatch
+  Steps    :
+    1. Checkout repository
+    2. Java 17 (Temurin) — IG Publisher dependency
+    3. Node.js 20 — SUSHI dependency
+    4. Install SUSHI (fsh-sushi)
+    5. Run SUSHI (FSH → FHIR JSON)
+    6. Python 3.11 + ETL dependencies
+    7. Run ETL --examples (generate 3 example MeasureReports)
+    8. Ruby + Jekyll (IG template rendering)
+    9. Download IG Publisher (latest release)
+   10. Run IG Publisher (-no-sushi, -tx https://tx.fhir.org/r4)
+   11. Upload IG artifact (30-day retention)
+   12. Deploy to GitHub Pages (main branch only)
+
+================================================================================
+SECTION I: ARTIFACT SUMMARY
+================================================================================
+
+  FSH source files      : 6
+  FHIR profiles         : 2  (TBMeasure, TBMeasureReport)
+  FHIR extensions       : 1  (NepaliCalendarPeriod)
+  FHIR code systems     : 1  (bs-month-codes)
+  FHIR value sets       : 1  (bs-month-valueset)
+  Canonical instances   : 3  (org-mohp, org-ntp, loc-kathmandu)
+  IG example MRs        : 3  (ratio, ratio-DAR, cohort)
+  SUSHI errors          : 0
+  SUSHI warnings        : 0
+
+================================================================================

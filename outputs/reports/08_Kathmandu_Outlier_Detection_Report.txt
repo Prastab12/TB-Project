@@ -1,0 +1,58 @@
+==================================================
+KATHMANDU DISTRICT OUTLIER DETECTION REPORT
+Analyzed 60 monthly records.
+Method: IQR (Interquartile Range)
+==================================================
+
+--- Variable: new_cases_total ---
+Normal Range: [119.4, 448.4]
+Found 3 outlier(s):
+  - 2078 Baishak 2078: 0
+  - 2078 Jestha 2078: 0
+  - 2078 Asar 2078: 0
+
+--- Variable: relapse_total ---
+Normal Range: [2.0, 20.0]
+Found 6 outlier(s):
+  - 2078 Baishak 2078: 0
+  - 2078 Jestha 2078: 0
+  - 2078 Asar 2078: 0
+  - 2080 Shrawan 2080: 21
+  - 2080 Chaitra 2080: 21
+  - 2080 Jestha 2080: 24
+
+--- Variable: total_tb_m+f ---
+Normal Range: [128.0, 460.0]
+Found 3 outlier(s):
+  - 2078 Baishak 2078: 0
+  - 2078 Jestha 2078: 0
+  - 2078 Asar 2078: 0
+
+--- Variable: pbc_reg ---
+Normal Range: [861.0, 1965.0]
+No outliers detected.
+
+--- Variable: cured ---
+Normal Range: [584.5, 1788.5]
+No outliers detected.
+
+--- Variable: failed ---
+Normal Range: [2.0, 18.0]
+No outliers detected.
+
+--- Variable: died ---
+Normal Range: [15.5, 43.5]
+No outliers detected.
+
+--- Variable: ltfu ---
+Normal Range: [3.0, 51.0]
+No outliers detected.
+
+--- Variable: not_eval ---
+Normal Range: [0.0, 139.0]
+No outliers detected.
+
+--- SUMMARY ---
+new_cases_total: 3 outliers detected.
+relapse_total: 6 outliers detected.
+total_tb_m+f: 3 outliers detected.

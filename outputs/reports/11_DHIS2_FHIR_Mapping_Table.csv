@@ -1,12 +1,19 @@
-DHIS2 Indicator,FHIR Measure ID,Numerator,Denominator
-Treatment Success Rate (TSR),nepal-tb-tsr-cure,cured,pbc_reg
-Annualized TB Notification Rate,nepal-tb-notification-rate,total_tb_m+f,district_pop_mid_year_cbs
-Mortality Rate (Cohort),nepal-tb-mortality-rate,died,pbc_reg
-Lost to Follow-up (LTFU) Rate,nepal-tb-ltfu-rate,ltfu,pbc_reg
-Treatment Failure Rate,nepal-tb-failure-rate,failed,pbc_reg
-Not Evaluated Rate,nepal-tb-not-eval-rate,not_eval,pbc_reg
-Bacteriological Confirmation Proportion,nepal-tb-bacteriological-confirmation,pbc_reg,total_tb_m+f
-Xpert MTB/RIF Coverage Rate,nepal-tb-xpert-coverage,xpert_cov_pct (multiplied by population),district_pop_mid_year_cbs
-TB/HIV Co-infection Proportion,nepal-tb-hiv-coinfection,tb_hiv_pct (multiplied by population),district_pop_mid_year_cbs
-HIV/ART Coverage Percentage,nepal-tb-art-coverage,art_cov_pct (multiplied by TB-HIV positive cases),tb_hiv_pct (multiplied by population)
-Male-to-Female Notification Ratio,nepal-tb-gender-ratio,total_tb_male,total_tb_female
+DHIS2 Indicator,FHIR Measure ID,Numerator,Denominator,Scoring Type,Improvement Notation,Source Columns,Data Availability
+Treatment Success Rate (TSR),nepal-tb-tsr-cure,cured,pbc_reg,proportion,increase,"cured, pbc_reg",All 60 months
+Annualised TB Notification Rate,nepal-tb-notification-rate,"new_cases_total × 12 × 100,000",district_pop_mid_year_cbs,ratio,—,"new_cases_total, district_pop_mid_year_cbs",All 60 months
+Mortality Rate,nepal-tb-mortality-rate,died,pbc_reg,proportion,decrease,"died, pbc_reg",All 60 months
+Lost to Follow-Up (LTFU) Rate,nepal-tb-ltfu-rate,ltfu,pbc_reg,proportion,decrease,"ltfu, pbc_reg",All 60 months
+Treatment Failure Rate,nepal-tb-failure-rate,failed,pbc_reg,proportion,decrease,"failed, pbc_reg",All 60 months
+Not Evaluated Rate,nepal-tb-not-eval-rate,not_eval,pbc_reg,proportion,decrease,"not_eval, pbc_reg",All 60 months
+Bacteriological Confirmation Proportion,nepal-tb-bacteriological-confirmation,pbc_reg,new_cases_total,proportion,increase,"pbc_reg, new_cases_total",All 60 months
+TB-HIV Co-infection Proportion,nepal-tb-hiv-coinfection,tb_hiv_positive,new_cases_total,proportion,—,"tb_hiv_positive, new_cases_total",All 60 months
+Male-to-Female Notification Ratio,nepal-tb-gender-ratio,new_cases_male,new_cases_female,ratio,—,"new_cases_male, new_cases_female",57 months (NaN for Baishak/Jestha/Asar 2078)
+Relapse Proportion,nepal-tb-relapse-proportion,relapse_total,new_cases_total + relapse_total,proportion,—,"relapse_total, new_cases_total",57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 0–4 Proportion,nepal-tb-age-group-0to4,0_to_4_f + 0_to_4_m,new_cases_total,proportion,—,"0_to_4_f, 0_to_4_m, new_cases_total",57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 5–14 Proportion,nepal-tb-age-group-5to14,5_to_14_f + 5_to_14_m,new_cases_total,proportion,—,"5_to_14_f, 5_to_14_m, new_cases_total",57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 15–24 Proportion,nepal-tb-age-group-15to24,15_to_24_f + 15_to_24_m,new_cases_total,proportion,—,"15_to_24_f, 15_to_24_m, new_cases_total",57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 25–34 Proportion,nepal-tb-age-group-25to34,25_to_34_f + 25_to_34_m,new_cases_total,proportion,—,"25_to_34_f, 25_to_34_m, new_cases_total",57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 35–44 Proportion,nepal-tb-age-group-35to44,35_to_44_f + 35_to_44_m,new_cases_total,proportion,—,"35_to_44_f, 35_to_44_m, new_cases_total",57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 45–54 Proportion,nepal-tb-age-group-45to54,45_to_54_f + 45_to_54_m,new_cases_total,proportion,—,"45_to_54_f, 45_to_54_m, new_cases_total",57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 55–64 Proportion,nepal-tb-age-group-55to64,55_to_64_f + 55_to_64_m,new_cases_total,proportion,—,"55_to_64_f, 55_to_64_m, new_cases_total",57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 65+ Proportion,nepal-tb-age-group-65plus,65_f + 65_m,new_cases_total,proportion,—,"65_f, 65_m, new_cases_total",57 months (NaN for Baishak/Jestha/Asar 2078)

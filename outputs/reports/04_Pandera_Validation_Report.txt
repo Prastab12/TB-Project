@@ -1,12 +1,12 @@
 
 --------------------------------------------------------------------------------
 B. PANDERA SCHEMA VALIDATION (Zero-Fill & Int64)
-   Validation Date : 2026-05-16
+   Validation Date : 2026-06-04
    Status          : PASSED (0 violations)
 --------------------------------------------------------------------------------
 Configuration:
-  - Missing Values: Replaced with 0
-  - Numeric Type  : Enforced as Int64
-  - District Names: Standardized
+  - Missing Values  : Replaced with 0 (Zero-fill strategy)
+  - Numeric Type    : Enforced as int64
+  - Non-negative    : Checked for all count and population columns
 
-Standalone report: outputs/reports/04_Pandera_Validation_Report.txt
+Standalone report  : outputs/reports/04_Pandera_Validation_Report.txt

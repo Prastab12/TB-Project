@@ -1,35 +1,72 @@
 # TB Project: Data Dictionary
-**Dataset:** `cleaned_data.csv` (780 Rows, 30 Columns)
 
-| Column Name | Type | Description |
+**Dataset:** `Original Final_KTM_data_set.xlsx`  
+**Date:** 2026-06-04  
+**Sheet:** Monthly Summary — 60 rows, 34 columns  
+
+---
+
+## Columns
+
+| # | Column Name | Dtype | Description |
+| :--- | :--- | :--- | :--- |
+| 0 | `BS_Month` | `object` | Month of reporting in Bikram Sambat (e.g., Baishak, Shrawan) |
+| 1 | `BS_Year` | `float64` | Bikram Sambat year (e.g., 2078, 2079) |
+| 2 | `AD_Year` | `float64` | Corresponding Gregorian calendar year (e.g., 2021, 2022). Rule: Baishak–Poush = BS_Year − 57; Magh–Chaitra = BS_Year − 56. |
+| 3 | `District Pop (Mid-Year CBS)` | `float64` | Annual mid-year population estimate from Central Bureau of Statistics. Constant within each BS year. Used as denominator for notification rates. |
+| 4 | `New Cases (Total)` | `int64` | Total incident (new) TB cases — source: TB-Age group-All New |
+| 5 | `New Cases Female` | `float64` | New TB cases — Female; sum of 8 age bands. NaN for Baishak/Jestha/Asar 2078. |
+| 6 | `New Cases Male` | `float64` | New TB cases — Male; sum of 8 age bands. NaN for Baishak/Jestha/Asar 2078. |
+| 7 | `Relapse Female` | `float64` | Relapse TB cases — Female. PROVISIONAL — verify against source before use. |
+| 8 | `Relapse Male` | `float64` | Relapse TB cases — Male. PROVISIONAL — verify against source before use. |
+| 9 | `Total TB Female` | `float64` | Total TB cases Female (New + Relapse Female). PROVISIONAL. |
+| 10 | `Total TB Male` | `float64` | Total TB cases Male (New + Relapse Male). PROVISIONAL. |
+| 11 | `PBC Reg *` | `int64` | PBC New cohort registered cases — denominator for treatment outcome rates. |
+| 12 | `Cured *` | `int64` | Treatment outcome: successfully cured (PBC New cohort). |
+| 13 | `Failed *` | `int64` | Treatment outcome: treatment failed (PBC New cohort). |
+| 14 | `Died *` | `int64` | Treatment outcome: died during treatment (PBC New cohort). |
+| 15 | `LTFU *` | `int64` | Treatment outcome: Lost to Follow-Up (PBC New cohort). |
+| 16 | `Not Eval *` | `int64` | Treatment outcome: not evaluated (PBC New cohort). |
+| 17 | `TB-HIV +ve` | `int64` | Count of TB patients with confirmed HIV co-infection. |
+| 18 | `0 to 4 F` | `float64` | New TB cases — Female, age group 0 to 4. NaN for Baishak/Jestha/Asar 2078. |
+| 19 | `0 to 4 M` | `float64` | New TB cases — Male, age group 0 to 4. NaN for Baishak/Jestha/Asar 2078. |
+| 20 | `5 to 14 F` | `float64` | New TB cases — Female, age group 5 to 14. NaN for Baishak/Jestha/Asar 2078. |
+| 21 | `5 to 14 M` | `float64` | New TB cases — Male, age group 5 to 14. NaN for Baishak/Jestha/Asar 2078. |
+| 22 | `15 to 24 F` | `float64` | New TB cases — Female, age group 15 to 24. NaN for Baishak/Jestha/Asar 2078. |
+| 23 | `15 to 24 M` | `float64` | New TB cases — Male, age group 15 to 24. NaN for Baishak/Jestha/Asar 2078. |
+| 24 | `25 to 34 F` | `float64` | New TB cases — Female, age group 25 to 34. NaN for Baishak/Jestha/Asar 2078. |
+| 25 | `25 to 34 M` | `float64` | New TB cases — Male, age group 25 to 34. NaN for Baishak/Jestha/Asar 2078. |
+| 26 | `35 to 44 F` | `float64` | New TB cases — Female, age group 35 to 44. NaN for Baishak/Jestha/Asar 2078. |
+| 27 | `35 to 44 M` | `float64` | New TB cases — Male, age group 35 to 44. NaN for Baishak/Jestha/Asar 2078. |
+| 28 | `45 to 54 F` | `float64` | New TB cases — Female, age group 45 to 54. NaN for Baishak/Jestha/Asar 2078. |
+| 29 | `45 to 54 M` | `float64` | New TB cases — Male, age group 45 to 54. NaN for Baishak/Jestha/Asar 2078. |
+| 30 | `55 to 64 F` | `float64` | New TB cases — Female, age group 55 to 64. NaN for Baishak/Jestha/Asar 2078. |
+| 31 | `55 to 64 M` | `float64` | New TB cases — Male, age group 55 to 64. NaN for Baishak/Jestha/Asar 2078. |
+| 32 | `65+ F` | `float64` | New TB cases — Female, age group 65+. NaN for Baishak/Jestha/Asar 2078. |
+| 33 | `65+ M` | `float64` | New TB cases — Male, age group 65+. NaN for Baishak/Jestha/Asar 2078. |
+
+---
+
+## Column Group Summary
+
+| Group | Columns | Notes |
 | :--- | :--- | :--- |
-| `chron_order` | `int64` | Chronological sort order identifier. |
-| `bs_month` | `object` | Month of reporting in Bikram Sambat (e.g., Shrawan, Bhadra). |
-| `bs_year` | `int64` | Fiscal year in Bikram Sambat (e.g., 2078). |
-| `ad_year` | `int64` | Corresponding Gregorian calendar year (e.g., 2021). |
-| `quarter` | `object` | Reporting quarter (e.g., Q1, Q2). |
-| `district` | `object` | Name of the specific district in Bagmati Province. |
-| `code` | `object` | Standardized health facility / district code. |
-| `eco_zone` | `object` | Ecological zone classification (e.g., Mountain/Hill). |
-| `district_pop_mid_year_cbs` | `int64` | Mid-year population estimate for the district based on CBS data. |
-| `new_cases_total` | `float64` | Total count of incident (new) Tuberculosis cases. |
-| `new_cases_female` | `float64` | Count of incident Tuberculosis cases (Female). |
-| `new_cases_male` | `float64` | Count of incident Tuberculosis cases (Male). |
-| `relapse_total` | `float64` | Total count of relapse Tuberculosis cases. |
-| `relapse_female` | `float64` | Count of relapse Tuberculosis cases (Female). |
-| `relapse_male` | `float64` | Count of relapse Tuberculosis cases (Male). |
-| `total_tb_m+f` | `float64` | Total combined Tuberculosis cases (New + Relapse, Male + Female). |
-| `total_tb_female` | `float64` | Total combined Tuberculosis cases (Female). |
-| `total_tb_male` | `float64` | Total combined Tuberculosis cases (Male). |
-| `m_to_f_ratio` | `float64` | Ratio of male TB cases to female TB cases. |
-| `male_pct_new` | `float64` | Proportion/Percentage of new cases that are Male. |
-| `female_pct_new` | `float64` | Proportion/Percentage of new cases that are Female. |
-| `pbc_reg` | `int64` | Pulmonary Bacteriologically Confirmed registered cases. |
-| `cured` | `int64` | Treatment Outcome: Number of patients successfully cured. |
-| `failed` | `int64` | Treatment Outcome: Number of patients whose treatment failed. |
-| `died` | `int64` | Treatment Outcome: Number of patients who died during treatment. |
-| `ltfu` | `int64` | Treatment Outcome: Number of patients Lost To Follow-Up. |
-| `not_eval` | `int64` | Treatment Outcome: Number of patients Not Evaluated. |
-| `tb_hiv_pct` | `float64` | Percentage of TB patients co-infected with HIV. |
-| `art_cov_pct` | `float64` | Antiretroviral Therapy (ART) coverage percentage among TB-HIV positive cases. |
-| `xpert_cov_pct` | `float64` | GeneXpert rapid molecular diagnostic test coverage percentage. |
+| Time identifiers | BS_Month, BS_Year, AD_Year | Quarter absent — derived in Phase 2 |
+| Population | District Pop (Mid-Year CBS) | Annual CBS figure; constant within each BS year |
+| New TB cases | New Cases (Total/Female/Male) | Female/Male validated against 16 age bands |
+| Relapse | Relapse Female, Relapse Male | PROVISIONAL — ±1–4 errors in ~25 months |
+| Total TB | Total TB Female, Total TB Male | PROVISIONAL — New + Relapse by sex |
+| Treatment outcomes | PBC Reg *, Cured *, Failed *, Died *, LTFU *, Not Eval * | PBC New cohort; recent months may be incomplete |
+| TB-HIV | TB-HIV +ve | Raw count of HIV co-infected TB patients |
+| Age-sex bands | 0 to 4 F/M through 65+ F/M (16 cols) | New cases only; NaN for first 3 months |
+
+---
+
+## Notes
+
+- `*` suffix = PBC (Pulmonary Bacteriologically Confirmed) New cohort.
+- **PROVISIONAL** columns: Relapse Female, Relapse Male, Total TB Female, Total TB Male.
+- Age-sex bands apply to **new cases only** — not relapse.
+- First 3 months (Baishak, Jestha, Asar 2078): NaN in all sex and age columns — structural source gap.
+- **Quarter** is not present in the raw file. It will be added in Phase 2 using: Q1 = Shrawan/Bhadra/Ashwin, Q2 = Kartik/Mangsir/Poush, Q3 = Magh/Falgun/Chaitra, Q4 = Baishak/Jestha/Asar.
+- **District** is not present in the raw file. Fixed as Kathmandu throughout.

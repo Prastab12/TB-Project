@@ -13,7 +13,7 @@
     "reference": "#loc-kathmandu",
     "display": "Kathmandu District, Nepal"
   },
-  "date": "2026-05-22T09:08:48Z",
+  "date": "2026-06-04T08:17:55Z",
   "reporter": {
     "reference": "#org-ntp",
     "display": "National Tuberculosis Programme"
@@ -55,14 +55,7 @@
               }
             ]
           },
-          "_count": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                "valueCode": "not-reported"
-              }
-            ]
-          }
+          "count": 176
         },
         {
           "code": {
@@ -74,21 +67,14 @@
               }
             ]
           },
-          "count": 2080935
+          "count": 2049618
         }
       ],
       "measureScore": {
+        "value": 8.587e-05,
         "unit": "1",
         "system": "http://unitsofmeasure.org",
-        "code": "1",
-        "_value": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-              "valueCode": "not-reported"
-            }
-          ]
-        }
+        "code": "1"
       }
     }
   ],

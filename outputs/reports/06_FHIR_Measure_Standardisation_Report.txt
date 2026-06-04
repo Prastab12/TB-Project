@@ -1,89 +1,121 @@
 ================================================================================
-PHASE 6: FHIR MEASURE STANDARDISATION REPORT
+PHASE 3: FHIR MEASURE STANDARDISATION REPORT
 ================================================================================
 Integrated Health Information Management System (IIHMS) | Nepal
-Date Generated: 2026-05-17
-Status: COMPLETE & VERIFIED
-
-This report documents the standardisation of the cleaned Bagmati Province TB dataset
-into official HL7 FHIR R4 Quality Measure specifications.
-
---------------------------------------------------------------------------------
-SECTION A: LEARN FHIR STRUCTURE (CONCEPTUAL STUDY)
---------------------------------------------------------------------------------
-We investigated the FHIR Clinical Reasoning Module structure to determine the most
-interoperable format for public health monthly TB summaries.
-
-1. Structural Strategy: Definitional vs Instance Resources
-   - Measure (Definitional): Acts as the computable standard, defining groups,
-     scoring methodologies, and populations.
-   - MeasureReport (Instance): Holds the actual calculated results (numerator,
-     denominator, and score) for a specific district over a specific month.
-
-2. Scoring Types Enforced:
-   - Proportion: Utilized when the numerator is a strict mathematical subset
-     of the denominator. Score is bounded within [0.0 - 1.0].
-   - Ratio: Utilized when the numerator is NOT a subset of the denominator 
-     (e.g., gender count comparisons, or notification rates scaled per 100k).
-
-3. Stratifiers:
-   - Built-in SNOMED CT gender stratification schema (Code: 263495000) inside
-     epidemiological groups to map demographic counts.
+Date Generated : 2026-06-04
+District       : Kathmandu
+Reporting Period: BS 2078 Baishak – BS 2082 Chaitra (60 months)
+Status         : COMPLETE
 
 --------------------------------------------------------------------------------
-SECTION B: DEFINE MAPPING TABLE
+SECTION A: FHIR ARCHITECTURAL STRATEGY
 --------------------------------------------------------------------------------
-The following mapping table aligns pre-aggregated DHIS2 indicator columns in the
-cleaned dataset directly to standard FHIR R4 Measure components:
 
-DHIS2 Indicator                         | FHIR Measure ID               | Numerator                     | Denominator
-----------------------------------------|-------------------------------|-------------------------------|---------------------------
-Treatment Success Rate (TSR)            | nepal-tb-tsr-cure             | cured                         | pbc_reg
-Annualized TB Notification Rate         | nepal-tb-notification-rate    | total_tb_m+f                  | district_pop_mid_year_cbs
-Mortality Rate (Cohort)                 | nepal-tb-mortality-rate       | died                          | pbc_reg
-Lost to Follow-up (LTFU) Rate           | nepal-tb-ltfu-rate            | ltfu                          | pbc_reg
-Treatment Failure Rate                  | nepal-tb-failure-rate         | failed                        | pbc_reg
-Not Evaluated Rate                      | nepal-tb-not-eval-rate        | not_eval                      | pbc_reg
-Bacteriological Confirmation Proportion  | nepal-tb-bacteriological-conf | pbc_reg                       | total_tb_m+f
-Xpert MTB/RIF Coverage Rate             | nepal-tb-xpert-coverage       | xpert_cov_pct * population    | district_pop_mid_year_cbs
-TB/HIV Co-infection Proportion          | nepal-tb-hiv-coinfection      | tb_hiv_pct * population       | district_pop_mid_year_cbs
-HIV/ART Coverage Percentage             | nepal-tb-art-coverage         | art_cov_pct * HIV positive    | tb_hiv_pct * population
-Male-to-Female Notification Ratio       | nepal-tb-gender-ratio         | total_tb_male                 | total_tb_female
+Structural Strategy:
+  Measure (Definitional) : Defines the indicator — groups, scoring,
+                           populations, and CQL expressions.
+  MeasureReport (Instance): Holds computed results (numerator, denominator,
+                           measureScore) for one district, one month.
 
-Spreadsheet saved to: outputs/reports/11_DHIS2_FHIR_Mapping_Table.csv
+Scoring Types:
+  proportion : Numerator is a strict subset of denominator. Score in [0, 1].
+  ratio      : Numerator is NOT a subset of denominator (e.g., rates, ratios).
+
+Data-Absent Handling:
+  Months Baishak / Jestha / Asar 2078 have no sex or age data in the source.
+  Indicator columns that depend on sex/age are set to NaN in harmonized_tb_data.csv.
+  In Phase 4 MeasureReports these NaN values will be encoded as:
+  data-absent-reason: "not-reported" per HL7 FHIR R4 specification.
 
 --------------------------------------------------------------------------------
-SECTION C: GENERATE MEASURE RESOURCES
+SECTION B: DHIS2 → FHIR MAPPING TABLE
 --------------------------------------------------------------------------------
-We programmatically compiled the mapping specifications into standard FHIR R4 resources.
 
-1. Execution Summary:
-   - Generator Script: scripts/05_fhir_measure/01_generate_fhir_measures.py
-   - Bundler Script  : scripts/05_fhir_measure/02_bundle_measures.py
-   - Target Directory: fhir/measures/
+DHIS2 Indicator                            FHIR Measure ID                        Scoring      Availability
+-----------------------------------------------------------------------------------------------------------
+Treatment Success Rate (TSR)               nepal-tb-tsr-cure                      proportion   All 60 months
+Annualised TB Notification Rate            nepal-tb-notification-rate             ratio        All 60 months
+Mortality Rate                             nepal-tb-mortality-rate                proportion   All 60 months
+Lost to Follow-Up (LTFU) Rate              nepal-tb-ltfu-rate                     proportion   All 60 months
+Treatment Failure Rate                     nepal-tb-failure-rate                  proportion   All 60 months
+Not Evaluated Rate                         nepal-tb-not-eval-rate                 proportion   All 60 months
+Bacteriological Confirmation Proportion    nepal-tb-bacteriological-confirmation  proportion   All 60 months
+TB-HIV Co-infection Proportion             nepal-tb-hiv-coinfection               proportion   All 60 months
+Male-to-Female Notification Ratio          nepal-tb-gender-ratio                  ratio        57 months (NaN for Baishak/Jestha/Asar 2078)
+Relapse Proportion                         nepal-tb-relapse-proportion            proportion   57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 0–4 Proportion                   nepal-tb-age-group-0to4                proportion   57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 5–14 Proportion                  nepal-tb-age-group-5to14               proportion   57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 15–24 Proportion                 nepal-tb-age-group-15to24              proportion   57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 25–34 Proportion                 nepal-tb-age-group-25to34              proportion   57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 35–44 Proportion                 nepal-tb-age-group-35to44              proportion   57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 45–54 Proportion                 nepal-tb-age-group-45to54              proportion   57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 55–64 Proportion                 nepal-tb-age-group-55to64              proportion   57 months (NaN for Baishak/Jestha/Asar 2078)
+Age Group 65+ Proportion                   nepal-tb-age-group-65plus              proportion   57 months (NaN for Baishak/Jestha/Asar 2078)
 
-2. Output Catalog:
-   - 11 Individual JSON Measure Files successfully validated:
-     * nepal-tb-tsr-cure.json
-     * nepal-tb-notification-rate.json
-     * nepal-tb-mortality-rate.json
-     * nepal-tb-ltfu-rate.json
-     * nepal-tb-failure-rate.json
-     * nepal-tb-not-eval-rate.json
-     * nepal-tb-bacteriological-confirmation.json
-     * nepal-tb-xpert-coverage.json
-     * nepal-tb-hiv-coinfection.json
-     * nepal-tb-art-coverage.json
-     * nepal-tb-gender-ratio.json
-   - 1 Global Bundle Resource containing all measures combined:
-     * nepal-tb-measures-bundle.json (Type: collection)
+Full mapping table saved → outputs/reports/11_DHIS2_FHIR_Mapping_Table.csv
 
-3. Key Structural Attributes Included:
-   - Canonical URLs: https://iihms.gov.np/fhir/Measure/<id>
-   - Unified publisher & contact telemetry.
-   - Distinctive "proportion" vs "ratio" scoring declarations in XML/JSON formats.
-   - Built-in CQL descriptors inside population definitions.
+--------------------------------------------------------------------------------
+SECTION C: INDICATOR CALCULATION SUMMARY
+--------------------------------------------------------------------------------
 
-================================================================================
-STATUS: VALIDATED & STANDARDISED. DEPLOYMENT READY.
+  Input  : data/final/final_cleaned_data.csv
+  Output : data/harmonized/harmonized_tb_data.csv
+  Total months        : 60
+  Fully computed rows : 57 (Shrawan 2078 → Chaitra 2082)
+  Gap months (NaN)    : 3 (Baishak/Jestha/Asar 2078)
+
+  Indicator                                   Min     Mean      Max  NaN count
+  ----------------------------------------------------------------------------
+  tsr_cure_rate                            0.7015   0.8370   0.9516          0
+  notification_rate_100k                  92.1547 162.8248 231.5324          0
+  mortality_rate                           0.0000   0.0218   0.0526          0
+  ltfu_rate                                0.0000   0.0193   0.0619          0
+  failure_rate                             0.0000   0.0079   0.0375          0
+  not_eval_rate                            0.0000   0.0425   0.1395          0
+  bacteriological_confirmation_pct         0.1808   0.4107   0.7546          0
+  tb_hiv_proportion                        0.0000   0.0094   0.0375          0
+  mf_ratio                                 0.7607   1.1911   1.7841          3
+  relapse_proportion                       0.0256   0.0577   0.1207          3
+  age_group_0to4_proportion                0.0000   0.0137   0.0469          3
+  age_group_5to14_proportion               0.0218   0.0561   0.1306          3
+  age_group_15to24_proportion              0.2089   0.2622   0.3856          3
+  age_group_25to34_proportion              0.1471   0.2097   0.3130          3
+  age_group_35to44_proportion              0.0800   0.1401   0.2079          3
+  age_group_45to54_proportion              0.0677   0.1036   0.1602          3
+  age_group_55to64_proportion              0.0428   0.0910   0.1324          3
+  age_group_65plus_proportion              0.0566   0.1236   0.1779          3
+
+--------------------------------------------------------------------------------
+SECTION D: FHIR MEASURE RESOURCE GENERATION
+--------------------------------------------------------------------------------
+
+  11 FHIR R4 Measure definition JSON files generated in fhir/measures/
+    [proportion] nepal-tb-tsr-cure.json
+    [ratio     ] nepal-tb-notification-rate.json
+    [proportion] nepal-tb-mortality-rate.json
+    [proportion] nepal-tb-ltfu-rate.json
+    [proportion] nepal-tb-failure-rate.json
+    [proportion] nepal-tb-not-eval-rate.json
+    [proportion] nepal-tb-bacteriological-confirmation.json
+    [proportion] nepal-tb-hiv-coinfection.json
+    [ratio     ] nepal-tb-gender-ratio.json
+    [proportion] nepal-tb-relapse-proportion.json
+    [proportion] nepal-tb-age-group-0to4.json
+    [proportion] nepal-tb-age-group-5to14.json
+    [proportion] nepal-tb-age-group-15to24.json
+    [proportion] nepal-tb-age-group-25to34.json
+    [proportion] nepal-tb-age-group-35to44.json
+    [proportion] nepal-tb-age-group-45to54.json
+    [proportion] nepal-tb-age-group-55to64.json
+    [proportion] nepal-tb-age-group-65plus.json
+
+  1 Master Bundle: nepal-tb-measures-bundle.json (type: collection)
+
+  Two indicators from the previous project are replaced:
+    REMOVED: nepal-tb-xpert-coverage  (xpert_cov_pct not in new dataset)
+    REMOVED: nepal-tb-art-coverage     (art_cov_pct not in new dataset)
+    ADDED  : nepal-tb-relapse-proportion       (now computable from new data)
+    ADDED  : nepal-tb-age-group-0to4 through nepal-tb-age-group-65plus
+             (all 8 age group proportions — full age distribution coverage)
+
 ================================================================================

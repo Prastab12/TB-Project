@@ -2,8 +2,8 @@
 // Profile: TBMeasure
 //
 // Profile on the FHIR R4 Measure resource for Nepal NTP TB programme indicators.
-// Covers all 13 indicators:
-//   - 7 ratio   (monthly notification: new cases, relapse, total notified)
+// Covers all 32 variables:
+//   - 26 ratio  (monthly notification: new cases, relapse, total notified, HIV, 16 age-sex bands)
 //   - 6 cohort  (annual treatment outcomes: pbc_reg, cured, failed, died, ltfu, not_eval)
 //
 // Canonical base: https://iihms.gov.np/fhir
@@ -20,9 +20,10 @@ in this IG conform to this profile.
 
 Two scoring types are used:
 
-- **ratio** — for 7 monthly notification indicators (numerator = case count;
-  denominator = CBS mid-year district population).
-- **cohort** — for 6 annual treatment outcome indicators (initial-population =
+- **ratio** — for 26 monthly notification variables (numerator = case count;
+  denominator = CBS mid-year district population). Covers total, sex-disaggregated,
+  and all 16 age-sex band counts, plus HIV co-infection.
+- **cohort** — for 6 annual treatment outcome variables (initial-population =
   registered cohort pbc_reg).
 
 All population criteria are expressed as plain-text descriptions referencing

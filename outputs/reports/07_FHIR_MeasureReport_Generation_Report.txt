@@ -1,128 +1,111 @@
 ================================================================================
-PHASE 6: FHIR MEASUREREPORT GENERATION & INTEGRITY VERIFICATION REPORT
+PHASE 4: FHIR R4 MEASUREREPORT GENERATION REPORT
 ================================================================================
-Integrated Health Information Management System (IIHMS) | Nepal
-Date Generated: 2026-05-17
-Status: COMPLETE, RESTRENGTHENED & SECURELY SEGREGATED (100% AUDIT PASS)
-
-This report documents the generation, hierarchical Month-Wise Restructuring, and 
-advanced FHIR R4 standard compliance mappings of the Kathmandu-specific monthly 
-TB MeasureReports and collection Bundles.
+Project    : IIHMS TB Data Standardization | Kathmandu District, Nepal
+Generated  : 2026-06-04
+FHIR Ver   : R4 (4.0.1)
+Status     : COMPLETE
 
 --------------------------------------------------------------------------------
-SECTION A: HIERARCHICAL MONTH-WISE RESTRICTED STRUCTURE
+GENERATION SUMMARY
 --------------------------------------------------------------------------------
-Rather than a flat structure or provincial disaggregation, all 660 Kathmandu-specific 
-monthly MeasureReports (60 months x 11 clinical indicators) are grouped into 60 
-individual, self-contained monthly directories:
-  → Path: fhir/measures/measure_report/monthwise_measure_report/{bs_year}-{clean_month}/
-
-Each monthly directory contains:
-1. 11 Individual Clinical MeasureReports:
-   - Formatted strictly as valid FHIR R4 'MeasureReport' resources.
-   - Subject explicitly set to 'Location/loc-kathmandu' (Kathmandu District, Nepal).
-2. 1 Custom Monthly Collection Bundle:
-   - File Name: bundle-kathmandu-{bs_year}-{clean_month}.json
-   - Resource Type: 'Bundle'
-   - Type: 'collection'
-   - Wraps all 11 MeasureReport resources for that month inside a single unified container.
+  Input CSV               : data/final/final_cleaned_data.csv
+  Total months            : 60
+  Total variables         : 32 (26 ratio + 6 cohort)
+  MeasureReport files     : 1920  (by_indicator/)
+  Per-variable bundles    : 32  (bundles/)
+  Master bundle           : 1  (bundle-all.json)
+  DAR entries (not-reported): 72  (24 gap-affected variables × 3 months)
 
 --------------------------------------------------------------------------------
-SECTION B: ADVANCED FHIR DATAABSENTREASON MAPPING
+VARIABLE CATALOGUE
 --------------------------------------------------------------------------------
-For periods where specific clinical variables were not reported, we implemented 
-a standard-compliant FHIR R4 DataAbsentReason mapping.
-
-1. Target Scope:
-   - Target District: Kathmandu
-   - Target Periods: 2078 Baishakh, Jestha, and Asar
-   - Mapped Variables: New Cases (Total/F/M), Relapse (Total/F/M), Total TB (M+F/F/M), 
-     M:F Ratio, and New Case Percentages (Male/Female).
-
-2. Affected Clinical Indicators & Mappings:
-   - Annualized TB Notification Rate (tb-notification-rate):
-     * Numerator Count is absent.
-   - Male-to-Female TB Notification Ratio (tb-gender-ratio):
-     * Numerator and Denominator Counts are both absent.
-   - Bacteriological Confirmation Proportion (tb-bacteriological-confirmation):
-     * Denominator Count is absent.
-
-3. Structural JSON Representation:
-   - Counts: Numerical count fields are omitted, and standard FHIR primitive extensions 
-     are appended under '_count':
-     ```json
-     "_count": {
-       "extension": [{
-         "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-         "valueCode": "not-reported"
-       }]
-     }
-     ```
-   - Scores: The overall mathematical 'measureScore' is flagged as uncomputable by 
-     omitting 'value' and appending '_value' with the exact same extension:
-     ```json
-     "measureScore": {
-       "unit": "ratio",
-       "system": "http://unitsofmeasure.org",
-       "_value": {
-         "extension": [{
-           "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-           "valueCode": "not-reported"
-         }]
-       }
-     }
-     ```
+  Variable ID                    CSV Column             Type     DAR?
+  ------------------------------------------------------------------------
+  nepal-tb-new-cases-total       new_cases_total        ratio    No
+  nepal-tb-new-cases-female      new_cases_female       ratio    Yes (3 months)
+  nepal-tb-new-cases-male        new_cases_male         ratio    Yes (3 months)
+  nepal-tb-relapse-total         relapse_total          ratio    Yes (3 months)
+  nepal-tb-relapse-female        relapse_female         ratio    Yes (3 months)
+  nepal-tb-relapse-male          relapse_male           ratio    Yes (3 months)
+  nepal-tb-total-tb-notified     total_tb_mf            ratio    Yes (3 months)
+  nepal-tb-total-tb-female       total_tb_female        ratio    Yes (3 months)
+  nepal-tb-total-tb-male         total_tb_male          ratio    Yes (3 months)
+  nepal-tb-hiv-positive          tb_hiv_positive        ratio    No
+  nepal-tb-age-0to4-f            0_to_4_f               ratio    Yes (3 months)
+  nepal-tb-age-0to4-m            0_to_4_m               ratio    Yes (3 months)
+  nepal-tb-age-5to14-f           5_to_14_f              ratio    Yes (3 months)
+  nepal-tb-age-5to14-m           5_to_14_m              ratio    Yes (3 months)
+  nepal-tb-age-15to24-f          15_to_24_f             ratio    Yes (3 months)
+  nepal-tb-age-15to24-m          15_to_24_m             ratio    Yes (3 months)
+  nepal-tb-age-25to34-f          25_to_34_f             ratio    Yes (3 months)
+  nepal-tb-age-25to34-m          25_to_34_m             ratio    Yes (3 months)
+  nepal-tb-age-35to44-f          35_to_44_f             ratio    Yes (3 months)
+  nepal-tb-age-35to44-m          35_to_44_m             ratio    Yes (3 months)
+  nepal-tb-age-45to54-f          45_to_54_f             ratio    Yes (3 months)
+  nepal-tb-age-45to54-m          45_to_54_m             ratio    Yes (3 months)
+  nepal-tb-age-55to64-f          55_to_64_f             ratio    Yes (3 months)
+  nepal-tb-age-55to64-m          55_to_64_m             ratio    Yes (3 months)
+  nepal-tb-age-65plus-f          65_f                   ratio    Yes (3 months)
+  nepal-tb-age-65plus-m          65_m                   ratio    Yes (3 months)
+  nepal-tb-pbc-reg               pbc_reg                cohort   No
+  nepal-tb-cured                 cured                  cohort   No
+  nepal-tb-failed                failed                 cohort   No
+  nepal-tb-died                  died                   cohort   No
+  nepal-tb-ltfu                  ltfu                   cohort   No
+  nepal-tb-not-eval              not_eval               cohort   No
 
 --------------------------------------------------------------------------------
-SECTION C: CALENDAR TRANSLATION & NEPALESE CONTEXT PRESERVATION
+DATA-ABSENT-REASON SCOPE
 --------------------------------------------------------------------------------
-1. Deterministic Conversion Mapping:
-   - We mapped 60 continuous monthly periods from the Bikram Sambat (BS) calendar
-     (spanning FY 2078 BS to 2082 BS) directly into ISO 8601 Gregorian start and 
-     end date bounds (e.g. Baishakh 2078 -> 2021-04-16 to 2021-05-15).
-
-2. Local Calendar Context Extensions:
-   - Every single generated period block contains a custom, complex extension:
-     * URL: https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period
-     * Sub-fields: 'bs-year', 'bs-month', and 'fiscal-year'.
-   - This ensures 100% interoperability with international systems while preserving 
-     complete local traceability for Nepalese public health analysts.
+  Gap months: Baishak 2078, Jestha 2078, Asar 2078
+  Reason: Source DHIS2 system had no sex/age data for these 3 months.
+  Variables NOT affected (data valid for all 60 months):
+    nepal-tb-new-cases-total, nepal-tb-hiv-positive,
+    nepal-tb-pbc-reg, nepal-tb-cured, nepal-tb-failed,
+    nepal-tb-died, nepal-tb-ltfu, nepal-tb-not-eval
+  Variables WITH data-absent-reason for gap months (24 variables):
+    All sex-disaggregated counts and all 16 age-sex band variables.
 
 --------------------------------------------------------------------------------
-SECTION D: SECURE VERSION CONTROL CONFIGURATION (GIT EXCLUSION)
+FILE STRUCTURE
 --------------------------------------------------------------------------------
-As per explicit directives to prevent pushing raw clinical outputs to Git:
-- Path 'fhir/measures/measure_report/' is added directly to '.gitignore'.
-- Git check-ignore tests confirm that all 660 JSON records, subfolders, and 
-  60 monthly Bundles are 100% ignored.
-- The generation scripts are safely preserved in version control:
-  * scripts/05_fhir_measure/05_generate_kathmandu_measure_reports.py
-  * scripts/05_fhir_measure/06_generate_grouped_monthwise_reports.py
-
---------------------------------------------------------------------------------
-SECTION E: PHASE 7 FHIR VALIDATION RIG & RESULTS
---------------------------------------------------------------------------------
-We constructed and executed a comprehensive automated Tier 2 & Tier 3 validation 
-rig (scripts/05_fhir_measure/07_verify_fhir_validation.py) to audit every single 
-generated resource.
-
-1. Validation Parameters:
-   - Tier 2 Specification Audit: Utilized fhir.resources (version 8.2.0, powered by Pydantic)
-     to parse and assert 100% syntactic compliance with FHIR choice fields 
-     (e.g., measureScoreQuantity) and R5 model requirements.
-   - Tier 3 Semantic Audit: Asserted subject Location references, Bikram Sambat 
-     temporal date mappings, and correct count/measureScore omissions under 
-     DataAbsentReason extensions.
-
-2. Audit Evaluation Metrics:
-   - Total Definitional Measure files validated: 11 / 11 (100% Passed)
-   - Total Definitional Bundle files validated: 1 / 1 (100% Passed)
-   - Total MeasureReport files validated: 660 / 660 (100% Passed)
-   - Total monthly Bundle files validated: 60 / 60 (100% Passed)
-   - Total structural/semantic failures encountered: 0 (100% Pass Rate)
+  fhir/measure_reports/
+    by_indicator/
+      new-cases-total/   (60 standalone JSON files)
+      new-cases-female/   (60 standalone JSON files)
+      new-cases-male/   (60 standalone JSON files)
+      relapse-total/   (60 standalone JSON files)
+      relapse-female/   (60 standalone JSON files)
+      relapse-male/   (60 standalone JSON files)
+      total-tb-notified/   (60 standalone JSON files)
+      total-tb-female/   (60 standalone JSON files)
+      total-tb-male/   (60 standalone JSON files)
+      hiv-positive/   (60 standalone JSON files)
+      age-0to4-f/   (60 standalone JSON files)
+      age-0to4-m/   (60 standalone JSON files)
+      age-5to14-f/   (60 standalone JSON files)
+      age-5to14-m/   (60 standalone JSON files)
+      age-15to24-f/   (60 standalone JSON files)
+      age-15to24-m/   (60 standalone JSON files)
+      age-25to34-f/   (60 standalone JSON files)
+      age-25to34-m/   (60 standalone JSON files)
+      age-35to44-f/   (60 standalone JSON files)
+      age-35to44-m/   (60 standalone JSON files)
+      age-45to54-f/   (60 standalone JSON files)
+      age-45to54-m/   (60 standalone JSON files)
+      age-55to64-f/   (60 standalone JSON files)
+      age-55to64-m/   (60 standalone JSON files)
+      age-65plus-f/   (60 standalone JSON files)
+      age-65plus-m/   (60 standalone JSON files)
+      pbc-reg/   (60 standalone JSON files)
+      cured/   (60 standalone JSON files)
+      failed/   (60 standalone JSON files)
+      died/   (60 standalone JSON files)
+      ltfu/   (60 standalone JSON files)
+      not-eval/   (60 standalone JSON files)
+    bundles/
+      bundle-{variable}.json  (32 files — 3 shared + 60 MRs each)
+      bundle-all.json           (3 shared + 1920 MRs)
 
 ================================================================================
-AUDIT STATUS: 100% INTEGRITY PASSED. DISAGGREGATED KATHMANDU DATASETS PREPARED.
-================================================================================
-
-

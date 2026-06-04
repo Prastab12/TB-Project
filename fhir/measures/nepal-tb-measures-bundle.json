@@ -1,0 +1,2554 @@
+{
+  "resourceType": "Bundle",
+  "id": "nepal-tb-measures-bundle",
+  "identifier": {
+    "use": "official",
+    "system": "https://iihms.gov.np/fhir/NamingSystem/bundle-identifiers",
+    "value": "nepal-tb-measures-bundle"
+  },
+  "type": "collection",
+  "timestamp": "2026-06-04T08:04:20.757028Z",
+  "entry": [
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-0to4-f",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-0to4-f",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-0to4-f",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-0to4-f"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_0TO4_F",
+        "title": "New TB Cases \u2014 Female, Age 0\u20134",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among female patients aged 0\u20134 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-0to4-f",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-0to4-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 0_to_4_f from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-0to4-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-0to4-m",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-0to4-m",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-0to4-m",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-0to4-m"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_0TO4_M",
+        "title": "New TB Cases \u2014 Male, Age 0\u20134",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among male patients aged 0\u20134 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-0to4-m",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-0to4-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 0_to_4_m from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-0to4-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-15to24-f",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-15to24-f",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-15to24-f",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-15to24-f"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_15TO24_F",
+        "title": "New TB Cases \u2014 Female, Age 15\u201324",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among female patients aged 15\u201324 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-15to24-f",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-15to24-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 15_to_24_f from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-15to24-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-15to24-m",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-15to24-m",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-15to24-m",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-15to24-m"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_15TO24_M",
+        "title": "New TB Cases \u2014 Male, Age 15\u201324",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among male patients aged 15\u201324 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-15to24-m",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-15to24-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 15_to_24_m from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-15to24-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-25to34-f",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-25to34-f",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-25to34-f",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-25to34-f"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_25TO34_F",
+        "title": "New TB Cases \u2014 Female, Age 25\u201334",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among female patients aged 25\u201334 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-25to34-f",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-25to34-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 25_to_34_f from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-25to34-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-25to34-m",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-25to34-m",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-25to34-m",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-25to34-m"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_25TO34_M",
+        "title": "New TB Cases \u2014 Male, Age 25\u201334",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among male patients aged 25\u201334 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-25to34-m",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-25to34-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 25_to_34_m from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-25to34-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-35to44-f",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-35to44-f",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-35to44-f",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-35to44-f"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_35TO44_F",
+        "title": "New TB Cases \u2014 Female, Age 35\u201344",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among female patients aged 35\u201344 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-35to44-f",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-35to44-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 35_to_44_f from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-35to44-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-35to44-m",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-35to44-m",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-35to44-m",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-35to44-m"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_35TO44_M",
+        "title": "New TB Cases \u2014 Male, Age 35\u201344",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among male patients aged 35\u201344 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-35to44-m",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-35to44-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 35_to_44_m from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-35to44-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-45to54-f",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-45to54-f",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-45to54-f",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-45to54-f"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_45TO54_F",
+        "title": "New TB Cases \u2014 Female, Age 45\u201354",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among female patients aged 45\u201354 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-45to54-f",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-45to54-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 45_to_54_f from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-45to54-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-45to54-m",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-45to54-m",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-45to54-m",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-45to54-m"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_45TO54_M",
+        "title": "New TB Cases \u2014 Male, Age 45\u201354",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among male patients aged 45\u201354 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-45to54-m",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-45to54-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 45_to_54_m from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-45to54-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-55to64-f",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-55to64-f",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-55to64-f",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-55to64-f"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_55TO64_F",
+        "title": "New TB Cases \u2014 Female, Age 55\u201364",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among female patients aged 55\u201364 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-55to64-f",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-55to64-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 55_to_64_f from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-55to64-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-55to64-m",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-55to64-m",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-55to64-m",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-55to64-m"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_55TO64_M",
+        "title": "New TB Cases \u2014 Male, Age 55\u201364",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among male patients aged 55\u201364 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-55to64-m",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-55to64-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 55_to_64_m from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-55to64-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-5to14-f",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-5to14-f",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-5to14-f",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-5to14-f"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_5TO14_F",
+        "title": "New TB Cases \u2014 Female, Age 5\u201314",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among female patients aged 5\u201314 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-5to14-f",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-5to14-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 5_to_14_f from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-5to14-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-5to14-m",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-5to14-m",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-5to14-m",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-5to14-m"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_5TO14_M",
+        "title": "New TB Cases \u2014 Male, Age 5\u201314",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among male patients aged 5\u201314 years. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-5to14-m",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-5to14-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 5_to_14_m from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-5to14-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-65plus-f",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-65plus-f",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-65plus-f",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-65plus-f"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_65PLUS_F",
+        "title": "New TB Cases \u2014 Female, Age 65+",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among female patients aged 65 years and above. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-65plus-f",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-65plus-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 65_f from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-65plus-f",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-65plus-m",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-age-65plus-m",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-age-65plus-m",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-age-65plus-m"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_AGE_65PLUS_M",
+        "title": "New TB Cases \u2014 Male, Age 65+",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly new TB cases among male patients aged 65 years and above. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-age-65plus-m",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-age-65plus-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of 65_m from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-age-65plus-m",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-cured",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-cured",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-cured",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-cured"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_CURED",
+        "title": "TB Patients Cured",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Count of TB patients who completed treatment and were bacteriologically confirmed cured.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "cohort",
+              "display": "Cohort"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-cured",
+            "population": [
+              {
+                "id": "pop-init-nepal-tb-cured",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Count of cured from NTP monthly reporting data for Kathmandu district."
+                }
+              }
+            ]
+          }
+        ],
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "increase",
+              "display": "Increased score indicates improvement"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-died",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-died",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-died",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-died"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_DIED",
+        "title": "TB Patients Died During Treatment",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Count of TB patients who died from any cause during the treatment period.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "cohort",
+              "display": "Cohort"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-died",
+            "population": [
+              {
+                "id": "pop-init-nepal-tb-died",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Count of died from NTP monthly reporting data for Kathmandu district."
+                }
+              }
+            ]
+          }
+        ],
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "decrease",
+              "display": "Decreased score indicates improvement"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-failed",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-failed",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-failed",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-failed"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_FAILED",
+        "title": "TB Treatment Failures",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Count of TB patients whose treatment failed (sputum-positive at month 5 or later during treatment).",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "cohort",
+              "display": "Cohort"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-failed",
+            "population": [
+              {
+                "id": "pop-init-nepal-tb-failed",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Count of failed from NTP monthly reporting data for Kathmandu district."
+                }
+              }
+            ]
+          }
+        ],
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "decrease",
+              "display": "Decreased score indicates improvement"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-hiv-positive",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-hiv-positive",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-hiv-positive",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-hiv-positive"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_HIV_POSITIVE",
+        "title": "TB Patients with HIV Co-infection",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly count of TB patients with confirmed HIV co-infection in Kathmandu district.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-hiv-positive",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-hiv-positive",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of tb_hiv_positive from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-hiv-positive",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-ltfu",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-ltfu",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-ltfu",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-ltfu"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_LTFU",
+        "title": "TB Patients Lost to Follow-Up",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Count of TB patients whose treatment was interrupted for two or more consecutive months.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "cohort",
+              "display": "Cohort"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-ltfu",
+            "population": [
+              {
+                "id": "pop-init-nepal-tb-ltfu",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Count of ltfu from NTP monthly reporting data for Kathmandu district."
+                }
+              }
+            ]
+          }
+        ],
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "decrease",
+              "display": "Decreased score indicates improvement"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-female",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-new-cases-female",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-female",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-new-cases-female"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_NEW_CASES_FEMALE",
+        "title": "New TB Cases (Female)",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly count of newly registered TB cases among female patients in Kathmandu district. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-new-cases-female",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-new-cases-female",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of new_cases_female from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-new-cases-female",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-male",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-new-cases-male",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-male",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-new-cases-male"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_NEW_CASES_MALE",
+        "title": "New TB Cases (Male)",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly count of newly registered TB cases among male patients in Kathmandu district. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-new-cases-male",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-new-cases-male",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of new_cases_male from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-new-cases-male",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-total",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-new-cases-total",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-total",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-new-cases-total"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_NEW_CASES_TOTAL",
+        "title": "New TB Cases (Total)",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly count of all newly registered TB cases (male + female) in Kathmandu district.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-new-cases-total",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-new-cases-total",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of new_cases_total from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-new-cases-total",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-not-eval",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-not-eval",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-not-eval"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_NOT_EVAL",
+        "title": "TB Treatment Outcomes Not Evaluated",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Count of TB patients for whom no treatment outcome was assigned.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "cohort",
+              "display": "Cohort"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-not-eval",
+            "population": [
+              {
+                "id": "pop-init-nepal-tb-not-eval",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Count of not_eval from NTP monthly reporting data for Kathmandu district."
+                }
+              }
+            ]
+          }
+        ],
+        "improvementNotation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+              "code": "decrease",
+              "display": "Decreased score indicates improvement"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-pbc-reg",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-pbc-reg",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-pbc-reg",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-pbc-reg"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_PBC_REG",
+        "title": "Pulmonary Bacteriologically Confirmed Registered Cohort",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Count of pulmonary bacteriologically confirmed TB patients registered in the treatment cohort for the reporting period.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "cohort",
+              "display": "Cohort"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-pbc-reg",
+            "population": [
+              {
+                "id": "pop-init-nepal-tb-pbc-reg",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Count of pbc_reg from NTP monthly reporting data for Kathmandu district."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-relapse-female",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-relapse-female",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-relapse-female",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-relapse-female"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_RELAPSE_FEMALE",
+        "title": "TB Relapse Cases (Female)",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly count of TB relapse cases among female patients in Kathmandu district. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-relapse-female",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-relapse-female",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of relapse_female from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-relapse-female",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-relapse-male",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-relapse-male",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-relapse-male",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-relapse-male"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_RELAPSE_MALE",
+        "title": "TB Relapse Cases (Male)",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly count of TB relapse cases among male patients in Kathmandu district. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-relapse-male",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-relapse-male",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of relapse_male from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-relapse-male",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-relapse-total",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-relapse-total",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-relapse-total",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-relapse-total"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_RELAPSE_TOTAL",
+        "title": "TB Relapse Cases (Total)",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly count of TB relapse (re-treatment) cases (male + female) in Kathmandu district. Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-relapse-total",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-relapse-total",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of relapse_total from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-relapse-total",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-total-tb-female",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-total-tb-female"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_TOTAL_TB_FEMALE",
+        "title": "Total TB Cases Notified (Female)",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly total TB cases notified among female patients (new + relapse female). Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-total-tb-female",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of total_tb_female from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-total-tb-female",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-male",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-total-tb-male",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-male",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-total-tb-male"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_TOTAL_TB_MALE",
+        "title": "Total TB Cases Notified (Male)",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly total TB cases notified among male patients (new + relapse male). Data-absent-reason: not-reported for Baishak/Jestha/Asar 2078.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-male",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-total-tb-male",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of total_tb_male from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-total-tb-male",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-notified",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "nepal-tb-total-tb-notified",
+        "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-notified",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+            "value": "nepal-tb-total-tb-notified"
+          }
+        ],
+        "version": "1.0.0",
+        "name": "NEPAL_TB_TOTAL_TB_NOTIFIED",
+        "title": "Total TB Cases Notified (M+F)",
+        "status": "active",
+        "experimental": false,
+        "date": "2026-06-04",
+        "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "https://iihms.gov.np"
+              }
+            ]
+          }
+        ],
+        "description": "Monthly total TB cases notified (new + relapse, male + female) in Kathmandu district.",
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "ratio",
+              "display": "Ratio"
+            }
+          ]
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-notified",
+            "population": [
+              {
+                "id": "pop-numer-nepal-tb-total-tb-notified",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Monthly count of total_tb_mf from NTP reporting data for Kathmandu district."
+                }
+              },
+              {
+                "id": "pop-denom-nepal-tb-total-tb-notified",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/plain",
+                  "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

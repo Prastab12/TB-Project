@@ -1,0 +1,78 @@
+{
+  "resourceType": "Measure",
+  "id": "nepal-tb-total-tb-notified",
+  "url": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-notified",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "https://iihms.gov.np/fhir/NamingSystem/measure-identifiers",
+      "value": "nepal-tb-total-tb-notified"
+    }
+  ],
+  "version": "1.0.0",
+  "name": "NEPAL_TB_TOTAL_TB_NOTIFIED",
+  "title": "Total TB Cases Notified (M+F)",
+  "status": "active",
+  "experimental": false,
+  "date": "2026-06-04",
+  "publisher": "Integrated Health Information Management System (IIHMS), Nepal",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://iihms.gov.np"
+        }
+      ]
+    }
+  ],
+  "description": "Monthly total TB cases notified (new + relapse, male + female) in Kathmandu district.",
+  "scoring": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+        "code": "ratio",
+        "display": "Ratio"
+      }
+    ]
+  },
+  "group": [
+    {
+      "id": "group-nepal-tb-total-tb-notified",
+      "population": [
+        {
+          "id": "pop-numer-nepal-tb-total-tb-notified",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "numerator",
+                "display": "Numerator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/plain",
+            "expression": "Monthly count of total_tb_mf from NTP reporting data for Kathmandu district."
+          }
+        },
+        {
+          "id": "pop-denom-nepal-tb-total-tb-notified",
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "denominator",
+                "display": "Denominator"
+              }
+            ]
+          },
+          "criteria": {
+            "language": "text/plain",
+            "expression": "Kathmandu district mid-year population from CBS (district_pop_mid_year_cbs)."
+          }
+        }
+      ]
+    }
+  ]
+}

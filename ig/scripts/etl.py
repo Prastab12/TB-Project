@@ -2,8 +2,8 @@
 IG ETL — Nepal NTP TB FHIR MeasureReport pipeline
 ===================================================
 Stack  : fhir.resources 8.x (Pydantic v2) + pandas
-Input  : data/final/final_cleaned_data.csv  (60 rows × 18 cols, Kathmandu)
-Output : ig/fhir-output/measure-reports/    (all 780 MeasureReport JSON files)
+Input  : data/final/final_cleaned_data.csv  (60 rows × 37 cols, Kathmandu)
+Output : ig/fhir-output/measure-reports/    (all 1,920 MeasureReport JSON files)
          ig/input/resources/               (3 canonical IG example files)
 
 Architectural rules:
@@ -91,15 +91,36 @@ def _fiscal_year(bs_year: int, bs_month: str) -> str:
     return f"{bs_year - 1}/{str(bs_year)[-2:]}"
 
 
-# ── Indicator specs ────────────────────────────────────────────────────────────
+# ── Variable specs ─────────────────────────────────────────────────────────────
+# (measure-id-suffix, csv_column, gap_affected)
+# gap_affected=True  → apply data-absent-reason for Baishak/Jestha/Asar 2078
 RATIO_INDICATORS = [
-    ("new-cases-total",   "new_cases_total"),
-    ("new-cases-female",  "new_cases_female"),
-    ("new-cases-male",    "new_cases_male"),
-    ("relapse-total",     "relapse_total"),
-    ("relapse-female",    "relapse_female"),
-    ("relapse-male",      "relapse_male"),
-    ("total-tb-notified", "total_tb_m+f"),
+    ("new-cases-total",   "new_cases_total",  False),
+    ("new-cases-female",  "new_cases_female", True),
+    ("new-cases-male",    "new_cases_male",   True),
+    ("relapse-total",     "relapse_total",    True),
+    ("relapse-female",    "relapse_female",   True),
+    ("relapse-male",      "relapse_male",     True),
+    ("total-tb-notified", "total_tb_mf",      True),
+    ("total-tb-female",   "total_tb_female",  True),
+    ("total-tb-male",     "total_tb_male",    True),
+    ("hiv-positive",      "tb_hiv_positive",  False),
+    ("age-0to4-f",        "0_to_4_f",         True),
+    ("age-0to4-m",        "0_to_4_m",         True),
+    ("age-5to14-f",       "5_to_14_f",        True),
+    ("age-5to14-m",       "5_to_14_m",        True),
+    ("age-15to24-f",      "15_to_24_f",       True),
+    ("age-15to24-m",      "15_to_24_m",       True),
+    ("age-25to34-f",      "25_to_34_f",       True),
+    ("age-25to34-m",      "25_to_34_m",       True),
+    ("age-35to44-f",      "35_to_44_f",       True),
+    ("age-35to44-m",      "35_to_44_m",       True),
+    ("age-45to54-f",      "45_to_54_f",       True),
+    ("age-45to54-m",      "45_to_54_m",       True),
+    ("age-55to64-f",      "55_to_64_f",       True),
+    ("age-55to64-m",      "55_to_64_m",       True),
+    ("age-65plus-f",      "65_f",             True),
+    ("age-65plus-m",      "65_m",             True),
 ]
 
 COHORT_INDICATORS = [
@@ -144,10 +165,12 @@ def _build_period(bs_year: int, bs_month: str) -> Period:
 
 
 def _ratio_group(
-    row: pd.Series, ind_id: str, num_col: str, bs_year: str, bs_month: str
+    row: pd.Series, ind_id: str, num_col: str, gap_affected: bool,
+    bs_year: str, bs_month: str
 ) -> MeasureReportGroup:
-    """Build the MeasureReportGroup for a ratio (notification) indicator."""
-    absent  = (bs_year, bs_month) in UNDER_REPORTED or str(row[num_col]).strip() in ("", "nan")
+    """Build the MeasureReportGroup for a ratio (notification) variable."""
+    absent  = (gap_affected and (bs_year, bs_month) in UNDER_REPORTED) \
+              or str(row[num_col]).strip() in ("", "nan")
     num_raw = str(row[num_col]).strip()
     den_raw = str(row[DENOMINATOR_COL]).strip()
     num_val = int(float(num_raw)) if num_raw not in ("", "nan") else 0
@@ -271,12 +294,12 @@ def run(examples_only: bool = False) -> None:
         bs_year  = str(row["bs_year"])
         bs_month = str(row["bs_month"])
 
-        # ── Ratio indicators ──────────────────────────────────────────────────
-        for ind_id, num_col in RATIO_INDICATORS:
-            group = _ratio_group(row, ind_id, num_col, bs_year, bs_month)
+        # ── Ratio variables ───────────────────────────────────────────────────
+        for ind_id, num_col, gap_affected in RATIO_INDICATORS:
+            group = _ratio_group(row, ind_id, num_col, gap_affected, bs_year, bs_month)
             mr    = _measure_report(row, ind_id, group, now_str)
 
-            is_dar = (bs_year, bs_month) in UNDER_REPORTED or str(row[num_col]).strip() in ("", "nan")
+            is_dar = gap_affected and (bs_year, bs_month) in UNDER_REPORTED
             if is_dar:
                 dar_count += 1
 
@@ -284,12 +307,15 @@ def run(examples_only: bool = False) -> None:
                 out_path = OUT_ALL / ind_id / f"{mr.id}.json"
                 _write(out_path, mr)
 
-            # Capture IG examples (first ratio, first DAR-ratio)
-            if ind_id == "new-cases-total":
-                if bs_year == "2078" and bs_month == "Shrawan" and "ratio" not in ig_examples:
-                    ig_examples["ratio"] = mr
-                if bs_year == "2078" and bs_month == "Baishak" and "ratio-dar" not in ig_examples:
-                    ig_examples["ratio-dar"] = mr
+            # Capture IG examples:
+            #   ratio     → new-cases-total, Shrawan 2078  (full data, no DAR)
+            #   ratio-dar → new-cases-female, Baishak 2078 (gap month, DAR applied)
+            if ind_id == "new-cases-total" and bs_year == "2078" \
+                    and bs_month == "Shrawan" and "ratio" not in ig_examples:
+                ig_examples["ratio"] = mr
+            if ind_id == "new-cases-female" and bs_year == "2078" \
+                    and bs_month == "Baishak" and "ratio-dar" not in ig_examples:
+                ig_examples["ratio-dar"] = mr
 
             total += 1
 

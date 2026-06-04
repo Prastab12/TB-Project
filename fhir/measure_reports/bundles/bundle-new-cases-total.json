@@ -7,7 +7,7 @@
     ]
   },
   "type": "collection",
-  "timestamp": "2026-05-22T09:08:48Z",
+  "timestamp": "2026-06-04T08:17:55Z",
   "entry": [
     {
       "fullUrl": "https://iihms.gov.np/fhir/Organization/org-mohp",
@@ -86,6 +86,258 @@
       }
     },
     {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2078-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-new-cases-total-kathmandu-2078-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-total",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2077/78"
+                }
+              ]
+            }
+          ],
+          "start": "2021-04-16",
+          "end": "2021-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-new-cases-total",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 273
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 0.0001332,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2078-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-new-cases-total-kathmandu-2078-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-total",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2077/78"
+                }
+              ]
+            }
+          ],
+          "start": "2021-05-16",
+          "end": "2021-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-new-cases-total",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 176
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 8.587e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2078-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-new-cases-total-kathmandu-2078-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-total",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2077/78"
+                }
+              ]
+            }
+          ],
+          "start": "2021-06-16",
+          "end": "2021-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-new-cases-total",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 281
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 0.0001371,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
       "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2078-shrawan",
       "resource": {
         "resourceType": "MeasureReport",
@@ -102,7 +354,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -186,7 +438,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -240,11 +492,11 @@
                     }
                   ]
                 },
-                "count": 2052749
+                "count": 2049618
               }
             ],
             "measureScore": {
-              "value": 0.00014371,
+              "value": 0.00014393,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -270,7 +522,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -324,11 +576,11 @@
                     }
                   ]
                 },
-                "count": 2055881
+                "count": 2049618
               }
             ],
             "measureScore": {
-              "value": 0.0001002,
+              "value": 0.00010051,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -354,7 +606,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -408,11 +660,11 @@
                     }
                   ]
                 },
-                "count": 2059013
+                "count": 2049618
               }
             ],
             "measureScore": {
-              "value": 0.0001117,
+              "value": 0.00011222,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -438,7 +690,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -492,11 +744,11 @@
                     }
                   ]
                 },
-                "count": 2062145
+                "count": 2049618
               }
             ],
             "measureScore": {
-              "value": 0.00011105,
+              "value": 0.00011173,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -522,7 +774,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -576,11 +828,11 @@
                     }
                   ]
                 },
-                "count": 2065276
+                "count": 2049618
               }
             ],
             "measureScore": {
-              "value": 0.00012928,
+              "value": 0.00013027,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -606,7 +858,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -660,11 +912,11 @@
                     }
                   ]
                 },
-                "count": 2068408
+                "count": 2049618
               }
             ],
             "measureScore": {
-              "value": 9.766e-05,
+              "value": 9.855e-05,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -690,7 +942,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -744,11 +996,11 @@
                     }
                   ]
                 },
-                "count": 2071540
+                "count": 2049618
               }
             ],
             "measureScore": {
-              "value": 0.0001313,
+              "value": 0.00013271,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -774,7 +1026,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -828,11 +1080,11 @@
                     }
                   ]
                 },
-                "count": 2074672
+                "count": 2049618
               }
             ],
             "measureScore": {
-              "value": 0.00016822,
+              "value": 0.00017028,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -842,10 +1094,10 @@
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2078-baishak",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2079-baishak",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2078-baishak",
+        "id": "tb-new-cases-total-kathmandu-2079-baishak",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -858,7 +1110,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -870,7 +1122,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2078
+                  "valueInteger": 2079
                 },
                 {
                   "url": "bs-month",
@@ -878,13 +1130,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2077/78"
+                  "valueString": "2078/79"
                 }
               ]
             }
           ],
-          "start": "2021-04-16",
-          "end": "2021-05-15"
+          "start": "2022-04-16",
+          "end": "2022-05-15"
         },
         "group": [
           {
@@ -900,14 +1152,7 @@
                     }
                   ]
                 },
-                "_count": {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                      "valueCode": "not-reported"
-                    }
-                  ]
-                }
+                "count": 317
               },
               {
                 "code": {
@@ -919,31 +1164,24 @@
                     }
                   ]
                 },
-                "count": 2077803
+                "count": 2087199
               }
             ],
             "measureScore": {
+              "value": 0.00015188,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
-              "code": "1",
-              "_value": {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                    "valueCode": "not-reported"
-                  }
-                ]
-              }
+              "code": "1"
             }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2078-jestha",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2079-jestha",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2078-jestha",
+        "id": "tb-new-cases-total-kathmandu-2079-jestha",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -956,7 +1194,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -968,7 +1206,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2078
+                  "valueInteger": 2079
                 },
                 {
                   "url": "bs-month",
@@ -976,13 +1214,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2077/78"
+                  "valueString": "2078/79"
                 }
               ]
             }
           ],
-          "start": "2021-05-16",
-          "end": "2021-06-15"
+          "start": "2022-05-16",
+          "end": "2022-06-15"
         },
         "group": [
           {
@@ -998,14 +1236,7 @@
                     }
                   ]
                 },
-                "_count": {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                      "valueCode": "not-reported"
-                    }
-                  ]
-                }
+                "count": 354
               },
               {
                 "code": {
@@ -1017,31 +1248,24 @@
                     }
                   ]
                 },
-                "count": 2080935
+                "count": 2087199
               }
             ],
             "measureScore": {
+              "value": 0.00016961,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
-              "code": "1",
-              "_value": {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                    "valueCode": "not-reported"
-                  }
-                ]
-              }
+              "code": "1"
             }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2078-asar",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2079-asar",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2078-asar",
+        "id": "tb-new-cases-total-kathmandu-2079-asar",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -1054,7 +1278,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1066,7 +1290,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2078
+                  "valueInteger": 2079
                 },
                 {
                   "url": "bs-month",
@@ -1074,13 +1298,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2077/78"
+                  "valueString": "2078/79"
                 }
               ]
             }
           ],
-          "start": "2021-06-16",
-          "end": "2021-07-15"
+          "start": "2022-06-16",
+          "end": "2022-07-15"
         },
         "group": [
           {
@@ -1096,14 +1320,7 @@
                     }
                   ]
                 },
-                "_count": {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                      "valueCode": "not-reported"
-                    }
-                  ]
-                }
+                "count": 336
               },
               {
                 "code": {
@@ -1115,21 +1332,14 @@
                     }
                   ]
                 },
-                "count": 2084067
+                "count": 2087199
               }
             ],
             "measureScore": {
+              "value": 0.00016098,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
-              "code": "1",
-              "_value": {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                    "valueCode": "not-reported"
-                  }
-                ]
-              }
+              "code": "1"
             }
           }
         ]
@@ -1152,7 +1362,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1236,7 +1446,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1290,11 +1500,11 @@
                     }
                   ]
                 },
-                "count": 2090142
+                "count": 2087199
               }
             ],
             "measureScore": {
-              "value": 0.0001464,
+              "value": 0.00014661,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -1320,7 +1530,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1374,11 +1584,11 @@
                     }
                   ]
                 },
-                "count": 2093085
+                "count": 2087199
               }
             ],
             "measureScore": {
-              "value": 0.00010272,
+              "value": 0.00010301,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -1404,7 +1614,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1458,11 +1668,11 @@
                     }
                   ]
                 },
-                "count": 2096028
+                "count": 2087199
               }
             ],
             "measureScore": {
-              "value": 0.00013597,
+              "value": 0.00013655,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -1488,7 +1698,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1530,7 +1740,7 @@
                     }
                   ]
                 },
-                "count": 247
+                "count": 248
               },
               {
                 "code": {
@@ -1542,11 +1752,11 @@
                     }
                   ]
                 },
-                "count": 2098971
+                "count": 2087199
               }
             ],
             "measureScore": {
-              "value": 0.00011768,
+              "value": 0.00011882,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -1572,7 +1782,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1626,11 +1836,11 @@
                     }
                   ]
                 },
-                "count": 2101914
+                "count": 2087199
               }
             ],
             "measureScore": {
-              "value": 0.00012655,
+              "value": 0.00012744,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -1656,7 +1866,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1710,11 +1920,11 @@
                     }
                   ]
                 },
-                "count": 2104858
+                "count": 2087199
               }
             ],
             "measureScore": {
-              "value": 0.0001164,
+              "value": 0.00011738,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -1740,7 +1950,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1794,11 +2004,11 @@
                     }
                   ]
                 },
-                "count": 2107801
+                "count": 2087199
               }
             ],
             "measureScore": {
-              "value": 0.0001466,
+              "value": 0.00014805,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -1824,7 +2034,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1878,11 +2088,11 @@
                     }
                   ]
                 },
-                "count": 2110744
+                "count": 2087199
               }
             ],
             "measureScore": {
-              "value": 0.00015397,
+              "value": 0.00015571,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -1892,10 +2102,10 @@
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2079-baishak",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2080-baishak",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2079-baishak",
+        "id": "tb-new-cases-total-kathmandu-2080-baishak",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -1908,7 +2118,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -1920,7 +2130,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2079
+                  "valueInteger": 2080
                 },
                 {
                   "url": "bs-month",
@@ -1928,13 +2138,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2078/79"
+                  "valueString": "2079/80"
                 }
               ]
             }
           ],
-          "start": "2022-04-16",
-          "end": "2022-05-15"
+          "start": "2023-04-16",
+          "end": "2023-05-15"
         },
         "group": [
           {
@@ -1950,7 +2160,7 @@
                     }
                   ]
                 },
-                "count": 317
+                "count": 314
               },
               {
                 "code": {
@@ -1962,11 +2172,11 @@
                     }
                   ]
                 },
-                "count": 2113687
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 0.00014997,
+              "value": 0.00014794,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -1976,10 +2186,10 @@
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2079-jestha",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2080-jestha",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2079-jestha",
+        "id": "tb-new-cases-total-kathmandu-2080-jestha",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -1992,7 +2202,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2004,7 +2214,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2079
+                  "valueInteger": 2080
                 },
                 {
                   "url": "bs-month",
@@ -2012,13 +2222,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2078/79"
+                  "valueString": "2079/80"
                 }
               ]
             }
           ],
-          "start": "2022-05-16",
-          "end": "2022-06-15"
+          "start": "2023-05-16",
+          "end": "2023-06-15"
         },
         "group": [
           {
@@ -2034,7 +2244,7 @@
                     }
                   ]
                 },
-                "count": 354
+                "count": 401
               },
               {
                 "code": {
@@ -2046,11 +2256,11 @@
                     }
                   ]
                 },
-                "count": 2116630
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 0.00016725,
+              "value": 0.00018893,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2060,10 +2270,10 @@
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2079-asar",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2080-asar",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2079-asar",
+        "id": "tb-new-cases-total-kathmandu-2080-asar",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -2076,7 +2286,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2088,7 +2298,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2079
+                  "valueInteger": 2080
                 },
                 {
                   "url": "bs-month",
@@ -2096,13 +2306,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2078/79"
+                  "valueString": "2079/80"
                 }
               ]
             }
           ],
-          "start": "2022-06-16",
-          "end": "2022-07-15"
+          "start": "2023-06-16",
+          "end": "2023-07-15"
         },
         "group": [
           {
@@ -2118,7 +2328,7 @@
                     }
                   ]
                 },
-                "count": 336
+                "count": 313
               },
               {
                 "code": {
@@ -2130,11 +2340,11 @@
                     }
                   ]
                 },
-                "count": 2119573
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 0.00015852,
+              "value": 0.00014747,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2160,7 +2370,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2244,7 +2454,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2298,11 +2508,11 @@
                     }
                   ]
                 },
-                "count": 2125313
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 0.00013927,
+              "value": 0.00013946,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2328,7 +2538,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2370,7 +2580,7 @@
                     }
                   ]
                 },
-                "count": 257
+                "count": 256
               },
               {
                 "code": {
@@ -2382,11 +2592,11 @@
                     }
                   ]
                 },
-                "count": 2128109
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 0.00012076,
+              "value": 0.00012061,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2412,7 +2622,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2454,7 +2664,7 @@
                     }
                   ]
                 },
-                "count": 164
+                "count": 163
               },
               {
                 "code": {
@@ -2466,11 +2676,11 @@
                     }
                   ]
                 },
-                "count": 2130905
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 7.696e-05,
+              "value": 7.68e-05,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2496,7 +2706,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2550,11 +2760,11 @@
                     }
                   ]
                 },
-                "count": 2133701
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 0.00011717,
+              "value": 0.00011778,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2580,7 +2790,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2634,11 +2844,11 @@
                     }
                   ]
                 },
-                "count": 2136497
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 0.00013386,
+              "value": 0.00013475,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2664,7 +2874,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2706,7 +2916,7 @@
                     }
                   ]
                 },
-                "count": 286
+                "count": 285
               },
               {
                 "code": {
@@ -2718,11 +2928,11 @@
                     }
                   ]
                 },
-                "count": 2139293
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 0.00013369,
+              "value": 0.00013427,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2748,7 +2958,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2790,7 +3000,7 @@
                     }
                   ]
                 },
-                "count": 315
+                "count": 316
               },
               {
                 "code": {
@@ -2802,11 +3012,11 @@
                     }
                   ]
                 },
-                "count": 2142089
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 0.00014705,
+              "value": 0.00014888,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2832,7 +3042,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2886,11 +3096,11 @@
                     }
                   ]
                 },
-                "count": 2144885
+                "count": 2122517
               }
             ],
             "measureScore": {
-              "value": 0.00017437,
+              "value": 0.00017621,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2900,10 +3110,10 @@
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2080-baishak",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2081-baishak",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2080-baishak",
+        "id": "tb-new-cases-total-kathmandu-2081-baishak",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -2916,7 +3126,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -2928,7 +3138,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2080
+                  "valueInteger": 2081
                 },
                 {
                   "url": "bs-month",
@@ -2936,13 +3146,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2079/80"
+                  "valueString": "2080/81"
                 }
               ]
             }
           ],
-          "start": "2023-04-16",
-          "end": "2023-05-15"
+          "start": "2024-04-16",
+          "end": "2024-05-15"
         },
         "group": [
           {
@@ -2958,7 +3168,7 @@
                     }
                   ]
                 },
-                "count": 312
+                "count": 354
               },
               {
                 "code": {
@@ -2970,11 +3180,11 @@
                     }
                   ]
                 },
-                "count": 2147681
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 0.00014527,
+              "value": 0.00016419,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -2984,10 +3194,10 @@
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2080-jestha",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2081-jestha",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2080-jestha",
+        "id": "tb-new-cases-total-kathmandu-2081-jestha",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -3000,7 +3210,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3012,7 +3222,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2080
+                  "valueInteger": 2081
                 },
                 {
                   "url": "bs-month",
@@ -3020,13 +3230,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2079/80"
+                  "valueString": "2080/81"
                 }
               ]
             }
           ],
-          "start": "2023-05-16",
-          "end": "2023-06-15"
+          "start": "2024-05-16",
+          "end": "2024-06-15"
         },
         "group": [
           {
@@ -3042,7 +3252,7 @@
                     }
                   ]
                 },
-                "count": 402
+                "count": 380
               },
               {
                 "code": {
@@ -3054,11 +3264,11 @@
                     }
                   ]
                 },
-                "count": 2150477
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 0.00018694,
+              "value": 0.00017625,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3068,10 +3278,10 @@
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2080-asar",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2081-asar",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2080-asar",
+        "id": "tb-new-cases-total-kathmandu-2081-asar",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -3084,7 +3294,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3096,7 +3306,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2080
+                  "valueInteger": 2081
                 },
                 {
                   "url": "bs-month",
@@ -3104,13 +3314,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2079/80"
+                  "valueString": "2080/81"
                 }
               ]
             }
           ],
-          "start": "2023-06-16",
-          "end": "2023-07-15"
+          "start": "2024-06-16",
+          "end": "2024-07-15"
         },
         "group": [
           {
@@ -3126,7 +3336,7 @@
                     }
                   ]
                 },
-                "count": 313
+                "count": 293
               },
               {
                 "code": {
@@ -3138,11 +3348,11 @@
                     }
                   ]
                 },
-                "count": 2153273
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 0.00014536,
+              "value": 0.0001359,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3168,7 +3378,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3252,7 +3462,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3306,11 +3516,11 @@
                     }
                   ]
                 },
-                "count": 2158733
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 0.00014036,
+              "value": 0.00014053,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3336,7 +3546,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3378,7 +3588,7 @@
                     }
                   ]
                 },
-                "count": 206
+                "count": 205
               },
               {
                 "code": {
@@ -3390,11 +3600,11 @@
                     }
                   ]
                 },
-                "count": 2161397
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 9.531e-05,
+              "value": 9.508e-05,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3420,7 +3630,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3462,7 +3672,7 @@
                     }
                   ]
                 },
-                "count": 224
+                "count": 225
               },
               {
                 "code": {
@@ -3474,11 +3684,11 @@
                     }
                   ]
                 },
-                "count": 2164061
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 0.00010351,
+              "value": 0.00010436,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3504,7 +3714,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3558,11 +3768,11 @@
                     }
                   ]
                 },
-                "count": 2166725
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 0.00013015,
+              "value": 0.00013079,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3588,7 +3798,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3630,7 +3840,7 @@
                     }
                   ]
                 },
-                "count": 259
+                "count": 257
               },
               {
                 "code": {
@@ -3642,11 +3852,11 @@
                     }
                   ]
                 },
-                "count": 2169388
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 0.00011939,
+              "value": 0.0001192,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3672,7 +3882,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3714,7 +3924,7 @@
                     }
                   ]
                 },
-                "count": 285
+                "count": 283
               },
               {
                 "code": {
@@ -3726,11 +3936,11 @@
                     }
                   ]
                 },
-                "count": 2172052
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 0.00013121,
+              "value": 0.00013126,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3756,7 +3966,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3798,7 +4008,7 @@
                     }
                   ]
                 },
-                "count": 283
+                "count": 277
               },
               {
                 "code": {
@@ -3810,11 +4020,11 @@
                     }
                   ]
                 },
-                "count": 2174716
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 0.00013013,
+              "value": 0.00012847,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3840,7 +4050,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3894,11 +4104,11 @@
                     }
                   ]
                 },
-                "count": 2177380
+                "count": 2156070
               }
             ],
             "measureScore": {
-              "value": 0.00015753,
+              "value": 0.00015909,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3908,10 +4118,10 @@
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2081-baishak",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2082-baishak",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2081-baishak",
+        "id": "tb-new-cases-total-kathmandu-2082-baishak",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -3924,7 +4134,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -3936,7 +4146,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2081
+                  "valueInteger": 2082
                 },
                 {
                   "url": "bs-month",
@@ -3944,13 +4154,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2080/81"
+                  "valueString": "2081/82"
                 }
               ]
             }
           ],
-          "start": "2024-04-16",
-          "end": "2024-05-15"
+          "start": "2025-04-16",
+          "end": "2025-05-15"
         },
         "group": [
           {
@@ -3966,7 +4176,7 @@
                     }
                   ]
                 },
-                "count": 354
+                "count": 322
               },
               {
                 "code": {
@@ -3978,11 +4188,11 @@
                     }
                   ]
                 },
-                "count": 2180043
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 0.00016238,
+              "value": 0.00014716,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -3992,10 +4202,10 @@
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2081-jestha",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2082-jestha",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2081-jestha",
+        "id": "tb-new-cases-total-kathmandu-2082-jestha",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -4008,7 +4218,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4020,7 +4230,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2081
+                  "valueInteger": 2082
                 },
                 {
                   "url": "bs-month",
@@ -4028,13 +4238,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2080/81"
+                  "valueString": "2081/82"
                 }
               ]
             }
           ],
-          "start": "2024-05-16",
-          "end": "2024-06-15"
+          "start": "2025-05-16",
+          "end": "2025-06-15"
         },
         "group": [
           {
@@ -4050,7 +4260,7 @@
                     }
                   ]
                 },
-                "count": 380
+                "count": 350
               },
               {
                 "code": {
@@ -4062,11 +4272,11 @@
                     }
                   ]
                 },
-                "count": 2182707
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 0.0001741,
+              "value": 0.00015996,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -4076,10 +4286,10 @@
       }
     },
     {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2081-asar",
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2082-asar",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2081-asar",
+        "id": "tb-new-cases-total-kathmandu-2082-asar",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/StructureDefinition/MeasureReport"
@@ -4092,7 +4302,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4104,7 +4314,7 @@
               "extension": [
                 {
                   "url": "bs-year",
-                  "valueInteger": 2081
+                  "valueInteger": 2082
                 },
                 {
                   "url": "bs-month",
@@ -4112,13 +4322,13 @@
                 },
                 {
                   "url": "fiscal-year",
-                  "valueString": "2080/81"
+                  "valueString": "2081/82"
                 }
               ]
             }
           ],
-          "start": "2024-06-16",
-          "end": "2024-07-15"
+          "start": "2025-06-16",
+          "end": "2025-07-15"
         },
         "group": [
           {
@@ -4134,7 +4344,7 @@
                     }
                   ]
                 },
-                "count": 294
+                "count": 371
               },
               {
                 "code": {
@@ -4146,11 +4356,11 @@
                     }
                   ]
                 },
-                "count": 2185371
+                "count": 2188035
               }
             ],
             "measureScore": {
-              "value": 0.00013453,
+              "value": 0.00016956,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -4176,7 +4386,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4260,7 +4470,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4302,7 +4512,7 @@
                     }
                   ]
                 },
-                "count": 297
+                "count": 296
               },
               {
                 "code": {
@@ -4318,7 +4528,7 @@
               }
             ],
             "measureScore": {
-              "value": 0.00013574,
+              "value": 0.00013528,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -4344,7 +4554,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4428,7 +4638,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4512,7 +4722,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4554,7 +4764,7 @@
                     }
                   ]
                 },
-                "count": 202
+                "count": 200
               },
               {
                 "code": {
@@ -4570,7 +4780,7 @@
               }
             ],
             "measureScore": {
-              "value": 9.232e-05,
+              "value": 9.141e-05,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -4596,7 +4806,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4680,7 +4890,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4722,7 +4932,7 @@
                     }
                   ]
                 },
-                "count": 257
+                "count": 253
               },
               {
                 "code": {
@@ -4738,7 +4948,7 @@
               }
             ],
             "measureScore": {
-              "value": 0.00011746,
+              "value": 0.00011563,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -4764,7 +4974,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4806,7 +5016,7 @@
                     }
                   ]
                 },
-                "count": 222
+                "count": 223
               },
               {
                 "code": {
@@ -4822,7 +5032,7 @@
               }
             ],
             "measureScore": {
-              "value": 0.00010146,
+              "value": 0.00010192,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"
@@ -4848,7 +5058,7 @@
           "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
           "display": "Kathmandu District, Nepal"
         },
-        "date": "2026-05-22T09:08:48Z",
+        "date": "2026-06-04T08:17:55Z",
         "reporter": {
           "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
           "display": "National Tuberculosis Programme"
@@ -4890,7 +5100,7 @@
                     }
                   ]
                 },
-                "count": 262
+                "count": 263
               },
               {
                 "code": {
@@ -4906,259 +5116,7 @@
               }
             ],
             "measureScore": {
-              "value": 0.00011974,
-              "unit": "1",
-              "system": "http://unitsofmeasure.org",
-              "code": "1"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2082-baishak",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2082-baishak",
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
-          ]
-        },
-        "status": "complete",
-        "type": "summary",
-        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-total",
-        "subject": {
-          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
-          "display": "Kathmandu District, Nepal"
-        },
-        "date": "2026-05-22T09:08:48Z",
-        "reporter": {
-          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
-          "display": "National Tuberculosis Programme"
-        },
-        "period": {
-          "extension": [
-            {
-              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
-              "extension": [
-                {
-                  "url": "bs-year",
-                  "valueInteger": 2082
-                },
-                {
-                  "url": "bs-month",
-                  "valueString": "Baishak"
-                },
-                {
-                  "url": "fiscal-year",
-                  "valueString": "2081/82"
-                }
-              ]
-            }
-          ],
-          "start": "2025-04-16",
-          "end": "2025-05-15"
-        },
-        "group": [
-          {
-            "id": "group-nepal-tb-new-cases-total",
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "numerator",
-                      "display": "Numerator"
-                    }
-                  ]
-                },
-                "count": 323
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "denominator",
-                      "display": "Denominator"
-                    }
-                  ]
-                },
-                "count": 2188035
-              }
-            ],
-            "measureScore": {
-              "value": 0.00014762,
-              "unit": "1",
-              "system": "http://unitsofmeasure.org",
-              "code": "1"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2082-jestha",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2082-jestha",
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
-          ]
-        },
-        "status": "complete",
-        "type": "summary",
-        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-total",
-        "subject": {
-          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
-          "display": "Kathmandu District, Nepal"
-        },
-        "date": "2026-05-22T09:08:48Z",
-        "reporter": {
-          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
-          "display": "National Tuberculosis Programme"
-        },
-        "period": {
-          "extension": [
-            {
-              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
-              "extension": [
-                {
-                  "url": "bs-year",
-                  "valueInteger": 2082
-                },
-                {
-                  "url": "bs-month",
-                  "valueString": "Jestha"
-                },
-                {
-                  "url": "fiscal-year",
-                  "valueString": "2081/82"
-                }
-              ]
-            }
-          ],
-          "start": "2025-05-16",
-          "end": "2025-06-15"
-        },
-        "group": [
-          {
-            "id": "group-nepal-tb-new-cases-total",
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "numerator",
-                      "display": "Numerator"
-                    }
-                  ]
-                },
-                "count": 351
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "denominator",
-                      "display": "Denominator"
-                    }
-                  ]
-                },
-                "count": 2188035
-              }
-            ],
-            "measureScore": {
-              "value": 0.00016042,
-              "unit": "1",
-              "system": "http://unitsofmeasure.org",
-              "code": "1"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-new-cases-total-kathmandu-2082-asar",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "tb-new-cases-total-kathmandu-2082-asar",
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
-          ]
-        },
-        "status": "complete",
-        "type": "summary",
-        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-new-cases-total",
-        "subject": {
-          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
-          "display": "Kathmandu District, Nepal"
-        },
-        "date": "2026-05-22T09:08:48Z",
-        "reporter": {
-          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
-          "display": "National Tuberculosis Programme"
-        },
-        "period": {
-          "extension": [
-            {
-              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
-              "extension": [
-                {
-                  "url": "bs-year",
-                  "valueInteger": 2082
-                },
-                {
-                  "url": "bs-month",
-                  "valueString": "Asar"
-                },
-                {
-                  "url": "fiscal-year",
-                  "valueString": "2081/82"
-                }
-              ]
-            }
-          ],
-          "start": "2025-06-16",
-          "end": "2025-07-15"
-        },
-        "group": [
-          {
-            "id": "group-nepal-tb-new-cases-total",
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "numerator",
-                      "display": "Numerator"
-                    }
-                  ]
-                },
-                "count": 371
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "denominator",
-                      "display": "Denominator"
-                    }
-                  ]
-                },
-                "count": 2188035
-              }
-            ],
-            "measureScore": {
-              "value": 0.00016956,
+              "value": 0.0001202,
               "unit": "1",
               "system": "http://unitsofmeasure.org",
               "code": "1"

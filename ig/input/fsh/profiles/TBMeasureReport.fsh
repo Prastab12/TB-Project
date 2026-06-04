@@ -4,8 +4,8 @@
 // Profile on the FHIR R4 MeasureReport resource for Kathmandu District monthly
 // TB aggregate reports.
 //
-// Each instance represents one indicator × one BS month × Kathmandu District.
-// 780 instances total: 13 indicators × 60 months (BS 2078 Shrawan – 2082 Asar).
+// Each instance represents one variable × one BS month × Kathmandu District.
+// 1,920 instances total: 32 variables × 60 months (BS 2078 Baishak – 2082 Chaitra).
 //
 // Key design decisions:
 //   - status fixed to #complete; type fixed to #summary.
@@ -25,8 +25,8 @@ Id:          tb-measure-report
 Title:       "Nepal TB MeasureReport"
 Description: """
 Profile on the FHIR R4 **MeasureReport** resource for Nepal NTP monthly district-level
-TB reporting. Each instance covers one TB indicator for one Bikram Sambat month in
-Kathmandu District.
+TB reporting. Each instance covers one TB surveillance variable for one Bikram Sambat
+month in Kathmandu District. 1,920 instances total: 32 variables × 60 months.
 
 **Period encoding:** The `period` element carries both mandatory Gregorian ISO 8601
 dates and a `NepaliCalendarPeriod` extension preserving the Bikram Sambat year,

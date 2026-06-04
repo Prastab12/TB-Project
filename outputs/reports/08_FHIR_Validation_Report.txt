@@ -1,0 +1,746 @@
+========================================================================
+  FHIR R4 INTERNAL VALIDATION REPORT
+  Generated  : 2026-06-04 08:18:18 UTC
+  Project    : TB Performance Dashboard — Kathmandu District, Nepal
+  FHIR Ver   : R4 (4.0.1)
+========================================================================
+
+========================================================================
+SECTION 1 — MEASURE DEFINITION FILES  (fhir/measures/)
+========================================================================
+  Files found: 32  (expected: 32)
+
+  Measure: nepal-tb-age-0to4-f
+  ------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-0to4-m
+  ------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-15to24-f
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-15to24-m
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-25to34-f
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-25to34-m
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-35to44-f
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-35to44-m
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-45to54-f
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-45to54-m
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-55to64-f
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-55to64-m
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-5to14-f
+  -------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-5to14-m
+  -------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-65plus-f
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-age-65plus-m
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-cured
+  -------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'cohort'
+    [PASS] population.code = 'initial-population'
+
+  Measure: nepal-tb-died
+  ------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'cohort'
+    [PASS] population.code = 'initial-population'
+
+  Measure: nepal-tb-failed
+  --------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'cohort'
+    [PASS] population.code = 'initial-population'
+
+  Measure: nepal-tb-hiv-positive
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-ltfu
+  ------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'cohort'
+    [PASS] population.code = 'initial-population'
+
+  Measure: nepal-tb-new-cases-female
+  ------------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-new-cases-male
+  ----------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-new-cases-total
+  -----------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-not-eval
+  ----------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'cohort'
+    [PASS] population.code = 'initial-population'
+
+  Measure: nepal-tb-pbc-reg
+  ---------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'cohort'
+    [PASS] population.code = 'initial-population'
+
+  Measure: nepal-tb-relapse-female
+  ----------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-relapse-male
+  --------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-relapse-total
+  ---------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-total-tb-female
+  -----------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-total-tb-male
+  ---------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+  Measure: nepal-tb-total-tb-notified
+  -------------------------------------
+    [PASS] 'resourceType' present
+    [PASS] 'id' present
+    [PASS] 'url' present
+    [PASS] 'status' present
+    [PASS] 'scoring' present
+    [PASS] 'group' present
+    [PASS] resourceType = 'Measure'
+    [PASS] canonical url valid
+    [PASS] status = 'active'
+    [PASS] scoring.code = 'ratio'
+    [PASS] population count = 2 (numerator + denominator)
+    [PASS] population[0].code = 'numerator'
+    [PASS] population[1].code = 'denominator'
+
+========================================================================
+SECTION 2 — MEASUREREPORT FILES  (fhir/measure_reports/by_indicator/)
+  Expected: 32 variables × 60 months = 1920 files
+========================================================================
+
+  Variable: nepal-tb-new-cases-total  (csv: new_cases_total)
+    → 60 files, 0 errors, DAR: 0
+
+  Variable: nepal-tb-new-cases-female  (csv: new_cases_female)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-new-cases-male  (csv: new_cases_male)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-relapse-total  (csv: relapse_total)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-relapse-female  (csv: relapse_female)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-relapse-male  (csv: relapse_male)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-total-tb-notified  (csv: total_tb_mf)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-total-tb-female  (csv: total_tb_female)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-total-tb-male  (csv: total_tb_male)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-hiv-positive  (csv: tb_hiv_positive)
+    → 60 files, 0 errors, DAR: 0
+
+  Variable: nepal-tb-age-0to4-f  (csv: 0_to_4_f)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-0to4-m  (csv: 0_to_4_m)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-5to14-f  (csv: 5_to_14_f)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-5to14-m  (csv: 5_to_14_m)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-15to24-f  (csv: 15_to_24_f)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-15to24-m  (csv: 15_to_24_m)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-25to34-f  (csv: 25_to_34_f)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-25to34-m  (csv: 25_to_34_m)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-35to44-f  (csv: 35_to_44_f)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-35to44-m  (csv: 35_to_44_m)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-45to54-f  (csv: 45_to_54_f)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-45to54-m  (csv: 45_to_54_m)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-55to64-f  (csv: 55_to_64_f)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-55to64-m  (csv: 55_to_64_m)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-65plus-f  (csv: 65_f)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-age-65plus-m  (csv: 65_m)
+    → 60 files, 0 errors, DAR: 3
+
+  Variable: nepal-tb-pbc-reg  (csv: pbc_reg)
+    → 60 files, 0 errors, DAR: 0
+
+  Variable: nepal-tb-cured  (csv: cured)
+    → 60 files, 0 errors, DAR: 0
+
+  Variable: nepal-tb-failed  (csv: failed)
+    → 60 files, 0 errors, DAR: 0
+
+  Variable: nepal-tb-died  (csv: died)
+    → 60 files, 0 errors, DAR: 0
+
+  Variable: nepal-tb-ltfu  (csv: ltfu)
+    → 60 files, 0 errors, DAR: 0
+
+  Variable: nepal-tb-not-eval  (csv: not_eval)
+    → 60 files, 0 errors, DAR: 0
+
+------------------------------------------------------------------------
+  VARIABLE SUMMARY
+------------------------------------------------------------------------
+  Variable                        Files  Errors   DAR
+  ----------------------------------------------------
+  new-cases-total                    60       0     0
+  new-cases-female                   60       0     3
+  new-cases-male                     60       0     3
+  relapse-total                      60       0     3
+  relapse-female                     60       0     3
+  relapse-male                       60       0     3
+  total-tb-notified                  60       0     3
+  total-tb-female                    60       0     3
+  total-tb-male                      60       0     3
+  hiv-positive                       60       0     0
+  age-0to4-f                         60       0     3
+  age-0to4-m                         60       0     3
+  age-5to14-f                        60       0     3
+  age-5to14-m                        60       0     3
+  age-15to24-f                       60       0     3
+  age-15to24-m                       60       0     3
+  age-25to34-f                       60       0     3
+  age-25to34-m                       60       0     3
+  age-35to44-f                       60       0     3
+  age-35to44-m                       60       0     3
+  age-45to54-f                       60       0     3
+  age-45to54-m                       60       0     3
+  age-55to64-f                       60       0     3
+  age-55to64-m                       60       0     3
+  age-65plus-f                       60       0     3
+  age-65plus-m                       60       0     3
+  pbc-reg                            60       0     0
+  cured                              60       0     0
+  failed                             60       0     0
+  died                               60       0     0
+  ltfu                               60       0     0
+  not-eval                           60       0     0
+  ----------------------------------------------------
+  TOTAL                            1920       0    72
+
+========================================================================
+SECTION 3 — MEASUREREPORT BUNDLES  (fhir/measure_reports/bundles/)
+========================================================================
+
+  Per-variable bundles  (63 entries each)
+  Bundle                                        Entries  Status
+  --------------------------------------------------------------
+  bundle-new-cases-total.json                        63  PASS
+  bundle-new-cases-female.json                       63  PASS
+  bundle-new-cases-male.json                         63  PASS
+  bundle-relapse-total.json                          63  PASS
+  bundle-relapse-female.json                         63  PASS
+  bundle-relapse-male.json                           63  PASS
+  bundle-total-tb-notified.json                      63  PASS
+  bundle-total-tb-female.json                        63  PASS
+  bundle-total-tb-male.json                          63  PASS
+  bundle-hiv-positive.json                           63  PASS
+  bundle-age-0to4-f.json                             63  PASS
+  bundle-age-0to4-m.json                             63  PASS
+  bundle-age-5to14-f.json                            63  PASS
+  bundle-age-5to14-m.json                            63  PASS
+  bundle-age-15to24-f.json                           63  PASS
+  bundle-age-15to24-m.json                           63  PASS
+  bundle-age-25to34-f.json                           63  PASS
+  bundle-age-25to34-m.json                           63  PASS
+  bundle-age-35to44-f.json                           63  PASS
+  bundle-age-35to44-m.json                           63  PASS
+  bundle-age-45to54-f.json                           63  PASS
+  bundle-age-45to54-m.json                           63  PASS
+  bundle-age-55to64-f.json                           63  PASS
+  bundle-age-55to64-m.json                           63  PASS
+  bundle-age-65plus-f.json                           63  PASS
+  bundle-age-65plus-m.json                           63  PASS
+  bundle-pbc-reg.json                                63  PASS
+  bundle-cured.json                                  63  PASS
+  bundle-failed.json                                 63  PASS
+  bundle-died.json                                   63  PASS
+  bundle-ltfu.json                                   63  PASS
+  bundle-not-eval.json                               63  PASS
+
+  Master bundle  (1923 entries)
+  --------------------------------------------------------------
+  bundle-all.json                                  1923  PASS
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 63
+    [PASS] entry count = 1923
+
+========================================================================
+VALIDATION SUMMARY
+========================================================================
+  Measure definition files     : 32
+  MeasureReport files          : 1920
+  Per-variable bundles         : 32
+  Master bundle                : 1
+
+  Checks passed  : 115529
+  Errors         : 0
+  Warnings       : 0
+  DAR entries    : 72  (data-absent-reason: not-reported)
+
+  RESULT: ALL CHECKS PASSED
+  STATUS: Ready for external HAPI FHIR R4 validation
+========================================================================

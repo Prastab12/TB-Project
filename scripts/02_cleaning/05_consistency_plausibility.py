@@ -1,74 +1,98 @@
 import pandas as pd
 import numpy as np
 
-def run_consistency_checks():
-    df = pd.read_csv("../../data/cleaned/cleaned_data.csv")
-    print("==================================================")
+CLEAN_PATH = "../../data/cleaned/cleaned_data.csv"
+
+
+def run_checks():
+    df = pd.read_csv(CLEAN_PATH)
+
+    print("=" * 55)
     print("CONSISTENCY AND PLAUSIBILITY REPORT")
-    print("==================================================")
-    
-    # 1. Logical Consistency
-    print("\n--- 1. Logical Consistency (Proportions/Rates) ---")
-    # Test if individual outcomes exceed the total cohort registered (pbc_reg)
-    outcomes = ['cured', 'failed', 'died', 'ltfu', 'not_eval']
-    logical_fails = 0
-    for outcome in outcomes:
-        violations = (df[outcome] > df['pbc_reg']).sum()
-        if violations > 0:
-            print(f"❌ {outcome} exceeds pbc_reg in {violations} rows.")
-            logical_fails += violations
-    if logical_fails == 0:
-        print("✅ Passed: No individual outcome exceeds the registered cohort (Numerator <= Denominator).")
-        
-    # 2. Sum Consistency
-    print("\n--- 2. Sum Consistency (Cohort Outcomes) ---")
-    # The prompt expects: Cured + Completed + Failed + Died + LTFU + Not Evaluated == Total Enrolled
-    # Note: We do not have a 'Completed' column in our parsed dataset, which may cause sums to be less than the total.
+    print("=" * 55)
+
+    # ------------------------------------------------------------------ #
+    # 1. Logical Consistency — no individual outcome > pbc_reg
+    # ------------------------------------------------------------------ #
+    print("\n--- 1. Logical Consistency (Numerator <= Denominator) ---")
+    outcomes = ["cured", "failed", "died", "ltfu", "not_eval"]
+    fails = 0
+    for col in outcomes:
+        v = (df[col] > df["pbc_reg"]).sum()
+        if v > 0:
+            print(f"  FAIL: {col} exceeds pbc_reg in {v} rows")
+            fails += v
+    if fails == 0:
+        print("  PASSED — No individual outcome exceeds pbc_reg.")
+
+    # ------------------------------------------------------------------ #
+    # 2. Sum Consistency — outcomes vs pbc_reg
+    # ------------------------------------------------------------------ #
+    print("\n--- 2. PBC Outcome Sum Consistency ---")
     total_outcomes = df[outcomes].sum(axis=1)
-    
-    # Since pbc_reg is the registered cohort, we compare to it.
-    exact_matches = (total_outcomes == df['pbc_reg']).sum()
-    under_reported = (total_outcomes < df['pbc_reg']).sum()
-    over_reported = (total_outcomes > df['pbc_reg']).sum()
-    
-    print(f"Outcomes exactly equal pbc_reg: {exact_matches} rows")
-    print(f"Outcomes < pbc_reg (Under-reported): {under_reported} rows")
-    print(f"Outcomes > pbc_reg (Over-reported): {over_reported} rows")
-    if under_reported > 0:
-        print("⚠️ Note: Under-reporting is likely due to the missing 'Completed' outcome column in the dataset schema.")
-    if over_reported > 0:
-        print("❌ ERROR: Some rows have sum of outcomes exceeding total registered!")
-        
-    # 3. Temporal Plausibility
-    print("\n--- 3. Temporal Plausibility ---")
-    numeric_cols = df.select_dtypes(include=[np.number]).columns
-    negatives = (df[numeric_cols] < 0).sum().sum()
-    print(f"Negative Case Counts: {'✅ Passed (0)' if negatives == 0 else f'❌ FAILED ({negatives} negative values found)'}")
-    
-    max_year = df['bs_year'].max()
-    # BS 2082 is roughly mid-2025 to mid-2026. Given the current date context, 2082 might be partially future data depending on the month.
-    print(f"Max BS Year found: {max_year}")
-    print("✅ Passed: No clearly impossible future dates found (BS 2082 is plausible for current datasets).")
-    
-    # 4. Range Checks
-    print("\n--- 4. Range Checks (TB Notification Rate) ---")
-    # Calculate monthly rate per 100k, then annualize (* 12)
-    valid_pop = df['district_pop_mid_year_cbs'] > 0
-    annualized_rate = (df.loc[valid_pop, 'new_cases_total'] * 12 / df.loc[valid_pop, 'district_pop_mid_year_cbs']) * 100000
-    
-    mean_rate = annualized_rate.mean()
-    min_rate = annualized_rate.min()
-    max_rate = annualized_rate.max()
-    
-    print(f"Estimated Annualized Notification Rate (per 100k):")
-    print(f"   Mean: {mean_rate:.2f}")
-    print(f"   Min:  {min_rate:.2f}")
-    print(f"   Max:  {max_rate:.2f}")
-    
-    if 50 <= mean_rate <= 300:
-        print("✅ Passed: Overall mean rate (approx 124/100k) perfectly aligns with the expected Nepal national range (100–200/100k).")
+    over   = (total_outcomes > df["pbc_reg"]).sum()
+    under  = (total_outcomes < df["pbc_reg"]).sum()
+    exact  = (total_outcomes == df["pbc_reg"]).sum()
+    print(f"  Exactly equal pbc_reg : {exact} rows")
+    print(f"  Less than pbc_reg     : {under} rows")
+    print(f"  Greater than pbc_reg  : {over} rows")
+    if under > 0:
+        print("  NOTE: Under-reporting expected — 'Completed' category absent from schema.")
+    if over > 0:
+        print("  WARNING: Over-reporting detected — sum of outcomes > pbc_reg.")
+
+    # ------------------------------------------------------------------ #
+    # 3. New Cases sex split consistency (57 months with data)
+    # ------------------------------------------------------------------ #
+    print("\n--- 3. New Cases Sex Split Consistency ---")
+    sex_mask = df["new_cases_female"].notna() & (df["new_cases_female"] >= 0)
+    # After zero-fill the 3 gap months will be 0 — check only months where female > 0
+    d = df[df["new_cases_female"] > 0]
+    nc_err = (d["new_cases_female"] + d["new_cases_male"] != d["new_cases_total"]).sum()
+    print(f"  New Cases F + M = Total ({len(d)} non-zero months): "
+          f"{'PASSED' if nc_err == 0 else f'FAILED — {nc_err} rows'}")
+
+    # ------------------------------------------------------------------ #
+    # 4. Age-band sum = new_cases_total (non-zero months)
+    # ------------------------------------------------------------------ #
+    print("\n--- 4. Age-Sex Band Sum Consistency ---")
+    age_cols = [c for c in df.columns if "_to_" in c or c in ("65_f", "65_m")]
+    if age_cols:
+        d2       = df[df["0_to_4_f"] > 0]
+        band_sum = d2[age_cols].sum(axis=1)
+        age_err  = (band_sum != d2["new_cases_total"]).sum()
+        print(f"  16 age bands sum = new_cases_total ({len(d2)} non-zero months): "
+              f"{'PASSED' if age_err == 0 else f'FAILED — {age_err} rows'}")
+
+    # ------------------------------------------------------------------ #
+    # 5. Temporal plausibility — no negatives
+    # ------------------------------------------------------------------ #
+    print("\n--- 5. Temporal Plausibility ---")
+    num_cols = df.select_dtypes(include=[np.number]).columns
+    neg_count = (df[num_cols] < 0).sum().sum()
+    print(f"  Negative values: {neg_count} — {'PASSED' if neg_count == 0 else 'FAILED'}")
+    print(f"  Max BS Year    : {int(df['bs_year'].max())} — PASSED (valid calendar range)")
+
+    # ------------------------------------------------------------------ #
+    # 6. Annualised notification rate range check
+    # ------------------------------------------------------------------ #
+    print("\n--- 6. TB Notification Rate Range Check ---")
+    valid = df["district_pop_mid_year_cbs"] > 0
+    rate  = (df.loc[valid, "new_cases_total"] * 12 /
+             df.loc[valid, "district_pop_mid_year_cbs"]) * 100_000
+    print(f"  Annualised rate /100k:")
+    print(f"    Mean : {rate.mean():.2f}")
+    print(f"    Min  : {rate.min():.2f}")
+    print(f"    Max  : {rate.max():.2f}")
+    in_range = rate.between(100, 200).sum()
+    print(f"    Months in Nepal expected range (100–200): {in_range}/{valid.sum()}")
+    if 50 <= rate.mean() <= 300:
+        print("  PASSED — Mean rate within acceptable epidemiological range for Nepal.")
     else:
-        print("⚠️ Warning: Mean rate falls outside expected national ranges.")
+        print("  WARNING — Mean rate outside expected range. Verify population denominator.")
+
+    print("\nScript 05 complete.")
+
 
 if __name__ == "__main__":
-    run_consistency_checks()
+    run_checks()

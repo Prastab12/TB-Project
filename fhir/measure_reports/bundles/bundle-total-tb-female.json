@@ -1,0 +1,5171 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundle-kathmandu-total-tb-female",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/Bundle"
+    ]
+  },
+  "type": "collection",
+  "timestamp": "2026-06-04T08:17:55Z",
+  "entry": [
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Organization/org-mohp",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-mohp",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/Organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://iihms.gov.np/fhir/NamingSystem/organization-id",
+            "value": "org-mohp"
+          }
+        ],
+        "name": "Ministry of Health and Population, Nepal",
+        "alias": [
+          "MoHP"
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Organization/org-ntp",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-ntp",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/Organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://iihms.gov.np/fhir/NamingSystem/organization-id",
+            "value": "org-ntp"
+          }
+        ],
+        "name": "National Tuberculosis Programme",
+        "alias": [
+          "NTP"
+        ],
+        "partOf": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-mohp",
+          "display": "Ministry of Health and Population, Nepal"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+      "resource": {
+        "resourceType": "Location",
+        "id": "loc-kathmandu",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/Location"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://iihms.gov.np/fhir/NamingSystem/location-id",
+            "value": "loc-kathmandu"
+          }
+        ],
+        "name": "Kathmandu District, Nepal",
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "jdn",
+              "display": "Jurisdiction"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2077/78"
+                }
+              ]
+            }
+          ],
+          "start": "2021-04-16",
+          "end": "2021-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "_count": {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                      "valueCode": "not-reported"
+                    }
+                  ]
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1",
+              "_value": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                    "valueCode": "not-reported"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2077/78"
+                }
+              ]
+            }
+          ],
+          "start": "2021-05-16",
+          "end": "2021-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "_count": {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                      "valueCode": "not-reported"
+                    }
+                  ]
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1",
+              "_value": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                    "valueCode": "not-reported"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2077/78"
+                }
+              ]
+            }
+          ],
+          "start": "2021-06-16",
+          "end": "2021-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "_count": {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                      "valueCode": "not-reported"
+                    }
+                  ]
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1",
+              "_value": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+                    "valueCode": "not-reported"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-shrawan",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-shrawan",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Shrawan"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-07-16",
+          "end": "2021-08-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 147
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 7.172e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-bhadra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-bhadra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Bhadra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-08-16",
+          "end": "2021-09-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 146
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 7.123e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-ashwin",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-ashwin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Ashwin"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-09-16",
+          "end": "2021-10-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 123
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 6.001e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-kartik",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-kartik",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Kartik"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-10-16",
+          "end": "2021-11-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 113
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 5.513e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-mangsir",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-mangsir",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Mangsir"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-11-16",
+          "end": "2021-12-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 104
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 5.074e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-poush",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-poush",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Poush"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2021-12-16",
+          "end": "2022-01-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 126
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 6.147e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-magh",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-magh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Magh"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-01-16",
+          "end": "2022-02-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 95
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 4.635e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-falgun",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-falgun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Falgun"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-02-16",
+          "end": "2022-03-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 130
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 6.343e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2078-chaitra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2078-chaitra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2078
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Chaitra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-03-16",
+          "end": "2022-04-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 185
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2049618
+              }
+            ],
+            "measureScore": {
+              "value": 9.026e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-04-16",
+          "end": "2022-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 154
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 7.378e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-05-16",
+          "end": "2022-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 177
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 8.48e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2078/79"
+                }
+              ]
+            }
+          ],
+          "start": "2022-06-16",
+          "end": "2022-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 171
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 8.193e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-shrawan",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-shrawan",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Shrawan"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-07-16",
+          "end": "2022-08-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 160
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 7.666e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-bhadra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-bhadra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Bhadra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-08-16",
+          "end": "2022-09-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 133
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 6.372e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-ashwin",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-ashwin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Ashwin"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-09-16",
+          "end": "2022-10-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 107
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 5.126e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-kartik",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-kartik",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Kartik"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-10-16",
+          "end": "2022-11-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 124
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 5.941e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-mangsir",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-mangsir",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Mangsir"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-11-16",
+          "end": "2022-12-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 116
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 5.558e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-poush",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-poush",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Poush"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2022-12-16",
+          "end": "2023-01-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 124
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 5.941e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-magh",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-magh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Magh"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-01-16",
+          "end": "2023-02-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 92
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 4.408e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-falgun",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-falgun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Falgun"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-02-16",
+          "end": "2023-03-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 135
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 6.468e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2079-chaitra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2079-chaitra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2079
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Chaitra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-03-16",
+          "end": "2023-04-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 156
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2087199
+              }
+            ],
+            "measureScore": {
+              "value": 7.474e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-04-16",
+          "end": "2023-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 149
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 7.02e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-05-16",
+          "end": "2023-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 193
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 9.093e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2079/80"
+                }
+              ]
+            }
+          ],
+          "start": "2023-06-16",
+          "end": "2023-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 146
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 6.879e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-shrawan",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-shrawan",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Shrawan"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-07-16",
+          "end": "2023-08-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 179
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 8.433e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-bhadra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-bhadra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Bhadra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-08-16",
+          "end": "2023-09-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 146
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 6.879e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-ashwin",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-ashwin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Ashwin"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-09-16",
+          "end": "2023-10-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 130
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 6.125e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-kartik",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-kartik",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Kartik"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-10-16",
+          "end": "2023-11-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 86
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 4.052e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-mangsir",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-mangsir",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Mangsir"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-11-16",
+          "end": "2023-12-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 107
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 5.041e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-poush",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-poush",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Poush"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2023-12-16",
+          "end": "2024-01-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 138
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 6.502e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-magh",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-magh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Magh"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-01-16",
+          "end": "2024-02-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 124
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 5.842e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-falgun",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-falgun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Falgun"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-02-16",
+          "end": "2024-03-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 152
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 7.161e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2080-chaitra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2080-chaitra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2080
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Chaitra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-03-16",
+          "end": "2024-04-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 184
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2122517
+              }
+            ],
+            "measureScore": {
+              "value": 8.669e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-04-16",
+          "end": "2024-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 173
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 8.024e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-05-16",
+          "end": "2024-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 190
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 8.812e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2080/81"
+                }
+              ]
+            }
+          ],
+          "start": "2024-06-16",
+          "end": "2024-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 150
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 6.957e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-shrawan",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-shrawan",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Shrawan"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-07-16",
+          "end": "2024-08-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 213
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 9.879e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-bhadra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-bhadra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Bhadra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-08-16",
+          "end": "2024-09-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 149
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 6.911e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-ashwin",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-ashwin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Ashwin"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-09-16",
+          "end": "2024-10-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 97
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 4.499e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-kartik",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-kartik",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Kartik"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-10-16",
+          "end": "2024-11-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 93
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 4.313e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-mangsir",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-mangsir",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Mangsir"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-11-16",
+          "end": "2024-12-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 138
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 6.401e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-poush",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-poush",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Poush"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2024-12-16",
+          "end": "2025-01-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 113
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 5.241e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-magh",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-magh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Magh"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-01-16",
+          "end": "2025-02-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 124
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 5.751e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-falgun",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-falgun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Falgun"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-02-16",
+          "end": "2025-03-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 132
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 6.122e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2081-chaitra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2081-chaitra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2081
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Chaitra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-03-16",
+          "end": "2025-04-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 175
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2156070
+              }
+            ],
+            "measureScore": {
+              "value": 8.117e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-baishak",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-baishak",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Baishak"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-04-16",
+          "end": "2025-05-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 154
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 7.038e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-jestha",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-jestha",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Jestha"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-05-16",
+          "end": "2025-06-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 194
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 8.866e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-asar",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-asar",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Asar"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2081/82"
+                }
+              ]
+            }
+          ],
+          "start": "2025-06-16",
+          "end": "2025-07-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 192
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 8.775e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-shrawan",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-shrawan",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Shrawan"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-07-16",
+          "end": "2025-08-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 160
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 7.312e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-bhadra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-bhadra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Bhadra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-08-16",
+          "end": "2025-09-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 148
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 6.764e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-ashwin",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-ashwin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Ashwin"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-09-16",
+          "end": "2025-10-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 107
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 4.89e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-kartik",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-kartik",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Kartik"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-10-16",
+          "end": "2025-11-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 106
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 4.845e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-mangsir",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-mangsir",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Mangsir"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-11-16",
+          "end": "2025-12-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 112
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 5.119e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-poush",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-poush",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Poush"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2025-12-16",
+          "end": "2026-01-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 115
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 5.256e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-magh",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-magh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Magh"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2026-01-16",
+          "end": "2026-02-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 128
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 5.85e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-falgun",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-falgun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Falgun"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2026-02-16",
+          "end": "2026-03-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 118
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 5.393e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://iihms.gov.np/fhir/MeasureReport/tb-total-tb-female-kathmandu-2082-chaitra",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "tb-total-tb-female-kathmandu-2082-chaitra",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/MeasureReport"
+          ]
+        },
+        "status": "complete",
+        "type": "summary",
+        "measure": "https://iihms.gov.np/fhir/Measure/nepal-tb-total-tb-female",
+        "subject": {
+          "reference": "https://iihms.gov.np/fhir/Location/loc-kathmandu",
+          "display": "Kathmandu District, Nepal"
+        },
+        "date": "2026-06-04T08:17:55Z",
+        "reporter": {
+          "reference": "https://iihms.gov.np/fhir/Organization/org-ntp",
+          "display": "National Tuberculosis Programme"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "https://iihms.gov.np/fhir/StructureDefinition/nepali-fiscal-period",
+              "extension": [
+                {
+                  "url": "bs-year",
+                  "valueInteger": 2082
+                },
+                {
+                  "url": "bs-month",
+                  "valueString": "Chaitra"
+                },
+                {
+                  "url": "fiscal-year",
+                  "valueString": "2082/83"
+                }
+              ]
+            }
+          ],
+          "start": "2026-03-16",
+          "end": "2026-04-15"
+        },
+        "group": [
+          {
+            "id": "group-nepal-tb-total-tb-female",
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 133
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 2188035
+              }
+            ],
+            "measureScore": {
+              "value": 6.079e-05,
+              "unit": "1",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
