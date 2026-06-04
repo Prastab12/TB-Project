@@ -1,67 +1,95 @@
-==================================================
-KATHMANDU DISTRICT: STATISTICAL SENSITIVITY ANALYSIS
-Analyzed 60 monthly records.
-Method: IQR (Interquartile Range) with varying multipliers
-==================================================
+======================================================================
+KATHMANDU DISTRICT — SENSITIVITY ANALYSIS & GAP DOCUMENTATION
+======================================================================
+Date    : 2026-06-04
+Dataset : data/final/final_cleaned_data.csv
 
---- Variable: new_cases_total ---
-  Multiplier 1.5x IQR: Range [119.4, 448.4] -> 3 outlier(s)
-  Multiplier 2.0x IQR: Range [78.2, 489.5] -> 3 outlier(s)
-  Multiplier 3.0x IQR: Range [0.0, 571.8] -> 0 outlier(s)
+======================================================================
+SECTION A — IQR SENSITIVITY MATRIX
+  Sex/age variables use 57-month subset (gap months excluded).
+  Total-count variables use all 60 months.
+======================================================================
 
---- Variable: relapse_total ---
-  Multiplier 1.5x IQR: Range [2.0, 20.0] -> 6 outlier(s)
-  Multiplier 2.0x IQR: Range [0.0, 22.2] -> 1 outlier(s)
-  Multiplier 3.0x IQR: Range [0.0, 26.8] -> 0 outlier(s)
+  Variable                      1.5x IQR (outliers)  2.0x IQR (outliers)  3.0x IQR (outliers)
+  -------------------------------------------------------------------------------------
+  new_cases_total                0 [  136.2,  438.2]   0 [   98.5,  476.0]   0 [   23.0,  551.5]
+  new_cases_female               0 [   51.5,  207.5]   0 [   32.0,  227.0]   0 [   -7.0,  266.0]
+  new_cases_male                 1 [   77.5,  233.5]   0 [   58.0,  253.0]   0 [   19.0,  292.0]
+  relapse_total                  0 [    3.5,   31.5]   0 [    0.0,   35.0]   0 [   -7.0,   42.0]
+  total_tb_mf                    0 [  146.0,  466.0]   0 [  106.0,  506.0]   0 [   26.0,  586.0]
+  tb_hiv_positive                4 [   -2.0,    6.0]   2 [   -3.0,    7.0]   1 [   -5.0,    9.0]
+  pbc_reg                        0 [   25.0,  201.0]   0 [    3.0,  223.0]   0 [  -41.0,  267.0]
+  cured                          0 [   17.1,  174.1]   0 [   -2.5,  193.8]   0 [  -41.8,  233.0]
+  failed                         2 [   -1.5,    2.5]   0 [   -2.0,    3.0]   0 [   -3.0,    4.0]
+  died                           0 [   -3.5,    8.5]   0 [   -5.0,   10.0]   0 [   -8.0,   13.0]
+  ltfu                           1 [   -2.0,    6.0]   0 [   -3.0,    7.0]   0 [   -5.0,    9.0]
+  not_eval                       1 [   -5.9,   15.1]   0 [   -8.5,   17.8]   0 [  -13.8,   23.0]
 
---- Variable: total_tb_m+f ---
-  Multiplier 1.5x IQR: Range [128.0, 460.0] -> 3 outlier(s)
-  Multiplier 2.0x IQR: Range [86.5, 501.5] -> 3 outlier(s)
-  Multiplier 3.0x IQR: Range [3.5, 584.5] -> 3 outlier(s)
-    [Extreme Outliers at 3.0x]:
-      - 2078 Baishak 2078: 0
-      - 2078 Jestha 2078: 0
-      - 2078 Asar 2078: 0
+  Reading: each cell shows 'count [lower_fence, upper_fence]'.
+  As multiplier increases, fences widen → fewer outliers flagged.
+  Variables consistently flagging 0 at all multipliers are clean.
 
---- Variable: pbc_reg ---
-  Multiplier 1.5x IQR: Range [861.0, 1965.0] -> 0 outlier(s)
-  Multiplier 2.0x IQR: Range [723.0, 2103.0] -> 0 outlier(s)
-  Multiplier 3.0x IQR: Range [447.0, 2379.0] -> 0 outlier(s)
+======================================================================
+SECTION B — STRUCTURAL REPORTING GAP DOCUMENTATION
+======================================================================
 
---- Variable: cured ---
-  Multiplier 1.5x IQR: Range [584.5, 1788.5] -> 0 outlier(s)
-  Multiplier 2.0x IQR: Range [434.0, 1939.0] -> 0 outlier(s)
-  Multiplier 3.0x IQR: Range [133.0, 2240.0] -> 0 outlier(s)
+  Source    : DHIS2 / IIHMS national platform
+  Gap scope : Baishak 2078, Jestha 2078, Asar 2078  (BS calendar Q4)
+  Gregorian : April 16 – July 15, 2021
 
---- Variable: failed ---
-  Multiplier 1.5x IQR: Range [2.0, 18.0] -> 0 outlier(s)
-  Multiplier 2.0x IQR: Range [0.0, 20.0] -> 0 outlier(s)
-  Multiplier 3.0x IQR: Range [0.0, 24.0] -> 0 outlier(s)
+  Root cause:
+    Sex-disaggregated and age-stratified TB data was not captured
+    in the DHIS2 system for Kathmandu District in these 3 months.
+    Total new case counts (new_cases_total) ARE present and reliable.
+    All treatment outcome fields (pbc_reg, cured, etc.) are present.
 
---- Variable: died ---
-  Multiplier 1.5x IQR: Range [15.5, 43.5] -> 0 outlier(s)
-  Multiplier 2.0x IQR: Range [12.0, 47.0] -> 0 outlier(s)
-  Multiplier 3.0x IQR: Range [5.0, 54.0] -> 0 outlier(s)
+  Quantitative impact:
+    New cases in gap months        : 730
+    Total new cases (60 months)    : 17263
+    Cases missing sex/age breakdown: 730 (4.2% of 60-month total)
+    Sex/age data recovered (57 mo) : 16533 (95.8%)
 
---- Variable: ltfu ---
-  Multiplier 1.5x IQR: Range [3.0, 51.0] -> 0 outlier(s)
-  Multiplier 2.0x IQR: Range [0.0, 57.0] -> 0 outlier(s)
-  Multiplier 3.0x IQR: Range [0.0, 69.0] -> 0 outlier(s)
+  Per-month breakdown of gap period:
+    Month            New Cases  PBC Reg   Cured   Died
+    --------------------------------------------------
+    Baishak                273       60      50      0
+    Jestha                 176       62      59      0
+    Asar                   281       87      70      2
 
---- Variable: not_eval ---
-  Multiplier 1.5x IQR: Range [0.0, 139.0] -> 0 outlier(s)
-  Multiplier 2.0x IQR: Range [0.0, 159.0] -> 0 outlier(s)
-  Multiplier 3.0x IQR: Range [0.0, 199.0] -> 0 outlier(s)
+  Variables affected by this gap:
+    new_cases_female, new_cases_male, relapse_female, relapse_male,
+    relapse_total, total_tb_female, total_tb_male, total_tb_mf,
+    all 16 age-sex band columns (0_to_4_f through 65_m)
 
---- SENSITIVITY SUMMARY MATRIX ---
-Variable           | 1.5x IQR   | 2.0x IQR   | 3.0x IQR  
--------------------------------------------------------
-new_cases_total    | 3          | 3          | 0         
-relapse_total      | 6          | 1          | 0         
-total_tb_m+f       | 3          | 3          | 3         
-pbc_reg            | 0          | 0          | 0         
-cured              | 0          | 0          | 0         
-failed             | 0          | 0          | 0         
-died               | 0          | 0          | 0         
-ltfu               | 0          | 0          | 0         
-not_eval           | 0          | 0          | 0         
+  FHIR handling:
+    These 3 months carry data-absent-reason: not-reported on the
+    affected MeasureReport numerator and measureScore fields.
+    24 variables × 3 months = 72 MeasureReports with DAR applied.
+
+  Classification: MNAR — Missing Not At Random (Structural Gap).
+  Action taken  : Zero-fill in cleaning pipeline for computation;
+                  DAR extension in FHIR for semantic correctness.
+
+======================================================================
+SECTION C — YEAR-OVER-YEAR TREND SUMMARY
+======================================================================
+
+   BS Year  New Cases  Avg/Mo  Ann Rate  Relapse    TSR   Mort  HIV+
+  -----------------------------------------------------------------
+      2078       3169   264.1     154.6      110  0.809  0.024    22
+      2079       3531   294.2     169.2      169  0.813  0.020    33
+      2080       3631   302.6     171.1      239  0.871  0.021    21
+      2081       3618   301.5     167.8      246  0.859  0.017    41
+      2082       3314   276.2     151.5      232  0.834  0.027    46
+
+  Ann Rate = annualised notification rate per 100,000 population
+  TSR      = Treatment Success Rate (cured / pbc_reg)
+  Mort     = Mortality Rate (died / pbc_reg)
+
+  Observations:
+    Notification rate range: 151.5–171.1/100k (all years within Nepal NTP expected range 100–200/100k)
+    TSR range: 0.809–0.871 (WHO target ≥0.85)
+    Best TSR  : BS 2080 = 0.871
+    Lowest TSR: BS 2078 = 0.809
+
+======================================================================
