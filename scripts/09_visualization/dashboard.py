@@ -210,7 +210,7 @@ avg_mf       = fd["mf_ratio"].mean()
 c1, c2, c3, c4 = st.columns(4)
 for col, label, value, sub in [
     (c1, "Total New TB Cases",     f"{total_cases:,}",      f"{len(fd)} months"),
-    (c2, "Treatment Success Rate", f"{avg_tsr*100:.1f}%",   "WHO target ≥ 85%"),
+    (c2, "Treatment Success Rate", f"{avg_tsr*100:.1f}%",   "Cured / PBC registered"),
     (c3, "Notification Rate",      f"{avg_notif:.1f}",      "per 100,000 population"),
     (c4, "M:F Ratio",              f"{avg_mf:.2f}",         "Male cases / Female cases"),
 ]:
@@ -381,53 +381,97 @@ st.divider()
 # ── Section 4: Treatment Outcomes ────────────────────────────────────────────
 st.subheader("4. Treatment Outcomes")
 
-o1, o2 = st.columns([1, 1])
+total_pbc  = int(fd["pbc_reg"].sum())
+o_cured    = int(fd["cured"].sum())
+o_failed   = int(fd["failed"].sum())
+o_died     = int(fd["died"].sum())
+o_ltfu     = int(fd["ltfu"].sum())
+o_not_eval = int(fd["not_eval"].sum())
 
-with o1:
-    outcome_data = {
-        "Cured":   int(fd["cured"].sum()),
-        "Failed":  int(fd["failed"].sum()),
-        "Died":    int(fd["died"].sum()),
-        "LTFU":    int(fd["ltfu"].sum()),
-        "Not Eval":int(fd["not_eval"].sum()),
-    }
-    fig_out = px.pie(
-        names=list(outcome_data.keys()),
-        values=list(outcome_data.values()),
-        hole=0.45,
-        color_discrete_sequence=["#15803d","#dc2626","#d97706","#7c3aed","#6b7280"],
+# ── Row 1: outcome KPI cards ──────────────────────────────────────────────────
+st.caption(f"PBC Registered cohort total: **{total_pbc:,}**")
+k1, k2, k3, k4, k5 = st.columns(5)
+for col, label, val, color in [
+    (k1, "Cured",        o_cured,    "#15803d"),
+    (k2, "Failed",       o_failed,   "#dc2626"),
+    (k3, "Died",         o_died,     "#d97706"),
+    (k4, "LTFU",         o_ltfu,     "#7c3aed"),
+    (k5, "Not Evaluated",o_not_eval, "#6b7280"),
+]:
+    pct = val / total_pbc * 100 if total_pbc > 0 else 0
+    col.markdown(
+        f'<div style="background:#fff; border-radius:8px; padding:12px 14px; '
+        f'border:1px solid #e5e7eb; border-left:4px solid {color};">'
+        f'<div style="font-size:11px;font-weight:600;color:{color};margin-bottom:4px;">'
+        f'{label}</div>'
+        f'<div style="font-size:22px;font-weight:800;color:{color};line-height:1.1;">'
+        f'{val:,}</div>'
+        f'<div style="font-size:11px;color:#9ca3af;margin-top:3px;">'
+        f'{pct:.1f}% of cohort</div>'
+        f'</div>',
+        unsafe_allow_html=True,
     )
-    fig_out.update_traces(textposition="outside", textinfo="percent+label")
-    fig_out.update_layout(
-        title="Treatment Outcome Distribution",
+
+st.write("")
+
+# ── Row 2: horizontal bar + annual TSR ───────────────────────────────────────
+b1, b2 = st.columns([1, 1])
+
+with b1:
+    outcomes_df = pd.DataFrame({
+        "Outcome": ["Cured", "LTFU", "Not Evaluated", "Died", "Failed"],
+        "Count":   [o_cured, o_ltfu, o_not_eval, o_died, o_failed],
+        "Color":   ["#15803d", "#7c3aed", "#6b7280", "#d97706", "#dc2626"],
+    }).sort_values("Count", ascending=True)
+
+    fig_bar = go.Figure(go.Bar(
+        x=outcomes_df["Count"],
+        y=outcomes_df["Outcome"],
+        orientation="h",
+        marker_color=outcomes_df["Color"].tolist(),
+        text=[f"{v:,}  ({v/total_pbc*100:.1f}%)" for v in outcomes_df["Count"]],
+        textposition="outside",
+        cliponaxis=False,
+    ))
+    fig_bar.update_layout(
+        title="Outcome Counts (sorted)",
+        xaxis=dict(
+            title="Count",
+            showgrid=True, gridcolor="#f3f4f6",
+            range=[0, outcomes_df["Count"].max() * 1.25],
+        ),
+        yaxis=dict(showgrid=False),
+        plot_bgcolor="rgba(0,0,0,0.01)", paper_bgcolor="rgba(0,0,0,0)",
+        margin=dict(l=10, r=80, t=40, b=10),
+        height=280,
         showlegend=False,
-        margin=dict(l=20, r=20, t=40, b=20),
-        paper_bgcolor="rgba(0,0,0,0)",
     )
-    st.plotly_chart(fig_out, use_container_width=True)
+    st.plotly_chart(fig_bar, use_container_width=True)
 
-with o2:
-    yearly_tsr = df.groupby("bs_year").apply(
+with b2:
+    yearly_tsr = fd.groupby("bs_year").apply(
         lambda g: pd.Series({
-            "TSR (%)":       round(g["cured"].sum()  / g["pbc_reg"].sum() * 100, 1),
-            "Mortality (%)": round(g["died"].sum()   / g["pbc_reg"].sum() * 100, 1),
-            "LTFU (%)":      round(g["ltfu"].sum()   / g["pbc_reg"].sum() * 100, 1),
+            "TSR (%)": round(g["cured"].sum() / g["pbc_reg"].sum() * 100, 1)
+            if g["pbc_reg"].sum() > 0 else 0
         })
-    ).reset_index().rename(columns={"bs_year": "BS Year"})
-    yearly_tsr["BS Year"] = yearly_tsr["BS Year"].astype(int)
+    ).reset_index()
+    yearly_tsr["BS Year"] = yearly_tsr["bs_year"].astype(int)
 
     fig_tsr = px.bar(
         yearly_tsr, x="BS Year", y="TSR (%)",
         text_auto=".1f",
         color_discrete_sequence=["#15803d"],
-        labels={"TSR (%)": "Treatment Success Rate (%)"},
+        labels={"TSR (%)": "TSR (%)"},
+        title="Treatment Success Rate by Year",
     )
-    fig_tsr.add_hline(y=85, line_dash="dot", line_color="#dc2626",
-                      annotation_text="WHO target 85%", annotation_position="top left")
+    fig_tsr.update_traces(textposition="outside")
     fig_tsr.update_layout(
         plot_bgcolor="rgba(0,0,0,0.01)", paper_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=10, r=10, t=10, b=10),
-        xaxis=dict(type="category"),
+        margin=dict(l=10, r=10, t=40, b=10),
+        xaxis=dict(type="category", showgrid=False),
+        yaxis=dict(range=[0, 100], showgrid=True, gridcolor="#f3f4f6",
+                   title="TSR (%)"),
+        height=280,
     )
     st.plotly_chart(fig_tsr, use_container_width=True)
 
